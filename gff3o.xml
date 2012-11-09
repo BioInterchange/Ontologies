@@ -5,6 +5,7 @@
     <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY faldo "http://biohackathon.org/faldo#" >
+    <!ENTITY ncbi "http://purl.obolibrary.org/obo/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -15,16 +16,17 @@
      xml:base="http://www.sequenceontology.org/gff3"
      xmlns:dc="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ncbi="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/faldo#">
     <owl:Ontology rdf:about="http://www.sequenceontology.org/gff3#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
-        <rdfs:seeAlso>http://www.sequenceontology.org/resources/gff3.html</rdfs:seeAlso>
+        <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
         <dc:contributor>Joachim Baran</dc:contributor>
         <dc:contributor>Robert Hoehndorf</dc:contributor>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>1.0.1</owl:versionInfo>
         <dc:description xml:lang="en">An ontology that describes the Generic Feature Format Version 3 (GFF3) by Lincoln Stein (http://www.sequenceontology.org/resources/gff3.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:title xml:lang="en">Generic Feature Format Version 3 Ontology (GFF3O)</dc:title>
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
@@ -117,6 +119,17 @@
         <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a feature&#39;s start, stop, strand datatype properties.</rdfs:comment>
         <rdfs:range rdf:resource="&faldo;Region"/>
         <rdfs:domain rdf:resource="http://www.sequenceontology.org/gff3#GFF3_0002"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gff3#GFF3_0023 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gff3#GFF3_0023">
+        <rdfs:label>species</rdfs:label>
+        <rdfs:comment xml:lang="en">NCBI Taxonomy Ontology &quot;NCBITaxon_1&quot; (or sub-classes) instance that denotes the species for a feature set.</rdfs:comment>
+        <rdfs:range rdf:resource="&ncbi;NCBITaxon_1"/>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gff3#GFF3_0001"/>
     </owl:ObjectProperty>
     
 
@@ -245,10 +258,10 @@
                 <owl:onDatatype rdf:resource="&xsd;int"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                        <xsd:maxInclusive rdf:datatype="&xsd;integer">2</xsd:maxInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:maxInclusive rdf:datatype="&xsd;integer">2</xsd:maxInclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -268,6 +281,40 @@
     
 
 
+    <!-- http://www.sequenceontology.org/gff3#GFF3_0022 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gff3#GFF3_0022">
+        <rdfs:label>version</rdfs:label>
+        <rdfs:comment xml:lang="en">Version of the GFF3 specification that defines the feature set contents.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gff3#GFF3_0001"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&owl;rational"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">3</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxExclusive rdf:datatype="&xsd;integer">4</xsd:maxExclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gff3#GFF3_0024 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gff3#GFF3_0024">
+        <rdfs:label>build</rdfs:label>
+        <rdfs:comment xml:lang="en">Name of a genome assembly build that denotes the provenance of features in a feature set. For example, &#39;NCBI 36&#39; or &#39;FlyBase r4.1&#39;.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gff3#GFF3_0001"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -275,8 +322,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
 
 
     <!-- http://www.sequenceontology.org/gff3#GFF3_0001 -->
