@@ -23,7 +23,7 @@
      xmlns:faldo="http://biohackathon.org/faldo#">
     <owl:Ontology rdf:about="http://www.sequenceontology.org/gvf1#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>1.0.1</owl:versionInfo>
         <dc:description xml:lang="en">An ontology that describes the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:title xml:lang="en">Genomic Variation Format Version 1 Ontology (GVF1O)</dc:title>
         <dc:contributor>Joachim Baran</dc:contributor>
@@ -162,6 +162,67 @@
         <rdfs:comment xml:lang="en">An effect of a particular feature variant.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
         <rdfs:range rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0042 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0042">
+        <rdfs:label>sequence_variant</rdfs:label>
+        <rdfs:comment xml:lang="en">Effect of a sequence alteration on a sequence feature.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0043 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0043">
+        <rdfs:label>feature_type</rdfs:label>
+        <rdfs:comment xml:lang="en">A term that is describing the sequence feature that is being affected.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0044 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0044">
+        <rdfs:label>feature_id</rdfs:label>
+        <rdfs:comment xml:lang="en">Features that are affected by this sequence alteration effect.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0002"/>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0046 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0046">
+        <rdfs:label>start_range</rdfs:label>
+        <rdfs:comment xml:lang="en">A coordinate range for ambiguous start coordinates.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+        <rdfs:range rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0045"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0047 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0047">
+        <rdfs:label>end_range</rdfs:label>
+        <rdfs:comment xml:lang="en">A coordinate range for ambiguous start coordinates.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+        <rdfs:range rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0045"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0051 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0051">
+        <rdfs:comment xml:lang="en">Denotes on which chromosome (for a given individual) this sequence variant appears.</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -497,6 +558,66 @@
     
 
 
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0048 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0048">
+        <rdfs:label>ambiguous_start</rdfs:label>
+        <rdfs:comment xml:lang="en">A coordinate that defines the start of an ambiguous coordinate range.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0045"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0049 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0049">
+        <rdfs:label>ambiguous_end</rdfs:label>
+        <rdfs:comment xml:lang="en">A coordinate that defines the end of an ambiguous coordinate range.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0045"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0050 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0050">
+        <rdfs:label>phased</rdfs:label>
+        <rdfs:comment xml:lang="en">Unclear from GVF specification.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>.+</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -504,6 +625,7 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+
 
     <!-- http://www.sequenceontology.org/gvf1#GVF1_0001 -->
 
@@ -569,6 +691,15 @@
     <owl:Class rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0040">
         <rdfs:label>Effect</rdfs:label>
         <rdfs:comment xml:lang="en">Describing the effect of a feature variant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0045 -->
+
+    <owl:Class rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0045">
+        <rdfs:label>Range</rdfs:label>
+        <rdfs:comment xml:lang="en">Describe ambiguity in either start or end coordinates.</rdfs:comment>
     </owl:Class>
     
 
@@ -644,6 +775,11 @@
             <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0002"/>
             <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0003"/>
             <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0016"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0028"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0035"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0045"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
