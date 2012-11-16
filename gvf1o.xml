@@ -23,11 +23,11 @@
      xmlns:faldo="http://biohackathon.org/faldo#">
     <owl:Ontology rdf:about="http://www.sequenceontology.org/gvf1#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
-        <owl:versionInfo>1.0.1</owl:versionInfo>
+        <owl:versionInfo>1.0.2</owl:versionInfo>
         <dc:description xml:lang="en">An ontology that describes the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:title xml:lang="en">Genomic Variation Format Version 1 Ontology (GVF1O)</dc:title>
-        <dc:contributor>Joachim Baran</dc:contributor>
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
+        <dc:contributor xml:lang="en">Joachim Baran</dc:contributor>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
     </owl:Ontology>
     
@@ -222,7 +222,21 @@
     <!-- http://www.sequenceontology.org/gvf1#GVF1_0051 -->
 
     <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0051">
-        <rdfs:comment xml:lang="en">Denotes on which chromosome (for a given individual) this sequence variant appears.</rdfs:comment>
+        <rdfs:label>chromosome</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes abstract chromosome representations for capturing variants that appear on the same chromosome of a polyploid organism.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0035"/>
+        <rdfs:range rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0052"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0053 -->
+
+    <owl:ObjectProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0053">
+        <rdfs:label>genotype</rdfs:label>
+        <rdfs:comment xml:lang="en">Determines the genotype as observed in an individual.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+        <rdfs:range rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0052"/>
     </owl:ObjectProperty>
     
 
@@ -362,10 +376,10 @@
                 <owl:onDatatype rdf:resource="&owl;rational"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;integer">2</xsd:maxExclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;integer">2</xsd:maxExclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -618,6 +632,86 @@
     
 
 
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0054 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0054">
+        <rdfs:label>variant_codon</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes the codon that overlaps this variant.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>[ACGT]{3}</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0055 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0055">
+        <rdfs:label>reference_codon</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>[ACGT]{3}</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0056 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0056">
+        <rdfs:label>variant_aa</rdfs:label>
+        <rdfs:comment xml:lang="en">Amino acid that overlaps with the variant.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>[A-Z]</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0057 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0057">
+        <rdfs:label>reference_aa</rdfs:label>
+        <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&#39;s genome coordinates.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.sequenceontology.org/gvf1#GVF1_0033"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>[A-Z]</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -704,6 +798,15 @@
     
 
 
+    <!-- http://www.sequenceontology.org/gvf1#GVF1_0052 -->
+
+    <owl:Class rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0052">
+        <rdfs:label>Chromosome</rdfs:label>
+        <rdfs:comment xml:lang="en">An abstract representation of a chromosome to represent ploidy.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -760,15 +863,6 @@
      -->
 
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0017"/>
-            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0018"/>
-            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0019"/>
-            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0020"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0001"/>
@@ -781,6 +875,15 @@
             <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0040"/>
             <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0045"/>
         </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0017"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0018"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0019"/>
+            <rdf:Description rdf:about="http://www.sequenceontology.org/gvf1#GVF1_0020"/>
+        </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
 
