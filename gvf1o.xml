@@ -23,12 +23,12 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gvf1o#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
+        <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
         <owl:versionInfo>1.0.5</owl:versionInfo>
         <dc:description xml:lang="en">An ontology that describes the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:title xml:lang="en">Genomic Variation Format Version 1 Ontology (GVF1O)</dc:title>
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
         <dc:contributor xml:lang="en">Joachim Baran</dc:contributor>
-        <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
     </owl:Ontology>
     
 
@@ -74,7 +74,7 @@
         <rdfs:comment xml:lang="en">Strand of the feature.</rdfs:comment>
         <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0016"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0075"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
 
@@ -337,6 +337,28 @@
     
 
 
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0080 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0080">
+        <rdfs:label>breakpoint</rdfs:label>
+        <rdfs:comment xml:lang="en">Potential source or destination of zero-length sequence alterations.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0083 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0083">
+        <rdfs:label>strand</rdfs:label>
+        <rdfs:comment xml:lang="en">Strand of the breakpoint.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0075"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -463,7 +485,16 @@
         <rdfs:comment xml:lang="en">Tag name of a feature attribute.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0003"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0064"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -471,7 +502,7 @@
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0022 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0022">
-        <rdfs:label>version</rdfs:label>
+        <rdfs:label>gvf_version</rdfs:label>
         <rdfs:comment xml:lang="en">Version of the GVF specification that defines the feature set contents.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0001"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0063"/>
@@ -499,7 +530,16 @@
         <rdfs:comment xml:lang="en">Name of a genome assembly build that denotes the provenance of features in a feature set. For example, &#39;NCBI 36&#39; or &#39;FlyBase r4.1&#39;.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0001"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0063"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -777,7 +817,7 @@
         <rdfs:label>reference_codon</rdfs:label>
         <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0060"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -819,7 +859,7 @@
         <rdfs:label>reference_aa</rdfs:label>
         <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&#39;s genome coordinates.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0060"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -1011,6 +1051,42 @@
     
 
 
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0081 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0081">
+        <rdfs:label>gff_version</rdfs:label>
+        <rdfs:comment xml:lang="en">Version of the GFF specification that defines the feature set contents apart from GVF related definitions.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0001"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0063"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&owl;rational"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:maxExclusive rdf:datatype="&xsd;integer">4</xsd:maxExclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">3</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0082 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0082">
+        <rdfs:label>file_date</rdfs:label>
+        <rdfs:comment xml:lang="en">Creation date of the GVF file that this set stems from.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0001"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0063"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1019,7 +1095,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0001 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0001">
@@ -1178,6 +1254,15 @@
      -->
 
     <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0017"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0018"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0019"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0020"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0001"/>
@@ -1192,15 +1277,6 @@
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0052"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
         </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0017"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0018"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0019"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0020"/>
-        </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
 
