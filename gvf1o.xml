@@ -164,6 +164,18 @@
     
 
 
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0038 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0038">
+        <rdfs:label>zygosity</rdfs:label>
+        <rdfs:comment xml:lang="en">Zygosity of a variant.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0069"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0041 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0041">
@@ -398,7 +410,16 @@
         <rdfs:comment xml:lang="en">A free text qualifier that describes the algorithm or operating procedure that generated this feature.  For example, the name of the software that generated this feature or a database name.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
 
@@ -694,27 +715,6 @@
     
 
 
-    <!-- http://www.biointerchange.org/gvf1o#GVF1_0038 -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0038">
-        <rdfs:label>zygosity</rdfs:label>
-        <rdfs:comment xml:lang="en">Zygosity of a feature locus.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>heterozygous|homozygous|hemizygous</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0039 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0039">
@@ -816,7 +816,7 @@
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0055">
         <rdfs:label>reference_codon</rdfs:label>
         <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -858,7 +858,7 @@
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0057">
         <rdfs:label>reference_aa</rdfs:label>
         <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&#39;s genome coordinates.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -1095,7 +1095,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0001 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0001">
@@ -1109,6 +1108,139 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0002">
         <rdfs:label>Feature</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0055"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0021"/>
+                <owl:onClass rdf:resource="&faldo;Region"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0078"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0028"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0026"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0034"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0036"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0035"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0027"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0006"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0080"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0077"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0007"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0009"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&owl;real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0031"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0005"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0010"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0016"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0014"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0008"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0076"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0057"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A genomic sequence feature.</rdfs:comment>
     </owl:Class>
     
@@ -1126,6 +1258,16 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0016">
         <rdfs:label>Strand</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0020"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0019"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0017"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0018"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1194,6 +1336,24 @@
     
 
 
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0084 -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0084">
+        <rdfs:label>Zygosity</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0085"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0086"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0087"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Denotes the zygosity of alleles.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1245,6 +1405,36 @@
     
 
 
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0085 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0085">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
+        <rdfs:label>Heterozygous</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes heterozygous alleles.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0086 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0086">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
+        <rdfs:label>Homozygous</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes homozygous alleles.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0087 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0087">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
+        <rdfs:label>Hemizygous</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes hemizygous alleles.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1276,6 +1466,7 @@
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0045"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0052"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
