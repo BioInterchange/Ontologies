@@ -424,13 +424,13 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0027"/>
         <rdfs:range>
             <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&owl;rational"/>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;integer">4</xsd:maxExclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;float">4</xsd:maxExclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">3</xsd:minInclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">3</xsd:minInclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>

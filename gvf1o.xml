@@ -562,13 +562,13 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0063"/>
         <rdfs:range>
             <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&owl;rational"/>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">1</xsd:minInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;integer">2</xsd:maxExclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;float">2</xsd:maxExclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1093,13 +1093,13 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0063"/>
         <rdfs:range>
             <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&owl;rational"/>
+                <owl:onDatatype rdf:resource="&xsd;float"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">3</xsd:minInclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">3</xsd:minInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;integer">4</xsd:maxExclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;float">4</xsd:maxExclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
