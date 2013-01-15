@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <!DOCTYPE rdf:RDF [
     <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
@@ -12,7 +11,6 @@
     <!ENTITY ipid "http://supfam.cs.bris.ac.uk/SUPERFAMILY/cgi-bin/scop.cgi?ipid=" >
     <!ENTITY sp "http://www.broad.mit.edu/annotation/genome/magnaporthe_grisea/GeneLocus.html?sp=" >
 ]>
-
 
 <rdf:RDF xmlns="http://www.biointerchange.org/gvf1o#"
      xml:base="http://www.biointerchange.org/gvf1o"
@@ -35,8 +33,6 @@
         <dc:contributor xml:lang="en">Joachim Baran</dc:contributor>
     </owl:Ontology>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -44,9 +40,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -56,9 +49,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -66,9 +56,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0010 -->
 
@@ -81,8 +68,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0012 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0012">
@@ -93,8 +78,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0014 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0014">
@@ -105,8 +88,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0015 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0015">
@@ -117,8 +98,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0068"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0021 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0021">
@@ -130,8 +109,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0023 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0023">
@@ -142,8 +119,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0068"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0034 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0034">
@@ -154,8 +129,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0036 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0036">
@@ -166,8 +139,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0038 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0038">
@@ -178,8 +149,6 @@
         <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0041 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0041">
@@ -190,8 +159,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0069"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0042 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0042">
@@ -201,8 +168,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0070"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0043 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0043">
@@ -212,8 +177,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0070"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0044 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0044">
@@ -224,8 +187,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0070"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0046 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0046">
@@ -236,8 +197,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0070"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0047 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0047">
@@ -248,8 +207,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0070"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0051 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0051">
@@ -260,8 +217,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0067"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0053 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0053">
@@ -272,8 +227,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0069"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0066 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0066">
@@ -281,8 +234,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0067 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0067">
@@ -290,8 +241,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with SequencedIndividual class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0068 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0068">
@@ -299,8 +248,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0069 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0069">
@@ -308,8 +255,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Variant class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0070 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0070">
@@ -317,8 +262,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Effect class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0075 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0075">
@@ -326,8 +269,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Breakpoint class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0078 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0078">
@@ -505,8 +446,6 @@
         </rdfs:range>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0079 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0079">
@@ -518,8 +457,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0075"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0080 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0080">
@@ -530,8 +467,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0083 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0083">
@@ -543,8 +478,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0075"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0089 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0089">
@@ -552,8 +485,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0090 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0090">
@@ -564,8 +495,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0089"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0091 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0091">
@@ -576,8 +505,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0089"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0096 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0096">
@@ -755,8 +682,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
     </owl:ObjectProperty>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -764,9 +689,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0004 -->
 
@@ -787,8 +709,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0005 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0005">
@@ -808,8 +728,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0006 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0006">
@@ -829,8 +747,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0007 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0007">
@@ -850,8 +766,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0008 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0008">
@@ -871,8 +785,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0009 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0009">
@@ -883,8 +795,6 @@
         <rdfs:range rdf:resource="&owl;real"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0013 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0013">
@@ -904,8 +814,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0022 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0022">
@@ -928,8 +836,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0024 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0024">
@@ -949,8 +855,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0025 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0025">
@@ -970,8 +874,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0026 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0026">
@@ -991,8 +893,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0027 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0027">
@@ -1012,8 +912,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0029 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0029">
@@ -1032,8 +930,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0030 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0030">
@@ -1052,8 +948,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0031 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0031">
@@ -1073,8 +967,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0032 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0032">
@@ -1085,8 +977,6 @@
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0037 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0037">
@@ -1097,8 +987,6 @@
         <rdfs:range rdf:resource="&xsd;int"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0039 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0039">
@@ -1109,8 +997,6 @@
         <rdfs:range rdf:resource="&owl;real"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0048 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0048">
@@ -1130,8 +1016,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0049 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0049">
@@ -1151,8 +1035,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0050 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0050">
@@ -1172,8 +1054,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0054 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0054">
@@ -1193,8 +1073,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0055 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0055">
@@ -1214,8 +1092,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0056 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0056">
@@ -1235,8 +1111,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0057 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0057">
@@ -1256,8 +1130,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0059 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0059">
@@ -1265,8 +1137,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0060 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0060">
@@ -1274,8 +1144,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Variant class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0061 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0061">
@@ -1283,8 +1151,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Range class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0062 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0062">
@@ -1292,8 +1158,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with DBXRef class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0063 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0063">
@@ -1301,8 +1165,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0064 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0064">
@@ -1310,8 +1172,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Attribute class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0065 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0065">
@@ -1319,8 +1179,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with SequencedIndividual class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0071 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0071">
@@ -1328,8 +1186,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Breakpoint class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0072 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0072">
@@ -1349,8 +1205,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0073 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0073">
@@ -1370,8 +1224,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0074 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0074">
@@ -1391,8 +1243,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0076 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0076">
@@ -1412,8 +1262,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0077 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0077">
@@ -1433,8 +1281,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0081 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0081">
@@ -1457,8 +1303,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0082 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0082">
@@ -1469,8 +1313,6 @@
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0092 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0092">
@@ -1478,8 +1320,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0093 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0093">
@@ -1499,8 +1339,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0094 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0094">
@@ -1520,8 +1358,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0095 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0095">
@@ -1541,8 +1377,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1558,8 +1392,6 @@
         <rdfs:comment xml:lang="en">Set of genomic sequence features, whose identifiers are unique within the set.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0002 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0002">
@@ -1693,16 +1525,12 @@
         <rdfs:comment xml:lang="en">A genomic sequence feature.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0003 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0003">
         <rdfs:label>Attribute</rdfs:label>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0016 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0016">
@@ -1720,8 +1548,6 @@
         <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0033 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0033">
@@ -1729,8 +1555,6 @@
         <rdfs:comment xml:lang="en">Describing specific alterations of a feature.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0035 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0035">
@@ -1738,8 +1562,6 @@
         <rdfs:comment xml:lang="en">Aggregated sequencing information for a particular individual.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0040 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0040">
@@ -1747,8 +1569,6 @@
         <rdfs:comment xml:lang="en">Describing the effect of a feature variant.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0045 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0045">
@@ -1756,8 +1576,6 @@
         <rdfs:comment xml:lang="en">Describe ambiguity in either start or end coordinates.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0052 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0052">
@@ -1765,8 +1583,6 @@
         <rdfs:comment xml:lang="en">An abstract representation of a chromosome to represent ploidy.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0058 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0058">
@@ -1774,8 +1590,6 @@
         <rdfs:comment xml:lang="en">Describes the source or destination of a zero-length sequence alteration.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0084 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0084">
@@ -1792,8 +1606,6 @@
         <rdfs:comment xml:lang="en">Denotes the zygosity of alleles.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0088 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0088">
@@ -1802,542 +1614,6 @@
         <rdfs:comment xml:lang="en">Indicates a feature&#39;s &quot;target&quot; of a nucleotide-to-nucleotide or protein-to-nucleotide alignment.</rdfs:comment>
     </owl:Class>
     
-
-
-    <!-- http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID= -->
-
-    <owl:Class rdf:about="http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID="/>
-    
-
-
-    <!-- http://www.brenda-enzymes.info/php/result_flat.php4?ecno= -->
-
-    <owl:Class rdf:about="http://www.brenda-enzymes.info/php/result_flat.php4?ecno="/>
-    
-
-
-    <!-- http://www.broad.mit.edu/annotation/genome/magnaporthe_grisea/GeneLocus.html?sp=S -->
-
-    <owl:Class rdf:about="&sp;S"/>
-    
-
-
-    <!-- http://www.candidagenome.org/cgi-bin/locus.pl?dbid= -->
-
-    <owl:Class rdf:about="http://www.candidagenome.org/cgi-bin/locus.pl?dbid="/>
-    
-
-
-    <!-- http://www.candidagenome.org/cgi-bin/locus.pl?locus= -->
-
-    <owl:Class rdf:about="http://www.candidagenome.org/cgi-bin/locus.pl?locus="/>
-    
-
-
-    <!-- http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid= -->
-
-    <owl:Class rdf:about="http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid="/>
-    
-
-
-    <!-- http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID= -->
-
-    <owl:Class rdf:about="http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID="/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html%26Submit=Go%26id= -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html%26Submit=Go%26id="/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI: -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:"/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid= -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid="/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/ena/data/view/ -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/ena/data/view/"/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/intact/search/do/search?searchString= -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/intact/search/do/search?searchString="/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/interpro/IEntry?ac= -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/interpro/IEntry?ac="/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/ontology-lookup/?termId=MOD: -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:"/>
-    
-
-
-    <!-- http://www.ebi.ac.uk/rhea/reaction.xhtml?id= -->
-
-    <owl:Class rdf:about="http://www.ebi.ac.uk/rhea/reaction.xhtml?id="/>
-    
-
-
-    <!-- http://www.ecogene.org/geneInfo.php?eck_id= -->
-
-    <owl:Class rdf:about="http://www.ecogene.org/geneInfo.php?eck_id="/>
-    
-
-
-    <!-- http://www.ecogene.org/geneInfo.php?eg_id= -->
-
-    <owl:Class rdf:about="http://www.ecogene.org/geneInfo.php?eg_id="/>
-    
-
-
-    <!-- http://www.ensembl.org/id/ -->
-
-    <owl:Class rdf:about="http://www.ensembl.org/id/"/>
-    
-
-
-    <!-- http://www.expasy.ch/cgi-bin/nicezyme.pl? -->
-
-    <owl:Class rdf:about="http://www.expasy.ch/cgi-bin/nicezyme.pl?"/>
-    
-
-
-    <!-- http://www.expasy.ch/cgi-bin/prosite-search-ac? -->
-
-    <owl:Class rdf:about="http://www.expasy.ch/cgi-bin/prosite-search-ac?"/>
-    
-
-
-    <!-- http://www.expasy.org/enzyme/ -->
-
-    <owl:Class rdf:about="http://www.expasy.org/enzyme/"/>
-    
-
-
-    <!-- http://www.gdb.org/gdb-bin/genera/accno?accessionNum=GDB: -->
-
-    <owl:Class rdf:about="http://www.gdb.org/gdb-bin/genera/accno?accessionNum=GDB:"/>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=glossina%26name= -->
-
-    <owl:Class rdf:about="http://www.genedb.org/genedb/Search?organism=glossina%26name="/>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=leish%26name= -->
-
-    <owl:Class rdf:about="http://www.genedb.org/genedb/Search?organism=leish%26name="/>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=malaria%26name= -->
-
-    <owl:Class rdf:about="http://www.genedb.org/genedb/Search?organism=malaria%26name="/>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=tryp%26name= -->
-
-    <owl:Class rdf:about="http://www.genedb.org/genedb/Search?organism=tryp%26name="/>
-    
-
-
-    <!-- http://www.genenames.org/data/hgnc_data.php?app_sym= -->
-
-    <owl:Class rdf:about="http://www.genenames.org/data/hgnc_data.php?app_sym="/>
-    
-
-
-    <!-- http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC: -->
-
-    <owl:Class rdf:about="http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:"/>
-    
-
-
-    <!-- http://www.geneontology.org/cgi-bin/references.cgi#GO_REF: -->
-
-    <owl:Class rdf:about="http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:"/>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?cpd: -->
-
-    <owl:Class rdf:about="http://www.genome.jp/dbget-bin/www_bget?cpd:"/>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?ec: -->
-
-    <owl:Class rdf:about="http://www.genome.jp/dbget-bin/www_bget?ec:"/>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?path: -->
-
-    <owl:Class rdf:about="http://www.genome.jp/dbget-bin/www_bget?path:"/>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?rn: -->
-
-    <owl:Class rdf:about="http://www.genome.jp/dbget-bin/www_bget?rn:"/>
-    
-
-
-    <!-- http://www.gramene.org/db/genes/search_gene?acc= -->
-
-    <owl:Class rdf:about="http://www.gramene.org/db/genes/search_gene?acc="/>
-    
-
-
-    <!-- http://www.gramene.org/db/literature/pub_search?ref_id= -->
-
-    <owl:Class rdf:about="http://www.gramene.org/db/literature/pub_search?ref_id="/>
-    
-
-
-    <!-- http://www.gramene.org/db/protein/protein_search?acc= -->
-
-    <owl:Class rdf:about="http://www.gramene.org/db/protein/protein_search?acc="/>
-    
-
-
-    <!-- http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id= -->
-
-    <owl:Class rdf:about="http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id="/>
-    
-
-
-    <!-- http://www.gramene.org/db/searches/browser?search_type=All%26RGN=on%26query= -->
-
-    <owl:Class rdf:about="http://www.gramene.org/db/searches/browser?search_type=All%26RGN=on%26query="/>
-    
-
-
-    <!-- http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid= -->
-
-    <owl:Class rdf:about="http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid="/>
-    
-
-
-    <!-- http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id= -->
-
-    <owl:Class rdf:about="http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id="/>
-    
-
-
-    <!-- http://www.h-invitational.jp/hinv/spsoup/transcript_view?acc_id= -->
-
-    <owl:Class rdf:about="http://www.h-invitational.jp/hinv/spsoup/transcript_view?acc_id="/>
-    
-
-
-    <!-- http://www.informatics.jax.org/accession/ -->
-
-    <owl:Class rdf:about="http://www.informatics.jax.org/accession/"/>
-    
-
-
-    <!-- http://www.informatics.jax.org/searches/AMA.cgi?id=MA: -->
-
-    <owl:Class rdf:about="http://www.informatics.jax.org/searches/AMA.cgi?id=MA:"/>
-    
-
-
-    <!-- http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId= -->
-
-    <owl:Class rdf:about="http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId="/>
-    
-
-
-    <!-- http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId= -->
-
-    <owl:Class rdf:about="http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId="/>
-    
-
-
-    <!-- http://www.jstor.org/stable/ -->
-
-    <owl:Class rdf:about="http://www.jstor.org/stable/"/>
-    
-
-
-    <!-- http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term= -->
-
-    <owl:Class rdf:about="http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term="/>
-    
-
-
-    <!-- http://www.maizegdb.org/cgi-bin/id_search.cgi?id= -->
-
-    <owl:Class rdf:about="http://www.maizegdb.org/cgi-bin/id_search.cgi?id="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/COG/new/release/cow.cgi?cog= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/COG/new/release/cow.cgi?cog="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pccompound%26term= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pccompound%26term="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pcsubstance%26term= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pcsubstance%26term="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide%26val= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide%26val="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein%26val= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein%26val="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/pubmed/ -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/"/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve%26db=gene%26list_uids= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve%26db=gene%26list_uids="/>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc%26cmd=search%26term= -->
-
-    <owl:Class rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc%26cmd=search%26term="/>
-    
-
-
-    <!-- http://www.neurolex.org/wiki/ -->
-
-    <owl:Class rdf:about="http://www.neurolex.org/wiki/"/>
-    
-
-
-    <!-- http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=%26term= -->
-
-    <owl:Class rdf:about="http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=%26term="/>
-    
-
-
-    <!-- http://www.nmpdr.org/linkin.cgi?id= -->
-
-    <owl:Class rdf:about="http://www.nmpdr.org/linkin.cgi?id="/>
-    
-
-
-    <!-- http://www.pharmgkb.org/do/serve?objId= -->
-
-    <owl:Class rdf:about="http://www.pharmgkb.org/do/serve?objId="/>
-    
-
-
-    <!-- http://www.plantontology.org/amigo/go.cgi?action=query%26view=query%26search_constraint=terms%26query=PO: -->
-
-    <owl:Class rdf:about="http://www.plantontology.org/amigo/go.cgi?action=query%26view=query%26search_constraint=terms%26query=PO:"/>
-    
-
-
-    <!-- http://www.plasmodb.org/gene/ -->
-
-    <owl:Class rdf:about="http://www.plasmodb.org/gene/"/>
-    
-
-
-    <!-- http://www.pombase.org/spombe/result/ -->
-
-    <owl:Class rdf:about="http://www.pombase.org/spombe/result/"/>
-    
-
-
-    <!-- http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR: -->
-
-    <owl:Class rdf:about="http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR:"/>
-    
-
-
-    <!-- http://www.proteinatlas.org/antibody_info.php?antibody_id= -->
-
-    <owl:Class rdf:about="http://www.proteinatlas.org/antibody_info.php?antibody_id="/>
-    
-
-
-    <!-- http://www.proteinatlas.org/tissue_profile.php?antibody_id= -->
-
-    <owl:Class rdf:about="http://www.proteinatlas.org/tissue_profile.php?antibody_id="/>
-    
-
-
-    <!-- http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId= -->
-
-    <owl:Class rdf:about="http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId="/>
-    
-
-
-    <!-- http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID= -->
-
-    <owl:Class rdf:about="http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID="/>
-    
-
-
-    <!-- http://www.sanger.ac.uk/cgi-bin/Pfam/getacc? -->
-
-    <owl:Class rdf:about="http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?"/>
-    
-
-
-    <!-- http://www.sgn.cornell.edu/chado/publication.pl?pub_id= -->
-
-    <owl:Class rdf:about="http://www.sgn.cornell.edu/chado/publication.pl?pub_id="/>
-    
-
-
-    <!-- http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id= -->
-
-    <owl:Class rdf:about="http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id="/>
-    
-
-
-    <!-- http://www.tcdb.org/tcdb/index.php?tc= -->
-
-    <owl:Class rdf:about="http://www.tcdb.org/tcdb/index.php?tc="/>
-    
-
-
-    <!-- http://www.theseed.org/linkin.cgi?id= -->
-
-    <owl:Class rdf:about="http://www.theseed.org/linkin.cgi?id="/>
-    
-
-
-    <!-- http://www.unimod.org/modifications_view.php?editid1= -->
-
-    <owl:Class rdf:about="http://www.unimod.org/modifications_view.php?editid1="/>
-    
-
-
-    <!-- http://www.uniprot.org/keywords/ -->
-
-    <owl:Class rdf:about="http://www.uniprot.org/keywords/"/>
-    
-
-
-    <!-- http://www.uniprot.org/locations/ -->
-
-    <owl:Class rdf:about="http://www.uniprot.org/locations/"/>
-    
-
-
-    <!-- http://www.uniprot.org/uniparc/ -->
-
-    <owl:Class rdf:about="http://www.uniprot.org/uniparc/"/>
-    
-
-
-    <!-- http://www.uniprot.org/uniprot/ -->
-
-    <owl:Class rdf:about="http://www.uniprot.org/uniprot/"/>
-    
-
-
-    <!-- http://www.wormbase.org/db/get?class=Protein;name=WP: -->
-
-    <owl:Class rdf:about="http://www.wormbase.org/db/get?class=Protein;name=WP:"/>
-    
-
-
-    <!-- http://www.wormbase.org/db/gene/gene?name= -->
-
-    <owl:Class rdf:about="http://www.wormbase.org/db/gene/gene?name="/>
-    
-
-
-    <!-- http://www.wormbase.org/db/misc/paper?name= -->
-
-    <owl:Class rdf:about="http://www.wormbase.org/db/misc/paper?name="/>
-    
-
-
-    <!-- http://zfin.org/cgi-bin/ZFIN_jump?record= -->
-
-    <owl:Class rdf:about="http://zfin.org/cgi-bin/ZFIN_jump?record="/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2345,593 +1621,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
-
-    <!-- http://agro.vbi.vt.edu/public/servlet/GeneEdit?%26Search=Search%26level=2%26genename= -->
-
-    <owl:Thing rdf:about="http://agro.vbi.vt.edu/public/servlet/GeneEdit?%26Search=Search%26level=2%26genename=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO: -->
-
-    <owl:Thing rdf:about="http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://arabidopsis.org/servlets/TairObject?accession= -->
-
-    <owl:Thing rdf:about="http://arabidopsis.org/servlets/TairObject?accession=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://arabidopsis.org/servlets/TairObject?type=locus%26name= -->
-
-    <owl:Thing rdf:about="http://arabidopsis.org/servlets/TairObject?type=locus%26name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord= -->
-
-    <owl:Thing rdf:about="http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY%26object= -->
-
-    <owl:Thing rdf:about="http://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY%26object=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME%26object= -->
-
-    <owl:Thing rdf:about="http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME%26object=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://biocyc.org/META/NEW-IMAGE?type=NIL%26object= -->
-
-    <owl:Thing rdf:about="http://biocyc.org/META/NEW-IMAGE?type=NIL%26object=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://biocyc.org/META/NEW-IMAGE?type=PATHWAY%26object= -->
-
-    <owl:Thing rdf:about="http://biocyc.org/META/NEW-IMAGE?type=PATHWAY%26object=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://cmr.jcvi.org/cgi-bin/CMR/EgadSearch.cgi?search_string= -->
-
-    <owl:Thing rdf:about="http://cmr.jcvi.org/cgi-bin/CMR/EgadSearch.cgi?search_string=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus= -->
-
-    <owl:Thing rdf:about="http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://cmr.jcvi.org/cgi-bin/CMR/shared/GenomePropDefinition.cgi?prop_acc= -->
-
-    <owl:Thing rdf:about="http://cmr.jcvi.org/cgi-bin/CMR/shared/GenomePropDefinition.cgi?prop_acc=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://db.ciliate.org/cgi-bin/locus.pl?locus= -->
-
-    <owl:Thing rdf:about="http://db.ciliate.org/cgi-bin/locus.pl?locus=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://db.yeastgenome.org/cgi-bin/locus.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://db.yeastgenome.org/cgi-bin/locus.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://db.yeastgenome.org/cgi-bin/locus.pl?locus= -->
-
-    <owl:Thing rdf:about="http://db.yeastgenome.org/cgi-bin/locus.pl?locus=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo= -->
-
-    <owl:Thing rdf:about="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://dictybase.org/gene/ -->
-
-    <owl:Thing rdf:about="http://dictybase.org/gene/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://dx.doi.org/DOI: -->
-
-    <owl:Thing rdf:about="http://dx.doi.org/DOI:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://en.wikipedia.org/wiki/ -->
-
-    <owl:Thing rdf:about="http://en.wikipedia.org/wiki/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://flybase.org/cgi-bin/fbcvq.html?query=FBbt: -->
-
-    <owl:Thing rdf:about="http://flybase.org/cgi-bin/fbcvq.html?query=FBbt:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://gene3d.biochem.ucl.ac.uk/superfamily/?accession= -->
-
-    <owl:Thing rdf:about="http://gene3d.biochem.ucl.ac.uk/superfamily/?accession=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://gowiki.tamu.edu/wiki/index.php/ -->
-
-    <owl:Thing rdf:about="http://gowiki.tamu.edu/wiki/index.php/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://img.jgi.doe.gov/cgi-bin/pub/main.cgi?section=GeneDetail%26page=geneDetail%26gene_oid= -->
-
-    <owl:Thing rdf:about="http://img.jgi.doe.gov/cgi-bin/pub/main.cgi?section=GeneDetail%26page=geneDetail%26gene_oid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://medicago.jcvi.org/cgi-bin/medicago/search/shared/ORF_infopage.cgi?orf= -->
-
-    <owl:Thing rdf:about="http://medicago.jcvi.org/cgi-bin/medicago/search/shared/ORF_infopage.cgi?orf=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://merops.sanger.ac.uk/cgi-bin/famsum?family= -->
-
-    <owl:Thing rdf:about="http://merops.sanger.ac.uk/cgi-bin/famsum?family=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://merops.sanger.ac.uk/cgi-bin/pepsum?mid= -->
-
-    <owl:Thing rdf:about="http://merops.sanger.ac.uk/cgi-bin/pepsum?mid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://mged.sourceforge.net/ontologies/MGEDontology.php# -->
-
-    <owl:Thing rdf:about="http://mged.sourceforge.net/ontologies/MGEDontology.php#">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://mips.gsf.de/cgi-bin/proj/funcatDB/search_advanced.pl?action=2%26wert= -->
-
-    <owl:Thing rdf:about="http://mips.gsf.de/cgi-bin/proj/funcatDB/search_advanced.pl?action=2%26wert=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://mips.gsf.de/genre/proj/corum/complexdetails.html?id= -->
-
-    <owl:Thing rdf:about="http://mips.gsf.de/genre/proj/corum/complexdetails.html?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://my.linkbaton.com/get?lbCC=q%26nC=q%26genre=book%26item= -->
-
-    <owl:Thing rdf:about="http://my.linkbaton.com/get?lbCC=q%26nC=q%26genre=book%26item=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://old.genedb.org/genedb/Search?organism=pombe%26name= -->
-
-    <owl:Thing rdf:about="http://old.genedb.org/genedb/Search?organism=pombe%26name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://omim.org/entry/ -->
-
-    <owl:Thing rdf:about="http://omim.org/entry/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://pantree.org/node/annotationNode.jsp?id= -->
-
-    <owl:Thing rdf:about="http://pantree.org/node/annotationNode.jsp?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://patric.vbi.vt.edu/gene/overview.php?fid= -->
-
-    <owl:Thing rdf:about="http://patric.vbi.vt.edu/gene/overview.php?fid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://pir.georgetown.edu/cgi-bin/ipcSF?id= -->
-
-    <owl:Thing rdf:about="http://pir.georgetown.edu/cgi-bin/ipcSF?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid= -->
-
-    <owl:Thing rdf:about="http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN%26query= -->
-
-    <owl:Thing rdf:about="http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN%26query=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://pubchem.ncbi.nlm.nih.gov/assay/assay.cgi?aid= -->
-
-    <owl:Thing rdf:about="http://pubchem.ncbi.nlm.nih.gov/assay/assay.cgi?aid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_ -->
-
-    <owl:Thing rdf:about="&ncbi;BFO_">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CL_ -->
-
-    <owl:Thing rdf:about="&ncbi;CL_">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_ -->
-
-    <owl:Thing rdf:about="&ncbi;RO_">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_ -->
-
-    <owl:Thing rdf:about="&ncbi;UBERON_">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://research.calacademy.org/research/ichthyology/catalog/getname.asp?rank=Genus%26id= -->
-
-    <owl:Thing rdf:about="http://research.calacademy.org/research/ichthyology/catalog/getname.asp?rank=Genus%26id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://research.calacademy.org/research/ichthyology/catalog/getname.asp?rank=Species%26id=1979 -->
-
-    <owl:Thing rdf:about="http://research.calacademy.org/research/ichthyology/catalog/getname.asp?rank=Species%26id=1979">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://research.calacademy.org/research/ichthyology/catalog/getref.asp?id= -->
-
-    <owl:Thing rdf:about="http://research.calacademy.org/research/ichthyology/catalog/getref.asp?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://rfam.sanger.ac.uk/family/ -->
-
-    <owl:Thing rdf:about="http://rfam.sanger.ac.uk/family/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1%26searchKeyword= -->
-
-    <owl:Thing rdf:about="http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1%26searchKeyword=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://s59.cas.albany.edu/RNAmods/cgi-bin/rnashow.cgi? -->
-
-    <owl:Thing rdf:about="http://s59.cas.albany.edu/RNAmods/cgi-bin/rnashow.cgi?">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://sabio.villa-bosch.de/reacdetails.jsp?reactid= -->
-
-    <owl:Thing rdf:about="http://sabio.villa-bosch.de/reacdetails.jsp?reactid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://salilab.org/modbase/searchbyid?databaseID= -->
-
-    <owl:Thing rdf:about="http://salilab.org/modbase/searchbyid?databaseID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://scotland.fgl.ncsu.edu/cgi-bin/adHocQuery.cgi?adHocQuery_dbName=smeng_goannotation%26Action=Data%26QueryName=Functional+Categorization+of+MGG+GO+Annotation%26P_KeyWord= -->
-
-    <owl:Thing rdf:about="http://scotland.fgl.ncsu.edu/cgi-bin/adHocQuery.cgi?adHocQuery_dbName=smeng_goannotation%26Action=Data%26QueryName=Functional+Categorization+of+MGG+GO+Annotation%26P_KeyWord=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://search.jcvi.org/search?p%26q= -->
-
-    <owl:Thing rdf:about="http://search.jcvi.org/search?p%26q=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://seeds.nottingham.ac.uk/NASC/stockatidb.lasso?code= -->
-
-    <owl:Thing rdf:about="http://seeds.nottingham.ac.uk/NASC/stockatidb.lasso?code=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY%26DOMAIN= -->
-
-    <owl:Thing rdf:about="http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY%26DOMAIN=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://song.sourceforge.net/SOterm_tables.html#SO: -->
-
-    <owl:Thing rdf:about="http://song.sourceforge.net/SOterm_tables.html#SO:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://supfam.cs.bris.ac.uk/SUPERFAMILY/cgi-bin/scop.cgi?ipid=SSF -->
-
-    <owl:Thing rdf:about="&ipid;SSF">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=ep%26enzymeID= -->
-
-    <owl:Thing rdf:about="http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=ep%26enzymeID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=r%26reacID= -->
-
-    <owl:Thing rdf:about="http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=r%26reacID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://umbbd.msi.umn.edu/servlets/rule.jsp?rule= -->
-
-    <owl:Thing rdf:about="http://umbbd.msi.umn.edu/servlets/rule.jsp?rule=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://us.expasy.org/unirules/ -->
-
-    <owl:Thing rdf:about="http://us.expasy.org/unirules/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://v2.pseudomonas.com/getAnnotation.do?locusID= -->
-
-    <owl:Thing rdf:about="http://v2.pseudomonas.com/getAnnotation.do?locusID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://vbrc.org/query.asp?web_id=VBRC: -->
-
-    <owl:Thing rdf:about="http://vbrc.org/query.asp?web_id=VBRC:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://vega.sanger.ac.uk/perl/searchview?species=all%26idx=All%26q= -->
-
-    <owl:Thing rdf:about="http://vega.sanger.ac.uk/perl/searchview?species=all%26idx=All%26q=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://vmd.vbi.vt.edu/cgi-bin/browse/browserDetail_new.cgi?gene_id= -->
-
-    <owl:Thing rdf:about="http://vmd.vbi.vt.edu/cgi-bin/browse/browserDetail_new.cgi?gene_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id= -->
-
-    <owl:Thing rdf:about="http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://wiki.plantontology.org:8080/index.php/PO_REF: -->
-
-    <owl:Thing rdf:about="http://wiki.plantontology.org:8080/index.php/PO_REF:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL%26object= -->
-
-    <owl:Thing rdf:about="http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL%26object=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.aspergillusgenome.org/cgi-bin/locus.pl?locus= -->
-
-    <owl:Thing rdf:about="http://www.aspergillusgenome.org/cgi-bin/locus.pl?locus=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.aspergillusgenome.org/cgi-bin/reference/reference.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://www.aspergillusgenome.org/cgi-bin/reference/reference.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints%26category=None%26queryform=false%26regexpr=off%26prints_accn= -->
-
-    <owl:Thing rdf:about="http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints%26category=None%26queryform=false%26regexpr=off%26prints_accn=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
 
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0017 -->
 
@@ -2941,8 +1630,6 @@
         <rdfs:comment xml:lang="en">Location on the positive (forward) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0018 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0018">
@@ -2951,8 +1638,6 @@
         <rdfs:comment xml:lang="en">Location on the negative (reverse) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0019 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0019">
@@ -2961,8 +1646,6 @@
         <rdfs:comment xml:lang="en">Strand was not determined, which leaves it open whether the location is on the positive (forward) or negative (reverse) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0020 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0020">
@@ -2971,8 +1654,6 @@
         <rdfs:comment xml:lang="en">Strand is not applicable.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0085 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0085">
@@ -2981,8 +1662,6 @@
         <rdfs:comment xml:lang="en">Denotes heterozygous alleles.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0086 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0086">
@@ -2991,8 +1670,6 @@
         <rdfs:comment xml:lang="en">Denotes homozygous alleles.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0087 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0087">
@@ -3001,720 +1678,6 @@
         <rdfs:comment xml:lang="en">Denotes hemizygous alleles.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
-    <!-- http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID= -->
-
-    <owl:Thing rdf:about="http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.brenda-enzymes.info/php/result_flat.php4?ecno= -->
-
-    <owl:Thing rdf:about="http://www.brenda-enzymes.info/php/result_flat.php4?ecno=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.broad.mit.edu/annotation/genome/magnaporthe_grisea/GeneLocus.html?sp=S -->
-
-    <owl:Thing rdf:about="&sp;S">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.candidagenome.org/cgi-bin/locus.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://www.candidagenome.org/cgi-bin/locus.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.candidagenome.org/cgi-bin/locus.pl?locus= -->
-
-    <owl:Thing rdf:about="http://www.candidagenome.org/cgi-bin/locus.pl?locus=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid= -->
-
-    <owl:Thing rdf:about="http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID= -->
-
-    <owl:Thing rdf:about="http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html%26Submit=Go%26id= -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html%26Submit=Go%26id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI: -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid= -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/ena/data/view/ -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/ena/data/view/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/intact/search/do/search?searchString= -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/intact/search/do/search?searchString=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/interpro/IEntry?ac= -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/interpro/IEntry?ac=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/ontology-lookup/?termId=MOD: -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ebi.ac.uk/rhea/reaction.xhtml?id= -->
-
-    <owl:Thing rdf:about="http://www.ebi.ac.uk/rhea/reaction.xhtml?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ecogene.org/geneInfo.php?eck_id= -->
-
-    <owl:Thing rdf:about="http://www.ecogene.org/geneInfo.php?eck_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ecogene.org/geneInfo.php?eg_id= -->
-
-    <owl:Thing rdf:about="http://www.ecogene.org/geneInfo.php?eg_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ensembl.org/id/ -->
-
-    <owl:Thing rdf:about="http://www.ensembl.org/id/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.expasy.ch/cgi-bin/nicezyme.pl? -->
-
-    <owl:Thing rdf:about="http://www.expasy.ch/cgi-bin/nicezyme.pl?">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.expasy.ch/cgi-bin/prosite-search-ac? -->
-
-    <owl:Thing rdf:about="http://www.expasy.ch/cgi-bin/prosite-search-ac?">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.expasy.org/enzyme/ -->
-
-    <owl:Thing rdf:about="http://www.expasy.org/enzyme/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.gdb.org/gdb-bin/genera/accno?accessionNum=GDB: -->
-
-    <owl:Thing rdf:about="http://www.gdb.org/gdb-bin/genera/accno?accessionNum=GDB:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=glossina%26name= -->
-
-    <owl:Thing rdf:about="http://www.genedb.org/genedb/Search?organism=glossina%26name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=leish%26name= -->
-
-    <owl:Thing rdf:about="http://www.genedb.org/genedb/Search?organism=leish%26name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=malaria%26name= -->
-
-    <owl:Thing rdf:about="http://www.genedb.org/genedb/Search?organism=malaria%26name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genedb.org/genedb/Search?organism=tryp%26name= -->
-
-    <owl:Thing rdf:about="http://www.genedb.org/genedb/Search?organism=tryp%26name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genenames.org/data/hgnc_data.php?app_sym= -->
-
-    <owl:Thing rdf:about="http://www.genenames.org/data/hgnc_data.php?app_sym=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC: -->
-
-    <owl:Thing rdf:about="http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.geneontology.org/cgi-bin/references.cgi#GO_REF: -->
-
-    <owl:Thing rdf:about="http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?cpd: -->
-
-    <owl:Thing rdf:about="http://www.genome.jp/dbget-bin/www_bget?cpd:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?ec: -->
-
-    <owl:Thing rdf:about="http://www.genome.jp/dbget-bin/www_bget?ec:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?path: -->
-
-    <owl:Thing rdf:about="http://www.genome.jp/dbget-bin/www_bget?path:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.genome.jp/dbget-bin/www_bget?rn: -->
-
-    <owl:Thing rdf:about="http://www.genome.jp/dbget-bin/www_bget?rn:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.gramene.org/db/genes/search_gene?acc= -->
-
-    <owl:Thing rdf:about="http://www.gramene.org/db/genes/search_gene?acc=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.gramene.org/db/literature/pub_search?ref_id= -->
-
-    <owl:Thing rdf:about="http://www.gramene.org/db/literature/pub_search?ref_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.gramene.org/db/protein/protein_search?acc= -->
-
-    <owl:Thing rdf:about="http://www.gramene.org/db/protein/protein_search?acc=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id= -->
-
-    <owl:Thing rdf:about="http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.gramene.org/db/searches/browser?search_type=All%26RGN=on%26query= -->
-
-    <owl:Thing rdf:about="http://www.gramene.org/db/searches/browser?search_type=All%26RGN=on%26query=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid= -->
-
-    <owl:Thing rdf:about="http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id= -->
-
-    <owl:Thing rdf:about="http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.h-invitational.jp/hinv/spsoup/transcript_view?acc_id= -->
-
-    <owl:Thing rdf:about="http://www.h-invitational.jp/hinv/spsoup/transcript_view?acc_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.informatics.jax.org/accession/ -->
-
-    <owl:Thing rdf:about="http://www.informatics.jax.org/accession/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.informatics.jax.org/searches/AMA.cgi?id=MA: -->
-
-    <owl:Thing rdf:about="http://www.informatics.jax.org/searches/AMA.cgi?id=MA:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId= -->
-
-    <owl:Thing rdf:about="http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId= -->
-
-    <owl:Thing rdf:about="http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.jstor.org/stable/ -->
-
-    <owl:Thing rdf:about="http://www.jstor.org/stable/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term= -->
-
-    <owl:Thing rdf:about="http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.maizegdb.org/cgi-bin/id_search.cgi?id= -->
-
-    <owl:Thing rdf:about="http://www.maizegdb.org/cgi-bin/id_search.cgi?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/COG/new/release/cow.cgi?cog= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/COG/new/release/cow.cgi?cog=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pccompound%26term= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pccompound%26term=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pcsubstance%26term= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pcsubstance%26term=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide%26val= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide%26val=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein%26val= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein%26val=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/pubmed/ -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve%26db=gene%26list_uids= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve%26db=gene%26list_uids=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc%26cmd=search%26term= -->
-
-    <owl:Thing rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc%26cmd=search%26term=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.neurolex.org/wiki/ -->
-
-    <owl:Thing rdf:about="http://www.neurolex.org/wiki/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=%26term= -->
-
-    <owl:Thing rdf:about="http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=%26term=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.nmpdr.org/linkin.cgi?id= -->
-
-    <owl:Thing rdf:about="http://www.nmpdr.org/linkin.cgi?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.pharmgkb.org/do/serve?objId= -->
-
-    <owl:Thing rdf:about="http://www.pharmgkb.org/do/serve?objId=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.plantontology.org/amigo/go.cgi?action=query%26view=query%26search_constraint=terms%26query=PO: -->
-
-    <owl:Thing rdf:about="http://www.plantontology.org/amigo/go.cgi?action=query%26view=query%26search_constraint=terms%26query=PO:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.plasmodb.org/gene/ -->
-
-    <owl:Thing rdf:about="http://www.plasmodb.org/gene/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.pombase.org/spombe/result/ -->
-
-    <owl:Thing rdf:about="http://www.pombase.org/spombe/result/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR: -->
-
-    <owl:Thing rdf:about="http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.proteinatlas.org/antibody_info.php?antibody_id= -->
-
-    <owl:Thing rdf:about="http://www.proteinatlas.org/antibody_info.php?antibody_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.proteinatlas.org/tissue_profile.php?antibody_id= -->
-
-    <owl:Thing rdf:about="http://www.proteinatlas.org/tissue_profile.php?antibody_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId= -->
-
-    <owl:Thing rdf:about="http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID= -->
-
-    <owl:Thing rdf:about="http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.sanger.ac.uk/cgi-bin/Pfam/getacc? -->
-
-    <owl:Thing rdf:about="http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.sgn.cornell.edu/chado/publication.pl?pub_id= -->
-
-    <owl:Thing rdf:about="http://www.sgn.cornell.edu/chado/publication.pl?pub_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id= -->
-
-    <owl:Thing rdf:about="http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.tcdb.org/tcdb/index.php?tc= -->
-
-    <owl:Thing rdf:about="http://www.tcdb.org/tcdb/index.php?tc=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.theseed.org/linkin.cgi?id= -->
-
-    <owl:Thing rdf:about="http://www.theseed.org/linkin.cgi?id=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.unimod.org/modifications_view.php?editid1= -->
-
-    <owl:Thing rdf:about="http://www.unimod.org/modifications_view.php?editid1=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.uniprot.org/keywords/ -->
-
-    <owl:Thing rdf:about="http://www.uniprot.org/keywords/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.uniprot.org/locations/ -->
-
-    <owl:Thing rdf:about="http://www.uniprot.org/locations/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.uniprot.org/uniparc/ -->
-
-    <owl:Thing rdf:about="http://www.uniprot.org/uniparc/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.uniprot.org/uniprot/ -->
-
-    <owl:Thing rdf:about="http://www.uniprot.org/uniprot/">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.wormbase.org/db/get?class=Protein;name=WP: -->
-
-    <owl:Thing rdf:about="http://www.wormbase.org/db/get?class=Protein;name=WP:">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.wormbase.org/db/gene/gene?name= -->
-
-    <owl:Thing rdf:about="http://www.wormbase.org/db/gene/gene?name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://www.wormbase.org/db/misc/paper?name= -->
-
-    <owl:Thing rdf:about="http://www.wormbase.org/db/misc/paper?name=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
-    <!-- http://zfin.org/cgi-bin/ZFIN_jump?record= -->
-
-    <owl:Thing rdf:about="http://zfin.org/cgi-bin/ZFIN_jump?record=">
-        <rdf:type rdf:resource="&owl;NamedIndividual"/>
-    </owl:Thing>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -3750,8 +1713,6 @@
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
-
-
 
 <!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
 
