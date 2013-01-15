@@ -23,29 +23,15 @@ inserts on its own.
 
 ### Post-Protege-Cleanup
 
-Saving an ontology with Protege will introduce explicit class definitions for external URIs. These
-have to be removed, so that the first class following the `// Classes` comment is a BioInterchange URI.
+Saving an ontology with Protege will introduce explicit class definitions and individuals for external URIs.
+These have to be removed, so that only BioInterchange URIs are described by the ontologies. A script has been
+provided that takes care of this, and additionally, increments the patch level version number of the
+ontologies.
 
-For example, for GFF3O and GVF1O, the following class definition will be added that links out to
-[dictyBase](http://dictybase.org):
+For example, for GFF3O the following commands can be used to create a new cleaned version of the ontology:
 
-    <!-- http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo= -->
-    
-    <owl:Class rdf:about="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo="/>
-
-This entry and others need to be removed, so that the ontology class section begins as follows:
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-    
-    <!-- http://www.biointerchange.org/... -->
-    
-    <owl:Class rdf:about="http://www.biointerchange.org/...">
+    <gff3o.xml scripts/cleanse.rb > gff3o.tmp
+    mv gff3o.tmp gff3o.xml
 
 ### Generating new GO Abbreviation Collection Link-Outs
 
