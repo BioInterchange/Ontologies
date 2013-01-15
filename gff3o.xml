@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <!DOCTYPE rdf:RDF [
     <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
@@ -10,7 +9,6 @@
     <!ENTITY faldo "http://biohackathon.org/resource/faldo#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
-
 
 <rdf:RDF xmlns="http://www.biointerchange.org/gff3o#"
      xml:base="http://www.biointerchange.org/gff3o"
@@ -22,7 +20,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gff3o#">
-        <owl:versionInfo>1.0.5</owl:versionInfo>
+        <owl:versionInfo>1.0.6</owl:versionInfo>
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
         <dc:description xml:lang="en">An ontology that describes the Generic Feature Format Version 3 (GFF3) by Lincoln Stein (http://www.sequenceontology.org/resources/gff3.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
@@ -32,8 +30,6 @@
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
     </owl:Ontology>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -41,9 +37,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -53,9 +46,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -63,9 +53,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- http://www.biointerchange.org/gff3o#GFF3_0010 -->
 
@@ -78,8 +65,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0012 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0012">
@@ -90,8 +75,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0014 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0014">
@@ -102,8 +85,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0015 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0015">
@@ -114,8 +95,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0025"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0021 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0021">
@@ -127,8 +106,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0023 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0023">
@@ -139,8 +116,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0025"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0025 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0025">
@@ -148,8 +123,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0026 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0026">
@@ -157,8 +130,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0034 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0034">
@@ -345,8 +316,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0035 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0035">
@@ -533,8 +502,6 @@
         </rdfs:range>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0039 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0039">
@@ -545,8 +512,6 @@
         <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0044 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0044">
@@ -554,8 +519,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0045 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0045">
@@ -567,8 +530,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0044"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0047 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0047">
@@ -579,8 +540,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0050 -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0050">
@@ -592,8 +551,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0044"/>
     </owl:ObjectProperty>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -601,9 +558,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- http://www.biointerchange.org/gff3o#GFF3_0004 -->
 
@@ -624,8 +578,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0005 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0005">
@@ -645,8 +597,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0006 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0006">
@@ -666,8 +616,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0007 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0007">
@@ -687,8 +635,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0008 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0008">
@@ -708,8 +654,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0009 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0009">
@@ -720,8 +664,6 @@
         <rdfs:range rdf:resource="&owl;real"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0011 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0011">
@@ -744,8 +686,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0013 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0013">
@@ -765,8 +705,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0022 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0022">
@@ -789,8 +727,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0024 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0024">
@@ -801,8 +737,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0027 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0027">
@@ -810,8 +744,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0028 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0028">
@@ -819,8 +751,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0029 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0029">
@@ -828,8 +758,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Attribute class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0031 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0031">
@@ -837,8 +765,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with DBXRef class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0032 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0032">
@@ -857,8 +783,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0033 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0033">
@@ -877,8 +801,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0036 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0036">
@@ -898,8 +820,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0037 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0037">
@@ -919,8 +839,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0040 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0040">
@@ -928,8 +846,6 @@
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0041 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0041">
@@ -949,8 +865,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0042 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0042">
@@ -970,8 +884,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0043 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0043">
@@ -991,8 +903,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0046 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0046">
@@ -1012,8 +922,6 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0048 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0048">
@@ -1024,8 +932,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0049 -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0049">
@@ -1036,8 +942,6 @@
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1053,8 +957,6 @@
         <rdfs:comment xml:lang="en">Set of genomic sequence features, whose identifiers are unique within the set.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0002 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0002">
@@ -1166,8 +1068,6 @@
         <rdfs:comment xml:lang="en">A genomic sequence feature.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0003 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0003">
@@ -1175,8 +1075,6 @@
         <rdfs:comment xml:lang="en">Describes additional feature attributes besides ID, Name, Alias, Parent, Target, Gap, Derives_from, Dbxref, Ontology_term, Ontology_term, or Is_circular.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0016 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0016">
@@ -1194,8 +1092,6 @@
         <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0038 -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0038">
@@ -1203,8 +1099,6 @@
         <rdfs:comment xml:lang="en">Indicates a feature&#39;s &quot;target&quot; of a nucleotide-to-nucleotide or protein-to-nucleotide alignment.</rdfs:comment>
     </owl:Class>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1212,9 +1106,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-    
-
 
     <!-- http://www.biointerchange.org/gff3o#GFF3_0017 -->
 
@@ -1224,8 +1115,6 @@
         <rdfs:comment xml:lang="en">Location on the positive (forward) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0018 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0018">
@@ -1234,8 +1123,6 @@
         <rdfs:comment xml:lang="en">Location on the negative (reverse) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0019 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0019">
@@ -1244,8 +1131,6 @@
         <rdfs:comment xml:lang="en">Strand was not determined, which leaves it open whether the location is on the positive (forward) or negative (reverse) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- http://www.biointerchange.org/gff3o#GFF3_0020 -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0020">
@@ -1254,8 +1139,6 @@
         <rdfs:comment xml:lang="en">Strand is not applicable.</rdfs:comment>
     </owl:NamedIndividual>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1284,8 +1167,6 @@
         </owl:distinctMembers>
     </rdf:Description>
 </rdf:RDF>
-
-
 
 <!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
 
