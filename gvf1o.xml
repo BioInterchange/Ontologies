@@ -26,7 +26,7 @@
     <owl:Ontology rdf:about="http://www.biointerchange.org/gvf1o#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
-        <owl:versionInfo>1.0.9</owl:versionInfo>
+        <owl:versionInfo>1.0.10</owl:versionInfo>
         <dc:description xml:lang="en">An ontology that describes the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:title xml:lang="en">Genomic Variation Format Version 1 Ontology (GVF1O)</dc:title>
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
@@ -273,177 +273,9 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0078">
         <rdfs:label>dbxref</rdfs:label>
-        <rdfs:comment xml:lang="en">A database cross-reference to associate a sequence alteration to its  representation in another database.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A database cross-reference to associate a sequence alteration to its representation in another database.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://agro.vbi.vt.edu/public/servlet/GeneEdit?%26Search=Search%26level=2%26genename="/>
-                    <rdf:Description rdf:about="http://amigo.geneontology.org/cgi-bin/amigo/term-details.cgi?term=GO:"/>
-                    <rdf:Description rdf:about="http://arabidopsis.org/servlets/TairObject?accession="/>
-                    <rdf:Description rdf:about="http://arabidopsis.org/servlets/TairObject?type=locus%26name="/>
-                    <rdf:Description rdf:about="http://arsa.ddbj.nig.ac.jp/arsa/ddbjSplSearch?KeyWord="/>
-                    <rdf:Description rdf:about="http://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY%26object="/>
-                    <rdf:Description rdf:about="http://biocyc.org/ECOLI/reference.html?type=CITATION-FRAME%26object="/>
-                    <rdf:Description rdf:about="http://biocyc.org/META/NEW-IMAGE?type=NIL%26object="/>
-                    <rdf:Description rdf:about="http://biocyc.org/META/NEW-IMAGE?type=PATHWAY%26object="/>
-                    <rdf:Description rdf:about="http://cmr.jcvi.org/cgi-bin/CMR/EgadSearch.cgi?search_string="/>
-                    <rdf:Description rdf:about="http://cmr.jcvi.org/cgi-bin/CMR/shared/GenePage.cgi?locus="/>
-                    <rdf:Description rdf:about="http://cmr.jcvi.org/cgi-bin/CMR/shared/GenomePropDefinition.cgi?prop_acc="/>
-                    <rdf:Description rdf:about="http://db.ciliate.org/cgi-bin/locus.pl?locus="/>
-                    <rdf:Description rdf:about="http://db.ciliate.org/cgi-bin/reference/reference.pl?dbid="/>
-                    <rdf:Description rdf:about="http://db.yeastgenome.org/cgi-bin/locus.pl?dbid="/>
-                    <rdf:Description rdf:about="http://db.yeastgenome.org/cgi-bin/locus.pl?locus="/>
-                    <rdf:Description rdf:about="http://db.yeastgenome.org/cgi-bin/reference/reference.pl?dbid="/>
-                    <rdf:Description rdf:about="http://dictybase.org/db/cgi-bin/dictyBase/reference/reference.pl?refNo="/>
-                    <rdf:Description rdf:about="http://dictybase.org/gene/"/>
-                    <rdf:Description rdf:about="http://dx.doi.org/DOI:"/>
-                    <rdf:Description rdf:about="http://en.wikipedia.org/wiki/"/>
-                    <rdf:Description rdf:about="http://flybase.org/cgi-bin/fbcvq.html?query=FBbt:"/>
-                    <rdf:Description rdf:about="http://gene3d.biochem.ucl.ac.uk/superfamily/?accession="/>
-                    <rdf:Description rdf:about="http://gowiki.tamu.edu/wiki/index.php/"/>
-                    <rdf:Description rdf:about="http://img.jgi.doe.gov/cgi-bin/pub/main.cgi?section=GeneDetail%26page=geneDetail%26gene_oid="/>
-                    <rdf:Description rdf:about="http://medicago.jcvi.org/cgi-bin/medicago/search/shared/ORF_infopage.cgi?orf="/>
-                    <rdf:Description rdf:about="http://merops.sanger.ac.uk/cgi-bin/famsum?family="/>
-                    <rdf:Description rdf:about="http://merops.sanger.ac.uk/cgi-bin/pepsum?mid="/>
-                    <rdf:Description rdf:about="http://mged.sourceforge.net/ontologies/MGEDontology.php#"/>
-                    <rdf:Description rdf:about="http://mips.gsf.de/cgi-bin/proj/funcatDB/search_advanced.pl?action=2%26wert="/>
-                    <rdf:Description rdf:about="http://mips.gsf.de/genre/proj/corum/complexdetails.html?id="/>
-                    <rdf:Description rdf:about="http://my.linkbaton.com/get?lbCC=q%26nC=q%26genre=book%26item="/>
-                    <rdf:Description rdf:about="http://old.genedb.org/genedb/Search?organism=pombe%26name="/>
-                    <rdf:Description rdf:about="http://omim.org/entry/"/>
-                    <rdf:Description rdf:about="http://pantree.org/node/annotationNode.jsp?id="/>
-                    <rdf:Description rdf:about="http://patric.vbi.vt.edu/gene/overview.php?fid="/>
-                    <rdf:Description rdf:about="http://pir.georgetown.edu/cgi-bin/ipcSF?id="/>
-                    <rdf:Description rdf:about="http://pir.georgetown.edu/cgi-bin/pirwww/nbrfget?uid="/>
-                    <rdf:Description rdf:about="http://prodom.prabi.fr/prodom/current/cgi-bin/request.pl?question=DBEN%26query="/>
-                    <rdf:Description rdf:about="http://pubchem.ncbi.nlm.nih.gov/assay/assay.cgi?aid="/>
-                    <rdf:Description rdf:about="&ncbi;BFO_"/>
-                    <rdf:Description rdf:about="&ncbi;CL_"/>
-                    <rdf:Description rdf:about="&ncbi;RO_"/>
-                    <rdf:Description rdf:about="&ncbi;UBERON_"/>
-                    <rdf:Description rdf:about="http://research.calacademy.org/research/ichthyology/catalog/getname.asp?rank=Genus%26id="/>
-                    <rdf:Description rdf:about="http://research.calacademy.org/research/ichthyology/catalog/getname.asp?rank=Species%26id=1979"/>
-                    <rdf:Description rdf:about="http://research.calacademy.org/research/ichthyology/catalog/getref.asp?id="/>
-                    <rdf:Description rdf:about="http://rfam.sanger.ac.uk/family/"/>
-                    <rdf:Description rdf:about="http://rgd.mcw.edu/generalSearch/RgdSearch.jsp?quickSearch=1%26searchKeyword="/>
-                    <rdf:Description rdf:about="http://s59.cas.albany.edu/RNAmods/cgi-bin/rnashow.cgi?"/>
-                    <rdf:Description rdf:about="http://sabio.villa-bosch.de/reacdetails.jsp?reactid="/>
-                    <rdf:Description rdf:about="http://salilab.org/modbase/searchbyid?databaseID="/>
-                    <rdf:Description rdf:about="http://scotland.fgl.ncsu.edu/cgi-bin/adHocQuery.cgi?adHocQuery_dbName=smeng_goannotation%26Action=Data%26QueryName=Functional+Categorization+of+MGG+GO+Annotation%26P_KeyWord="/>
-                    <rdf:Description rdf:about="http://search.jcvi.org/search?p%26q="/>
-                    <rdf:Description rdf:about="http://seeds.nottingham.ac.uk/NASC/stockatidb.lasso?code="/>
-                    <rdf:Description rdf:about="http://smart.embl-heidelberg.de/smart/do_annotation.pl?BLAST=DUMMY%26DOMAIN="/>
-                    <rdf:Description rdf:about="http://song.sourceforge.net/SOterm_tables.html#SO:"/>
-                    <rdf:Description rdf:about="&ipid;SSF"/>
-                    <rdf:Description rdf:about="http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=ep%26enzymeID="/>
-                    <rdf:Description rdf:about="http://umbbd.msi.umn.edu/servlets/pageservlet?ptype=r%26reacID="/>
-                    <rdf:Description rdf:about="http://umbbd.msi.umn.edu/servlets/rule.jsp?rule="/>
-                    <rdf:Description rdf:about="http://us.expasy.org/unirules/"/>
-                    <rdf:Description rdf:about="http://v2.pseudomonas.com/getAnnotation.do?locusID="/>
-                    <rdf:Description rdf:about="http://vbrc.org/query.asp?web_id=VBRC:"/>
-                    <rdf:Description rdf:about="http://vega.sanger.ac.uk/perl/searchview?species=all%26idx=All%26q="/>
-                    <rdf:Description rdf:about="http://vmd.vbi.vt.edu/cgi-bin/browse/browserDetail_new.cgi?gene_id="/>
-                    <rdf:Description rdf:about="http://vmd.vbi.vt.edu/cgi-bin/browse/go_detail.cgi?gene_id="/>
-                    <rdf:Description rdf:about="http://wiki.plantontology.org:8080/index.php/PO_REF:"/>
-                    <rdf:Description rdf:about="http://www.arabidopsis.org:1555/ARA/NEW-IMAGE?type=NIL%26object="/>
-                    <rdf:Description rdf:about="http://www.aspergillusgenome.org/cgi-bin/locus.pl?dbid="/>
-                    <rdf:Description rdf:about="http://www.aspergillusgenome.org/cgi-bin/locus.pl?locus="/>
-                    <rdf:Description rdf:about="http://www.aspergillusgenome.org/cgi-bin/reference/reference.pl?dbid="/>
-                    <rdf:Description rdf:about="http://www.bioinf.manchester.ac.uk/cgi-bin/dbbrowser/sprint/searchprintss.cgi?display_opts=Prints%26category=None%26queryform=false%26regexpr=off%26prints_accn="/>
-                    <rdf:Description rdf:about="http://www.biolws1.york.ac.uk/echobase/Gene.cfm?recordID="/>
-                    <rdf:Description rdf:about="http://www.brenda-enzymes.info/php/result_flat.php4?ecno="/>
-                    <rdf:Description rdf:about="&sp;S"/>
-                    <rdf:Description rdf:about="http://www.candidagenome.org/cgi-bin/locus.pl?dbid="/>
-                    <rdf:Description rdf:about="http://www.candidagenome.org/cgi-bin/locus.pl?locus="/>
-                    <rdf:Description rdf:about="http://www.candidagenome.org/cgi-bin/reference/reference.pl?dbid="/>
-                    <rdf:Description rdf:about="http://www.dkfz.de/LIFEdb/LIFEdb.aspx?ID="/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/cgi-bin/emblfetch?style=html%26Submit=Go%26id="/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:"/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid="/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/ena/data/view/"/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/intact/search/do/search?searchString="/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/interpro/IEntry?ac="/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/ontology-lookup/?termId=MOD:"/>
-                    <rdf:Description rdf:about="http://www.ebi.ac.uk/rhea/reaction.xhtml?id="/>
-                    <rdf:Description rdf:about="http://www.ecogene.org/geneInfo.php?eck_id="/>
-                    <rdf:Description rdf:about="http://www.ecogene.org/geneInfo.php?eg_id="/>
-                    <rdf:Description rdf:about="http://www.ensembl.org/id/"/>
-                    <rdf:Description rdf:about="http://www.expasy.ch/cgi-bin/nicezyme.pl?"/>
-                    <rdf:Description rdf:about="http://www.expasy.ch/cgi-bin/prosite-search-ac?"/>
-                    <rdf:Description rdf:about="http://www.expasy.org/enzyme/"/>
-                    <rdf:Description rdf:about="http://www.gdb.org/gdb-bin/genera/accno?accessionNum=GDB:"/>
-                    <rdf:Description rdf:about="http://www.genedb.org/genedb/Search?organism=glossina%26name="/>
-                    <rdf:Description rdf:about="http://www.genedb.org/genedb/Search?organism=leish%26name="/>
-                    <rdf:Description rdf:about="http://www.genedb.org/genedb/Search?organism=malaria%26name="/>
-                    <rdf:Description rdf:about="http://www.genedb.org/genedb/Search?organism=tryp%26name="/>
-                    <rdf:Description rdf:about="http://www.genenames.org/data/hgnc_data.php?app_sym="/>
-                    <rdf:Description rdf:about="http://www.genenames.org/data/hgnc_data.php?hgnc_id=HGNC:"/>
-                    <rdf:Description rdf:about="http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:"/>
-                    <rdf:Description rdf:about="http://www.genome.jp/dbget-bin/www_bget?cpd:"/>
-                    <rdf:Description rdf:about="http://www.genome.jp/dbget-bin/www_bget?ec:"/>
-                    <rdf:Description rdf:about="http://www.genome.jp/dbget-bin/www_bget?path:"/>
-                    <rdf:Description rdf:about="http://www.genome.jp/dbget-bin/www_bget?rn:"/>
-                    <rdf:Description rdf:about="http://www.gramene.org/db/genes/search_gene?acc="/>
-                    <rdf:Description rdf:about="http://www.gramene.org/db/literature/pub_search?ref_id="/>
-                    <rdf:Description rdf:about="http://www.gramene.org/db/protein/protein_search?acc="/>
-                    <rdf:Description rdf:about="http://www.gramene.org/db/qtl/qtl_display?qtl_accession_id="/>
-                    <rdf:Description rdf:about="http://www.gramene.org/db/searches/browser?search_type=All%26RGN=on%26query="/>
-                    <rdf:Description rdf:about="http://www.grenoble.prabi.fr/obiwarehouse/unipathway/upa?upid="/>
-                    <rdf:Description rdf:about="http://www.h-invitational.jp/hinv/spsoup/locus_view?hix_id="/>
-                    <rdf:Description rdf:about="http://www.h-invitational.jp/hinv/spsoup/transcript_view?acc_id="/>
-                    <rdf:Description rdf:about="http://www.informatics.jax.org/accession/"/>
-                    <rdf:Description rdf:about="http://www.informatics.jax.org/searches/AMA.cgi?id=MA:"/>
-                    <rdf:Description rdf:about="http://www.iuphar-db.org/DATABASE/FamilyMenuForward?familyId="/>
-                    <rdf:Description rdf:about="http://www.iuphar-db.org/DATABASE/ObjectDisplayForward?objectId="/>
-                    <rdf:Description rdf:about="http://www.jstor.org/stable/"/>
-                    <rdf:Description rdf:about="http://www.maizegdb.org/cgi-bin/displaylocusresults.cgi?term="/>
-                    <rdf:Description rdf:about="http://www.maizegdb.org/cgi-bin/id_search.cgi?id="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/COG/grace/shokog.cgi?fun="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/COG/new/release/coglist.cgi?pathw="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/COG/new/release/cow.cgi?cog="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/Structure/cdd/cddsrv.cgi?uid="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pccompound%26term="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search%26DB=pcsubstance%26term="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=nucleotide%26val="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?db=protein%26val="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/entrez/viewer.fcgi?val="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/pubmed/"/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=Retrieve%26db=gene%26list_uids="/>
-                    <rdf:Description rdf:about="http://www.ncbi.nlm.nih.gov/sites/entrez?db=pmc%26cmd=search%26term="/>
-                    <rdf:Description rdf:about="http://www.neurolex.org/wiki/"/>
-                    <rdf:Description rdf:about="http://www.nlm.nih.gov/cgi/mesh/2005/MB_cgi?mode=%26term="/>
-                    <rdf:Description rdf:about="http://www.nmpdr.org/linkin.cgi?id="/>
-                    <rdf:Description rdf:about="http://www.pharmgkb.org/do/serve?objId="/>
-                    <rdf:Description rdf:about="http://www.plantontology.org/amigo/go.cgi?action=query%26view=query%26search_constraint=terms%26query=PO:"/>
-                    <rdf:Description rdf:about="http://www.plasmodb.org/gene/"/>
-                    <rdf:Description rdf:about="http://www.pombase.org/spombe/result/"/>
-                    <rdf:Description rdf:about="http://www.proconsortium.org/cgi-bin/pro/entry_pro?id=PR:"/>
-                    <rdf:Description rdf:about="http://www.proteinatlas.org/antibody_info.php?antibody_id="/>
-                    <rdf:Description rdf:about="http://www.proteinatlas.org/tissue_profile.php?antibody_id="/>
-                    <rdf:Description rdf:about="http://www.rcsb.org/pdb/cgi/explore.cgi?pdbId="/>
-                    <rdf:Description rdf:about="http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID="/>
-                    <rdf:Description rdf:about="http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?"/>
-                    <rdf:Description rdf:about="http://www.sgn.cornell.edu/chado/publication.pl?pub_id="/>
-                    <rdf:Description rdf:about="http://www.sgn.cornell.edu/phenome/locus_display.pl?locus_id="/>
-                    <rdf:Description rdf:about="http://www.tcdb.org/tcdb/index.php?tc="/>
-                    <rdf:Description rdf:about="http://www.theseed.org/linkin.cgi?id="/>
-                    <rdf:Description rdf:about="http://www.unimod.org/modifications_view.php?editid1="/>
-                    <rdf:Description rdf:about="http://www.uniprot.org/keywords/"/>
-                    <rdf:Description rdf:about="http://www.uniprot.org/locations/"/>
-                    <rdf:Description rdf:about="http://www.uniprot.org/uniparc/"/>
-                    <rdf:Description rdf:about="http://www.uniprot.org/uniprot/"/>
-                    <rdf:Description rdf:about="http://www.wormbase.org/db/get?class=Protein;name=WP:"/>
-                    <rdf:Description rdf:about="http://www.wormbase.org/db/gene/gene?name="/>
-                    <rdf:Description rdf:about="http://www.wormbase.org/db/misc/paper?name="/>
-                    <rdf:Description rdf:about="http://zfin.org/cgi-bin/ZFIN_jump?record="/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gvf1o#GVF1_0079 -->
@@ -680,6 +512,174 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0102 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0102">
+        <rdfs:label>technologyplatform_properties</rdfs:label>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with TechnologyPlatform class instances.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0112"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0103 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0103">
+        <rdfs:label>datasource_properties</rdfs:label>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with DataSource class instances.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0112"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0104 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0104">
+        <rdfs:label>dbxref</rdfs:label>
+        <rdfs:comment xml:lang="en">A database cross-reference to associate a structured pragma to a representation in another database.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0112"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0098"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0100"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0112 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0112">
+        <rdfs:label>structuredpragma_properties</rdfs:label>
+        <rdfs:comment xml:lang="en">Properties describing structured pragma properties.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0119 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0119">
+        <rdfs:label>read_type</rdfs:label>
+        <rdfs:comment xml:lang="en">Types of reads produced by the platform.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0102"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0109"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0120 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0120">
+        <rdfs:label>data_type</rdfs:label>
+        <rdfs:comment xml:lang="en">Datatype of this data source.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0098"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0103"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0114"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0121 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0121">
+        <rdfs:label>technology_platform</rdfs:label>
+        <rdfs:comment xml:lang="en">Technology platform that was used to derive the feature.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0122 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0122">
+        <rdfs:label>data_source</rdfs:label>
+        <rdfs:comment xml:lang="en">Data source origin of the feature.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0098"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0123 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0123">
+        <rdfs:label>score_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Used scoring method.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0124 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0124">
+        <rdfs:label>source_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about the algorithm/methodologies used.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0066"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0125 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0125">
+        <rdfs:label>phenotype_description</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about an individual&#39;s phenotype.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0035"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0067"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0100"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0126 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0126">
+        <rdfs:label>attribute_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about the associated attribute(s).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0040"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0070"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0127 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0127">
+        <rdfs:label>attribute_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about the associated attribute(s).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0075"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0128 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0128">
+        <rdfs:label>attribute_properties</rdfs:label>
+        <rdfs:comment xml:lang="en">Properties about Attribute instances.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0129 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0129">
+        <rdfs:label>attribute_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about the associated attribute(s).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0003"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0128"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0130 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0130">
+        <rdfs:label>attribute_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about the associated attribute(s).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0088"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0089"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0131 -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0131">
+        <rdfs:label>attribute_method</rdfs:label>
+        <rdfs:comment xml:lang="en">Further information about the associated attribute(s).</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0069"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
     </owl:ObjectProperty>
     
     <!-- 
@@ -1377,6 +1377,127 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0101 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0101">
+        <rdfs:label>phased</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates whether this particular is phased. Used to encode ##phased-genotypes statements.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0059"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0105 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0105">
+        <rdfs:label>comment</rdfs:label>
+        <rdfs:comment xml:lang="en">An arbitrary comment. Free text.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0113"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0098"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0100"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0106 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0106">
+        <rdfs:label>platform_class</rdfs:label>
+        <rdfs:comment xml:lang="en">Type of technology used to gather the variant data. Unrestricted range due to open specification.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0107"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0107 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0107">
+        <rdfs:label>technologyplatform_properties</rdfs:label>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with TechnologyPlatform class instances.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0113"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0108 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0108">
+        <rdfs:label>platform_name</rdfs:label>
+        <rdfs:comment xml:lang="en">Sequencer or other machine used to collect the variant data. Unrestricted range due to open specification.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0107"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0113 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0113">
+        <rdfs:label>structuredpragma_properties</rdfs:label>
+        <rdfs:comment xml:lang="en">Properties describing structured pragma properties.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0132 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0132">
+        <rdfs:label>read_length</rdfs:label>
+        <rdfs:comment xml:lang="en">Undocumented in GVF specification.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0107"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0133 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0133">
+        <rdfs:label>read_pair_span</rdfs:label>
+        <rdfs:comment xml:lang="en">Undocumented in GVF specification.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0107"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0134 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0134">
+        <rdfs:label>average_coverage</rdfs:label>
+        <rdfs:comment xml:lang="en">Undocumented in GVF specification.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0107"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1398,6 +1519,62 @@
         <rdfs:label>Feature</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0006"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0007"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0057"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0008"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0036"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0035"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0055"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0077"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0026"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0021"/>
                 <owl:onClass rdf:resource="&faldo;Region"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
@@ -1405,23 +1582,30 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0027"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0034"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0009"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&owl;real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0031"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0005"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0014"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1440,27 +1624,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0008"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0026"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0036"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0035"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0076"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
@@ -1468,58 +1631,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0006"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0005"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0007"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0055"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0034"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0033"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0057"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0077"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0027"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0014"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0002"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0009"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&owl;real"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A genomic sequence feature.</rdfs:comment>
@@ -1628,6 +1749,52 @@
         <rdfs:comment xml:lang="en">Provides information about the source of the data. For example, it can link out to actual sequences associated with the Feature individuals in a Set.</rdfs:comment>
     </owl:Class>
     
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0099 -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0099">
+        <rdfs:label>Method</rdfs:label>
+        <rdfs:comment xml:lang="en">Information about the used scoring algorithm or method.</rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0100 -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0100">
+        <rdfs:label>PhenotypeDescription</rdfs:label>
+        <rdfs:comment xml:lang="en">Additional information about an individual&#39;s phenotype.</rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0109 -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0109">
+        <rdfs:label>ReadType</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0110"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0111"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Type of reads obtained for a given technology platform.</rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0114 -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0114">
+        <rdfs:label>DataType</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0115"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0118"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0116"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0117"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Determines the datatype of a variant sequence.</rdfs:comment>
+    </owl:Class>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1692,6 +1859,54 @@
         <rdfs:comment xml:lang="en">Denotes hemizygous alleles.</rdfs:comment>
     </owl:NamedIndividual>
     
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0110 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0110">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0109"/>
+        <rdfs:label>Fragment</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes reads that are fragments.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0111 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0111">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0109"/>
+        <rdfs:label>Pair</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes reads that are pairs.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0115 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0115">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0114"/>
+        <rdfs:label>DNASequence</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a DNA sequence.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0116 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0116">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0114"/>
+        <rdfs:label>RNASequence</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes an RNA sequence.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0117 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0117">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0114"/>
+        <rdfs:label>DNAMicroarray</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a DNA microarray probe.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.biointerchange.org/gvf1o#GVF1_0118 -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0118">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0114"/>
+        <rdfs:label>ArrayComparativeGenomicHybridization</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes an array-comparative genomic hybridization.</rdfs:comment>
+    </owl:NamedIndividual>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1724,6 +1939,11 @@
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0058"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0084"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0088"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0097"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0098"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0099"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0100"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0109"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
