@@ -26,7 +26,7 @@
     <owl:Ontology rdf:about="http://www.biointerchange.org/gvf1o#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
-        <owl:versionInfo>1.0.12</owl:versionInfo>
+        <owl:versionInfo>1.0.11</owl:versionInfo>
         <dc:description xml:lang="en">An ontology that describes the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html). The ontology was inspired by previous work of Robert Hoehndorf&#39;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:title xml:lang="en">Genomic Variation Format Version 1 Ontology (GVF1O)</dc:title>
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
