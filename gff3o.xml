@@ -894,7 +894,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^([a-zA-Z0-9\.:\^\*\$@!\+_\?\-|]|%[a-fA-F0-9][a-fA-F0-9])+$</xsd:pattern>
+                        <xsd:pattern>([a-zA-Z0-9\.:\^\*\$@!\+_\?\-|]|%[a-fA-F0-9][a-fA-F0-9])+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -951,7 +951,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[A-Z\*\-]+$</xsd:pattern>
+                        <xsd:pattern>[A-Z\*\-]+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -970,7 +970,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[A-Z\*\-]+$</xsd:pattern>
+                        <xsd:pattern>[A-Z\*\-]+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
