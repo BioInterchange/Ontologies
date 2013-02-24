@@ -901,7 +901,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.|!|\^)$</xsd:pattern>
+                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.|!|\^)</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -958,7 +958,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*)$</xsd:pattern>
+                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*)</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1064,7 +1064,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^([ACGT]{3})+$</xsd:pattern>
+                        <xsd:pattern>([ACGT]{3})+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1083,7 +1083,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^([ACGT]{3})+$</xsd:pattern>
+                        <xsd:pattern>([ACGT]{3})+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1102,7 +1102,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[A-Z]$</xsd:pattern>
+                        <xsd:pattern>[A-Z]</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1121,7 +1121,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[A-Z]$</xsd:pattern>
+                        <xsd:pattern>[A-Z]</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1227,7 +1227,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[ACGT]+$</xsd:pattern>
+                        <xsd:pattern>[ACGT]+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1246,7 +1246,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[ACGT]+$</xsd:pattern>
+                        <xsd:pattern>[ACGT]+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1516,7 +1516,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^([a-zA-Z0-9\.:\^\*\$@!\+_\?\-|]|%[a-fA-F0-9][a-fA-F0-9])+$</xsd:pattern>
+                        <xsd:pattern>([a-zA-Z0-9\.:\^\*\$@!\+_\?\-|]|%[a-fA-F0-9][a-fA-F0-9])+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1596,7 +1596,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[A-Z\*\-]+$</xsd:pattern>
+                        <xsd:pattern>[A-Z\*\-]+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1615,7 +1615,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>^[A-Z\*\-]+$</xsd:pattern>
+                        <xsd:pattern>[A-Z\*\-]+</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
