@@ -958,7 +958,7 @@
                 <owl:onDatatype rdf:resource="&xsd;string"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*)</xsd:pattern>
+                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.)</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
