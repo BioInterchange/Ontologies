@@ -2,7 +2,7 @@
 
 Bioinformatics related ontologies. Especially for generating RDF content using BioInterchange.
 
-### GFF3O
+### Generic Feature Format Version 3 Ontology (GFF3O)
 
 An ontology for describing [GFF3](http://sequenceontology.org/gff3.shtml) file contents.
 
@@ -35,16 +35,13 @@ For example, for GFF3O the following commands can be used to create a new cleane
 
 ### Generating new GO Abbreviation Collection Link-Outs
 
-The URIs linking out to the [Gene Ontology Abbreviation Collection](http://www.geneontology.org/doc/GO.xrf_abbs)
-can be automatically generated from the BioInterchange project's corresponding vocabulary
-wrapper class:
+A regular expression of valid URIs as defined in the [Gene Ontology Abbreviation Collection](http://www.geneontology.org/doc/GO.xrf_abbs)
+can be automatically generated using the following command:
 
-    git clone git://github.com/BioInterchange/BioInterchange.git
-    cd BioInterchange
-    grep 'RDF::URI.new' lib/biointerchange/goxref.rb | grep -o -E 'http:[^"]+' | awk '{ print "                    <owl:Class rdf:about=\"&go"NR";\"/>" }'
+    ./scripts/go_xref2xsd_pattern.rb
 
-On Mac OS X, the generated list of entities can be copied into the clipboard for subsequent
+On Mac OS X, the generated regular expression can be copied into the clipboard for subsequent
 pasting using the `pbcopy` command:
 
-    grep 'RDF::URI.new' lib/biointerchange/goxref.rb | grep -o -E 'http:[^"]+' | awk '{ print "                    <owl:Class rdf:about=\"&go"NR";\"/>" }' | pbcopy
+    ./scripts/go_xref2xsd_pattern.rb | pbcopy
 
