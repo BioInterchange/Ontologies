@@ -8,7 +8,6 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY faldo "http://biohackathon.org/resource/faldo#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY bfo "http://www.ifomis.org/bfo/1.1/snap#" >
 ]>
 
 <rdf:RDF xmlns="http://www.biointerchange.org/gvf1o#"
@@ -19,8 +18,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:faldo="http://biohackathon.org/resource/faldo#"
-     xmlns:bfo="http://www.ifomis.org/bfo/1.1/snap#">
+     xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gvf1o#">
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
@@ -1530,7 +1528,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0001">
         <rdfs:label>Set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;ObjectAggregate"/>
         <rdfs:comment xml:lang="en">Set of genomic sequence features, whose identifiers are unique within the set.</rdfs:comment>
     </owl:Class>
     
@@ -1538,7 +1535,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0002">
         <rdfs:label>Feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;ObjectAggregate"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gvf1o#GVF1_0026"/>
@@ -1665,7 +1661,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0003">
         <rdfs:label>Attribute</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;FiatObjectPart"/>
         <rdfs:comment xml:lang="en">Representation of attribute tag/value pairs that are not covered by specific classes such as Effect or Variant.</rdfs:comment>
     </owl:Class>
     
@@ -1683,7 +1678,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;Quality"/>
         <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
@@ -1691,7 +1685,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0033">
         <rdfs:label>Variant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Object"/>
         <rdfs:comment xml:lang="en">Describing specific alterations of a feature.</rdfs:comment>
     </owl:Class>
     
@@ -1699,7 +1692,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0035">
         <rdfs:label>SequencedIndividual</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Object"/>
         <rdfs:comment xml:lang="en">Aggregated sequencing information for a particular individual.</rdfs:comment>
     </owl:Class>
     
@@ -1707,7 +1699,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0040">
         <rdfs:label>Effect</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Object"/>
         <rdfs:comment xml:lang="en">Describing the effect of a feature variant.</rdfs:comment>
     </owl:Class>
     
@@ -1715,7 +1706,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0045">
         <rdfs:label>Range</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;SpatialRegion"/>
         <rdfs:comment xml:lang="en">Describe ambiguity in either start or end coordinates.</rdfs:comment>
     </owl:Class>
     
@@ -1723,7 +1713,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0052">
         <rdfs:label>Chromosome</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Object"/>
         <rdfs:comment xml:lang="en">An abstract representation of a chromosome to represent ploidy.</rdfs:comment>
     </owl:Class>
     
@@ -1731,7 +1720,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0058">
         <rdfs:label>Breakpoint</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;SpecificallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">Describes the source or destination of a zero-length sequence alteration.</rdfs:comment>
     </owl:Class>
     
@@ -1748,7 +1736,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;Quality"/>
         <rdfs:comment xml:lang="en">Denotes the zygosity of alleles.</rdfs:comment>
     </owl:Class>
     
@@ -1756,7 +1743,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0088">
         <rdfs:label>Target</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Object"/>
         <rdfs:comment xml:lang="en">Indicates a feature&#39;s &quot;target&quot; of a nucleotide-to-nucleotide or protein-to-nucleotide alignment.</rdfs:comment>
     </owl:Class>
     
@@ -1764,7 +1750,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0097">
         <rdfs:label>TechnologyPlatform</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;SpecificallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">Details about the sequencing/microarray technology used to gather the data in a set.</rdfs:comment>
     </owl:Class>
     
@@ -1772,7 +1757,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0098">
         <rdfs:label>DataSource</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;SpecificallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">Provides information about the source of the data. For example, it can link out to actual sequences associated with the Feature individuals in a Set.</rdfs:comment>
     </owl:Class>
     
@@ -1780,7 +1764,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0099">
         <rdfs:label>Method</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;SpecificallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">Information about the used scoring algorithm or method.</rdfs:comment>
     </owl:Class>
     
@@ -1788,7 +1771,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0100">
         <rdfs:label>PhenotypeDescription</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;SpecificallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">Additional information about an individual&#39;s phenotype.</rdfs:comment>
     </owl:Class>
     
@@ -1804,7 +1786,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;Quality"/>
         <rdfs:comment xml:lang="en">Type of reads obtained for a given technology platform.</rdfs:comment>
     </owl:Class>
     
@@ -1822,7 +1803,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;GenericallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">Determines the datatype of a variant sequence.</rdfs:comment>
     </owl:Class>
     
@@ -1830,7 +1810,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0135">
         <rdfs:label>Landmark</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Site"/>
         <rdfs:comment xml:lang="en">A landmark that establishes the coordinate system for features.</rdfs:comment>
     </owl:Class>
     
@@ -1846,7 +1825,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;Quality"/>
         <rdfs:comment xml:lang="en">For single individual sets, the Sex class&#39; OWL-individuals can be used to specify the sex of the sequenced (real-life) individuals.</rdfs:comment>
     </owl:Class>
     
@@ -1863,7 +1841,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;GenericallyDependentContinuant"/>
         <rdfs:comment xml:lang="en">An enumerated class for determining the genomic source (cell type) of sequenced data.</rdfs:comment>
     </owl:Class>
     
@@ -1871,7 +1848,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gvf1o#GVF1_0151">
         <rdfs:label>StructuredAttribute</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;FiatObjectPart"/>
         <rdfs:comment xml:lang="en">Representation of attribute tag/value pairs that are specific to particular structured attributes, but which are not covered by the GVF specification.</rdfs:comment>
     </owl:Class>
     

@@ -10,7 +10,6 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY ipid "http://supfam.cs.bris.ac.uk/SUPERFAMILY/cgi-bin/scop.cgi?ipid=" >
     <!ENTITY sp "http://www.broad.mit.edu/annotation/genome/magnaporthe_grisea/GeneLocus.html?sp=" >
-    <!ENTITY bfo "http://www.ifomis.org/bfo/1.1/snap#" >
 ]>
 
 <rdf:RDF xmlns="http://www.biointerchange.org/gff3o#"
@@ -23,8 +22,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:faldo="http://biohackathon.org/resource/faldo#"
-     xmlns:bfo="http://www.ifomis.org/bfo/1.1/snap#">
+     xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gff3o#">
         <owl:versionInfo>1.0.12</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
@@ -691,7 +689,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0001">
         <rdfs:label>Set</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;ObjectAggregate"/>
         <rdfs:comment xml:lang="en">Set of genomic sequence features, whose identifiers are unique within the set.</rdfs:comment>
     </owl:Class>
     
@@ -699,7 +696,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0002">
         <rdfs:label>Feature</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;ObjectAggregate"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0046"/>
@@ -798,7 +794,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0003">
         <rdfs:label>Attribute</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;FiatObjectPart"/>
         <rdfs:comment xml:lang="en">Describes additional feature attributes besides ID, Name, Alias, Parent, Target, Gap, Derives_from, Dbxref, Ontology_term, Ontology_term, or Is_circular.</rdfs:comment>
     </owl:Class>
     
@@ -816,7 +811,6 @@
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&bfo;Quality"/>
         <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
@@ -824,7 +818,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0038">
         <rdfs:label>Target</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Object"/>
         <rdfs:comment xml:lang="en">Indicates a feature&#39;s &quot;target&quot; of a nucleotide-to-nucleotide or protein-to-nucleotide alignment.</rdfs:comment>
     </owl:Class>
     
@@ -832,7 +825,6 @@
 
     <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0051">
         <rdfs:label>Landmark</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&bfo;Site"/>
         <rdfs:comment xml:lang="en">A landmark that establishes the coordinate system for features.</rdfs:comment>
     </owl:Class>
     
