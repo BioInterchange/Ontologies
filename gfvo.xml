@@ -20,7 +20,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
-        <owl:versionInfo>0.9.1</owl:versionInfo>
+        <owl:versionInfo>0.9.2</owl:versionInfo>
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <dc:description xml:lang="en">An ontology that describes the Generic Feature Format Version 3 (GFF3) by Lincoln Stein (http://www.sequenceontology.org/resources/gff3.html), the General Transfer Format (GTF) by various contributors (http://mblab.wustl.edu/GTF22.html), the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html), and the Variant Call Format (VCF) by Petr Danecek, Adam Auton, Goncalo Abecasis, Cornelis A. Albers, Eric Banks, Mark A. DePristo, Robert E. Handsaker, Gerton Lunter, Gabor T. Marth, Stephen T. Sherry, Gilean McVean, Richard Durbin and the 1000 Genomes Project Analysis Group (http://vcftools.sourceforge.net/specs.html). The ontology was inspired by previous work of Robert Hoehndorf&apos;s RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
@@ -82,33 +82,12 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gfvo#breakpointLocus -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointLocus">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>breakpoint locus</rdfs:label>
-        <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a breakpoint&apos;s start, stop, strand properties.</rdfs:comment>
-        <rdfs:range rdf:resource="&faldo;Region"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#breakpointObjectProperty"/>
-    </owl:ObjectProperty>
-    
     <!-- http://www.biointerchange.org/gfvo#breakpointObjectProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointObjectProperty">
         <rdfs:label>breakpoint object property</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Breakpoint class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationObjectProperty"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#breakpointSeqid -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointSeqid">
-        <rdfs:label>breakpoint seqid</rdfs:label>
-        <rdfs:comment xml:lang="en">Link to the landmark that establishes the coordinate system for the breakpoint.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gfvo#Landmark"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#breakpointObjectProperty"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#chromosome -->
@@ -159,6 +138,27 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologicalAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#dbxref -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#dbxref">
+        <rdfs:label>dbxref</rdfs:label>
+        <rdfs:comment xml:lang="en">A database cross-reference to associate a feature or its structured pragma metadata to a representation in another database.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologicalAnnotationObjectProperty"/>
+        <rdfs:range rdf:resource="&owl;Thing"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#DataSource"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Method"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhenotypeDescription"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#effect -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#effect">
@@ -177,31 +177,11 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variationAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gfvo#endRange -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#endRange">
-        <rdfs:label>end range</rdfs:label>
-        <rdfs:comment xml:lang="en">A coordinate range for ambiguous start coordinates.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Effect"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gfvo#Range"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#effectObjectProperty"/>
-    </owl:ObjectProperty>
-    
     <!-- http://www.biointerchange.org/gfvo#featureAnnotationObjectProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#featureAnnotationObjectProperty">
         <rdfs:label>feature annotation object property</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#recordObjectProperty"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#featureDbxref -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#featureDbxref">
-        <rdfs:label>featureDbxref</rdfs:label>
-        <rdfs:comment xml:lang="en">A database cross-reference to associate a sequence alteration to its representation in another database.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
-        <rdfs:range rdf:resource="&owl;Thing"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#featureObjectProperty -->
@@ -269,8 +249,19 @@
         <rdfs:label>locus</rdfs:label>
         <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a feature&apos;s start, stop, strand properties.</rdfs:comment>
         <rdfs:range rdf:resource="&faldo;Region"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Breakpoint"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Effect"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Target"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#locusAnnotationObjectProperty -->
@@ -331,6 +322,16 @@
         <rdfs:label>record object property</rdfs:label>
     </owl:ObjectProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#reference -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#reference">
+        <rdfs:label>reference</rdfs:label>
+        <rdfs:comment xml:lang="en">Specific information about the reference sequence of a feature.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
+        <rdfs:range rdf:resource="http://www.biointerchange.org/gfvo#Reference"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
+    </owl:ObjectProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#scoreMethod -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#scoreMethod">
@@ -345,10 +346,18 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#seqid">
         <rdfs:label>seqid</rdfs:label>
-        <rdfs:comment xml:lang="en">Establishes the landmark (e.g. a chromosome) on which a feature is located.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
+        <rdfs:comment xml:lang="en">Establishes the landmark (e.g. a chromosome) on which a feature or breakpoint is located.</rdfs:comment>
         <rdfs:range rdf:resource="http://www.biointerchange.org/gfvo#Landmark"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#breakpointObjectProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Breakpoint"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#sequenceVariant -->
@@ -413,27 +422,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#setObjectProperty"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gfvo#startRange -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#startRange">
-        <rdfs:label>start range</rdfs:label>
-        <rdfs:comment xml:lang="en">A coordinate range for ambiguous start coordinates.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Effect"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gfvo#Range"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#effectObjectProperty"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#strand -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#strand">
-        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>strand</rdfs:label>
-        <rdfs:comment xml:lang="en">Strand of the feature.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gfvo#Strand"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureObjectProperty"/>
-    </owl:ObjectProperty>
-    
     <!-- http://www.biointerchange.org/gfvo#structuredAttributes -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#structuredAttributes">
@@ -473,41 +461,12 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetProperty"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gfvo#targetLocus -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#targetLocus">
-        <rdfs:label>target locus</rdfs:label>
-        <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a target&apos;s start, stop, strand  properties.</rdfs:comment>
-        <rdfs:range rdf:resource="&faldo;Region"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Target"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetProperty"/>
-    </owl:ObjectProperty>
-    
     <!-- http://www.biointerchange.org/gfvo#targetProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#targetProperty">
         <rdfs:label>target property</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationObjectProperty"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#technicalAnnotationDbxref -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#technicalAnnotationDbxref">
-        <rdfs:label>technical annotation dbxref</rdfs:label>
-        <rdfs:comment xml:lang="en">A database cross-reference to associate a structured pragma to a representation in another database.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologicalAnnotationObjectProperty"/>
-        <rdfs:range rdf:resource="&owl;Thing"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#DataSource"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Method"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhenotypeDescription"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#technologicalAnnotationObjectProperty -->
@@ -635,6 +594,33 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#aminoAcid -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#aminoAcid">
+        <rdfs:label>amino acid</rdfs:label>
+        <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&apos;s genome coordinates. Amino acid that overlaps with the variant.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>[A-Z]</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#averageCoverage -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#averageCoverage">
@@ -648,52 +634,6 @@
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
                         <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#breakpointDatatypeProperty -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointDatatypeProperty">
-        <rdfs:label>breakpoint datatype property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Breakpoint class instances.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationDatatypeProperty"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#breakpointEnd -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointEnd">
-        <rdfs:label>breakpoint end</rdfs:label>
-        <rdfs:comment xml:lang="en">End coordinate of the feature on the seqid landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#breakpointDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#breakpointStart -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointStart">
-        <rdfs:label>breakpoint start</rdfs:label>
-        <rdfs:comment xml:lang="en">Start coordinate of the feature on the seqid landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#breakpointDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -717,6 +657,33 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#codon -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#codon">
+        <rdfs:label>codon</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant. Describes the codon that overlaps this variant.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>([ACGT]{3})+</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#comment -->
@@ -797,63 +764,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#recordDatatypeProperty"/>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gfvo#featureEnd -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#featureEnd">
-        <rdfs:label>feature end</rdfs:label>
-        <rdfs:comment xml:lang="en">End coordinate of the feature on the seqid landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#featureSequence -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#featureSequence">
-        <rdfs:label>feature sequence</rdfs:label>
-        <rdfs:comment xml:lang="en">Sequence associated with this feature, if it has been specified using a FASTA string.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>[A-Z\*\-]+</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#featureStart -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#featureStart">
-        <rdfs:label>feature start</rdfs:label>
-        <rdfs:comment xml:lang="en">Start coordinate of the feature on the seqid landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
     <!-- http://www.biointerchange.org/gfvo#fileDatatypeProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#fileDatatypeProperty">
@@ -890,6 +800,16 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#frequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#frequency">
+        <rdfs:label>frequency</rdfs:label>
+        <rdfs:comment xml:lang="en">Frequency of a variant in a population.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#gffVersion -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#gffVersion">
@@ -902,10 +822,10 @@
                 <owl:onDatatype rdf:resource="&xsd;float"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;float">4.0</xsd:maxExclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">3.0</xsd:minInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;float">3.0</xsd:minInclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;float">4.0</xsd:maxExclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -924,10 +844,10 @@
                 <owl:onDatatype rdf:resource="&xsd;float"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;float">3.0</xsd:maxExclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">2.0</xsd:minInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;float">2.0</xsd:minInclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;float">3.0</xsd:maxExclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -946,10 +866,10 @@
                 <owl:onDatatype rdf:resource="&xsd;float"/>
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
-                        <xsd:maxExclusive rdf:datatype="&xsd;float">2.0</xsd:maxExclusive>
+                        <xsd:minInclusive rdf:datatype="&xsd;float">1.0</xsd:minInclusive>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;float">1.0</xsd:minInclusive>
+                        <xsd:maxExclusive rdf:datatype="&xsd;float">2.0</xsd:maxExclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -961,8 +881,9 @@
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#id">
         <rdfs:label>id</rdfs:label>
         <rdfs:comment xml:lang="en">A unique identifier for the feature within the feature set.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetDatatypeProperty"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -973,6 +894,15 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Target"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isCircular -->
@@ -989,29 +919,18 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#isPhased">
         <rdfs:label>is phased</rdfs:label>
-        <rdfs:comment xml:lang="en">Indicates whether this particular is phased. Used to encode ##phased-genotypes statements.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
+        <rdfs:comment xml:lang="en">Indicates whether this particular is phased. Used to encode ##phased-genotypes statements.Also a property of a GVF variant, but the specification is unclear on exact details.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#isPhasedVariant -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#isPhasedVariant">
-        <rdfs:label>is phased variant</rdfs:label>
-        <rdfs:comment xml:lang="en">Unclear from GVF specification.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#landmarkDatatypeProperty -->
@@ -1020,82 +939,6 @@
         <rdfs:label>landmark datatype property</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Landmark class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationDatatypeProperty"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#landmarkEnd -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#landmarkEnd">
-        <rdfs:label>landmark end</rdfs:label>
-        <rdfs:comment xml:lang="en">Genomic end coordinate of the landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Landmark"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#landmarkId -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#landmarkId">
-        <rdfs:label>landmark id</rdfs:label>
-        <rdfs:comment xml:lang="en">ID that uniquely establishes the Landmark&apos;s identity within a Set.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Landmark"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern xml:lang="!\+_\?\-|]|%[a-fa-f0-9][a-fa-f0-9])+">([a-zA-Z0-9\.:\^\*\$</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#landmarkSequence -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#landmarkSequence">
-        <rdfs:label>landmark sequence</rdfs:label>
-        <rdfs:comment xml:lang="en">Sequence associated with this feature, if it has been specified using a FASTA string.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Landmark"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>[A-Z\*\-]+</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#landmarkStart -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#landmarkStart">
-        <rdfs:label>landmark start</rdfs:label>
-        <rdfs:comment xml:lang="en">Genomic start coordinate of the landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Landmark"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#locusAnnotationDatatypeProperty -->
@@ -1155,6 +998,24 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#phredScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#phredScore">
+        <rdfs:label>phred score</rdfs:label>
+        <rdfs:comment xml:lang="en">A phred-scaled quality score for the reference seuence; -10log_10 prob(no variant). A phred-scaled quality score for a variant sequence; -10log_10 prob(variant call is wrong). High scores indicate high confidence calls. This is a property associated with VCF data.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#platformClass -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#platformClass">
@@ -1187,52 +1048,6 @@
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
                         <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#rangeDatatypeProperty -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#rangeDatatypeProperty">
-        <rdfs:label>range datatype property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Range class instances.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationDatatypeProperty"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#rangeEnd -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#rangeEnd">
-        <rdfs:label>range end</rdfs:label>
-        <rdfs:comment xml:lang="en">A coordinate that defines the end of an ambiguous coordinate range.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Range"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#rangeDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#rangeStart -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#rangeStart">
-        <rdfs:label>range start</rdfs:label>
-        <rdfs:comment xml:lang="en">A coordinate that defines the start of an ambiguous coordinate range.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Range"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#rangeDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1277,75 +1092,36 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#reads -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#reads">
+        <rdfs:label>reads</rdfs:label>
+        <rdfs:comment xml:lang="en">Number of reads that are supporting a variant.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#recordDatatypeProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#recordDatatypeProperty">
         <rdfs:label>record datatype property</rdfs:label>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gfvo#referenceAminoAcid -->
+    <!-- http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#referenceAminoAcid">
-        <rdfs:label>reference amino acid</rdfs:label>
-        <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&apos;s genome coordinates.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>[A-Z]</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#referenceCodon -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#referenceCodon">
-        <rdfs:label>reference codon</rdfs:label>
-        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>([ACGT]{3})+</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#referencePhredScore -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#referencePhredScore">
-        <rdfs:label>reference phred score</rdfs:label>
-        <rdfs:comment xml:lang="en">A phred-scaled quality score for the reference seuence; -10log_10 prob(no variant). High scores indicate high confidence calls. This is a property associated with VCF data.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#referenceSequence -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#referenceSequence">
-        <rdfs:label>reference sequence</rdfs:label>
-        <rdfs:comment xml:lang="en">Sequence from the reference genome.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.)</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty">
+        <rdfs:label>reference annotation datatype property</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureAnnotationDatatypeProperty"/>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#score -->
@@ -1356,6 +1132,37 @@
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
         <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#sequence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#sequence">
+        <rdfs:label>sequence</rdfs:label>
+        <rdfs:comment xml:lang="en">All sequence variations at a locus -- including the reference sequence when appropriate (for example, when the locus is heterozygous). If the feature is on the minus strand, then the sequence is the reverse-compliment of the reference genome for these coordinates.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.|!|\^)</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#sequencedIndividualDatatypeProperty -->
@@ -1399,6 +1206,16 @@
         <rdfs:label>tag</rdfs:label>
         <rdfs:comment xml:lang="en">Tag name of a feature attribute.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#customAnnotationDatatypeProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1407,16 +1224,6 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#targetDatatypeProperty -->
@@ -1425,63 +1232,6 @@
         <rdfs:label>target datatype property</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationDatatypeProperty"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#targetEnd -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#targetEnd">
-        <rdfs:label>target end</rdfs:label>
-        <rdfs:comment xml:lang="en">End coordinate of the target.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Target"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#targetId -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#targetId">
-        <rdfs:label>target id</rdfs:label>
-        <rdfs:comment xml:lang="en">ID or accession of the target alignment.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Target"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minLength rdf:datatype="&xsd;integer">1</xsd:minLength>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#targetStart -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#targetStart">
-        <rdfs:label>target start</rdfs:label>
-        <rdfs:comment xml:lang="en">Start coordinate of the target.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Target"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetDatatypeProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;int"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:minInclusive rdf:datatype="&xsd;integer">1</xsd:minInclusive>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#technologicalAnnotationDatatypeProperty -->
@@ -1506,7 +1256,16 @@
         <rdfs:comment xml:lang="en">Total number of reads.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#sequencedIndividualDatatypeProperty"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#type -->
@@ -1522,93 +1281,6 @@
                 <owl:withRestrictions rdf:parseType="Collection">
                     <rdf:Description>
                         <xsd:pattern>http://www\.sequenceontology\.org/miso/current_release/term/.+</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#variantAminoAcid -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#variantAminoAcid">
-        <rdfs:label>variant amino acid</rdfs:label>
-        <rdfs:comment xml:lang="en">Amino acid that overlaps with the variant.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>[A-Z]</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#variantCodon -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#variantCodon">
-        <rdfs:label>variant codon</rdfs:label>
-        <rdfs:comment xml:lang="en">Describes the codon that overlaps this variant.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>([ACGT]{3})+</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#variantFrequency -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#variantFrequency">
-        <rdfs:label>variant frequency</rdfs:label>
-        <rdfs:comment xml:lang="en">Frequency of a variant in a population.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range rdf:resource="&xsd;float"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#variantPhredScore -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#variantPhredScore">
-        <rdfs:label>variant phred score</rdfs:label>
-        <rdfs:comment xml:lang="en">A phred-scaled quality score for the variant; -10log_10 prob(variant call is wrong). High scores indicate high confidence calls. This is a property associated with VCF data.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range rdf:resource="&xsd;double"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#variantReads -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#variantReads">
-        <rdfs:label>variant reads</rdfs:label>
-        <rdfs:comment xml:lang="en">Number of reads that are supporting this variant.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range rdf:resource="&xsd;int"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#variantSequence -->
-
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#variantSequence">
-        <rdfs:label>variant sequence</rdfs:label>
-        <rdfs:comment xml:lang="en">All sequence variations at a locus -- including the reference sequence when appropriate (for example, when the locus is heterozygous). If the feature is on the minus strand, then the sequence is the reverse-compliment of the reference genome for these coordinates.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.|!|\^)</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
@@ -1738,57 +1410,8 @@
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Record"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#featureEnd"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#individual"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#parent"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#strand"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Strand"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#variant"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#referenceCodon"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#referenceAminoAcid"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1801,37 +1424,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#score"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&owl;real"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#featureStart"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;int"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#parent"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#referenceSequence"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1850,9 +1452,37 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#score"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&owl;real"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
                 <owl:onClass rdf:resource="&faldo;Region"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#individual"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#variant"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A genomic sequence feature.</rdfs:comment>
@@ -1923,14 +1553,6 @@
         <rdfs:comment xml:lang="en">Additional information about an individual&apos;s phenotype.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Range -->
-
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Range">
-        <rdfs:label>Range</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#LocusAnnotation"/>
-        <rdfs:comment xml:lang="en">Describe ambiguity in either start or end coordinates.</rdfs:comment>
-    </owl:Class>
-    
     <!-- http://www.biointerchange.org/gfvo#ReadType -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ReadType">
@@ -1950,6 +1572,14 @@
     <!-- http://www.biointerchange.org/gfvo#Record -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Record"/>
+    
+    <!-- http://www.biointerchange.org/gfvo#Reference -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Reference">
+        <rdfs:label>Reference</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#FeatureAnnotation"/>
+        <rdfs:comment xml:lang="en">Describing the reference sequence of a feature.</rdfs:comment>
+    </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#SequencedIndividual -->
 
@@ -1992,24 +1622,6 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividualEnumeration"/>
         <rdfs:comment xml:lang="en">For single individual sets, the Sex class&apos; OWL-individuals can be used to specify the sex of the sequenced (real-life) individuals.</rdfs:comment>
-    </owl:Class>
-    
-    <!-- http://www.biointerchange.org/gfvo#Strand -->
-
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Strand">
-        <rdfs:label>Strand</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#NotStranded"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Positive"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Negative"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#UnknownStrand"/>
-                </owl:oneOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#GenomicEnumeration"/>
-        <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#StructuredAttribute -->
@@ -2167,36 +1779,12 @@
         <rdfs:comment xml:lang="en">Denotes that a Set contains features of a male.</rdfs:comment>
     </owl:NamedIndividual>
     
-    <!-- http://www.biointerchange.org/gfvo#Negative -->
-
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Negative">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Strand"/>
-        <rdfs:label>Negative</rdfs:label>
-        <rdfs:comment xml:lang="en">Location on the negative (reverse) strand.</rdfs:comment>
-    </owl:NamedIndividual>
-    
-    <!-- http://www.biointerchange.org/gfvo#NotStranded -->
-
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#NotStranded">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Strand"/>
-        <rdfs:label>NotStranded</rdfs:label>
-        <rdfs:comment xml:lang="en">Strand is not applicable.</rdfs:comment>
-    </owl:NamedIndividual>
-    
     <!-- http://www.biointerchange.org/gfvo#Pair -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Pair">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#ReadType"/>
         <rdfs:label>Pair</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes reads that are pairs.</rdfs:comment>
-    </owl:NamedIndividual>
-    
-    <!-- http://www.biointerchange.org/gfvo#Positive -->
-
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Positive">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Strand"/>
-        <rdfs:label>Positive</rdfs:label>
-        <rdfs:comment xml:lang="en">Location on the positive (forward) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- http://www.biointerchange.org/gfvo#Prenatal -->
@@ -2223,14 +1811,6 @@
         <rdfs:comment xml:lang="en">Denotes that a set contains features of somatic cells.</rdfs:comment>
     </owl:NamedIndividual>
     
-    <!-- http://www.biointerchange.org/gfvo#UnknownStrand -->
-
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#UnknownStrand">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Strand"/>
-        <rdfs:label>UnknownStrand</rdfs:label>
-        <rdfs:comment xml:lang="en">Strand was not determined, which leaves it open whether the location is on the positive (forward) or negative (reverse) strand.</rdfs:comment>
-    </owl:NamedIndividual>
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2239,15 +1819,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Negative"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#NotStranded"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Positive"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#UnknownStrand"/>
-        </owl:distinctMembers>
-    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
@@ -2261,12 +1832,10 @@
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Method"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhenotypeDescription"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Range"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReadType"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Set"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Sex"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Strand"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#StructuredAttribute"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Target"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
