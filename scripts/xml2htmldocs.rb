@@ -1,5 +1,17 @@
 #!/usr/bin/ruby
 
+def origin_tag(uri)
+  # For now... random. Testing phase.
+  n = rand(4)
+  return '<span class="badge badge-important">GFF3</span>' if n == 0
+  return '<span class="badge badge-info">GTF</span>' if n == 1
+  return '<span class="badge badge-success">GVF</span>' if n == 2
+  return '<span class="badge badge-warning">VCF</span>'
+end
+
+left_margin_items = '16px'
+bottom_margin_items = '16px'
+
 base = nil
 ontology_base = nil
 namespace = nil
@@ -90,11 +102,12 @@ puts '<p>'
 puts "  Ontology namespace \"#{namespace}\": #{base}"
 puts '</p>'
 
-puts '<h2>Classes</h2>'
+puts '<h4>Classes</h4>'
 
 terms[:class].keys.sort.each { |term|
   puts '<p>'
-  puts "  <h3 id=\"#class#{term}\">Class #{namespace}:#{term}</h3>"
+  puts "  <h5 id=\"#class#{term}\">Class #{namespace}:#{term}</h5>"
+  puts "  <div style=\"margin-left: #{left_margin_items}; margin-bottom: #{bottom_margin_items}\">"
   puts "  <div><i>Subclass of:</i> <a href=\"#class#{terms[:class][term][:subclassof]}\">#{terms[:class][term][:subclassof]}</a></div>" if terms[:class][term][:subclassof]
   related = []
   terms[:named_individual].keys.sort.each { |named_individual|
@@ -103,39 +116,47 @@ terms[:class].keys.sort.each { |term|
   puts "  <div><i>Individuals:</i> #{related.join(', ')}</div>" unless related.empty?
   puts "  <div><i>Label:</i> #{terms[:class][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:class][term][:comment]}</div>"
+  x = rand(5)
+  puts "  <div>#{(0..x).map { |y| origin_tag(y) }.sort.uniq.join('')}</div>" if x > 0
+  puts "  </div>"
   puts '</p>'
 }
 
-puts '<h2>Named Individuals (Constants, Enumerations)</h2>'
+puts '<h4>Named Individuals (Constants, Enumerations)</h4>'
 
 terms[:named_individual].keys.sort.each { |term|
   puts '<p>'
-  puts "  <h3 id=\"#namedIndividual#{term}\">Named Individual #{namespace}:#{term}</h3>"
-  puts "  <div><i>Type:</i> #{terms[:named_individual][term][:type]}</div>"
+  puts "  <h5 id=\"#namedIndividual#{term}\">Named Individual #{namespace}:#{term}</h5>"
+  puts "  <div style=\"margin-left: #{left_margin_items}; margin-bottom: #{bottom_margin_items}\">"
+  puts "  <div><i>Type:</i> <a href=\"#class#{terms[:named_individual][term][:type]}\">#{terms[:named_individual][term][:type]}</a></div>"
   puts "  <div><i>Label:</i> #{terms[:named_individual][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:named_individual][term][:comment]}</div>"
+  puts "  </div>"
   puts '</p>'
 }
 
-puts '<h2>Object Properties (Referencing other Class Instances)</h2>'
+puts '<h4>Object Properties (Referencing other Class Instances)</h4>'
 
 terms[:object_property].keys.sort.each { |term|
   puts '<p>'
-  puts "  <h3 id=\"#objectProperty#{term}\">Object Property #{namespace}:#{term}</h3>"
+  puts "  <h5 id=\"#objectProperty#{term}\">Object Property #{namespace}:#{term}</h5>"
+  puts "  <div style=\"margin-left: #{left_margin_items}; margin-bottom: #{bottom_margin_items}\">"
   puts "  <div><i>Domain:</i> <a href=\"#class#{terms[:object_property][term][:local_domain]}\">#{terms[:object_property][term][:local_domain]}</a></div>" if terms[:object_property][term][:local_domain]
   puts "  <div><i>Domain:</i> <a href=\"#{terms[:object_property][term][:external_domain]}\">#{terms[:object_property][term][:external_domain]}</a></div>" if terms[:object_property][term][:external_domain]
   puts "  <div><i>Range:</i> <a href=\"#class#{terms[:object_property][term][:local_range]}\">#{terms[:object_property][term][:local_range]}</a></div>" if terms[:object_property][term][:local_range]
   puts "  <div><i>Range:</i> <a href=\"#{terms[:object_property][term][:external_range]}\">#{terms[:object_property][term][:external_range]}</a></div>" if terms[:object_property][term][:external_range]
   puts "  <div><i>Label:</i> #{terms[:object_property][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:object_property][term][:comment]}</div>"
+  puts "  </div>"
   puts '</p>'
 }
 
-puts '<h2>Datatype Properties (Strings, Numbers, Dates, etc.)</h2>'
+puts '<h4>Datatype Properties (Strings, Numbers, Dates, etc.)</h4>'
 
 terms[:datatype_property].keys.sort.each { |term|
   puts '<p>'
-  puts "  <h3 id=\"#datatypeProperty#{term}\">Datatype Property #{namespace}:#{term}</h3>"
+  puts "  <h5 id=\"#datatypeProperty#{term}\">Datatype Property #{namespace}:#{term}</h5>"
+  puts "  <div style=\"margin-left: #{left_margin_items}; margin-bottom: #{bottom_margin_items}\">"
   puts "  <div><i>Domain:</i> <a href=\"#class#{terms[:datatype_property][term][:local_domain]}\">#{terms[:datatype_property][term][:local_domain]}</a></div>" if terms[:datatype_property][term][:local_domain]
   puts "  <div><i>Domain:</i> <a href=\"#{terms[:datatype_property][term][:external_domain]}\">#{terms[:datatype_property][term][:external_domain]}</a></div>" if terms[:datatype_property][term][:external_domain]
   puts "  <div><i>Range:</i> <a href=\"#class#{terms[:datatype_property][term][:local_range]}\">#{terms[:datatype_property][term][:local_range]}</a></div>" if terms[:datatype_property][term][:local_range]
@@ -143,6 +164,7 @@ terms[:datatype_property].keys.sort.each { |term|
   puts "  <div>The data range has restrictions imposed on it. Please refer to the <a href=\"#{ontology_base}\">OWL file</a> for further details.</div>" if terms[:datatype_property][term][:has_restrictions]
   puts "  <div><i>Label:</i> #{terms[:datatype_property][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:datatype_property][term][:comment]}</div>"
+  puts "  </div>"
   puts '</p>'
 }
 
