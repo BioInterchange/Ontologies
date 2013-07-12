@@ -2,17 +2,11 @@
 
 Bioinformatics related ontologies. Especially for generating RDF content using BioInterchange.
 
-### Generic Feature Format Version 3 Ontology (GFF3O)
+### Genomic Feature and Variation Ontology (GFVO)
 
-An ontology for describing [GFF3](http://sequenceontology.org/gff3.shtml) file contents.
+An ontology for describing genomic features and variants; in particular the contents of [GFF3](http://sequenceontology.org/resources/gff3.html), [GTF](http://www.ensembl.org/info/website/upload/gff.html), [GVF](http://sequenceontology.org/resources/gvf.html) and [VCF](http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41) files.
 
-*  https://raw.github.com/BioInterchange/Ontologies/master/gff3o.xml
-
-### Genome Variation Format Version 1 Ontology (GVF1O)
-
-An ontology for describing [GVF](http://sequenceontology.org/gvf.shtml) file contents.
-
-*  https://raw.github.com/BioInterchange/Ontologies/master/gvf1o.xml
+*  https://raw.github.com/BioInterchange/Ontologies/master/gfvo.xml
 
 ## Build Instructions
 
@@ -44,4 +38,21 @@ On Mac OS X, the generated regular expression can be copied into the clipboard f
 pasting using the `pbcopy` command:
 
     ./scripts/go_xref2xsd_pattern.rb | pbcopy
+
+## Deprecated Ontologies
+
+The following ontologies were prototypes that eventually merged into the Genomic Feature and Variation Ontology (GFVO).
+
+### Generic Feature Format Version 3 Ontology (GFF3O)
+
+An ontology for describing [GFF3](http://sequenceontology.org/resources/gff3.html) file contents.
+
+*  https://raw.github.com/BioInterchange/Ontologies/master/gff3o.xml
+
+### Genome Variation Format Version 1 Ontology (GVF1O)
+
+An ontology for describing [GVF](http://sequenceontology.org/resources/gvf.html) file contents.
+
+*  https://raw.github.com/BioInterchange/Ontologies/master/gvf1o.xml
+
 

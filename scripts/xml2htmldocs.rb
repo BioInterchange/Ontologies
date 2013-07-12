@@ -1,12 +1,11 @@
 #!/usr/bin/ruby
 
 def origin_tag(uri)
-  # For now... random. Testing phase.
-  n = rand(4)
-  return '<span class="badge badge-important">GFF3</span>' if n == 0
-  return '<span class="badge badge-info">GTF</span>' if n == 1
-  return '<span class="badge badge-success">GVF</span>' if n == 2
-  return '<span class="badge badge-warning">VCF</span>'
+  return '<span class="badge badge-important">GFF3</span>' if uri == 'http://sequenceontology.org/resources/gff3.html'
+  return '<span class="badge badge-info">GTF</span>' if uri == 'http://www.ensembl.org/info/website/upload/gff.html'
+  return '<span class="badge badge-success">GVF</span>' if uri == 'http://sequenceontology.org/resources/gvf.html'
+  return '<span class="badge badge-warning">VCF</span>' if uri == 'http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41'
+  return "<i>#{uri}</i>"
 end
 
 left_margin_items = '16px'
@@ -66,6 +65,8 @@ STDIN.each { |line|
 
   next unless type
 
+  terms[type][term][:defined_by] = [] unless terms[type][term][:defined_by]
+
   if line.start_with?('<rdfs:label>') then
     terms[type][term][:label] = line.sub(/^[^>]+>/, '').sub(/<.*$/, '')
     next
@@ -82,15 +83,18 @@ STDIN.each { |line|
     if line.start_with?('<rdfs:domain rdf:resource="http://www.biointerchange.org/') then
       terms[type][term][:local_domain] = line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '')
     else
-      terms[type][term][:external_domain] =  line.sub(/^[^"]+"/, '').sub(/".*$/, '')
+      terms[type][term][:external_domain] = line.sub(/^[^"]+"/, '').sub(/".*$/, '')
     end
     next
   elsif line.start_with?('<rdfs:range ') or line.start_with?('<owl:onDatatype') then
     if line.start_with?('<rdfs:range rdf:resource="http://www.biointerchange.org/') then
       terms[type][term][:local_range] = line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '')
     else
-      terms[type][term][:external_range] =  "#{external_namespaces[line.sub(/^[^&]+&/, '').sub(/;.*$/, '')]}#{line.sub(/^.+;/, '').sub(/".*$/, '')}"
+      terms[type][term][:external_range] = "#{external_namespaces[line.sub(/^[^&]+&/, '').sub(/;.*$/, '')]}#{line.sub(/^.+;/, '').sub(/".*$/, '')}"
     end
+    next
+  elsif line.start_with?('<rdfs:isDefinedBy ') then
+    terms[type][term][:defined_by] << line.sub(/^[^"]+"/, '').sub(/".*$/, '')
     next
   elsif line.start_with?('<owl:withRestrictions') then
     terms[type][term][:has_restrictions] = true
@@ -116,8 +120,7 @@ terms[:class].keys.sort.each { |term|
   puts "  <div><i>Individuals:</i> #{related.join(', ')}</div>" unless related.empty?
   puts "  <div><i>Label:</i> #{terms[:class][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:class][term][:comment]}</div>"
-  x = rand(5)
-  puts "  <div>#{(0..x).map { |y| origin_tag(y) }.sort.uniq.join('')}</div>" if x > 0
+  puts "  <div>#{terms[:class][term][:defined_by].map { |uri| origin_tag(uri) }.sort.uniq.join('')}</div>" if terms[:class][term][:defined_by]
   puts "  </div>"
   puts '</p>'
 }
@@ -131,6 +134,7 @@ terms[:named_individual].keys.sort.each { |term|
   puts "  <div><i>Type:</i> <a href=\"#class#{terms[:named_individual][term][:type]}\">#{terms[:named_individual][term][:type]}</a></div>"
   puts "  <div><i>Label:</i> #{terms[:named_individual][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:named_individual][term][:comment]}</div>"
+  puts "  <div>#{terms[:named_individual][term][:defined_by].map { |uri| origin_tag(uri) }.sort.uniq.join('')}</div>" if terms[:named_individual][term][:defined_by]
   puts "  </div>"
   puts '</p>'
 }
@@ -147,6 +151,7 @@ terms[:object_property].keys.sort.each { |term|
   puts "  <div><i>Range:</i> <a href=\"#{terms[:object_property][term][:external_range]}\">#{terms[:object_property][term][:external_range]}</a></div>" if terms[:object_property][term][:external_range]
   puts "  <div><i>Label:</i> #{terms[:object_property][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:object_property][term][:comment]}</div>"
+  puts "  <div>#{terms[:object_property][term][:defined_by].map { |uri| origin_tag(uri) }.sort.uniq.join('')}</div>" if terms[:object_property][term][:defined_by]
   puts "  </div>"
   puts '</p>'
 }
@@ -164,6 +169,7 @@ terms[:datatype_property].keys.sort.each { |term|
   puts "  <div>The data range has restrictions imposed on it. Please refer to the <a href=\"#{ontology_base}\">OWL file</a> for further details.</div>" if terms[:datatype_property][term][:has_restrictions]
   puts "  <div><i>Label:</i> #{terms[:datatype_property][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{terms[:datatype_property][term][:comment]}</div>"
+  puts "  <div>#{terms[:datatype_property][term][:defined_by].map { |uri| origin_tag(uri) }.sort.uniq.join('')}</div>" if terms[:datatype_property][term][:defined_by]
   puts "  </div>"
   puts '</p>'
 }
