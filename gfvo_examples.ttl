@@ -1,0 +1,146 @@
+@prefix : <http://www.biointerchange.org/gfvo#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix vario: <http://purl.obolibrary.org/obo/> .
+@base <http://www.biointerchange.org/gfvo#> .
+
+#################################################################
+#
+#    Example 1
+#
+#################################################################
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1
+
+:ExampleSet1 rdf:type :File ,
+                      owl:NamedIndividual ;
+             
+             :gffVersion "3" ;
+             
+             rdfs:comment "A simple example of a hierarchical genomic feature dependency. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1ChromEnd
+
+:ExampleSet1ChromEnd rdf:type faldo:ExactPosition ,
+                              owl:NamedIndividual ;
+                     
+                     faldo:position "1497228" .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1ChromStart
+
+:ExampleSet1ChromStart rdf:type faldo:ExactPosition ,
+                                owl:NamedIndividual ;
+                       
+                       faldo:position "1" .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Feature1
+
+:ExampleSet1Feature1 rdf:type :Feature ,
+                              owl:NamedIndividual ;
+                     
+                     :id "gene00001" ;
+                     
+                     :name "EDEN" ;
+                     
+                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000704" ;
+                     
+                     :seqid :ExampleSet1Landmark1 .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Feature1_2Start
+
+:ExampleSet1Feature1_2Start rdf:type faldo:ExactPosition ,
+                                     owl:NamedIndividual ;
+                            
+                            faldo:position "1000" .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Feature2
+
+:ExampleSet1Feature2 rdf:type :Feature ,
+                              owl:NamedIndividual ;
+                     
+                     :id "tfbs00001" ;
+                     
+                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000235" ;
+                     
+                     :parent :ExampleSet1Feature1 ;
+                     
+                     :locus :ExampleSet1Region3 .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Feature2End
+
+:ExampleSet1Feature2End rdf:type faldo:ExactPosition ,
+                                 owl:NamedIndividual ;
+                        
+                        faldo:position "1012" .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Landmark1
+
+:ExampleSet1Landmark1 rdf:type :Landmark ,
+                               owl:NamedIndividual ;
+                      
+                      :id "ctg123" ;
+                      
+                      :locus :ExampleSet1Region1 .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Region1
+
+:ExampleSet1Region1 rdf:type faldo:Region ,
+                             owl:NamedIndividual ;
+                    
+                    faldo:begin :ExampleSet1ChromEnd ,
+                                :ExampleSet1ChromStart .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Region2
+
+:ExampleSet1Region2 rdf:type faldo:ForwardStrandPosition ,
+                             owl:NamedIndividual ;
+                    
+                    faldo:begin :ExampleSet1Feature1_2Start ;
+                    
+                    faldo:end :ExampleSetFeature1End .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSet1Region3
+
+:ExampleSet1Region3 rdf:type faldo:Region ,
+                             owl:NamedIndividual ;
+                    
+                    faldo:begin :ExampleSet1Feature1_2Start ;
+                    
+                    faldo:end :ExampleSet1Feature2End .
+
+
+
+###  http://www.biointerchange.org/gfvo#ExampleSetFeature1End
+
+:ExampleSetFeature1End rdf:type faldo:ExactPosition ,
+                                owl:NamedIndividual ;
+                       
+                       faldo:position "9000" .
+
+
