@@ -73,14 +73,14 @@
 :ExampleSet1Region2 rdf:type faldo:ForwardStrandPosition ,
                              owl:NamedIndividual ;
                     faldo:begin :ExampleSet1Feature1_2Start ;
-                    faldo:end :ExampleSetFeature1End .
+                    faldo:end :ExampleSet1Feature1End .
 
 :ExampleSet1Region3 rdf:type faldo:Region ,
                              owl:NamedIndividual ;
                     faldo:begin :ExampleSet1Feature1_2Start ;
                     faldo:end :ExampleSet1Feature2End .
 
-:ExampleSetFeature1End rdf:type faldo:ExactPosition ,
+:ExampleSet1Feature1End rdf:type faldo:ExactPosition ,
                                 owl:NamedIndividual ;
                        faldo:position "9000" .
 
@@ -117,8 +117,7 @@
 
 :ExampleSet2Target1 rdf:type :Target ,
                              owl:NamedIndividual ;
-                    :alignment :ExampleSet2AlignmentOperation1 ;
-                    faldo:end :ExampleSet1Feature2End .
+                    :alignment :ExampleSet2AlignmentOperation1 .
 
 :ExampleSet2AlignmentOperation1 rdf:type :AlignmentOperation ,
                                 owl:NamedIndividual ;
