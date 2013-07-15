@@ -13,134 +13,145 @@
 #
 #    Example 1
 #
+#    Encoding loci and basic genomic feature annotations. The
+#    example covers lines 0-3 of the example gene description
+#    given in the GFF3 specification.
+#           (http://www.sequenceontology.org/resources/gff3.html)
+#
+#    Please note that this seemingly verbose data representation
+#    is slighly misleading. The reuse of non-literals as well as
+#    binary RDF encodings such as RDF/HDT permits a more concise
+#    representation of the same data.
+#
 #################################################################
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1
 
 :ExampleSet1 rdf:type :File ,
                       owl:NamedIndividual ;
-             
              :gffVersion "3" ;
-             
              rdfs:comment "A simple example of a hierarchical genomic feature dependency. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1ChromEnd
 
 :ExampleSet1ChromEnd rdf:type faldo:ExactPosition ,
                               owl:NamedIndividual ;
-                     
                      faldo:position "1497228" .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1ChromStart
 
 :ExampleSet1ChromStart rdf:type faldo:ExactPosition ,
                                 owl:NamedIndividual ;
-                       
                        faldo:position "1" .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Feature1
 
 :ExampleSet1Feature1 rdf:type :Feature ,
                               owl:NamedIndividual ;
-                     
                      :id "gene00001" ;
-                     
                      :name "EDEN" ;
-                     
                      :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000704" ;
-                     
                      :seqid :ExampleSet1Landmark1 .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Feature1_2Start
 
 :ExampleSet1Feature1_2Start rdf:type faldo:ExactPosition ,
                                      owl:NamedIndividual ;
-                            
                             faldo:position "1000" .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Feature2
 
 :ExampleSet1Feature2 rdf:type :Feature ,
                               owl:NamedIndividual ;
-                     
                      :id "tfbs00001" ;
-                     
                      :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000235" ;
-                     
                      :parent :ExampleSet1Feature1 ;
-                     
                      :locus :ExampleSet1Region3 .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Feature2End
 
 :ExampleSet1Feature2End rdf:type faldo:ExactPosition ,
                                  owl:NamedIndividual ;
-                        
                         faldo:position "1012" .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Landmark1
 
 :ExampleSet1Landmark1 rdf:type :Landmark ,
                                owl:NamedIndividual ;
-                      
                       :id "ctg123" ;
-                      
                       :locus :ExampleSet1Region1 .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Region1
 
 :ExampleSet1Region1 rdf:type faldo:Region ,
                              owl:NamedIndividual ;
-                    
                     faldo:begin :ExampleSet1ChromEnd ,
                                 :ExampleSet1ChromStart .
 
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Region2
-
 :ExampleSet1Region2 rdf:type faldo:ForwardStrandPosition ,
                              owl:NamedIndividual ;
-                    
                     faldo:begin :ExampleSet1Feature1_2Start ;
-                    
                     faldo:end :ExampleSetFeature1End .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSet1Region3
 
 :ExampleSet1Region3 rdf:type faldo:Region ,
                              owl:NamedIndividual ;
-                    
                     faldo:begin :ExampleSet1Feature1_2Start ;
-                    
                     faldo:end :ExampleSet1Feature2End .
-
-
-
-###  http://www.biointerchange.org/gfvo#ExampleSetFeature1End
 
 :ExampleSetFeature1End rdf:type faldo:ExactPosition ,
                                 owl:NamedIndividual ;
-                       
                        faldo:position "9000" .
+
+#################################################################
+#
+#    Example 2
+#
+#    Encoding of a sequence alignment. This is part of the GFF3
+#    specification, denoting the alignment between the reference
+#    sequence "chr3" and the target sequence "EST23".
+#           (http://www.sequenceontology.org/resources/gff3.html)
+#
+#################################################################
+
+:ExampleSet2 rdf:type :Set ,
+                      owl:NamedIndividual ;
+             rdfs:comment "An example of a sequence alignment. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
+
+:ExampleSet2Feature1 rdf:type :Feature ,
+                              owl:NamedIndividual ;
+                     :id "Match1" ;
+                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000343" ;
+                     :seqid :ExampleSet2Landmark1 .
+
+:ExampleSet2Feature2 rdf:type :Feature ,
+                              owl:NamedIndividual ;
+                     :id "EST23" ;
+                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000345" ;
+                     :target :ExampleSet2Target1 .
+
+:ExampleSet2Landmark1 rdf:type :Landmark ,
+                               owl:NamedIndividual ;
+                      :id "chr3" .
+
+:ExampleSet2Target1 rdf:type :Target ,
+                             owl:NamedIndividual ;
+                    :alignment :ExampleSet2AlignmentOperation1 ;
+                    faldo:end :ExampleSet1Feature2End .
+
+:ExampleSet2AlignmentOperation1 rdf:type :AlignmentOperation ,
+                                owl:NamedIndividual ;
+                       :operation :Match ;
+                       :span "8" ;
+                       :first :ExampleSet2AlignmentOperation1 ;
+                       :rest :ExampleSet2AlignmentOperation2 .
+
+:ExampleSet2AlignmentOperation2 rdf:type :AlignmentOperation ,
+                                owl:NamedIndividual ;
+                       :operation :TargetSequenceGap ;
+                       :span "3" ;
+                       :first :ExampleSet2AlignmentOperation2 ;
+                       :rest :ExampleSet2AlignmentOperation3 .
+
+:ExampleSet2AlignmentOperation3 rdf:type :AlignmentOperation ,
+                                owl:NamedIndividual ;
+                       :operation :Match ;
+                       :span "6" ;
+                       :first :ExampleSet2AlignmentOperation3 ;
+                       :rest :ExampleSet2AlignmentOperation4 .
+
+:ExampleSet2AlignmentOperation4 rdf:type :AlignmentOperation ,
+                                owl:NamedIndividual ;
+                       :operation :ReferenceSequenceGap ;
+                       :span "1" ;
+                       :first :ExampleSet2AlignmentOperation4 ;
+                       :rest :ExampleSet2AlignmentOperation5 .
+
+:ExampleSet2AlignmentOperation5 rdf:type :AlignmentOperation ,
+                                owl:NamedIndividual ;
+                       :operation :Match ;
+                       :span "6" ;
+                       :first :ExampleSet2AlignmentOperation5 .
 
 
