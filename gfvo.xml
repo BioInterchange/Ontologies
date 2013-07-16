@@ -20,7 +20,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
-        <owl:versionInfo>0.9.6</owl:versionInfo>
+        <owl:versionInfo>0.9.8</owl:versionInfo>
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <dc:title xml:lang="en">Genomic Feature and Variation Ontology (GFVO)</dc:title>
@@ -176,7 +176,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#dbxref">
         <rdfs:label>dbxref</rdfs:label>
-        <rdfs:comment xml:lang="en">A database cross-reference to associate a feature or its structured pragma metadata to a representation in another database.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A database cross-reference to associate a feature or its structured pragma metadata in GVF to a representation in another database.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -293,7 +293,7 @@
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#locus">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>locus</rdfs:label>
-        <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a feature&apos;s start, stop, strand properties.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The locus determines the genomic position of an genomic object. The FALDO &quot;Region&quot; class can denote genomic feature&apos;s start, stop, and strand properties, it can express fuzzy genomic ranges if exact genomic coordinates are unknown. For &quot;Landmark&quot; class instances, the locus provides the start and end coordinates of the landmark.</rdfs:comment>
         <rdfs:range rdf:resource="&faldo;Region"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -325,7 +325,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#ontologyTerm">
         <rdfs:label>ontology term</rdfs:label>
-        <rdfs:comment xml:lang="en">A cross-reference to an ontology term that is associated with a feature.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A cross-reference to an ontology term that is associated with a feature. For instances of the &quot;Variant&quot; class, the associated ontology term must be a Variant Ontology term (VariO; http://purl.obolibrary.org/obo/VariO_0001 or subclasses thereof).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -427,7 +427,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#seqid">
         <rdfs:label>seqid</rdfs:label>
-        <rdfs:comment xml:lang="en">Establishes the landmark (e.g. a chromosome, scaffold or contig) on which the feature or breakpoint is located.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Establishes the landmark on which the feature or breakpoint is located. A landmark is typically a chromosome, scaffold or contig, but can be any other genomic object (DNA, RNA, protein) in principle.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -724,11 +724,19 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#aminoAcid">
         <rdfs:label>amino acid</rdfs:label>
-        <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&apos;s genome coordinates. Amino acid that overlaps with the variant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Amino acid in the reference genome that overlaps with a variant&apos;s genome coordinates.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -739,21 +747,13 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#averageCoverage -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#averageCoverage">
         <rdfs:label>average coverage</rdfs:label>
-        <rdfs:comment xml:lang="en">Undocumented in GVF specification.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Undocumented in GVF specification. Even though the property&apos;s semantics are undocumented, it is still included in the ontology in order to reflect the data values that might be encoded in GVF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologyPlatformDatatypeProperty"/>
@@ -773,7 +773,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#build">
         <rdfs:label>build</rdfs:label>
-        <rdfs:comment xml:lang="en">Name of a genome assembly build that denotes the provenance of features in a feature set. For example, &apos;NCBI 36&apos; or &apos;FlyBase r4.1&apos;.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Name of a genome assembly build that denotes the provenance of genomic features and variants in a &quot;Set&quot;. For example, &apos;GRCh37&apos;, &apos;NCBI 36&apos;, &apos;FlyBase r4.1&apos;, or &apos;hg19&apos;. If possible, the patch level of the assembly build should be included, such as &apos;GRCh37.p7&apos;.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Set"/>
@@ -794,18 +794,10 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#codon">
         <rdfs:label>codon</rdfs:label>
-        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant. Describes the codon that overlaps this variant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -816,6 +808,14 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#comment -->
@@ -825,16 +825,6 @@
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <rdfs:comment xml:lang="en">Comments should be made using &quot;http://www.w3.org/2000/01/rdf-schema#comment&quot;.This datatype property only exists to redirect the focus to RDF Schema for commenting, since it might be expected that comments are modeled similar to other datatype properties involving &quot;Data Source&quot;, &quot;Method&quot;, &quot;Phenotype Description&quot; or &quot;Technology Platform&quot;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologicalAnnotationDatatypeProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#DataSource"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Method"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhenotypeDescription"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -845,6 +835,16 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#DataSource"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Method"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhenotypeDescription"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#customAnnotationDatatypeProperty -->
@@ -901,6 +901,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#fileDatatypeProperty">
         <rdfs:label>file datatype property</rdfs:label>
+        <rdfs:comment xml:lang="en">Datatype properties related to &quot;File&quot; class instances. Subclasses of this property are used for denoting data that is specific to files only and which is only preserved as a means to encode for all data items defined by the GFF3, GTF, GVF and VCF specifications. These properties cannot be carried over into the result of set operations (s.a. union) between &quot;File&quot;/&quot;Set&quot; class instances. Keeping these properties in the result set between set operations may result in wrong annotations or contradictions (e.g., mutliple assignment of different versions or dates).</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#setDatatypeProperty"/>
     </owl:DatatypeProperty>
     
@@ -908,7 +909,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#fileDate">
         <rdfs:label>file date</rdfs:label>
-        <rdfs:comment xml:lang="en">Creation date of the file that this set stems from.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Creation date of the data file whose genomic data is captured by the associated &quot;File&quot; instance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#File"/>
@@ -920,7 +921,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#fileVersion">
         <rdfs:label>file version</rdfs:label>
-        <rdfs:comment xml:lang="en">Version of the GVF file that this set stems from.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Proprietary version of the file or its contents whose genomic data is associated with a &quot;File&quot; instance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#File"/>
@@ -941,7 +942,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#frequency">
         <rdfs:label>frequency</rdfs:label>
-        <rdfs:comment xml:lang="en">Frequency of a variant in a population.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Frequency of a variant in a population. The population is determined by the &quot;Set&quot; in which the &quot;Variant&quot; resides.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
@@ -952,7 +953,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#gffVersion">
         <rdfs:label>gff version</rdfs:label>
-        <rdfs:comment xml:lang="en">Version of the GFF specification that defines the feature set contents apart from GVF related definitions.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Version of the GFF3 specification that defines the contents captured by the &quot;File&quot; class instance. The version number should be greater or equal than 3.0, but less than 4.0. For GFF2/GTF version number assignment, see the &quot;gtf version&quot; datatype property.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#File"/>
@@ -976,7 +977,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#gtfVersion">
         <rdfs:label>gtf version</rdfs:label>
-        <rdfs:comment xml:lang="en">Version of the GTF specification that defines the feature set contents.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Version of the GTF specification that defines the contents captured by the &quot;File&quot; class instance. The version number should be greater or equal than 2.0, but less than 3.0. This number derives from the fact that GTF files are equivalent to GFF2 files. GTF/GFF2 files are incompatible with the GFF3 specification. For GFF3 version number assignment, see the &quot;gff version&quot; datatype property.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#File"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#fileDatatypeProperty"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
@@ -999,7 +1000,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#gvfVersion">
         <rdfs:label>gvf version</rdfs:label>
-        <rdfs:comment xml:lang="en">Version of the GVF specification that defines the feature set contents.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Version of the GVF specification that defines the contents captured by the &quot;File&quot; class instance. The version number should be greater or equal than 1.0, but less than 2.0. GVF files usually make a statement about their underlying GFF3 specification that they rely on too, which should be encoded using the &quot;gff version&quot; datatype property.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#File"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#fileDatatypeProperty"/>
@@ -1022,7 +1023,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#id">
         <rdfs:label>id</rdfs:label>
-        <rdfs:comment xml:lang="en">A unique identifier for the feature within the feature set (&quot;Set&quot;/&quot;File&quot; class instance).</rdfs:comment>
+        <rdfs:comment xml:lang="en">A unique identifier for the feature within the feature set (a &quot;Set&quot;/&quot;File&quot; class instance). The unique identifier is important when dealing with GFF3, GTF, GVF or VCF files as a stand in object that makes the aggregation and separation of genomic feature and variant information possible. In RDF, the URI of subject should be used primarily, provided that its URI can be considered stable.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1055,7 +1056,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#isCircular">
         <rdfs:label xml:lang="en">is circular</rdfs:label>
-        <rdfs:comment xml:lang="en">Truth value describing whether the feature is circular or not.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Truth value describing whether the feature is circular or not. This can be used to describe, for example, circular DNA as being found in bacteria or viruses. It can also be applied to mitochondrial DNA or plastid DNA, where applicable.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
@@ -1143,7 +1144,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#phase">
         <rdfs:label>phase</rdfs:label>
-        <rdfs:comment xml:lang="en">Phase of the feature, if it is a CDS. Called &quot;frame&quot; in GTF. A feature&apos;s phase ca n be either 0, 1, or 2.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Phase of the feature, if it is a CDS. Called &quot;frame&quot; in GTF. A feature&apos;s phase can be either 0, 1, or 2.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureDatatypeProperty"/>
@@ -1186,7 +1187,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#platformClass">
         <rdfs:label>platform class</rdfs:label>
-        <rdfs:comment xml:lang="en">Type of technology used to gather the variant data. Unrestricted range due to open specification.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of technology used to gather the variant data. The GVF specification&apos;s list of available classes is naturally incomplete. The range of this property is therefore unrestricted due to its open specification.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologyPlatformDatatypeProperty"/>
@@ -1206,7 +1207,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#platformName">
         <rdfs:label>platform name</rdfs:label>
-        <rdfs:comment xml:lang="en">Sequencer or other machine used to collect the variant data. Unrestricted range due to open specification.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sequencer or other machine used to collect the variant data. The GVF specification&apos;s list of available platforms is naturally incomplete. The range of this property is therefore unrestricted due to its open specification.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologyPlatformDatatypeProperty"/>
@@ -1226,7 +1227,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#readLength">
         <rdfs:label>read length</rdfs:label>
-        <rdfs:comment xml:lang="en">Undocumented in GVF specification.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Undocumented in GVF specification. Even though the property&apos;s semantics are undocumented, it is still included in the ontology in order to reflect the data values that might be encoded in GVF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologyPlatformDatatypeProperty"/>
@@ -1246,7 +1247,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#readPairSpan">
         <rdfs:label>read pair span</rdfs:label>
-        <rdfs:comment xml:lang="en">Undocumented in GVF specification.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Undocumented in GVF specification. Even though the property&apos;s semantics are undocumented, it is still included in the ontology in order to reflect the data values that might be encoded in GVF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#TechnologyPlatform"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologyPlatformDatatypeProperty"/>
@@ -1266,7 +1267,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#reads">
         <rdfs:label>reads</rdfs:label>
-        <rdfs:comment xml:lang="en">Number of reads that are supporting a variant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Number of reads that are supporting a variant. Valid values are integers greater or equal than zero.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
@@ -1320,16 +1321,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:onDatatype rdf:resource="&xsd;string"/>
-                <owl:withRestrictions rdf:parseType="Collection">
-                    <rdf:Description>
-                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.|!|\^)</xsd:pattern>
-                    </rdf:Description>
-                </owl:withRestrictions>
-            </rdfs:Datatype>
-        </rdfs:range>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1340,6 +1331,16 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="&xsd;string"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:pattern>([ACGTUWSMKRYBDHVN\-]+|\~[0-9]*|\.|!|\^)</xsd:pattern>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#sequencedIndividualDatatypeProperty -->
@@ -1384,7 +1385,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#span">
         <rdfs:label>span</rdfs:label>
-        <rdfs:comment xml:lang="en">A span denotes the number of continuous nucleotides or amino acids an &quot;Alignment Operation&quot; is annotating.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A span denotes the number of continuous nucleotides or amino acids an &quot;Alignment Operation&quot; is annotating. A span can be of length zero or greater.</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#AlignmentOperation"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#alignmentOperationDatatypeProperty"/>
         <rdfs:range>
@@ -1403,7 +1404,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#tag">
         <rdfs:label>tag</rdfs:label>
-        <rdfs:comment xml:lang="en">Tag name of a feature attribute.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Tag name of a feature attribute. &quot;Attribute&quot; and &quot;Structured Attribute&quot; instances are key/value(s) pairs, The key in that assignment is referred to as the &quot;tag&quot;. Custom annotations, i.e. attributes that are not defined by the file format specifications, should use lowercase tags. Future extensions of the specifications might introduce new attributes though, which can be encoded using custom annotations by RDFization tools. The tag should therefore not be treated as strictly lowercase when dealing with custom annotations.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1456,7 +1457,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#totalReads">
         <rdfs:label>total reads</rdfs:label>
-        <rdfs:comment xml:lang="en">Total number of reads.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Total number of reads for a &quot;Sequenced Individual&quot;. When merging &quot;Set&quot;/&quot;File&quot; class instances, it should be noted whether the total number of reads needs to be updated based on the identity of sequenced individuals in the involved sets.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#sequencedIndividualDatatypeProperty"/>
@@ -1491,7 +1492,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#vcfVersion">
         <rdfs:label>vcf version</rdfs:label>
-        <rdfs:comment xml:lang="en">Version of the VCF specification that defines the feature set contents.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Version of the VCF specification that defines the contents captured by the &quot;File&quot; class instance. The version number should be greater or equal than 4.0, but less than 5.0.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#File"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#fileDatatypeProperty"/>
@@ -1594,7 +1595,7 @@
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#DataSource">
         <rdfs:label>Data Source</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#TechnologicalAnnotation"/>
-        <rdfs:comment xml:lang="en">Provides information about the source of the data. For example, it can link out to actual sequences associated with the Feature individuals in a Set.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Provides information about the source of the data. For example, it can link out to actual sequences associated with &quot;Feature&quot; individuals in a &quot;Set&quot;.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1613,7 +1614,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#TechnologicalEnumeration"/>
-        <rdfs:comment xml:lang="en">Determines the datatype of a variant sequence.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Determines the physical type of data behind a variant sequence. For example, &quot;RNA Sequence&quot;. The data type enumeration is used by the &quot;Data Source&quot; class.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1648,8 +1649,22 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#breakpoint"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#parent"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1662,36 +1677,8 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#variant"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#parent"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#5primeContext"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#breakpoint"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1704,16 +1691,30 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
+                <owl:onClass rdf:resource="&faldo;Region"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#variant"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
-                <owl:onClass rdf:resource="&faldo;Region"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The feature class captures information about genomic sequence features. A genomic feature can be a large object, such as a chromosome or contig, down to single base-pair reference or variant alleles. A feature class instance is a composite of further information that is encoded using &quot;Attribute&quot;, &quot;Reference&quot;, &quot;Variation&quot; and other sub-classes of &quot;Feature Annotation&quot;.</rdfs:comment>
@@ -1748,7 +1749,7 @@
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GenomicEnumeration">
         <rdfs:label>Genomic Enumeration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Enumeration"/>
-        <rdfs:comment xml:lang="en">A genomic enumeration provides a finite choice between OWL individuals that are denoting instances of genomic concepts. For example, zygosity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A genomic enumeration provides a finite choice between OWL individuals that are denoting instances of genomic concepts. For example, &quot;Zygosity&quot;.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#GenomicSource -->
@@ -1820,7 +1821,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#TechnologicalEnumeration"/>
-        <rdfs:comment xml:lang="en">Type of reads obtained for a given technology platform.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of reads obtained for a given technology platform. Reads can be either &quot;Fragment&quot; or &quot;Pair&quot; by this enumeration.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1855,7 +1856,7 @@
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SequencedIndividualEnumeration">
         <rdfs:label>Sequenced Individual Enumeration</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Enumeration"/>
-        <rdfs:comment xml:lang="en">A sequenced individual enumeration provides a finite choice between OWL individuals that are denoting instances that are related to human individuals, patients, donors, etc. For example, human sex is an enumeration related to sequenced individuals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A sequenced individual enumeration provides a finite choice between OWL individuals that are denoting instances that are related to human individuals, patients, donors, etc. For example, &quot;Sex&quot; is an enumeration related to the sex of sequenced individuals.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Set -->
@@ -1999,7 +2000,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#ArrayComparativeGenomicHybridization">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#DataType"/>
-        <rdfs:label>ArrayComparativeGenomicHybridization</rdfs:label>
+        <rdfs:label>Array Comparative Genomic Hybridization</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes an array-comparative genomic hybridization.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
@@ -2008,7 +2009,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#DNAMicroarray">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#DataType"/>
-        <rdfs:label>DNAMicroarray</rdfs:label>
+        <rdfs:label>DNA Microarray</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a DNA microarray probe.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
@@ -2017,7 +2018,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#DNASequence">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#DataType"/>
-        <rdfs:label>DNASequence</rdfs:label>
+        <rdfs:label>DNA Sequence</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a DNA sequence.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
@@ -2027,7 +2028,7 @@
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Female">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Sex"/>
         <rdfs:label>Female</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that a Set contains features of a female.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes that a &quot;Set&quot; contains genomic features or variants of a female. Females are defined as individuals producing ova.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
     
@@ -2035,6 +2036,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Alignment"/>
+        <rdfs:label>Forward Reference Sequence Frameshift</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a frameshift forward in the reference sequence. The reference sequence is denoted by a &quot;Landmark&quot; whilst the aligned target sequence is an instance of the &quot;Target&quot; class.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- http://www.biointerchange.org/gfvo#Fragment -->
@@ -2051,7 +2054,7 @@
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Germline">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#GenomicSource"/>
         <rdfs:label>Germline</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that a set contains features of germline cells.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes that a &quot;Set&quot; contains features of germline cells.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
     
@@ -2062,6 +2065,14 @@
         <rdfs:label>Hemizygous</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes hemizygous alleles.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+    </owl:NamedIndividual>
+    
+    <!-- http://www.biointerchange.org/gfvo#Hermaphrodite -->
+
+    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite">
+        <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Sex"/>
+        <rdfs:label>Hermaphrodite</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes that a &quot;Set&quot; contains features of an individual that contains both male and female gemetes.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- http://www.biointerchange.org/gfvo#Heterozygous -->
@@ -2087,7 +2098,7 @@
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Male">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Sex"/>
         <rdfs:label>Male</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that a Set contains features of a male.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes that a &quot;Set&quot; contains genomic features or variants of a male. Males are defined as the individuals producing spermatozoa.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
     
@@ -2095,6 +2106,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Match">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Alignment"/>
+        <rdfs:label>Match</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a match between the reference sequence and target sequence. The reference sequence is denoted by a &quot;Landmark&quot; whilst the aligned target sequence is an instance of the &quot;Target&quot; class.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- http://www.biointerchange.org/gfvo#Pair -->
@@ -2119,7 +2132,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#RNASequence">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#DataType"/>
-        <rdfs:label>RNASequence</rdfs:label>
+        <rdfs:label>RNA Sequence</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes an RNA sequence.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
@@ -2128,12 +2141,16 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequenceGap">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Alignment"/>
+        <rdfs:label>Reference Sequence Gap</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a gap in the reference sequence for an alignment. The reference sequence is denoted by a &quot;Landmark&quot; whilst the aligned target sequence is an instance of the &quot;Target&quot; class.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift -->
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Alignment"/>
+        <rdfs:label>Reverse Reference Sequence Frameshift</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a frameshift backwards (reverse) in the reference sequence. The reference sequence is denoted by a &quot;Landmark&quot; whilst the aligned target sequence is an instance of the &quot;Target&quot; class.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- http://www.biointerchange.org/gfvo#Somatic -->
@@ -2141,7 +2158,7 @@
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#Somatic">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#GenomicSource"/>
         <rdfs:label>Somatic</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that a set contains features of somatic cells.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes that a &quot;Set&quot; contains features of somatic cells.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:NamedIndividual>
     
@@ -2149,6 +2166,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gfvo#TargetSequenceGap">
         <rdf:type rdf:resource="http://www.biointerchange.org/gfvo#Alignment"/>
+        <rdfs:label>Target Sequence Gap</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes a gap in the target sequence for an alignment. The reference sequence is denoted by a &quot;Landmark&quot; whilst the aligned target sequence is an instance of the &quot;Target&quot; class.</rdfs:comment>
     </owl:NamedIndividual>
     
     <!-- 
