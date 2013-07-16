@@ -37,6 +37,9 @@ terms[:class] = {}
 terms[:named_individual] = {}
 
 current_term = {}
+collection = []
+
+state = :idle
 
 STDIN.each { |line|
   line.chomp!
@@ -93,10 +96,27 @@ STDIN.each { |line|
     next
   elsif line.start_with?('<rdfs:domain ') then
     if line.start_with?('<rdfs:domain rdf:resource="http://www.biointerchange.org/') then
-      terms[type][term][:local_domain] = line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '')
+      terms[type][term][:local_domain] = [ line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '') ]
     else
       terms[type][term][:external_domain] = line.sub(/^[^"]+"/, '').sub(/".*$/, '')
     end
+    next
+  elsif line.start_with?('<rdfs:domain>') then
+    collection = []
+    state = :domain
+    next
+  elsif line.start_with?('<owl:Class>') and state == :domain then
+    state = :class
+  elsif line.start_with?('<owl:unionOf rdf:parseType="Collection">') and state == :class then
+    state = :union
+    next
+  elsif line.start_with?('</rdfs:domain') then
+    terms[type][term][:local_domain] = collection
+    state = :idle
+    next
+  elsif line.start_with?('<rdf:Description ') and state == :union then
+    # Assuming local domain/range here.
+    collection << line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '')
     next
   elsif line.start_with?('<rdfs:range ') or line.start_with?('<owl:onDatatype') then
     if line.start_with?('<rdfs:range rdf:resource="http://www.biointerchange.org/') then
@@ -157,7 +177,7 @@ terms[:object_property].keys.sort.each { |term|
   puts '<p>'
   puts "  <h5 id=\"objectProperty#{term}\">Object Property #{namespace}:#{term}</h5>"
   puts "  <div style=\"margin-left: #{left_margin_items}; margin-bottom: #{bottom_margin_items}\">"
-  puts "  <div><i>Domain:</i> <a href=\"#class#{terms[:object_property][term][:local_domain]}\">#{terms[:object_property][term][:local_domain]}</a></div>" if terms[:object_property][term][:local_domain]
+  puts "  <div><i>Domain:</i> #{terms[:object_property][term][:local_domain].map { |domain| "<a href=\"#class#{domain}\">#{domain}</a>"}.join(', ') }</div>" if terms[:object_property][term][:local_domain]
   puts "  <div><i>Domain:</i> <a href=\"#{terms[:object_property][term][:external_domain]}\">#{terms[:object_property][term][:external_domain]}</a></div>" if terms[:object_property][term][:external_domain]
   puts "  <div><i>Range:</i> <a href=\"#class#{terms[:object_property][term][:local_range]}\">#{terms[:object_property][term][:local_range]}</a></div>" if terms[:object_property][term][:local_range]
   puts "  <div><i>Range:</i> <a href=\"#{terms[:object_property][term][:external_range]}\">#{terms[:object_property][term][:external_range]}</a></div>" if terms[:object_property][term][:external_range]
@@ -174,7 +194,7 @@ terms[:datatype_property].keys.sort.each { |term|
   puts '<p>'
   puts "  <h5 id=\"datatypeProperty#{term}\">Datatype Property #{namespace}:#{term}</h5>"
   puts "  <div style=\"margin-left: #{left_margin_items}; margin-bottom: #{bottom_margin_items}\">"
-  puts "  <div><i>Domain:</i> <a href=\"#class#{terms[:datatype_property][term][:local_domain]}\">#{terms[:datatype_property][term][:local_domain]}</a></div>" if terms[:datatype_property][term][:local_domain]
+  puts "  <div><i>Domain:</i> #{terms[:datatype_property][term][:local_domain].map { |domain| "<a href=\"#class#{domain}\">#{domain}</a>"}.join(', ') }</div>" if terms[:datatype_property][term][:local_domain]
   puts "  <div><i>Domain:</i> <a href=\"#{terms[:datatype_property][term][:external_domain]}\">#{terms[:datatype_property][term][:external_domain]}</a></div>" if terms[:datatype_property][term][:external_domain]
   puts "  <div><i>Range:</i> <a href=\"#class#{terms[:datatype_property][term][:local_range]}\">#{terms[:datatype_property][term][:local_range]}</a></div>" if terms[:datatype_property][term][:local_range]
   puts "  <div><i>Range:</i> <a href=\"#{terms[:datatype_property][term][:external_range]}\">#{terms[:datatype_property][term][:external_range]}</a></div>" if terms[:datatype_property][term][:external_range]
