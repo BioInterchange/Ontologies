@@ -122,7 +122,11 @@ STDIN.each { |line|
     if line.start_with?('<rdfs:range rdf:resource="http://www.biointerchange.org/') then
       terms[type][term][:local_range] = line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '')
     else
-      terms[type][term][:external_range] = "#{external_namespaces[line.sub(/^[^&]+&/, '').sub(/;.*$/, '')]}#{line.sub(/^.+;/, '').sub(/".*$/, '')}"
+      if line.start_with?('<rdfs:range rdf:resource="http://') then
+        terms[type][term][:external_range] = line.sub(/^[^"]+"/, '').sub(/".*$/, '')
+      else
+        terms[type][term][:external_range] = "#{external_namespaces[line.sub(/^[^&]+&/, '').sub(/;.*$/, '')]}#{line.sub(/^.+;/, '').sub(/".*$/, '')}"
+      end
     end
     next
   elsif line.start_with?('<rdfs:isDefinedBy ') then
