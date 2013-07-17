@@ -20,7 +20,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
-        <owl:versionInfo>0.9.8</owl:versionInfo>
+        <owl:versionInfo>0.9.9</owl:versionInfo>
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <dc:title xml:lang="en">Genomic Feature and Variation Ontology (GFVO)</dc:title>
@@ -113,7 +113,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#breakpointObjectProperty">
         <rdfs:label>breakpoint object property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Breakpoint class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Breakpoint&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -168,7 +168,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#datasourceObjectProperty">
         <rdfs:label>datasource object property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with DataSource class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Data Source&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologicalAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -212,7 +212,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#effectObjectProperty">
         <rdfs:label>effect object property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Effect class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Effect&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variationAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -220,6 +220,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#featureAnnotationObjectProperty">
         <rdfs:label>feature annotation object property</rdfs:label>
+        <rdfs:comment xml:lang="en">Property of one of the genomic annotation classes, such as &quot;Breakpoint&quot;, &quot;Reference&quot;, &quot;Variant&quot;. For properties related to the core genomic data class &quot;Feature&quot;, see &quot;feature datatype property&quot; or &quot;feature object property&quot;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#recordObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -227,7 +228,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#featureObjectProperty">
         <rdfs:label>feature object property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Feature&quot; class instances. For properties related to &quot;Reference&quot;, &quot;Variant&quot;, or other genomic annotation classes, see &quot;feature annotation datatype property&quot; or &quot;feature annotation object property&quot;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#recordObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -398,6 +399,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#recordObjectProperty">
         <rdfs:label>record object property</rdfs:label>
+        <rdfs:comment xml:lang="en">A record object property is directly related to describing genomic feature or variant data. Classes that make use of record object properties are &quot;Feature&quot;, &quot;Variant&quot;, and so on. For container classes, such as &quot;Set&quot; and &quot;File&quot;, see &quot;set object property&quot;.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#reference -->
@@ -460,7 +462,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#sequencedIndividualObjectProperty">
         <rdfs:label>sequenced individual object property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with SequencedIndividual class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Sequenced Individual&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -475,7 +477,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#setObjectProperty">
         <rdfs:label>set object property</rdfs:label>
-        <rdfs:comment xml:lang="en">A property that is directly associated with the &quot;Set&quot; class. Immediate sub-properties of this property are independent to specific specifications such as GFF3, GTF, GVF or VCF. Not all sub-properties can be preserved when carrying out operations between multiple &quot;Set&quot; class instances. For example, the &quot;sex&quot; property applies to single individual sets and can only be kept in a set union between multiple &quot;Set&quot; class instances if all involved instances agree on this property.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A property that is directly associated with the &quot;Set&quot; class. Immediate sub-properties of this property are independent to specific specifications such as GFF3, GTF, GVF or VCF. Not all sub-properties can be preserved when carrying out operations between multiple &quot;Set&quot; class instances. For example, the &quot;sex&quot; property applies to single individual sets and can only be kept in a set union between multiple &quot;Set&quot; class instances if all involved instances agree on this property. For genomic feature and variant related properties, see &quot;record object property&quot; and &quot;record datatype property&quot;.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#sex -->
@@ -561,7 +563,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#targetProperty">
         <rdfs:label>target property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Target&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#locusAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -587,7 +589,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#technologyPlatformProperty">
         <rdfs:label>technology platform property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with TechnologyPlatform class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Technology Platform&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#technologicalAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -619,7 +621,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#variantObjectProperty">
         <rdfs:label>variant object property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Variant class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Properties that are directly associated with &quot;Variant&quot; class instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variationAnnotationObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -654,7 +656,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#3primeContext">
         <rdfs:label>3&apos; context</rdfs:label>
-        <rdfs:comment xml:lang="en">Sequence context of a feature on the positive strand (forward strand) on the 3&apos; end.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sequence context of a feature on the positive strand (forward strand) on the 3&apos; end. A valid sequence context is denoted by a string of one or more concatenated letters A, C, G, or T.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
@@ -675,7 +677,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#5primeContext">
         <rdfs:label>5&apos; context</rdfs:label>
-        <rdfs:comment xml:lang="en">Sequence context of a feature on the positive strand (forward strand) on the 5&apos; end.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Sequence context of a feature on the positive strand (forward strand) on the 5&apos; end. A valid sequence context is denoted by a string of one or more concatenated letters A, C, G, or T.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:domain rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
@@ -794,7 +796,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#codon">
         <rdfs:label>codon</rdfs:label>
-        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the codon from the reference sequence whose coordinates overlap with this variant. A valid codon description is a string of three -- or multiples thereof -- concatenated letters A, C, G, or T.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
@@ -851,6 +853,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#customAnnotationDatatypeProperty">
         <rdfs:label>custom annotation datatype property</rdfs:label>
+        <rdfs:comment xml:lang="en">Datatype property of an &quot;Attribute&quot; or &quot;Structured Attribute&quot; class instance. &quot;Attribute&quot; and &quot;Structured Attribute&quot; class instances are used to capture genomic feature and variation data assignments that may appear in a GFF3, GTF, GVF or VCF file, but which are not covered by their respective specifications.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#featureAnnotationDatatypeProperty"/>
     </owl:DatatypeProperty>
     
@@ -886,6 +889,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#featureAnnotationDatatypeProperty">
         <rdfs:label>feature annotation datatype property</rdfs:label>
+        <rdfs:comment xml:lang="en">Property of one of the genomic annotation classes, such as &quot;Breakpoint&quot;, &quot;Reference&quot;, &quot;Variant&quot;. For properties related to the core genomic data class &quot;Feature&quot;, see &quot;feature datatype property&quot; or &quot;feature object property&quot;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#recordDatatypeProperty"/>
     </owl:DatatypeProperty>
     
@@ -893,7 +897,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#featureDatatypeProperty">
         <rdfs:label>feature datatype property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property that is directly associated with a &quot;Feature&quot; class instance. For properties related to &quot;Reference&quot;, &quot;Variant&quot;, or other genomic annotation classes, see &quot;feature annotation datatype property&quot; or &quot;feature annotation object property&quot;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#recordDatatypeProperty"/>
     </owl:DatatypeProperty>
     
@@ -1287,6 +1291,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#recordDatatypeProperty">
         <rdfs:label>record datatype property</rdfs:label>
+        <rdfs:comment xml:lang="en">A record datatype property is directly related to describing genomic feature or variant data. Classes that make use of record datatype properties are &quot;Feature&quot;, &quot;Variant&quot;, and so on. For container classes, such as &quot;Set&quot; and &quot;File&quot;, see &quot;set datatype property&quot;.</rdfs:comment>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty -->
@@ -1355,7 +1360,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#setDatatypeProperty">
         <rdfs:label>set datatype property</rdfs:label>
-        <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A property that is directly associated with the &quot;Set&quot; class. Immediate sub-properties of this property are independent to specific specifications such as GFF3, GTF, GVF or VCF. Not all sub-properties can be preserved when carrying out operations between multiple &quot;Set&quot; class instances. For example, the &quot;build&quot; property can only be kept in a set union between multiple &quot;Set&quot; class instances if all involved instances agree on this property. For genomic feature and variant related properties, see &quot;record object property&quot; and &quot;record datatype property&quot;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
     </owl:DatatypeProperty>
     
@@ -1642,9 +1647,30 @@
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Record"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#5primeContext"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#source"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
+                <owl:onClass rdf:resource="&faldo;Region"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1656,29 +1682,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#parent"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#individual"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#5primeContext"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1691,9 +1703,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
-                <owl:onClass rdf:resource="&faldo;Region"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#parent"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Feature"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#individual"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#SequencedIndividual"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1701,20 +1720,6 @@
                 <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#variant"/>
                 <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Variant"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The feature class captures information about genomic sequence features. A genomic feature can be a large object, such as a chromosome or contig, down to single base-pair reference or variant alleles. A feature class instance is a composite of further information that is encoded using &quot;Attribute&quot;, &quot;Reference&quot;, &quot;Variation&quot; and other sub-classes of &quot;Feature Annotation&quot;.</rdfs:comment>
