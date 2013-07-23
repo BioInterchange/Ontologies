@@ -20,22 +20,22 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
-        <owl:versionInfo>0.9.10</owl:versionInfo>
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
+        <owl:versionInfo>0.9.11</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
-        <dc:title xml:lang="en">Genomic Feature and Variation Ontology (GFVO)</dc:title>
-        <dc:contributor xml:lang="en">Joachim Baran</dc:contributor>
-        <dc:contributor xml:lang="en">Karen Eilbeck</dc:contributor>
-        <dc:contributor xml:lang="en">Robert Hoehndorf</dc:contributor>
-        <dc:contributor xml:lang="en">Toshiaki Katayama</dc:contributor>
-        <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
         <dc:contributor xml:lang="en">Chris Mungall</dc:contributor>
         <dc:contributor xml:lang="en">Erick Antezana</dc:contributor>
         <dc:contributor xml:lang="en">Francesco Strozzi</dc:contributor>
+        <dc:title xml:lang="en">Genomic Feature and Variation Ontology (GFVO)</dc:title>
         <dc:creator xml:lang="en">Joachim Baran</dc:creator>
+        <dc:contributor xml:lang="en">Joachim Baran</dc:contributor>
+        <dc:contributor xml:lang="en">Karen Eilbeck</dc:contributor>
         <dc:contributor xml:lang="en">Michel Dumontier</dc:contributor>
         <dc:contributor xml:lang="en">Raoul Bonnal</dc:contributor>
+        <dc:contributor xml:lang="en">Robert Hoehndorf</dc:contributor>
         <dc:description xml:lang="en">The Genomic Feature and Variation Ontology (GFVO) is modeled to represent genomic data using the Resource Description Format (RDF). It was modeled to capture at least the contents of data files that adhere to the Generic Feature Format Version 3 (GFF3) by Lincoln Stein (http://www.sequenceontology.org/resources/gff3.html), the General Transfer Format (GTF) by various contributors (http://mblab.wustl.edu/GTF22.html), the Genome Variation Format Version 1 (GVF) by Karen Eilbeck, Paul Flicek, Gabor Marth, Martin Reese, Lincoln Stein and Mark Yandell (http://www.sequenceontology.org/resources/gvf.html), and the Variant Call Format (VCF) by Petr Danecek, Adam Auton, Goncalo Abecasis, Cornelis A. Albers, Eric Banks, Mark A. DePristo, Robert E. Handsaker, Gerton Lunter, Gabor T. Marth, Stephen T. Sherry, Gilean McVean, Richard Durbin and the 1000 Genomes Project Analysis Group (http://vcftools.sourceforge.net/specs.html). The creation of the ontology was inspired by previous work of Robert Hoehndorf on RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
+        <dc:contributor xml:lang="en">Toshiaki Katayama</dc:contributor>
+        <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
     </owl:Ontology>
     
     <!-- 
@@ -808,6 +808,14 @@
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#referenceAnnotationDatatypeProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#variant_datatype_property"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -818,14 +826,6 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Reference"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Variant"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#comment -->
@@ -1043,15 +1043,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#landmarkDatatypeProperty"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#targetDatatypeProperty"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Target"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -1062,6 +1053,15 @@
                 </owl:withRestrictions>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
+                    <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Target"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isCircular -->
@@ -1659,22 +1659,22 @@
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Record"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#5primeContext"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#breakpoint"/>
+                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#score"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&xsd;string"/>
+                <owl:onDataRange rdf:resource="&owl;real"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1687,22 +1687,15 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#source"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#5primeContext"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
-                <owl:onClass rdf:resource="&faldo;Region"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#source"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#alias"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1722,15 +1715,22 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#score"/>
-                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="&owl;real"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#breakpoint"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gfvo#Breakpoint"/>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#3primeContext"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.biointerchange.org/gfvo#locus"/>
+                <owl:onClass rdf:resource="&faldo;Region"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2208,7 +2208,6 @@
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#DataType"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Effect"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#File"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GenomicSource"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Landmark"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Method"/>
