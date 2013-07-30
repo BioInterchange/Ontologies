@@ -142,7 +142,7 @@ puts '<p>'
 puts "  Ontology namespace \"#{namespace}\": #{base}"
 puts '</p>'
 
-puts '<h4>Classes</h4>'
+puts '<h4>Classes</h4>' unless terms[:class].keys.empty?
 
 terms[:class].keys.sort.each { |term|
   puts '<p>'
@@ -161,7 +161,7 @@ terms[:class].keys.sort.each { |term|
   puts '</p>'
 }
 
-puts '<h4>Named Individuals (Constants, Enumerations)</h4>'
+puts '<h4>Named Individuals (Constants, Enumerations)</h4>' unless terms[:named_individual].keys.empty?
 
 terms[:named_individual].keys.sort.each { |term|
   puts '<p>'
@@ -175,7 +175,7 @@ terms[:named_individual].keys.sort.each { |term|
   puts '</p>'
 }
 
-puts '<h4>Object Properties (Referencing other Class Instances)</h4>'
+puts '<h4>Object Properties (Referencing other Class Instances)</h4>' unless terms[:object_property].keys.empty?
 
 terms[:object_property].keys.sort.each { |term|
   puts '<p>'
@@ -192,7 +192,7 @@ terms[:object_property].keys.sort.each { |term|
   puts '</p>'
 }
 
-puts '<h4>Datatype Properties (Strings, Numbers, Dates, etc.)</h4>'
+puts '<h4>Datatype Properties (Strings, Numbers, Dates, etc.)</h4>' unless terms[:datatype_property].keys.empty?
 
 terms[:datatype_property].keys.sort.each { |term|
   puts '<p>'
