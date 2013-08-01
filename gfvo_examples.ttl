@@ -153,4 +153,16 @@
                        :span "6" ;
                        :first :ExampleSet2AlignmentOperation5 .
 
+#################################################################
+#
+#    Example 3
+#
+#    Encoding of a sequence variant. This is part of the GVF
+#    specification, denoting two variants for two separate
+#    sequenced individuals.
+#           (http://www.sequenceontology.org/resources/gvf.html)
+#
+#################################################################
+
+# TODO
 
