@@ -28,6 +28,8 @@
 :ExampleSet1 rdf:type :File ,
                       owl:NamedIndividual ;
              :gffVersion "3" ;
+             :contains :ExampleSet1Feature1 ,
+                       :ExampleSet1Feature2 ;
              rdfs:comment "A simple example of a hierarchical genomic feature dependency. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
 :ExampleSet1ChromEnd rdf:type faldo:ExactPosition ,
@@ -97,6 +99,8 @@
 
 :ExampleSet2 rdf:type :Set ,
                       owl:NamedIndividual ;
+             :contains :ExampleSet2Feature1 ,
+                       :ExampleSet2Feature2 ;
              rdfs:comment "An example of a sequence alignment. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
 :ExampleSet2Feature1 rdf:type :Feature ,
@@ -159,10 +163,71 @@
 #
 #    Encoding of a sequence variant. This is part of the GVF
 #    specification, denoting two variants for two separate
-#    sequenced individuals.
+#    sequenced individuals: "Variant_seq=A,T;Genotype=0:1,1:1".
+#    The sequenced individuals in this example are denoted
+#    by the gender ambiguous class "Sequenced Individual", where
+#    instances of "Sequenced Female", "Sequenced Male", and
+#    "Sequenced Hermaphrodite" can be used where more details are
+#    available.
+#
+#    The use of "Chromosome" instances -- or their derivatives
+#    "Maternal Chromosome"/"Paternal Chromosome" -- is used
+#    for placing phased genotypes on their respective chromosome,
+#    which is also shown in this example.
+#
 #           (http://www.sequenceontology.org/resources/gvf.html)
 #
 #################################################################
 
-# TODO
+:ExampleSet3 rdf:type :Set ,
+                      owl:NamedIndividual ;
+             :contains :ExampleSet3Feature1 ,
+                       :ExampleSet3Feature2 ;
+             rdfs:comment "Encoding of a sequence variant. This example is part of the GVF specification, denoting two variants for two separate sequenced individuals (http://www.sequenceontology.org/resources/gvf.html)."@en .
+
+:ExampleSet3SequencedIndividual1 rdf:type :SequencedIndividual ,
+                                 owl:NamedIndividual .
+
+:ExampleSet3SequencedIndividual2 rdf:type :SequencedIndividual ,
+                                 owl:NamedIndividual .
+
+:ExampleSet3Feature1 rdf:type :Feature ,
+                              owl:NamedIndividual ;
+                     :id "Variant1" ;
+                     :individual :ExampleSet3SequencedIndividual1 ;
+                     :variant :ExampleSet3Variant1 ,
+                              :ExampleSet3Variant2 .
+
+:ExampleSet3Feature2 rdf:type :Feature ,
+                              owl:NamedIndividual ;
+                     :id "Variant1" ;
+                     :individual :ExampleSet3SequencedIndividual2 ;
+                     :variant :ExampleSet3Variant3 ,
+                              :ExampleSet3Variant4 .
+
+:ExampleSet3Variant1 rdf:type :Variant ,
+                              owl:NamedIndividual ;
+                     :genotype :ExampleSet3ChromosomeA ;
+                     :sequence "A" .
+
+:ExampleSet3Variant2 rdf:type :Variant ,
+                              owl:NamedIndividual ;
+                     :genotype :ExampleSet3ChromosomeB ;
+                     :sequence "T" .
+
+:ExampleSet3Variant3 rdf:type :Variant ,
+                              owl:NamedIndividual ;
+                     :genotype :ExampleSet3ChromosomeA ;
+                     :sequence "T" .
+
+:ExampleSet3Variant4 rdf:type :Variant ,
+                              owl:NamedIndividual ;
+                     :genotype :ExampleSet3ChromosomeB ;
+                     :sequence "T" .
+
+:ExampleSet3ChromosomeA rdf:type :Chromosome ,
+                        owl:NamedIndividual .
+
+:ExampleSet3ChromosomeB rdf:type :Chromosome ,
+                        owl:NamedIndividual .
 
