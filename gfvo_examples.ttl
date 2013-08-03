@@ -164,6 +164,13 @@
 #    Encoding of a sequence variant. This is part of the GVF
 #    specification, denoting two variants for two separate
 #    sequenced individuals: "Variant_seq=A,T;Genotype=0:1,1:1".
+#
+#    The variants are represented by "Heterozygous Variant" and
+#    "Homozygous Variant" instances. If this distinction cannot
+#    be made, for example when information is only available for
+#    one chromosome, then the generic "Variant" class can be
+#    instantiated instead.
+#
 #    The sequenced individuals in this example are denoted
 #    by the gender ambiguous class "Sequenced Individual", where
 #    instances of "Sequenced Female", "Sequenced Male", and
@@ -205,22 +212,22 @@
                      :variant :ExampleSet3Variant3 ,
                               :ExampleSet3Variant4 .
 
-:ExampleSet3Variant1 rdf:type :Variant ,
+:ExampleSet3Variant1 rdf:type :HeterozygousVariant ,
                               owl:NamedIndividual ;
                      :genotype :ExampleSet3ChromosomeA ;
                      :sequence "A" .
 
-:ExampleSet3Variant2 rdf:type :Variant ,
+:ExampleSet3Variant2 rdf:type :HeterozygousVariant ,
                               owl:NamedIndividual ;
                      :genotype :ExampleSet3ChromosomeB ;
                      :sequence "T" .
 
-:ExampleSet3Variant3 rdf:type :Variant ,
+:ExampleSet3Variant3 rdf:type :HomozygousVariant ,
                               owl:NamedIndividual ;
                      :genotype :ExampleSet3ChromosomeA ;
                      :sequence "T" .
 
-:ExampleSet3Variant4 rdf:type :Variant ,
+:ExampleSet3Variant4 rdf:type :HomozygousVariant ,
                               owl:NamedIndividual ;
                      :genotype :ExampleSet3ChromosomeB ;
                      :sequence "T" .
