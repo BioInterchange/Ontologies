@@ -25,65 +25,53 @@
 #
 #################################################################
 
-:ExampleSet1 rdf:type :File ,
-                      owl:NamedIndividual ;
+:ExampleSet1 rdf:type :File ;
              :gffVersion "3" ;
              :contains :ExampleSet1Feature1 ,
                        :ExampleSet1Feature2 ;
              rdfs:comment "A simple example of a hierarchical genomic feature dependency. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
-:ExampleSet1ChromEnd rdf:type faldo:ExactPosition ,
-                              owl:NamedIndividual ;
+:ExampleSet1ChromEnd rdf:type faldo:ExactPosition ;
                      faldo:position "1497228" .
 
-:ExampleSet1ChromStart rdf:type faldo:ExactPosition ,
-                                owl:NamedIndividual ;
+:ExampleSet1ChromStart rdf:type faldo:ExactPosition ;
                        faldo:position "1" .
 
-:ExampleSet1Feature1 rdf:type :Feature ,
-                              owl:NamedIndividual ;
+:ExampleSet1Feature1 rdf:type :Feature ;
                      :id "gene00001" ;
                      :name "EDEN" ;
                      :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000704" ;
                      :seqid :ExampleSet1Landmark1 .
 
-:ExampleSet1Feature1_2Start rdf:type faldo:ExactPosition ,
-                                     owl:NamedIndividual ;
+:ExampleSet1Feature1_2Start rdf:type faldo:ExactPosition ;
                             faldo:position "1000" .
 
-:ExampleSet1Feature2 rdf:type :Feature ,
-                              owl:NamedIndividual ;
+:ExampleSet1Feature2 rdf:type :Feature ;
                      :id "tfbs00001" ;
                      :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000235" ;
                      :parent :ExampleSet1Feature1 ;
                      :locus :ExampleSet1Region3 .
 
-:ExampleSet1Feature2End rdf:type faldo:ExactPosition ,
-                                 owl:NamedIndividual ;
+:ExampleSet1Feature2End rdf:type faldo:ExactPosition ;
                         faldo:position "1012" .
 
-:ExampleSet1Landmark1 rdf:type :Landmark ,
-                               owl:NamedIndividual ;
+:ExampleSet1Landmark1 rdf:type :Landmark ;
                       :id "ctg123" ;
                       :locus :ExampleSet1Region1 .
 
-:ExampleSet1Region1 rdf:type faldo:Region ,
-                             owl:NamedIndividual ;
+:ExampleSet1Region1 rdf:type faldo:Region ;
                     faldo:begin :ExampleSet1ChromEnd ,
                                 :ExampleSet1ChromStart .
 
-:ExampleSet1Region2 rdf:type faldo:ForwardStrandPosition ,
-                             owl:NamedIndividual ;
+:ExampleSet1Region2 rdf:type faldo:ForwardStrandPosition ;
                     faldo:begin :ExampleSet1Feature1_2Start ;
                     faldo:end :ExampleSet1Feature1End .
 
-:ExampleSet1Region3 rdf:type faldo:Region ,
-                             owl:NamedIndividual ;
+:ExampleSet1Region3 rdf:type faldo:Region ;
                     faldo:begin :ExampleSet1Feature1_2Start ;
                     faldo:end :ExampleSet1Feature2End .
 
-:ExampleSet1Feature1End rdf:type faldo:ExactPosition ,
-                                owl:NamedIndividual ;
+:ExampleSet1Feature1End rdf:type faldo:ExactPosition ;
                        faldo:position "9000" .
 
 #################################################################
@@ -97,65 +85,51 @@
 #
 #################################################################
 
-:ExampleSet2 rdf:type :Set ,
-                      owl:NamedIndividual ;
+:ExampleSet2 rdf:type :Set ;
              :contains :ExampleSet2Feature1 ,
                        :ExampleSet2Feature2 ;
              rdfs:comment "An example of a sequence alignment. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
-:ExampleSet2Feature1 rdf:type :Feature ,
-                              owl:NamedIndividual ;
+:ExampleSet2Feature1 rdf:type :Feature ;
                      :id "Match1" ;
                      :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000343" ;
                      :seqid :ExampleSet2Landmark1 .
 
-:ExampleSet2Feature2 rdf:type :Feature ,
-                              owl:NamedIndividual ;
+:ExampleSet2Feature2 rdf:type :Feature ;
                      :id "EST23" ;
                      :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000345" ;
                      :target :ExampleSet2Target1 .
 
-:ExampleSet2Landmark1 rdf:type :Landmark ,
-                               owl:NamedIndividual ;
+:ExampleSet2Landmark1 rdf:type :Landmark ;
                       :id "chr3" .
 
-:ExampleSet2Target1 rdf:type :Target ,
-                             owl:NamedIndividual ;
+:ExampleSet2Target1 rdf:type :Target ;
                     :alignment :ExampleSet2AlignmentOperation1 .
 
-:ExampleSet2AlignmentOperation1 rdf:type :AlignmentOperation ,
-                                owl:NamedIndividual ;
-                       :operation :Match ;
+:ExampleSet2AlignmentOperation1 rdf:type :Match ;
                        :span "8" ;
-                       :first :ExampleSet2AlignmentOperation1 ;
-                       :rest :ExampleSet2AlignmentOperation2 .
+                       rdf:first :ExampleSet2AlignmentOperation1 ;
+                       rdf:rest :ExampleSet2AlignmentOperation2 .
 
-:ExampleSet2AlignmentOperation2 rdf:type :AlignmentOperation ,
-                                owl:NamedIndividual ;
-                       :operation :TargetSequenceGap ;
+:ExampleSet2AlignmentOperation2 rdf:type :TargetSequenceGap ;
                        :span "3" ;
-                       :first :ExampleSet2AlignmentOperation2 ;
-                       :rest :ExampleSet2AlignmentOperation3 .
+                       rdf:first :ExampleSet2AlignmentOperation2 ;
+                       rdf:rest :ExampleSet2AlignmentOperation3 .
 
-:ExampleSet2AlignmentOperation3 rdf:type :AlignmentOperation ,
-                                owl:NamedIndividual ;
-                       :operation :Match ;
+:ExampleSet2AlignmentOperation3 rdf:type :Match ;
                        :span "6" ;
-                       :first :ExampleSet2AlignmentOperation3 ;
-                       :rest :ExampleSet2AlignmentOperation4 .
+                       rdf:first :ExampleSet2AlignmentOperation3 ;
+                       rdf:rest :ExampleSet2AlignmentOperation4 .
 
-:ExampleSet2AlignmentOperation4 rdf:type :AlignmentOperation ,
-                                owl:NamedIndividual ;
-                       :operation :ReferenceSequenceGap ;
+:ExampleSet2AlignmentOperation4 rdf:type :ReferenceSequenceGap ;
                        :span "1" ;
-                       :first :ExampleSet2AlignmentOperation4 ;
-                       :rest :ExampleSet2AlignmentOperation5 .
+                       rdf:first :ExampleSet2AlignmentOperation4 ;
+                       rdf:rest :ExampleSet2AlignmentOperation5 .
 
-:ExampleSet2AlignmentOperation5 rdf:type :AlignmentOperation ,
-                                owl:NamedIndividual ;
-                       :operation :Match ;
+:ExampleSet2AlignmentOperation5 rdf:type :Match ;
                        :span "6" ;
-                       :first :ExampleSet2AlignmentOperation5 .
+                       rdf:first :ExampleSet2AlignmentOperation5 ;
+                       rdf:rest rdf:nil .
 
 #################################################################
 #
@@ -186,55 +160,44 @@
 #
 #################################################################
 
-:ExampleSet3 rdf:type :Set ,
-                      owl:NamedIndividual ;
+:ExampleSet3 rdf:type :Set ;
              :contains :ExampleSet3Feature1 ,
                        :ExampleSet3Feature2 ;
              rdfs:comment "Encoding of a sequence variant. This example is part of the GVF specification, denoting two variants for two separate sequenced individuals (http://www.sequenceontology.org/resources/gvf.html)."@en .
 
-:ExampleSet3SequencedIndividual1 rdf:type :SequencedIndividual ,
-                                 owl:NamedIndividual .
+:ExampleSet3SequencedIndividual1 rdf:type :SequencedIndividual .
 
-:ExampleSet3SequencedIndividual2 rdf:type :SequencedIndividual ,
-                                 owl:NamedIndividual .
+:ExampleSet3SequencedIndividual2 rdf:type :SequencedIndividual .
 
-:ExampleSet3Feature1 rdf:type :Feature ,
-                              owl:NamedIndividual ;
+:ExampleSet3Feature1 rdf:type :Feature ;
                      :id "Variant1" ;
                      :individual :ExampleSet3SequencedIndividual1 ;
                      :variant :ExampleSet3Variant1 ,
                               :ExampleSet3Variant2 .
 
-:ExampleSet3Feature2 rdf:type :Feature ,
-                              owl:NamedIndividual ;
+:ExampleSet3Feature2 rdf:type :Feature ;
                      :id "Variant1" ;
                      :individual :ExampleSet3SequencedIndividual2 ;
                      :variant :ExampleSet3Variant3 ,
                               :ExampleSet3Variant4 .
 
-:ExampleSet3Variant1 rdf:type :HeterozygousVariant ,
-                              owl:NamedIndividual ;
+:ExampleSet3Variant1 rdf:type :HeterozygousVariant ;
                      :genotype :ExampleSet3ChromosomeA ;
                      :sequence "A" .
 
-:ExampleSet3Variant2 rdf:type :HeterozygousVariant ,
-                              owl:NamedIndividual ;
+:ExampleSet3Variant2 rdf:type :HeterozygousVariant ;
                      :genotype :ExampleSet3ChromosomeB ;
                      :sequence "T" .
 
-:ExampleSet3Variant3 rdf:type :HomozygousVariant ,
-                              owl:NamedIndividual ;
+:ExampleSet3Variant3 rdf:type :HomozygousVariant ;
                      :genotype :ExampleSet3ChromosomeA ;
                      :sequence "T" .
 
-:ExampleSet3Variant4 rdf:type :HomozygousVariant ,
-                              owl:NamedIndividual ;
+:ExampleSet3Variant4 rdf:type :HomozygousVariant ;
                      :genotype :ExampleSet3ChromosomeB ;
                      :sequence "T" .
 
-:ExampleSet3ChromosomeA rdf:type :Chromosome ,
-                        owl:NamedIndividual .
+:ExampleSet3ChromosomeA rdf:type :Chromosome .
 
-:ExampleSet3ChromosomeB rdf:type :Chromosome ,
-                        owl:NamedIndividual .
+:ExampleSet3ChromosomeB rdf:type :Chromosome .
 
