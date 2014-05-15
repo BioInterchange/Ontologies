@@ -1,7 +1,5 @@
 #!/usr/bin/ruby
 
-require 'optparse'
-
 # Reads GFVO from STDIN and outputs a "cleaned" version of it.
 # "Clean" means that it does not contain classes or individuals that fall
 # outside the scope of our ontologies context (like, Gene Ontology abbreviation
@@ -17,8 +15,8 @@ was_empty_line = false
 # supress output that stretches over multiple lines.
 skip_until_matching = nil
 
-# There will be SIO classes in the file. Remember owl:equivalentCLass references
-# to GFVO and get rid of the SIO class definition in here.
+# There will be SIO classes/properties in the file. Remember owl:equivalentClass 
+# and owl:equivalentProperty references to GFVO and get rid of the SIO definitions in here.
 read_sio_mapping = nil
 sio_mapping = {}
 
@@ -33,9 +31,9 @@ STDIN.each { |line|
   end
 
   # Find SIO class definitions, remember the equivalence in the next line and skip the rest.
-  if line.strip.start_with?('<owl:Class rdf:about="&sio;SIO_') then
+  if line.match(/^\s*<(owl:Class|rdf:Description) rdf:about="&sio;SIO_/) then
     read_sio_mapping = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
-    skip_until_matching = "#{line.sub(/\S.*$/, '')}</owl:Class>"
+    skip_until_matching = "#{line.sub(/\S.*$/, '')}</#{line.scan(/owl:Class|rdf:Description/)[0]}>"
     next
   end
 
@@ -85,6 +83,14 @@ STDIN.each { |line|
     defined_class = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
     if sio_mapping.has_key?(defined_class) then
       line << "\n#{line.sub(/\S.*$/, '')}    <owl:equivalentClass rdf:resource=\"#{sio_mapping[defined_class]}\"/>"
+    end
+  end
+
+  # If this is a propert with SIO mapping, then output the mapping here.
+  if line.match(/^\s*<owl:(Datatype|Object)Property rdf:about="http:\/\/www\.biointerchange\.org\//) then
+    defined_property = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
+    if sio_mapping.has_key?(defined_property) then
+      line << "\n#{line.sub(/\S.*$/, '')}    <owl:equivalentProperty rdf:resource=\"#{sio_mapping[defined_property]}\"/>"
     end
   end
 

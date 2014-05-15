@@ -23,7 +23,7 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.28</owl:versionInfo>
+        <owl:versionInfo>0.9.29</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <dc:contributor xml:lang="en">Chris Mungall</dc:contributor>
         <dc:contributor xml:lang="en">Erick Antezana</dc:contributor>
@@ -55,58 +55,67 @@
     <!-- http://www.biointerchange.org/gfvo#describes -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#describes">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000563"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000563"/>
+        <rdfs:label>describes</rdfs:label>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasAnnotation -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAnnotation">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000255"/>
+        <rdfs:label>hasAnnotation</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000255"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasAttribute -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAttribute">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000008"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000008"/>
+        <rdfs:label>hasAttribute</rdfs:label>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasEvidence -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasEvidence">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000772"/>
+        <rdfs:label>hasEvidence</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#references"/>
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000772"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasIdentifier -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasIdentifier">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000671"/>
+        <rdfs:label>hasIdentifier</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000671"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isAfter -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAfter">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000211"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000211"/>
+        <rdfs:label>isAfter</rdfs:label>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isBefore -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isBefore">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000240"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000240"/>
+        <rdfs:label>isBefore</rdfs:label>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isParticipantIn -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isParticipantIn">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000062"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000062"/>
+        <rdfs:label>isParticipantIn</rdfs:label>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#references -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#references">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000631"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000631"/>
+        <rdfs:label>references</rdfs:label>
     </owl:ObjectProperty>
     
     <!-- 
@@ -120,7 +129,8 @@
     <!-- http://www.biointerchange.org/gfvo#hasValue -->
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#hasValue">
-        <owl:equivalentProperty rdf:resource="http://semanticscience.org/resource/SIO_000300"/>
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000300"/>
+        <rdfs:label>hasValue</rdfs:label>
     </owl:DatatypeProperty>
     
     <!-- 
@@ -146,10 +156,10 @@
                                 <owl:onDatatype rdf:resource="&xsd;double"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:minInclusive rdf:datatype="&xsd;double">0.0</xsd:minInclusive>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;double">1.0</xsd:maxInclusive>
                                     </rdf:Description>
                                     <rdf:Description>
-                                        <xsd:maxInclusive rdf:datatype="&xsd;double">1.0</xsd:maxInclusive>
+                                        <xsd:minInclusive rdf:datatype="&xsd;double">0.0</xsd:minInclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -162,10 +172,10 @@
                                 <owl:onDatatype rdf:resource="&xsd;float"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:maxInclusive rdf:datatype="&xsd;float">1.0</xsd:maxInclusive>
+                                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
                                     </rdf:Description>
                                     <rdf:Description>
-                                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;float">1.0</xsd:maxInclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -576,6 +586,7 @@ May be used to denote the &apos;ancestral allele&apos; of TODO formatted files.<
         <owl:equivalentClass rdf:resource="&sio;SIO_000315"/>
         <rdfs:label>Functional Specification</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
+        <rdfs:comment xml:lang="en">A functional specification of bioinformatics data.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#GameticPhase -->
@@ -683,6 +694,19 @@ May be used to denote the &apos;ancestral allele&apos; of TODO formatted files.<
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+    <!-- http://www.biointerchange.org/gfvo#Identifier -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Identifier">
+        <rdfs:label>Identifier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
+        <rdfs:comment xml:lang="en">An identifier labels an entity with a term.</rdfs:comment>
+        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Identifier</rdfs:seeAlso>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
+    </owl:Class>
+    
     <!-- http://www.biointerchange.org/gfvo#InformationContentEntity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#InformationContentEntity">
@@ -702,6 +726,19 @@ Genomic landmarks whose type cannot be established should be assigned the inform
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Process"/>
         <rdfs:comment xml:lang="en">Describing the effect of a feature &quot;Variant&quot; class instance.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+    </owl:Class>
+    
+    <!-- http://www.biointerchange.org/gfvo#Key -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Key">
+        <rdfs:label>Key</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
+        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Hashmap</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">A key is a name or label in a key-value pair mapping.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Landmark -->
@@ -1203,6 +1240,19 @@ Genomic landmarks whose type cannot be established should be assigned the inform
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/SNV_calling_from_NGS_data</rdfs:seeAlso>
     </owl:Class>
     
+    <!-- http://www.biointerchange.org/gfvo#Version -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Version">
+        <rdfs:label>Version</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
+        <rdfs:comment xml:lang="en">A version names a release of a software, dataset, or other resource. A versioned resource is not necessarily public.</rdfs:comment>
+        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Versioning</rdfs:seeAlso>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
+    </owl:Class>
+    
     <!-- http://www.biointerchange.org/gfvo#Zygosity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Zygosity">
@@ -1220,6 +1270,14 @@ Genomic landmarks whose type cannot be established should be assigned the inform
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Germline"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Prenatal"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Somatic"/>
+        </owl:members>
+    </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
@@ -1241,6 +1299,14 @@ Genomic landmarks whose type cannot be established should be assigned the inform
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
@@ -1249,25 +1315,9 @@ Genomic landmarks whose type cannot be established should be assigned the inform
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Germline"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Prenatal"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Somatic"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
