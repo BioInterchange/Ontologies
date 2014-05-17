@@ -1,13 +1,8 @@
 @prefix : <http://www.biointerchange.org/gfvo#> .
-@prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
-@prefix vario: <http://purl.obolibrary.org/obo/> .
-@base <http://www.biointerchange.org/gfvo#> .
+@prefix so: <http://purl.bioontology.org/ontology/SO/SO> .
 
 #################################################################
 #
@@ -23,56 +18,112 @@
 #    binary RDF encodings such as RDF/HDT permits a more concise
 #    representation of the same data.
 #
+#    This example also avoids blank nodes, so that this file can
+#    be conveniently viewed using the Protege ontology editor.
+#    Using blank nodes, the line
+#
+#        :hasIdentifier :ExampleSet1Feature1Identifier ;
+#
+#    can be substituted with
+#
+#        :hasIdentifier [
+#            a :Identifier ;
+#            :hasValue "gene00001" ;
+#        ]
+#
 #################################################################
 
-:ExampleSet1 rdf:type :File ;
-             :gffVersion "3" ;
-             :contains :ExampleSet1Feature1 ,
-                       :ExampleSet1Feature2 ;
+# This example is representing the contents of a GFF3 file, version 3.
+:Example1Version a :Version ;
+                 :hasValue "gff-version 3" .
+
+# Two genomic features are described in the file, where an extra comment
+# was added to clarify the provenance of this example representation.
+:ExampleSet1 a :File ;
+             :hasIdentifier :Example1Version ;
+             :hasMember :ExampleSet1Feature1 ,
+                        :ExampleSet1Feature2 ;
              rdfs:comment "A simple example of a hierarchical genomic feature dependency. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
-:ExampleSet1ChromEnd rdf:type faldo:ExactPosition ;
-                     faldo:position "1497228" .
+# Features in this example are placed on a single langmark, which has
+# an identifier associated with it (it cannot be anonymous in GFF3, even
+# though GFVO permits landmarks without explicit identifier), and it
+# has a range of sequence positions it covers (expressed by a separate
+# pragma statement in GFF3).
+:ExampleSet1Landmark a :Landmark ;
+                     :hasIdentifier :ExampleSet1LandmarkIdentifier ;
+                     :hasAttribute :ExampleSet1LandmarkRegion .
 
-:ExampleSet1ChromStart rdf:type faldo:ExactPosition ;
-                       faldo:position "1" .
+:ExampleSet1LandmarkIdentifier a :Identifier ;
+                               :hasValue "ctg123" .
 
-:ExampleSet1Feature1 rdf:type :Feature ;
-                     :id "gene00001" ;
-                     :name "EDEN" ;
-                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000704" ;
-                     :seqid :ExampleSet1Landmark1 .
+:ExampleSet1LandmarkRegion a faldo:Region ;
+                           faldo:begin :ExampleSet1LandmarkStartPosition ;
+                           faldo:end :ExampleSet1LandmarkEndPosition .
 
-:ExampleSet1Feature1_2Start rdf:type faldo:ExactPosition ;
-                            faldo:position "1000" .
+:ExampleSet1LandmarkStartPosition a faldo:ExactPosition ;
+                                  faldo:position "1" .
 
-:ExampleSet1Feature2 rdf:type :Feature ;
-                     :id "tfbs00001" ;
-                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000235" ;
-                     :parent :ExampleSet1Feature1 ;
-                     :locus :ExampleSet1Region3 .
+:ExampleSet1LandmarkEndPosition a faldo:ExactPosition ;
+                                faldo:position "1497228" .
 
-:ExampleSet1Feature2End rdf:type faldo:ExactPosition ;
-                        faldo:position "1012" .
+# GFF3, GTF and GVF make use of named attributes. There are predefined (reserved)
+# names, but users can also freely contribute their own attributes. In this example,
+# only one labeled attribute is used, whose name we define upfront.
+:ExampleSet1Name a :Label ;
+                 :hasValue "Name" .
 
-:ExampleSet1Landmark1 rdf:type :Landmark ;
-                      :id "ctg123" ;
-                      :locus :ExampleSet1Region1 .
+# First feature of the GFF3 file (line 2).
+:ExampleSet1Feature1 a :Feature ,
+                       so:0000704 ;
+                     :isLocatedOn :ExampleSet1Landmark ;
+                     :hasPart :ExampleSet1Feature1Locus ;
+                     :hasIdentifier :ExampleSet1Feature1Identifier ;
+                     :hasAttribute :ExampleSet1Feature1Name .
 
-:ExampleSet1Region1 rdf:type faldo:Region ;
-                    faldo:begin :ExampleSet1ChromEnd ,
-                                :ExampleSet1ChromStart .
+:ExampleSet1Feature1Locus a :Locus ;
+                          :hasAttribute :ExampleSet1Feature1Region .
 
-:ExampleSet1Region2 rdf:type faldo:ForwardStrandPosition ;
-                    faldo:begin :ExampleSet1Feature1_2Start ;
-                    faldo:end :ExampleSet1Feature1End .
+:ExampleSet1Feature1Region a faldo:Region ;
+                           faldo:begin :ExampleSet1FeatureStartPosition ;
+                           faldo:end :ExampleSet1Feature1EndPosition .
 
-:ExampleSet1Region3 rdf:type faldo:Region ;
-                    faldo:begin :ExampleSet1Feature1_2Start ;
-                    faldo:end :ExampleSet1Feature2End .
+# The start coordinate of both features is the same in this example. So this
+# entity is used by both :ExampleSet1Feature1 and :ExampleSet1Feature2.
+:ExampleSet1FeatureStartPosition a faldo:ExactPosition ;
+                                 faldo:position "1000" .
 
-:ExampleSet1Feature1End rdf:type faldo:ExactPosition ;
-                       faldo:position "9000" .
+:ExampleSet1Feature1EndPosition a faldo:ExactPosition ;
+                                faldo:position "9000" .
+
+:ExampleSet1Feature1Identifier a :Identifier ;
+                               :hasValue "gene00001" .
+
+:ExampleSet1Feature1Name a :Name ;
+                         :hasValue "EDEN" .
+
+# Second feature of the GFF3 file (line 3). It references the first
+# feature via a "Parent" attribute.
+:ExampleSet1Feature2 a :Feature ,
+                       so:0000235 ;
+                     :isLocatedOn :ExampleSet1Landmark ;
+                     :hasPart :ExampleSet1Feature2Locus ;
+                     :hasIdentifier :ExampleSet1Feature2Identifier ;
+                     :hasAttribute :ExampleSet1Feature2Name ;
+                     :hasSource :ExampleSet1Feature1 .
+
+:ExampleSet1Feature2Locus a :Locus ;
+                          :hasAttribute :ExampleSet1Feature1Region .
+
+:ExampleSet1Feature2Region a faldo:Region ;
+                           faldo:begin :ExampleSet1FeatureStartPosition ;
+                           faldo:end :ExampleSet1Feature2EndPosition .
+
+:ExampleSet1Feature2EndPosition a faldo:ExactPosition ;
+                                faldo:position "1012" .
+
+:ExampleSet1Feature2Identifier a :Identifier ;
+                               :hasValue "tfbs00001" .
 
 #################################################################
 #
@@ -85,51 +136,93 @@
 #
 #################################################################
 
-:ExampleSet2 rdf:type :Set ;
-             :contains :ExampleSet2Feature1 ,
-                       :ExampleSet2Feature2 ;
+:ExampleSet2 a :Collection ;
+             :hasMember :ExampleSet2Feature1 ,
+                        :ExampleSet2Feature2 ;
              rdfs:comment "An example of a sequence alignment. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
-:ExampleSet2Feature1 rdf:type :Feature ;
-                     :id "Match1" ;
-                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000343" ;
-                     :seqid :ExampleSet2Landmark1 .
+:ExampleSet2Landmark a :Landmark ;
+                     :hasIdentifier :ExampleSet2LandmarkIdentifier .
 
-:ExampleSet2Feature2 rdf:type :Feature ;
-                     :id "EST23" ;
-                     :type "http://www.sequenceontology.org/browser/current_release/term/SO:0000345" ;
-                     :target :ExampleSet2Target1 .
+:ExampleSet2LandmarkIdentifier a :Identifier ;
+                               :hasValue "chr3" .
 
-:ExampleSet2Landmark1 rdf:type :Landmark ;
-                      :id "chr3" .
+:ExampleSet2Feature1 a :Feature ,
+                       so:0000343 ;
+                     :isLocatedOn :ExampleSet2Landmark ;
+                     :hasIdentifier :ExampleSet2Feature1Identifier .
 
-:ExampleSet2Target1 rdf:type :Target ;
-                    :alignment :ExampleSet2AlignmentOperation1 .
+:ExampleSet1Feature1Identifier a :Identifier ;
+                               :hasValue "Match1" .
 
+:ExampleSet2Feature2 a :Feature ;
+                     :isLocatedOn :ExampleSet2Landmark ;
+                     :isDescribedBy <http://www.sequenceontology.org/browser/current_release/term/SO:0000343> ;
+                     :hasIdentifier :ExampleSet2Feature2Identifier .
+
+:ExampleSet1Feature2Identifier a :Identifier ;
+                               :hasValue "EST23" .
+
+# Description of the sequence alignment between :ExampleSet2Feature1
+# and :ExampleSet2Feature2 (features "Match1" and "EST23").
+:ExampleSet2SequenceAlignment a :SequenceAlignment ;
+                              :hasAttribute :ExampleSet2AlignmentLocus ;
+                              :hasSource :ExampleSet2Feature1 ;
+                              :hasInput :ExampleSet2Feature2 ;
+                              :hasFirstPart :ExampleSet2AlignmentOperation1 ;
+                              :hasOrderedPart :ExampleSet2AlignmentOperation2 ,
+                                              :ExampleSet2AlignmentOperation3 ,
+                                              :ExampleSet2AlignmentOperation4 ;
+                              :hasLastPart :ExampleSet2AlignmentOperation5 .
+
+# The locus describes the region over which the alignment operation
+# is being carried out.
+:ExampleSet2AlignmentLocus a :Locus ;
+                           :hasAttribute :ExampleSet2AlignmentRegion .
+
+:ExampleSet2AlignmentRegion a faldo:Region ;
+                            faldo:begin :ExampleSet2AlignmentStartPosition ;
+                            faldo:end :ExampleSet2AlignmentEndPosition .
+
+:ExampleSet2AlignmentStartPosition a faldo:ExactPosition ;
+                                   faldo:position "1" .
+
+:ExampleSet2AlignmentEndPosition a faldo:ExactPosition ;
+                                 faldo:position "21" .
+
+# Description of an actual alignment operation.
 :ExampleSet2AlignmentOperation1 rdf:type :Match ;
-                       :span "8" ;
-                       rdf:first :ExampleSet2AlignmentOperation1 ;
-                       rdf:rest :ExampleSet2AlignmentOperation2 .
+                                :isBefore :ExampleSet2AlignmentOperation2 .
+
+:ExampleSet2AlignmentOperation1Span a :Span ;
+                                    :hasValue "8" .
 
 :ExampleSet2AlignmentOperation2 rdf:type :TargetSequenceGap ;
-                       :span "3" ;
-                       rdf:first :ExampleSet2AlignmentOperation2 ;
-                       rdf:rest :ExampleSet2AlignmentOperation3 .
+                       :isAfter :ExampleSet2AlignmentOperation1 ;
+                       :isBefore :ExampleSet2AlignmentOperation3 .
+
+:ExampleSet2AlignmentOperation2Span a :Span ;
+                                    :hasValue "3" .
 
 :ExampleSet2AlignmentOperation3 rdf:type :Match ;
-                       :span "6" ;
-                       rdf:first :ExampleSet2AlignmentOperation3 ;
-                       rdf:rest :ExampleSet2AlignmentOperation4 .
+                       :isAfter :ExampleSet2AlignmentOperation2 ;
+                       :isBefore :ExampleSet2AlignmentOperation4 .
+
+:ExampleSet2AlignmentOperation3Span a :Span ;
+                                    :hasValue "6" .
 
 :ExampleSet2AlignmentOperation4 rdf:type :ReferenceSequenceGap ;
-                       :span "1" ;
-                       rdf:first :ExampleSet2AlignmentOperation4 ;
-                       rdf:rest :ExampleSet2AlignmentOperation5 .
+                       :isAfter :ExampleSet2AlignmentOperation3 ;
+                       :isBefore :ExampleSet2AlignmentOperation5 .
+
+:ExampleSet2AlignmentOperation4Span a :Span ;
+                                    :hasValue "1" .
 
 :ExampleSet2AlignmentOperation5 rdf:type :Match ;
-                       :span "6" ;
-                       rdf:first :ExampleSet2AlignmentOperation5 ;
-                       rdf:rest rdf:nil .
+                       :isAfter :ExampleSet2AlignmentOperation4 .
+
+:ExampleSet2AlignmentOperation5Span a :Span ;
+                                    :hasValue "6" .
 
 #################################################################
 #
@@ -138,6 +231,7 @@
 #    Encoding of a sequence variant. This is part of the GVF
 #    specification, denoting two variants for two separate
 #    sequenced individuals: "Variant_seq=A,T;Genotype=0:1,1:1".
+#    (See "Genotype" in the GVF specification).
 #
 #    The variants are represented by "Heterozygous Variant" and
 #    "Homozygous Variant" instances. If this distinction cannot
@@ -160,44 +254,50 @@
 #
 #################################################################
 
-:ExampleSet3 rdf:type :Set ;
-             :contains :ExampleSet3Feature1 ,
-                       :ExampleSet3Feature2 ;
+:ExampleSet3 rdf:type :Collection ;
+             :hasMember :ExampleSet3Feature1 ,
+                        :ExampleSet3Feature2 ;
              rdfs:comment "Encoding of a sequence variant. This example is part of the GVF specification, denoting two variants for two separate sequenced individuals (http://www.sequenceontology.org/resources/gvf.html)."@en .
 
+# The individuals that were sequenced are represented by named, but otherwise
+# unspecified, instances. This provides sufficient information to distinguish
+# between the individuals.
 :ExampleSet3SequencedIndividual1 rdf:type :SequencedIndividual .
-
 :ExampleSet3SequencedIndividual2 rdf:type :SequencedIndividual .
 
+# The example contains a phased genotype; two chromosome instances are used
+# to distinguish between them.
+:ExampleSet3ChromosomeA a :Chromosome .
+:ExampleSet3ChromosomeB a :Chromosome .
+
 :ExampleSet3Feature1 rdf:type :Feature ;
-                     :id "Variant1" ;
-                     :individual :ExampleSet3SequencedIndividual1 ;
-                     :variant :ExampleSet3Variant1 ,
-                              :ExampleSet3Variant2 .
+                     :hasParticipant :ExampleSet3SequencedIndividual1 ;
+                     :hasAttribute :ExampleSet3Variant1 ,
+                                   :ExampleSet3Variant2 .
 
 :ExampleSet3Feature2 rdf:type :Feature ;
-                     :id "Variant1" ;
-                     :individual :ExampleSet3SequencedIndividual2 ;
-                     :variant :ExampleSet3Variant3 ,
-                              :ExampleSet3Variant4 .
+                     :hasParticipant :ExampleSet3SequencedIndividual2 ;
+                     :hasAttribute :ExampleSet3Variant3 ,
+                                   :ExampleSet3Variant4 .
 
-:ExampleSet3Variant1 rdf:type :HeterozygousVariant ;
-                     :genotype :ExampleSet3ChromosomeA ;
-                     :sequence "A" .
+:ExampleSet3Variant1 a :SequenceVariation ;
+                     :hasQuality :Heterozygous ;
+                     :isLocatedOn :ExampleSet3ChromosomeA ;
+                     :hasValue "A" .
 
-:ExampleSet3Variant2 rdf:type :HeterozygousVariant ;
-                     :genotype :ExampleSet3ChromosomeB ;
-                     :sequence "T" .
+:ExampleSet3Variant2 a :SequenceVariation ;
+                     :hasQuality :Heterozygous ;
+                     :isLocatedOn :ExampleSet3ChromosomeB ;
+                     :hasValue "T" .
 
-:ExampleSet3Variant3 rdf:type :HomozygousVariant ;
-                     :genotype :ExampleSet3ChromosomeA ;
-                     :sequence "T" .
+:ExampleSet3Variant3 a :SequenceVariation ;
+                     :hasQuality :Homozygous ;
+                     :isLocatedOn :ExampleSet3ChromosomeA ;
+                     :hasValue "T" .
 
-:ExampleSet3Variant4 rdf:type :HomozygousVariant ;
-                     :genotype :ExampleSet3ChromosomeB ;
-                     :sequence "T" .
+:ExampleSet3Variant4 a :SequenceVariation ;
+                     :hasQuality :Homozygous ;
+                     :isLocatedOn :ExampleSet3ChromosomeB ;
+                     :hasValue "T" .
 
-:ExampleSet3ChromosomeA rdf:type :Chromosome .
-
-:ExampleSet3ChromosomeB rdf:type :Chromosome .
 
