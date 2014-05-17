@@ -23,7 +23,7 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.29</owl:versionInfo>
+        <owl:versionInfo>0.9.30</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <dc:contributor xml:lang="en">Chris Mungall</dc:contributor>
         <dc:contributor xml:lang="en">Erick Antezana</dc:contributor>
@@ -67,6 +67,76 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
+    <!-- http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000322"/>
+        <rdfs:label>isSpatiotemporallyRelatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasParticipant">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000132"/>
+        <rdfs:label>hasParticipant</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasPart">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000028"/>
+        <rdfs:label>hasPart</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasOrderedPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasOrderedPart">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000974"/>
+        <rdfs:label>hasOrderedPart</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasPart"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasFirstPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasFirstPart">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000971"/>
+        <rdfs:label>hasFirstPart</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasOrderedPart"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasLastPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasLastPart">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000972"/>
+        <rdfs:label>hasLastPart</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasOrderedPart"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#isLocatedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isLocatedOn">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000061"/>
+        <rdfs:label>isLocatedOn</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasInput">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000230"/>
+        <rdfs:label>hasInput</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isDescribedBy">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000557"/>
+        <rdfs:label>isDescribedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
     <!-- http://www.biointerchange.org/gfvo#hasAttribute -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAttribute">
@@ -80,6 +150,30 @@
         <owl:equivalentProperty rdf:resource="&sio;SIO_000772"/>
         <rdfs:label>hasEvidence</rdfs:label>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#references"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasSource">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000253"/>
+        <rdfs:label>hasSource</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasMember">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000059"/>
+        <rdfs:label>hasMember</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasQuality">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000217"/>
+        <rdfs:label>hasQuality</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasIdentifier -->
@@ -345,6 +439,15 @@ May be used to denote the &apos;ancestral allele&apos; of TODO formatted files.<
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+    <!-- http://www.biointerchange.org/gfvo#Label -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Label">
+        <rdfs:label>Label</rdfs:label>
+        <owl:equivalentClass rdf:resource="&sio;SIO_000179"/>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
+        <rdfs:comment xml:lang="en">A label is a term or short list of terms that name an entity for the purpose of lexicographically distinguishing the entity from entities of similar type.</rdfs:comment>
+    </owl:Class>
+
     <!-- http://www.biointerchange.org/gfvo#CodonSequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#CodonSequence">
@@ -697,13 +800,26 @@ May be used to denote the &apos;ancestral allele&apos; of TODO formatted files.<
     <!-- http://www.biointerchange.org/gfvo#Identifier -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Identifier">
+        <owl:equivalentClass rdf:resource="&sio;SIO_000115"/>
         <rdfs:label>Identifier</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
-        <rdfs:comment xml:lang="en">An identifier labels an entity with a term.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Label"/>
+        <rdfs:comment xml:lang="en">An identifier labels an entity with a single term that is interpreted as an accession. An accession labels entities that are part of a collection of similar type.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Identifier</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
+    </owl:Class>
+    
+    <!-- http://www.biointerchange.org/gfvo#Name -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Name">
+        <owl:equivalentClass rdf:resource="&sio;SIO_000116"/>
+        <rdfs:label>Name</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Label"/>
+        <rdfs:comment xml:lang="en">A name assigns an entity a non-formal term (or multiples thereof) that can provide information about the entities identity..</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -728,24 +844,11 @@ Genomic landmarks whose type cannot be established should be assigned the inform
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Key -->
-
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Key">
-        <rdfs:label>Key</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
-        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Hashmap</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A key is a name or label in a key-value pair mapping.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
-    </owl:Class>
-    
     <!-- http://www.biointerchange.org/gfvo#Landmark -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Landmark">
         <rdfs:label>Landmark</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
         <rdfs:comment xml:lang="en">A landmark establishes a coordinate system for features. Landmarks can be chromosomes, contigs, scaffolds or other constructs that can harbor &quot;Feature&quot; class instances. For expressing ploidy within a data set, please refer to the &quot;Chromosome&quot; class.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1243,6 +1346,7 @@ Genomic landmarks whose type cannot be established should be assigned the inform
     <!-- http://www.biointerchange.org/gfvo#Version -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Version">
+        <owl:equivalentClass rdf:resource="&sio;SIO_000653"/>
         <rdfs:label>Version</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
         <rdfs:comment xml:lang="en">A version names a release of a software, dataset, or other resource. A versioned resource is not necessarily public.</rdfs:comment>
