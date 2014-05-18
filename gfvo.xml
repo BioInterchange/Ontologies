@@ -37,7 +37,7 @@
         <dc:description xml:lang="en">The Genomic Feature and Variation Ontology (GFVO) is modeled to represent genomic data using the Resource Description Format (RDF). It is captures the contents of data files that adhere to the Generic Feature Format Version 3 (GFF3, http://www.sequenceontology.org/resources/gff3.html), the General Transfer Format (GTF, http://mblab.wustl.edu/GTF22.html), the Genome Variation Format Version 1 (GVF, http://www.sequenceontology.org/resources/gvf.html), and the Variant Call Format (VCF, http://vcftools.sourceforge.net/specs.html). The creation of the ontology was inspired by previous work of Robert Hoehndorf on RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:contributor xml:lang="en">Toshiaki Katayama</dc:contributor>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
-        <owl:versionInfo>0.9.31</owl:versionInfo>
+        <owl:versionInfo>0.9.32</owl:versionInfo>
         <owl:imports rdf:resource="&vario;so.owl"/>
         <owl:imports rdf:resource="http://semanticscience.org/ontology/sio.owl"/>
         <owl:imports rdf:resource="http://www.biointerchange.org/faldo.owl"/>
@@ -58,6 +58,15 @@
         <owl:equivalentProperty rdf:resource="&sio;SIO_000563"/>
         <rdfs:label>describes</rdfs:label>
         <rdfs:comment xml:lang="en">Links to an entity for which supportive information is being provided.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#isAbout -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAbout">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000332"/>
+        <rdfs:label>isAbout</rdfs:label>
+        <rdfs:comment xml:lang="en">References an entity about which information is provided for.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#describes"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasAnnotation -->
