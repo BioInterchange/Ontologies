@@ -23,8 +23,14 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.37</owl:versionInfo>
+        <owl:versionInfo>0.9.38</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
+        <rdfs:comment xml:lang="en">Best Practices
+
+1.) The class hierarchy, object- and datatype-property hierarchies are modeled to match SIO&apos;s hierarchies.
+
+2.) Ontology terms are encoded in the URIs using camel case, i.e. letters following a white space in an ontology term are capitalized followed by the removal of the white space.
+</rdfs:comment>
         <dc:contributor xml:lang="en">Chris Mungall</dc:contributor>
         <dc:contributor xml:lang="en">Erick Antezana</dc:contributor>
         <dc:contributor xml:lang="en">Francesco Strozzi</dc:contributor>
@@ -35,9 +41,9 @@
         <dc:contributor xml:lang="en">Michel Dumontier</dc:contributor>
         <dc:contributor xml:lang="en">Raoul Bonnal</dc:contributor>
         <dc:contributor xml:lang="en">Robert Hoehndorf</dc:contributor>
+        <dc:contributor xml:lang="en">Takatomo Fujisawa</dc:contributor>
         <dc:description xml:lang="en">The Genomic Feature and Variation Ontology (GFVO) is modeled to represent genomic data using the Resource Description Format (RDF). It is captures the contents of data files that adhere to the Generic Feature Format Version 3 (GFF3, http://www.sequenceontology.org/resources/gff3.html), the General Transfer Format (GTF, http://mblab.wustl.edu/GTF22.html), the Genome Variation Format Version 1 (GVF, http://www.sequenceontology.org/resources/gvf.html), and the Variant Call Format (VCF, http://vcftools.sourceforge.net/specs.html). The creation of the ontology was inspired by previous work of Robert Hoehndorf on RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:contributor xml:lang="en">Toshiaki Katayama</dc:contributor>
-        <dc:contributor xml:lang="en">Takatomo Fujisawa</dc:contributor>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
         <owl:imports rdf:resource="&vario;so.owl"/>
         <owl:imports rdf:resource="http://semanticscience.org/ontology/sio.owl"/>
@@ -65,33 +71,16 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAnnotation">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000255"/>
-        <rdfs:label>hasAnnotation</rdfs:label>
+        <rdfs:label>has annotation</rdfs:label>
         <rdfs:comment xml:lang="en">Links to additional annotations about an entity.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#isAttributeOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAttributeOf">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_000011"/>
-        <rdfs:label>isAttributeOf</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that an entity is an attribute of the entity that this property links out to.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#isSourceOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSourceOf">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_000219"/>
-        <rdfs:label>isSourceOf</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that an entity is the source of the entity that this property links out to.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isAttributeOf"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasAttribute -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAttribute">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000008"/>
-        <rdfs:label>hasAttribute</rdfs:label>
+        <rdfs:label>has attribute</rdfs:label>
         <rdfs:comment xml:lang="en">Links out to aggregate information for an entity.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -99,7 +88,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasEvidence">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000772"/>
-        <rdfs:label>hasEvidence</rdfs:label>
+        <rdfs:label>has evidence</rdfs:label>
         <rdfs:comment xml:lang="en">References an entity or resource that provides supporting evidence.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#references"/>
     </owl:ObjectProperty>
@@ -108,7 +97,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasFirstPart">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000971"/>
-        <rdfs:label>hasFirstPart</rdfs:label>
+        <rdfs:label>has first part</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the first entity of an ordered part relationship.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasOrderedPart"/>
     </owl:ObjectProperty>
@@ -117,25 +106,16 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasIdentifier">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000671"/>
-        <rdfs:label>hasIdentifier</rdfs:label>
+        <rdfs:label>has identifier</rdfs:label>
         <rdfs:comment xml:lang="en">Links out to an identifier.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#hasOutput -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasOutput">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_000229"/>
-        <rdfs:label>hasOutput</rdfs:label>
-        <rdfs:comment xml:lang="en">Links out to an entity that is the output of a &quot;Process&quot; subclass.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasInput -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasInput">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000230"/>
-        <rdfs:label>hasInput</rdfs:label>
+        <rdfs:label>has input</rdfs:label>
         <rdfs:comment xml:lang="en">Links out to an entity that is the input of a &quot;Process&quot; subclass.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
@@ -144,7 +124,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasLastPart">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000972"/>
-        <rdfs:label>hasLastPart</rdfs:label>
+        <rdfs:label>has last part</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the last entity of an ordered part relationship.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasOrderedPart"/>
     </owl:ObjectProperty>
@@ -153,7 +133,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasMember">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000059"/>
-        <rdfs:label>hasMember</rdfs:label>
+        <rdfs:label>has member</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes membership for &quot;Collection&quot;, &quot;Catalog&quot; and &quot;File&quot; instances.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
@@ -162,16 +142,25 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasOrderedPart">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000974"/>
-        <rdfs:label>hasOrderedPart</rdfs:label>
+        <rdfs:label>has ordered part</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a compositional relationship to other entities, where the ordering of the composition of entities carries meaning.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasPart"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasOutput">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000229"/>
+        <rdfs:label>has output</rdfs:label>
+        <rdfs:comment xml:lang="en">Links out to an entity that is the output of a &quot;Process&quot; subclass.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#hasPart -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasPart">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000028"/>
-        <rdfs:label>hasPart</rdfs:label>
+        <rdfs:label>has part</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a compositional relationship to other entities.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
@@ -180,7 +169,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasParticipant">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000132"/>
-        <rdfs:label>hasParticipant</rdfs:label>
+        <rdfs:label>has participant</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the participation of other entities in processes.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
@@ -189,7 +178,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasQuality">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000217"/>
-        <rdfs:label>hasQuality</rdfs:label>
+        <rdfs:label>has quality</rdfs:label>
         <rdfs:comment xml:lang="en">Links out to an entity that provides qualitative information.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
@@ -198,7 +187,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasSource">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000253"/>
-        <rdfs:label>hasSource</rdfs:label>
+        <rdfs:label>has source</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes information origin.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
@@ -207,30 +196,49 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAbout">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000332"/>
-        <rdfs:label>isAbout</rdfs:label>
+        <rdfs:label>is about</rdfs:label>
         <rdfs:comment xml:lang="en">References an entity about which information is provided for.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#describes"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#isAffectedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAffectedBy">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_001159"/>
+        <rdfs:label>is affected by</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes that an entity is affected by another entity.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isParticipantIn"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isAfter -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAfter">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000211"/>
-        <rdfs:label>isAfter</rdfs:label>
+        <rdfs:label>is after</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes the trailing occurrence or succession of the subject in regards to the object.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#isAttributeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAttributeOf">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000011"/>
+        <rdfs:label>is attribute of</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes that an entity is an attribute of the entity that this property links out to.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isBefore -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isBefore">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000240"/>
-        <rdfs:label>isBefore</rdfs:label>
+        <rdfs:label>is before</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes the leading occurrence or precedence of the subject in regards to the object.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isCreatedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isCreatedBy">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000365"/>
-        <rdfs:label>isCreatedBy</rdfs:label>
+        <rdfs:label>is created by</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the process or method that created an entity.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -238,32 +246,15 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isDescribedBy">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000557"/>
-        <rdfs:label>isDescribedBy</rdfs:label>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#isParticipantIn -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isParticipantIn">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_000062"/>
-        <rdfs:label>isParticipantIn</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes participation with another entity.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#isAffectedby -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAffectedBy">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_001159"/>
-        <rdfs:label>isAffectedBy</rdfs:label>
-        <rdfs:comment xml:lang="en">Denotes that an entity is affected by another entity.</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isParticipantIn"/>
+        <rdfs:label>is described by</rdfs:label>
+        <rdfs:comment xml:lang="en">Provides a description of the subject via reference to an object that provides further information on the subject.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isLocatedOn -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isLocatedOn">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000061"/>
-        <rdfs:label>isLocatedOn</rdfs:label>
+        <rdfs:label>is located on</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes the location of genomic feature on a landmark.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
@@ -271,7 +262,7 @@
     <!-- http://www.biointerchange.org/gfvo#isPartOf -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isPartOf">
-        <rdfs:label>isPartOf</rdfs:label>
+        <rdfs:label>is part of</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes that an entity is an intrinsic component of an encapsulating entity.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isLocatedOn"/>
     </owl:ObjectProperty>
@@ -280,34 +271,37 @@
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isParticipantIn">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000062"/>
-        <rdfs:label>isParticipantIn</rdfs:label>
+        <rdfs:label>is participant in</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes participation with another entity.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#isSourceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSourceOf">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000219"/>
+        <rdfs:label>is source of</rdfs:label>
+        <rdfs:comment xml:lang="en">Denotes that an entity is the source of the entity that this property links out to.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isAttributeOf"/>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000322"/>
-        <rdfs:label>isSpatiotemporallyRelatedTo</rdfs:label>
+        <rdfs:label>is spatiotemporally related to</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes spatio-temporal relations to other entities.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#isTemporarilyPartOf -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isTemporarilyPartOf">
-        <rdfs:label>isTemporarilyPartOf</rdfs:label>
+        <rdfs:label>is temporarily part of</rdfs:label>
         <rdfs:comment xml:lang="en">Denotes a temporarily constraint &quot;isPartOf&quot; relationship. The temporal restriction expresses that the relationship is not universally true.
 
 This property can be used to express &quot;Derives_from&quot; relations in GFF3.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isPartOf"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.biointerchange.org/gfvo#refersTo -->
-
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#refersTo">
-        <owl:equivalentProperty rdf:resource="&sio;SIO_000628"/>
-        <rdfs:label>refersTo</rdfs:label>
-        <rdfs:comment xml:lang="en">References an entity, where additional information is provided to augment the reference.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- http://www.biointerchange.org/gfvo#references -->
@@ -317,6 +311,14 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:label>references</rdfs:label>
         <rdfs:comment xml:lang="en">References another entity or resource.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#refersTo"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.biointerchange.org/gfvo#refersTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#refersTo">
+        <owl:equivalentProperty rdf:resource="&sio;SIO_000628"/>
+        <rdfs:label>refers to</rdfs:label>
+        <rdfs:comment xml:lang="en">References an entity, where additional information is provided to augment the reference.</rdfs:comment>
     </owl:ObjectProperty>
     
     <!-- 
@@ -331,8 +333,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
 
     <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gfvo#hasValue">
         <owl:equivalentProperty rdf:resource="&sio;SIO_000300"/>
-        <rdfs:label>hasValue</rdfs:label>
-        <rdfs:comment xml:lang="en">Representation of any literal that is associated with a GFVO class instance. Domain restrictions might apply. For example, &quot;Codon Sequence&quot; entities restrict &quot;hasValue&quot; to be a non-empty string consisting of A, C, G, or T letters, and whose length is a multiple of 3.</rdfs:comment>
+        <rdfs:label>has value</rdfs:label>
+        <rdfs:comment xml:lang="en">Representation of any literal that is associated with a GFVO class instance. Domain restrictions might apply. For example, &quot;Codon Sequence&quot; entities restrict &quot;has value&quot; to be a non-empty string consisting of A, C, G, or T letters, and whose length is a multiple of 3.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -389,10 +391,10 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
                                 <owl:onDatatype rdf:resource="&xsd;float"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;float">1.0</xsd:maxInclusive>
                                     </rdf:Description>
                                     <rdf:Description>
-                                        <xsd:maxInclusive rdf:datatype="&xsd;float">1.0</xsd:maxInclusive>
+                                        <xsd:minInclusive rdf:datatype="&xsd;float">0.0</xsd:minInclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -465,8 +467,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AverageCoverage">
         <rdfs:label>Average Coverage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Coverage"/>
-        <rdfs:comment xml:lang="en">Average coverage depth for a genomic locus (a region or single base pair).</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Shotgun_sequencing#Coverage</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Average coverage depth for a genomic locus (a region or single base pair), i.e. the average number of reads representing a given nucleotide in the reconstructed sequence.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -887,10 +889,10 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Germline -->
+    <!-- http://www.biointerchange.org/gfvo#GermlineCell -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Germline">
-        <rdfs:label>Germline</rdfs:label>
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GermlineCell">
+        <rdfs:label>Germline Cell</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Cell"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Germline</rdfs:seeAlso>
         <rdfs:comment xml:lang="en">The germline feature class captures information about genomic sequence features arising from germline cells.</rdfs:comment>
@@ -921,8 +923,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Heritage">
         <rdfs:label>Heritage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quality"/>
-        <rdfs:comment xml:lang="en">Heritage denotes the passing of traints from parents to ancestors. Passed traits may not be visible as a phenotype, but instead, might only manifest as genetic inheritance.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Heredity</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Heritage denotes the passing of traits from parents or ancestors. Passed traits may not be visible as a phenotype, but instead, might only manifest as genetic inheritance.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Hermaphrodite -->
@@ -932,7 +934,7 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:label>Hermaphrodite</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Sex"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Hermaphrodite</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Denoting sex of an individual that contains both male and female gemetes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denoting sex of an individual that contains both male and female gametes.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Heterozygous -->
@@ -1057,14 +1059,14 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A material entity represents a physical object. In the context of genomic features and variations, material entities are cells, organisms, sequences, chromosomes, etc.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Maternal -->
+    <!-- http://www.biointerchange.org/gfvo#MaternalHeritage -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Maternal">
-        <rdfs:label>Maternal</rdfs:label>
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#MaternalHeritage">
+        <rdfs:label>Maternal Heritage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Heritage"/>
-        <owl:disjointWith rdf:resource="http://www.biointerchange.org/gfvo#Paternal"/>
-        <rdfs:comment xml:lang="en">Maternal heritage is the passing of traits from a female to her ancestors.</rdfs:comment>
+        <owl:disjointWith rdf:resource="http://www.biointerchange.org/gfvo#PaternalHeritage"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Maternal_effect</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Maternal heritage is the passing of traits from a female to her ancestors.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#MobileElementSequenceVariant -->
@@ -1141,10 +1143,10 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Paternal -->
+    <!-- http://www.biointerchange.org/gfvo#PaternalHeritage -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Paternal">
-        <rdfs:label>Paternal</rdfs:label>
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PaternalHeritage">
+        <rdfs:label>Paternal Heritage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Heritage"/>
         <rdfs:comment xml:lang="en">Paternal heritage is the passing of traits from a male to his ancestors.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Maternal_effect#Paternal_effect_genes</rdfs:seeAlso>
@@ -1244,10 +1246,10 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Prenatal -->
+    <!-- http://www.biointerchange.org/gfvo#PrenatalCell -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Prenatal">
-        <rdfs:label>Prenatal</rdfs:label>
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell">
+        <rdfs:label>Prenatal Cell</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Cell"/>
         <owl:deprecated rdf:datatype="&xsd;boolean">true</owl:deprecated>
         <rdfs:comment xml:lang="en">A prenatal feature is purportedly associated with prenatal cells; the GVF specification declares this feature type under the prama directive &quot;##genomic-source&quot;, but does not describe its semantics and the referenced Logical Observation Identifiers Names and Codes (LOINC, http://loinc.org), do not define the meaning or intended usage of the term &quot;prenatal&quot; either.</rdfs:comment>
@@ -1291,7 +1293,7 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <owl:equivalentClass rdf:resource="&sio;SIO_000052"/>
         <rdfs:label>Quantity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Object"/>
-        <rdfs:comment xml:lang="en">A quantity denotes the magnitude of a property. This class is typically not directly instantiated, but instead, its subclasses &quot;Allele Frequency&quot;, &quot;Average Coverage&quot;, etc. are used.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A property of a phenomenon, body, or substance, where the property has a magnitude that can be expressed by means of a number and a reference. This class is typically not directly instantiated, but instead, its subclasses &quot;Allele Frequency&quot;, &quot;Average Coverage&quot;, etc. are used.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#RNASequencing -->
@@ -1486,10 +1488,10 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:comment xml:lang="en">Biological sex of an individual.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gfvo#Somatic -->
+    <!-- http://www.biointerchange.org/gfvo#SomaticCell -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Somatic">
-        <rdfs:label>Somatic</rdfs:label>
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SomaticCell">
+        <rdfs:label>Somatic Cell</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Cell"/>
         <rdfs:comment xml:lang="en">The somatic feature class captures information about genomic sequence features arising from somatic cells.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Somatic</rdfs:seeAlso>
@@ -1595,17 +1597,9 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Germline"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Prenatal"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Somatic"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1622,6 +1616,14 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
