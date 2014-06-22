@@ -78,12 +78,12 @@ puts "Object properties    : #{object_properties} (SIO equivalent: #{object_prop
 
 puts ''
 
-puts "<tr><td>Classes:</td><td>#{classes}</td><td>#{classes_sio_equivalent}</td></tr>"
-puts "<tr><td>from GFF3:</td><td>#{gff3_specification_linkout}</td><td></td></tr>"
-puts "<tr><td>from GTF:</td><td>#{gtf_specification_linkout}</td><td></td></tr>"
-puts "<tr><td>from GVF:</td><td>#{gvf_specification_linkout}</td><td></td></tr>"
-puts "<tr><td>from VCF:</td><td>#{vcf_specification_linkout}</td><td></td></tr>"
-puts "<tr><td>Wikipedia reference:</td><td>#{wikipedia_linkout}</td><td></td></tr>"
-puts "<tr><td>Datatype properties:</td><td>#{datatype_properties}</td><td>#{datatype_properties_sio_equivalent}</td></tr>"
-puts "<tr><td>Object properties:</td><td>#{object_properties}</td><td>#{object_properties_sio_equivalent}</td></tr>"
+puts "<tr><td>Classes</td><td>#{classes}</td><td>#{classes_sio_equivalent}</td></tr>"
+puts "<tr><td>&hellip;modeled from GFF3</td><td>#{gff3_specification_linkout}</td><td></td></tr>"
+puts "<tr><td>&hellip;modeled from GTF</td><td>#{gtf_specification_linkout}</td><td></td></tr>"
+puts "<tr><td>&hellip;modeled from GVF</td><td>#{gvf_specification_linkout}</td><td></td></tr>"
+puts "<tr><td>&hellip;modeled from VCF</td><td>#{vcf_specification_linkout}</td><td></td></tr>"
+puts "<tr><td>&hellip;with Wikipedia reference</td><td>#{wikipedia_linkout}</td><td></td></tr>"
+puts "<tr><td>Datatype properties</td><td>#{datatype_properties}</td><td>#{datatype_properties_sio_equivalent}</td></tr>"
+puts "<tr><td>Object properties</td><td>#{object_properties}</td><td>#{object_properties_sio_equivalent}</td></tr>"
 
