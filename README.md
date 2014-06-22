@@ -22,10 +22,16 @@ These have to be removed, so that only BioInterchange URIs are described by the 
 provided that takes care of this, and additionally, increments the patch level version number of the
 ontologies.
 
-For example, for GFF3O the following commands can be used to create a new cleaned version of the ontology:
+For example, the following commands can be used to create a new cleaned version of the GFVO ontology:
 
-    <gff3o.xml scripts/cleanse.rb > gff3o.tmp
-    mv gff3o.tmp gff3o.xml
+    <gfvo.xml scripts/cleanse.rb > gfvo.tmp
+    mv gfvo.tmp gfvo.xml
+
+### Generating Statistics
+
+Summary statistics about classes and properties can be output in human-readable and HTML via:
+
+    ./scripts/stats.rb < gfvo.xml
 
 ### Generating new GO Abbreviation Collection Link-Outs
 
