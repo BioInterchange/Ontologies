@@ -23,7 +23,7 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.39</owl:versionInfo>
+        <owl:versionInfo>0.9.40</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <dc:contributor xml:lang="en">Chris Mungall</dc:contributor>
         <dc:contributor xml:lang="en">Erick Antezana</dc:contributor>
