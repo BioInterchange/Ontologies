@@ -27,6 +27,14 @@ For example, the following commands can be used to create a new cleaned version 
     <gfvo.xml scripts/cleanse.rb > gfvo.tmp
     mv gfvo.tmp gfvo.xml
 
+### Generating GFVO for BioPortal
+
+Due to technical limitations of BioPortal, GFVO in BioPortal cannot import other ontologies or contain SIO class- or property-equivalences. If ontologies are imported and equivalences kept, then BioPortal reports from summary statistics and the class browser shows thousands of classes that are not part of GFVO itself.
+
+Removal of OWL imports and class- and property-equivalences:
+
+    grep -v '<owl:imports ' gfvo.xml | grep -v '<owl:equivalentProperty ' | grep -v '<owl:equivalentClass ' > gfvo_bioportal.xml
+
 ### Generating Statistics
 
 Summary statistics about classes and properties can be output in human-readable and HTML via:
