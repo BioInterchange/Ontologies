@@ -23,8 +23,20 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.40</owl:versionInfo>
+        <owl:versionInfo>0.9.41</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
+        <rdfs:comment xml:lang="en">Best Practices
+
+1.) The class hierarchy, object- and datatype-property hierarchies are modeled to match SIO&apos;s hierarchies.
+
+2.) Every class and property has a label (rdfs:label) as well as a description (rdfs:comment). The description may contain an example of how a class/property is being applied.
+
+3.) Classes that are directly related to either GFF3, GTF, GVF or VCF specification have a link-out to the specification&apos;s document as provenance indicator (via rdfs:isDefinedBy).
+
+4.) Link-outs to Wikipedia are provided for classes whereever possible.
+
+5.) Ontology terms are encoded in the URIs using camel case, i.e. letters following a white space in an ontology term are capitalized followed by the removal of the white space.
+</rdfs:comment>
         <dc:contributor xml:lang="en">Chris Mungall</dc:contributor>
         <dc:contributor xml:lang="en">Erick Antezana</dc:contributor>
         <dc:contributor xml:lang="en">Francesco Strozzi</dc:contributor>
@@ -39,18 +51,6 @@
         <dc:description xml:lang="en">The Genomic Feature and Variation Ontology (GFVO) is modeled to represent genomic data using the Resource Description Format (RDF). It is captures the contents of data files that adhere to the Generic Feature Format Version 3 (GFF3, http://www.sequenceontology.org/resources/gff3.html), the General Transfer Format (GTF, http://mblab.wustl.edu/GTF22.html), the Genome Variation Format Version 1 (GVF, http://www.sequenceontology.org/resources/gvf.html), and the Variant Call Format (VCF, http://vcftools.sourceforge.net/specs.html). The creation of the ontology was inspired by previous work of Robert Hoehndorf on RDF2OWL (http://code.google.com/p/rdf2owl).</dc:description>
         <dc:contributor xml:lang="en">Toshiaki Katayama</dc:contributor>
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Best Practices
-
-1.) The class hierarchy, object- and datatype-property hierarchies are modeled to match SIO&apos;s hierarchies.
-
-2.) Every class and property has a label (rdfs:label) as well as a description (rdfs:comment). The description may contain an example of how a class/property is being applied.
-
-3.) Classes that are directly related to either GFF3, GTF, GVF or VCF specification have a link-out to the specification&apos;s document as provenance indicator (via rdfs:isDefinedBy).
-
-4.) Link-outs to Wikipedia are provided for classes whereever possible.
-
-5.) Ontology terms are encoded in the URIs using camel case, i.e. letters following a white space in an ontology term are capitalized followed by the removal of the white space.
-</rdfs:comment>
     </owl:Ontology>
     
     <!-- 
@@ -1275,6 +1275,17 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+    <!-- http://www.biointerchange.org/gfvo#Sample -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Sample">
+        <rdfs:label>Sample</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#ChemicalEntity"/>
+        <rdfs:comment xml:lang="en">A sample is a limited quantity of a chemical entity of some sort, which is typically used (destructively/non-desctructively) in a scientific analysis or test.</rdfs:comment>
+        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Sample_(material)</rdfs:seeAlso>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+    </owl:Class>
+    
     <!-- http://www.biointerchange.org/gfvo#Scaffold -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Scaffold">
@@ -1531,14 +1542,6 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
@@ -1547,9 +1550,9 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1573,9 +1576,17 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
