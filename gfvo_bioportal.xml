@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 
+
 <!DOCTYPE rdf:RDF [
     <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
@@ -10,6 +11,7 @@
     <!ENTITY faldo "http://biohackathon.org/resource/faldo#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
+
 
 <rdf:RDF xmlns="http://www.biointerchange.org/gfvo#"
      xml:base="http://www.biointerchange.org/gfvo"
@@ -53,6 +55,8 @@
         <rdfs:seeAlso>https://github.com/BioInterchange/Ontologies</rdfs:seeAlso>
     </owl:Ontology>
     
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -61,6 +65,224 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+    <!-- http://semanticscience.org/resource/SIO_000008 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000008">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000011 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000011">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000028 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000028">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000059 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000059">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000061 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000061">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000062 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000062">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000068 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000068">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000132 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000132">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000206 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000206">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000211 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000211">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000217 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000217">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000219 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000219">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000229 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000229">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000230 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000230">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000240 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000240">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000253 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000253">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000255 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000255">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000322 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000322">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000332 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000332">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000365 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000365">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000557 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000557">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000563 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000563">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000628 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000628">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000631 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000631">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000671 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000671">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000772 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000772">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000774 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000774">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000971 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000971">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000972 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000972">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000974 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000974">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001159 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001159">
+    </rdf:Description>
+    
+
+
     <!-- http://www.biointerchange.org/gfvo#describes -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#describes">
@@ -68,6 +290,8 @@
         <rdfs:comment xml:lang="en">Links to an entity for which supportive information is being provided.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasAnnotation -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAnnotation">
@@ -76,6 +300,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasAttribute -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasAttribute">
@@ -83,6 +309,8 @@
         <rdfs:comment xml:lang="en">Links out to aggregate information for an entity.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasEvidence -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasEvidence">
@@ -91,6 +319,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#references"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasFirstPart -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasFirstPart">
@@ -99,6 +329,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasOrderedPart"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasIdentifier -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasIdentifier">
@@ -107,6 +339,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasInput -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasInput">
@@ -115,6 +349,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasLastPart -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasLastPart">
@@ -123,6 +359,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasOrderedPart"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasMember -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasMember">
@@ -131,6 +369,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasOrderedPart -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasOrderedPart">
@@ -139,6 +379,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasPart"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasOutput -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasOutput">
@@ -147,6 +389,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasPart -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasPart">
@@ -155,6 +399,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasParticipant -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasParticipant">
@@ -163,6 +409,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasQuality -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasQuality">
@@ -171,6 +419,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#hasSource -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#hasSource">
@@ -179,6 +429,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasAttribute"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isAbout -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAbout">
@@ -187,6 +439,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#describes"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isAffectedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAffectedBy">
@@ -195,6 +449,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isParticipantIn"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isAfter -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAfter">
@@ -202,6 +458,8 @@
         <rdfs:comment xml:lang="en">Denotes the trailing occurrence or succession of the subject in regards to the object.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isAttributeOf -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isAttributeOf">
@@ -209,6 +467,8 @@
         <rdfs:comment xml:lang="en">Denotes that an entity is an attribute of the entity that this property links out to.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isBefore -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isBefore">
@@ -216,6 +476,8 @@
         <rdfs:comment xml:lang="en">Denotes the leading occurrence or precedence of the subject in regards to the object.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isCreatedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isCreatedBy">
@@ -223,6 +485,8 @@
         <rdfs:comment xml:lang="en">Denotes the process or method that created an entity.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isDescribedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isDescribedBy">
@@ -230,6 +494,8 @@
         <rdfs:comment xml:lang="en">Provides a description of the subject via reference to an object that provides further information on the subject.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isLocatedOn -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isLocatedOn">
@@ -238,6 +504,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isPartOf -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isPartOf">
@@ -246,6 +514,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isLocatedOn"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isParticipantIn -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isParticipantIn">
@@ -254,6 +524,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isRefutedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isRefutedBy">
@@ -262,6 +534,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasEvidence"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isSourceOf -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSourceOf">
@@ -270,6 +544,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isAttributeOf"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSpatiotemporallyRelatedTo">
@@ -277,6 +553,8 @@
         <rdfs:comment xml:lang="en">Denotes spatio-temporal relations to other entities.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isSupportedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isSupportedBy">
@@ -285,6 +563,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#hasEvidence"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#isTemporarilyPartOf -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#isTemporarilyPartOf">
@@ -296,6 +576,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isPartOf"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#references -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#references">
@@ -304,6 +586,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#refersTo"/>
     </owl:ObjectProperty>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#refersTo -->
 
     <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gfvo#refersTo">
@@ -311,6 +595,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:comment xml:lang="en">References an entity, where additional information is provided to augment the reference.</rdfs:comment>
     </owl:ObjectProperty>
     
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -318,6 +604,16 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000300 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000300">
+    </rdf:Description>
+    
+
 
     <!-- http://www.biointerchange.org/gfvo#hasValue -->
 
@@ -330,6 +626,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:DatatypeProperty>
     
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -337,6 +635,294 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+
+    
+    <!-- http://semanticscience.org/resource/SIO_001243 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001243">
+    </rdf:Description>
+
+
+
+    <!-- http://semanticscience.org/resource/SIO_000004 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000004">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000005 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000005">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000006 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000006">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000015 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000015">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000030 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000030">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000052 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000052">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000056 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000056">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000115 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000115">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000116 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000116">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000152 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000152">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000179 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000179">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000315 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000315">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000396 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000396">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000593 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000593">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000614 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000614">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000616 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000616">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000653 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000653">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000776 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000776">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000784 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000784">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000899 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000899">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000984 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000984">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000999 -->
+
+    <rdf:Description rdf:about="&sio;SIO_000999">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001050 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001050">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001076 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001076">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001079 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001079">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001167 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001167">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001171 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001171">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001224 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001224">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001241 -->
+
+    <rdf:Description rdf:about="&sio;SIO_001241">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010000 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010000">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010001 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010001">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010004 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010004">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010015 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010015">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010016 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010016">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010029 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010029">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010046 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010046">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010048 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010048">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010052 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010052">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010056 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010056">
+    </rdf:Description>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_010065 -->
+
+    <rdf:Description rdf:about="&sio;SIO_010065">
+    </rdf:Description>
+    
+
 
     <!-- http://www.biointerchange.org/gfvo#Alias -->
 
@@ -349,6 +935,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#AlleleFrequency -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AlleleFrequency">
@@ -397,6 +985,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#AminoAcid -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AminoAcid">
@@ -421,6 +1011,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#AncestralSequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AncestralSequence">
@@ -431,6 +1023,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ArrayComparativeGenomicHybridization -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ArrayComparativeGenomicHybridization">
@@ -440,6 +1034,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Attribute -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Attribute">
@@ -449,6 +1045,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
 The object property &quot;hasQuality&quot; (or subproperties thereof) should be utilized to express qualities of entities. The &quot;hasAttribute&quot; object property should be used to denote relationships to &quot;Object&quot; or &quot;Process&quot; instances, unless there is a better object property suitable to represent the relationship between the involved entities..</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#AverageCoverage -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AverageCoverage">
@@ -459,6 +1057,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#BiologicalEntity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#BiologicalEntity">
@@ -467,6 +1067,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:comment xml:lang="en">A biological entity an entity that contains genomic material or utilizes genomic material during its existance. Genomic material itself is represented as sub-classes of Chemical Entity.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#BiopolymerSequencing -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#BiopolymerSequencing">
@@ -476,6 +1078,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Sequencing</rdfs:seeAlso>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Breakpoint -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Breakpoint">
@@ -485,6 +1089,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Catalog -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Catalog">
@@ -493,6 +1099,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:comment xml:lang="en">A catalog is a specialization of a &quot;Collection&quot;, where all its contents are of the same type.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Cell -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Cell">
@@ -502,6 +1110,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:comment xml:lang="en">A cell is a biological unit that in itself forms a living organism or is part of a larger organism that is composed of many other cells.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ChemicalEntity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ChemicalEntity">
@@ -510,6 +1120,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:comment xml:lang="en">A chemical entity is an entity related to chemistry. This class is typically not instantiated, but instead, its subclasses &quot;Amino Acid&quot;, &quot;Chromosome&quot;, &quot;Peptide Sequence&quot;, etc., are used to represent specific chemical entities.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Chromosome -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Chromosome">
@@ -523,6 +1135,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#CircularHelix -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#CircularHelix">
@@ -538,6 +1152,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#CodingFrameOffset -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#CodingFrameOffset">
@@ -567,6 +1183,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#CodonSequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#CodonSequence">
@@ -594,6 +1212,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Collection -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Collection">
@@ -606,6 +1226,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Comment -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Comment">
@@ -614,6 +1236,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A comment is a remark about a piece of information, an observation or statement. In the context of GFF3, GVF, etc., genomic feature and variation descriptions, &quot;isAfter&quot; and &quot;isBefore&quot; relationships should be used to indicate where a comment is situated between pragma or feature statements of GFF3, GTF, GVF or VCF files.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Contig -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Contig">
@@ -623,6 +1247,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A contig is a contiguous DNA sequence that has been assembled from shorter overlapping DNA segments.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Coverage -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Coverage">
@@ -677,6 +1303,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#DNAMicroarray -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#DNAMicroarray">
@@ -687,6 +1315,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#DNASequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#DNASequence">
@@ -714,6 +1344,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#DNASequencing -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#DNASequencing">
@@ -725,6 +1357,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ExperimentalMethod -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ExperimentalMethod">
@@ -735,6 +1369,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ExternalReference -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ExternalReference">
@@ -747,6 +1383,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Feature -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Feature">
@@ -759,6 +1397,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Female -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Female">
@@ -769,6 +1409,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#File -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#File">
@@ -781,6 +1423,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift">
@@ -791,6 +1435,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#FragmentReadPlatform -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#FragmentReadPlatform">
@@ -801,6 +1447,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#FunctionalSpecification -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#FunctionalSpecification">
@@ -809,6 +1457,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A functional specification of bioinformatics data, i.e. the specification of genomic material that potentially has biological function.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#GameticPhase -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GameticPhase">
@@ -820,6 +1470,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Genome -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Genome">
@@ -830,6 +1482,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#GenomeAnalysis -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GenomeAnalysis">
@@ -839,6 +1493,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Genomics#Genome_analysis</rdfs:seeAlso>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#GenomicAscertainingMethod -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GenomicAscertainingMethod">
@@ -848,17 +1504,25 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Genotype -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Genotype">
         <rdfs:label>Genotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#FunctionalSpecification"/>
+        <rdfs:comment xml:lang="en">The genotype is the genetic information captured in a particular genome. It can also refer to one or more populations, if statistical distributions are provided that assign genetic codes to groups of individuals.
+
+A genotype is denoted by a string of slash-separated list of alleles (&quot;has value&quot; property). The length of the list is dependent on the ploidy of the studied species as well as sequencing technique used.
+
+Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot;G&quot;.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Genotype</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">The genotype is the genetic information captured in a particular genome. It can also refer to one or more populations, if statistical distributions are provided that assign genetic codes to groups of individuals.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#GermlineCell -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GermlineCell">
@@ -869,6 +1533,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#HelixStructure -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#HelixStructure">
@@ -878,6 +1544,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">Helix structure denotes the physical shape of biopolymers.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Hemizygous -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Hemizygous">
@@ -888,6 +1556,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Heritage -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Heritage">
@@ -897,6 +1567,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">Heritage denotes the passing of traits from parents or ancestors. Passed traits may not be visible as a phenotype, but instead, might only manifest as genetic inheritance.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Hermaphrodite -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite">
@@ -906,6 +1578,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">Denoting sex of an individual that contains both male and female gametes.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Heterozygous -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Heterozygous">
@@ -916,6 +1590,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Homozygous -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Homozygous">
@@ -926,6 +1602,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Identifier -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Identifier">
@@ -939,6 +1617,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#InformationContentEntity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#InformationContentEntity">
@@ -947,6 +1627,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">An information content entity requires background information or specific domain knowledge to be interpreted correctly.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Interaction -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Interaction">
@@ -956,6 +1638,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Label -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Label">
@@ -968,6 +1652,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Landmark -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Landmark">
@@ -980,6 +1666,19 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
+    <!-- http://www.biointerchange.org/gfvo#Likelihood -->
+
+    <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Likelihood">
+        <rdfs:label>Likelihood</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quantity"/>
+        <rdfs:comment xml:lang="en">Likelihood is the hypothetical probability of the occurrence of a certain event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.biointerchange.org/gfvo#Locus -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Locus">
@@ -993,6 +1692,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Male -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Male">
@@ -1003,6 +1704,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Match -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Match">
@@ -1013,6 +1716,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#MaterialEntity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#MaterialEntity">
@@ -1021,6 +1726,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A material entity represents a physical object. In the context of genomic features and variations, material entities are cells, organisms, sequences, chromosomes, etc.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#MaternalHeritage -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#MaternalHeritage">
@@ -1031,6 +1738,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">Maternal heritage is the passing of traits from a female to her ancestors.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#MobileElementSequenceVariant -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#MobileElementSequenceVariant">
@@ -1040,6 +1749,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Name -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Name">
@@ -1052,6 +1763,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Note -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Note">
@@ -1061,6 +1774,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#NumberOfReads -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#NumberOfReads">
@@ -1086,6 +1801,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Object -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Object">
@@ -1093,6 +1810,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">An object is a concrete entity that realizes a concept and encapsulates data associated with said concept. Objects are typically representing tangible entities, such as &quot;Chromosome&quot;, &quot;DNA Sequence&quot;, but also objects such as &quot;Identifier&quot;, &quot;Average Coverage&quot; or other computational or mathematical entities.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#PairedEndReadPlatform -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PairedEndReadPlatform">
@@ -1102,6 +1821,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#PaternalHeritage -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PaternalHeritage">
@@ -1111,6 +1832,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Maternal_effect#Paternal_effect_genes</rdfs:seeAlso>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#PeptideSequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PeptideSequence">
@@ -1138,6 +1861,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Phenotype -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Phenotype">
@@ -1148,6 +1873,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#PhredScore -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PhredScore">
@@ -1204,6 +1931,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#PrenatalCell -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell">
@@ -1215,6 +1944,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Process -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Process">
@@ -1222,6 +1953,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A process denotes a temporally dependent entity. It can be thought of as a function, where input data is transformed by an algorithm to produce certain output data.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ProteinSequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ProteinSequence">
@@ -1234,6 +1967,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Quality -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Quality">
@@ -1242,6 +1977,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">Quality is a specific attribute that is strongly associated with an entity, but whose values are varying and disjunct. Qualities are finite enumerations, such as sex (&quot;Female&quot;, &quot;Male&quot;, &quot;Hermaphrodite&quot;), heritage (&quot;Maternal&quot;, &quot;Paternal&quot;), but they also make use of the &quot;hasValue&quot; datatype property such as &quot;Coding Frame Offset&quot; (either &quot;0&quot;, &quot;1&quot; or &quot;2&quot;).</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Quantity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Quantity">
@@ -1250,6 +1987,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A property of a phenomenon, body, or substance, where the property has a magnitude that can be expressed by means of a number and a reference. This class is typically not directly instantiated, but instead, its subclasses &quot;Allele Frequency&quot;, &quot;Average Coverage&quot;, etc. are used.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#RNASequencing -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#RNASequencing">
@@ -1260,6 +1999,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ReferenceSequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequence">
@@ -1271,6 +2012,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ReferenceSequenceGap -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequenceGap">
@@ -1281,6 +2024,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift">
@@ -1291,6 +2036,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Sample -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Sample">
@@ -1302,6 +2049,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Scaffold -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Scaffold">
@@ -1311,6 +2060,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">A scaffold is the aggregation of multiple contigs to form a larger continuous sequencing region.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Score -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Score">
@@ -1342,6 +2093,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Sequence -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Sequence">
@@ -1369,6 +2122,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#SequenceAlignment -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SequenceAlignment">
@@ -1386,6 +2141,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#SequenceAlignmentOperation -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SequenceAlignmentOperation">
@@ -1411,6 +2168,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#SequenceVariant -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SequenceVariant">
@@ -1422,6 +2181,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#SequencedIndividual -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SequencedIndividual">
@@ -1431,6 +2192,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#SequencingTechnologyPlatform -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SequencingTechnologyPlatform">
@@ -1441,6 +2204,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Sex -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Sex">
@@ -1450,6 +2215,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:comment xml:lang="en">Biological sex of an individual.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#SomaticCell -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SomaticCell">
@@ -1461,6 +2228,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Span -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Span">
@@ -1486,6 +2255,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#TargetSequenceGap -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#TargetSequenceGap">
@@ -1496,6 +2267,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#TotalNumberOfReads -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#TotalNumberOfReads">
@@ -1505,6 +2278,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#VariantCalling -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#VariantCalling">
@@ -1514,6 +2289,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:comment xml:lang="en">Denotes the technique of calling genomic feature variants in a genome assembly.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Version -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Version">
@@ -1527,6 +2304,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#WatsonCrickHelix -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#WatsonCrickHelix">
@@ -1538,6 +2317,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
 Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GVF.</rdfs:comment>
     </owl:Class>
     
+
+
     <!-- http://www.biointerchange.org/gfvo#Zygosity -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Zygosity">
@@ -1547,6 +2328,8 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Zygosity</rdfs:seeAlso>
     </owl:Class>
     
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1558,9 +2341,9 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1574,17 +2357,27 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Match"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequenceGap"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TargetSequenceGap"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1595,17 +2388,9 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
         </owl:members>
     </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Match"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequenceGap"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TargetSequenceGap"/>
-        </owl:members>
-    </rdf:Description>
 </rdf:RDF>
+
+
 
 <!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 
