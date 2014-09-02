@@ -231,33 +231,17 @@
 #
 #    Encoding of a sequence variant. This is part of the GVF
 #    specification, denoting two variants for two separate
-#    sequenced individuals: "Variant_seq=A,T;Genotype=0:1,1:1".
-#    (See "Genotype" in the GVF specification).
+#    sequenced individuals: &quot;Variant_seq=A,T;Genotype=0:1,1:1&quot;.
+#    (See &quot;Genotype&quot; in the GVF specification at
+#     http://www.sequenceontology.org/resources/gvf.html)
 #
-#    The variants are represented by "Heterozygous Variant" and
-#    "Homozygous Variant" instances. If this distinction cannot
-#    be made, for example when information is only available for
-#    one chromosome, then the generic "Variant" class can be
-#    instantiated instead.
-#
-#    The sequenced individuals in this example are denoted
-#    by the gender ambiguous class "Sequenced Individual", where
-#    instances of "Sequenced Female", "Sequenced Male", and
-#    "Sequenced Hermaphrodite" can be used where more details are
-#    available.
-#
-#    The use of "Chromosome" instances -- or their derivatives
-#    "Maternal Chromosome"/"Paternal Chromosome" -- is used
-#    for placing phased genotypes on their respective chromosome,
-#    which is also shown in this example.
-#
-#           (http://www.sequenceontology.org/resources/gvf.html)
+#    The example also addresses sequence variant encoding in
+#    VCF files.
 #
 #################################################################
 
-:ExampleSet3 rdf:type :Collection ;
-             :hasMember :ExampleSet3Feature1 ,
-                        :ExampleSet3Feature2 ;
+:ExampleSet3 a :Collection ;
+             :hasMember :ExampleSet3Feature1 ;
              rdfs:comment "Encoding of a sequence variant. This example is part of the GVF specification, denoting two variants for two separate sequenced individuals (http://www.sequenceontology.org/resources/gvf.html)."@en .
 
 # The individuals that were sequenced are represented by named, but otherwise
@@ -266,39 +250,48 @@
 :ExampleSet3SequencedIndividual1 rdf:type :SequencedIndividual .
 :ExampleSet3SequencedIndividual2 rdf:type :SequencedIndividual .
 
-# The example contains a phased genotype; two chromosome instances are used
-# to distinguish between them.
-:ExampleSet3ChromosomeA a :Chromosome .
-:ExampleSet3ChromosomeB a :Chromosome .
+# Genomic feature that captures the two described genotypes.
+:ExampleSet3Feature1 a :Feature ;
+                     :hasAttribute :ExampleSet3Genotype1 ,
+                                   :ExampleSet3Genotype2 .
 
-:ExampleSet3Feature1 rdf:type :Feature ;
-                     :hasParticipant :ExampleSet3SequencedIndividual1 ;
-                     :hasAttribute :ExampleSet3Variant1 ,
-                                   :ExampleSet3Variant2 .
+# Genotype for the first individual.
+#
+# The genotype's phased variants are linked via "hasFirstPart" and
+# "hasLastPart" only. The object property "isBefore" could be used
+# to explicitly denote the ordering of the variants, but it would then
+# be necessary to create variant instances per-genotype, since the
+# ordering is not uniform across all genotypes.
+:ExampleSet3Genotype1 a :Genotype ;
+                      :hasParticipant :ExampleSet3SequencedIndividual1 ;
+                      :hasQuality :Heterozygous ;
+                      :hasAttribute :ExampleSet3Phase ;
+                      :hasFirstPart :ExampleSet3Variant1 ;
+                      :hasLastPart :ExampleSet3Variant2 .
 
-:ExampleSet3Feature2 rdf:type :Feature ;
-                     :hasParticipant :ExampleSet3SequencedIndividual2 ;
-                     :hasAttribute :ExampleSet3Variant3 ,
-                                   :ExampleSet3Variant4 .
+# Genotype of the second individual.
+:ExampleSet3Genotype2 a :Genotype ;
+                      :hasParticipant :ExampleSet3SequencedIndividual2 ;
+                      :hasQuality :Homozygous ;
+                      :hasAttribute :ExampleSet3Phase ;
+                      :hasFirstPart :ExampleSet3Variant2 ;
+                      :hasLastPart :ExampleSet3Variant2 .
 
-:ExampleSet3Variant1 a :SequenceVariation ;
-                     :hasQuality :Heterozygous ;
-                     :isLocatedOn :ExampleSet3ChromosomeA ;
+# Having an instance to denote the presence of phase information
+# might appear redundant across data sets. On the other hand, it
+# permits data providers to enrich their own or other providers'
+# data set with additional information (annotations) about used
+# protocols/equipment/tools.
+:ExampleSet3Phase a :GameticPhase .
+
+# For VCF data, the type can also be "ReferenceSequence", which
+# denotes that the sequence is located on a reference genome. This
+# would be indicated -- in a VCF file -- by a "0" in the GT field
+# (e.g., "0/1" to indicate a genotype whose first allele is on the
+# reference genome and the second allele is an alternative allele).
+:ExampleSet3Variant1 a :SequenceVariant ;
                      :hasValue "A" .
 
-:ExampleSet3Variant2 a :SequenceVariation ;
-                     :hasQuality :Heterozygous ;
-                     :isLocatedOn :ExampleSet3ChromosomeB ;
+:ExampleSet3Variant2 a :SequenceVariant ;
                      :hasValue "T" .
-
-:ExampleSet3Variant3 a :SequenceVariation ;
-                     :hasQuality :Homozygous ;
-                     :isLocatedOn :ExampleSet3ChromosomeA ;
-                     :hasValue "T" .
-
-:ExampleSet3Variant4 a :SequenceVariation ;
-                     :hasQuality :Homozygous ;
-                     :isLocatedOn :ExampleSet3ChromosomeB ;
-                     :hasValue "T" .
-
 
