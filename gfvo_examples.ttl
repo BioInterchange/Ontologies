@@ -1,5 +1,4 @@
 @prefix : <http://www.biointerchange.org/gfvo#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
@@ -71,10 +70,14 @@
 # GFF3, GTF and GVF make use of named attributes. There are predefined (reserved)
 # names, but users can also freely contribute their own attributes. In this example,
 # only one labeled attribute is used, whose name we define upfront.
-:ExampleSet1Name a :Label ;
-                 :hasValue "Name" .
+#
+# Note: It might be a bit confusing that the label "Name" is applied to an attribute
+#       of type "Name". This is just an artifact of the chosen example and it is of
+#       course possible to label a "Name" attribute arbitrarily.
+:ExampleSet1AttributeName a :Label ;
+                          :hasValue "Name" .
 
-# First feature of the GFF3 file (line 2).
+# First feature of the GFF3 file (line 2): a gene.
 :ExampleSet1Feature1 a :Feature ,
                        so:0000704 ;
                      :isLocatedOn :ExampleSet1Landmark ;
@@ -101,16 +104,17 @@
                                :hasValue "gene00001" .
 
 :ExampleSet1Feature1Name a :Name ;
+                         :hasAttribute :ExampleSet1AttributeName ;
                          :hasValue "EDEN" .
 
-# Second feature of the GFF3 file (line 3). It references the first
-# feature via a "Parent" attribute.
+# Second feature of the GFF3 file (line 3): a transcription factor
+# binding site.
+# It references the first feature via a "Parent" attribute.
 :ExampleSet1Feature2 a :Feature ,
                        so:0000235 ;
                      :isLocatedOn :ExampleSet1Landmark ;
                      :hasPart :ExampleSet1Feature2Locus ;
                      :hasIdentifier :ExampleSet1Feature2Identifier ;
-                     :hasAttribute :ExampleSet1Feature2Name ;
                      :hasSource :ExampleSet1Feature1 .
 
 :ExampleSet1Feature2Locus a :Locus ;
@@ -148,17 +152,18 @@
 :ExampleSet2LandmarkIdentifier a :Identifier ;
                                :hasValue "chr3" .
 
-:ExampleSet2Feature1 a :Feature ,
-                       so:0000343 ;
+# Reference sequence feature:
+:ExampleSet2Feature1 a :Feature ;
                      :isLocatedOn :ExampleSet2Landmark ;
                      :hasIdentifier :ExampleSet2Feature1Identifier .
 
 :ExampleSet1Feature1Identifier a :Identifier ;
                                :hasValue "Match1" .
 
-:ExampleSet2Feature2 a :Feature ;
+# Target sequence feature:
+:ExampleSet2Feature2 a :Feature ,
+                       so:0000343 ;
                      :isLocatedOn :ExampleSet2Landmark ;
-                     :isDescribedBy <http://www.sequenceontology.org/browser/current_release/term/SO:0000343> ;
                      :hasIdentifier :ExampleSet2Feature2Identifier .
 
 :ExampleSet1Feature2Identifier a :Identifier ;
@@ -193,34 +198,39 @@
 
 # Description of an actual alignment operation.
 :ExampleSet2AlignmentOperation1 rdf:type :Match ;
+                                :hasAttribute :ExampleSet2AlignmentOperation1Span ;
                                 :isBefore :ExampleSet2AlignmentOperation2 .
 
 :ExampleSet2AlignmentOperation1Span a :Span ;
                                     :hasValue "8" .
 
 :ExampleSet2AlignmentOperation2 rdf:type :TargetSequenceGap ;
-                       :isAfter :ExampleSet2AlignmentOperation1 ;
-                       :isBefore :ExampleSet2AlignmentOperation3 .
+                                :hasAttribute :ExampleSet2AlignmentOperation2Span ;
+                                :isAfter :ExampleSet2AlignmentOperation1 ;
+                                :isBefore :ExampleSet2AlignmentOperation3 .
 
 :ExampleSet2AlignmentOperation2Span a :Span ;
                                     :hasValue "3" .
 
 :ExampleSet2AlignmentOperation3 rdf:type :Match ;
-                       :isAfter :ExampleSet2AlignmentOperation2 ;
-                       :isBefore :ExampleSet2AlignmentOperation4 .
+                                :hasAttribute :ExampleSet2AlignmentOperation3Span ;
+                                :isAfter :ExampleSet2AlignmentOperation2 ;
+                                :isBefore :ExampleSet2AlignmentOperation4 .
 
 :ExampleSet2AlignmentOperation3Span a :Span ;
                                     :hasValue "6" .
 
 :ExampleSet2AlignmentOperation4 rdf:type :ReferenceSequenceGap ;
-                       :isAfter :ExampleSet2AlignmentOperation3 ;
-                       :isBefore :ExampleSet2AlignmentOperation5 .
+                                :hasAttribute :ExampleSet2AlignmentOperation4Span ;
+                                :isAfter :ExampleSet2AlignmentOperation3 ;
+                                :isBefore :ExampleSet2AlignmentOperation5 .
 
 :ExampleSet2AlignmentOperation4Span a :Span ;
                                     :hasValue "1" .
 
 :ExampleSet2AlignmentOperation5 rdf:type :Match ;
-                       :isAfter :ExampleSet2AlignmentOperation4 .
+                                :hasAttribute :ExampleSet2AlignmentOperation5Span ;
+                                :isAfter :ExampleSet2AlignmentOperation4 .
 
 :ExampleSet2AlignmentOperation5Span a :Span ;
                                     :hasValue "6" .
@@ -246,7 +256,7 @@
 
 # The individuals that were sequenced are represented by named, but otherwise
 # unspecified, instances. This provides sufficient information to distinguish
-# between the individuals.
+# between the individuals that were sequenced.
 :ExampleSet3SequencedIndividual1 rdf:type :SequencedIndividual .
 :ExampleSet3SequencedIndividual2 rdf:type :SequencedIndividual .
 
