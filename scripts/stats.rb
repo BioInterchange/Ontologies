@@ -23,11 +23,20 @@ vcf_specification_linkout_sio = 0
 
 wikipedia_linkout = 0
 
+pairwise_disjoint_classes = 0
+disjoint_class_collections = 0
+
 within_definition = nil
 
 STDIN.each { |line|
   line.chomp!
   line.strip!
+
+  if line.include?('owl:disjointWith') then
+    pairwise_disjoint_classes += 1
+  elsif line.include?('&owl;AllDisjointClasses') then
+    disjoint_class_collections += 1
+  end
 
   if line.start_with?('<owl:Class rdf:about="http://www.biointerchange.org/gfvo#') then
     has_sio_equivalent = false
@@ -85,14 +94,17 @@ STDIN.each { |line|
   end
 }
 
-puts "Classes              : #{classes} (SIO equivalent: #{classes_sio_equivalent})"
-puts "  from GFF3          : #{gff3_specification_linkout} (#{gff3_specification_linkout_sio})"
-puts "  from GTF           : #{gtf_specification_linkout} (#{gtf_specification_linkout_sio})"
-puts "  from GVF           : #{gvf_specification_linkout} (#{gvf_specification_linkout_sio})"
-puts "  from VCF           : #{vcf_specification_linkout} (#{vcf_specification_linkout_sio})"
-puts "  Wikipedia reference: #{wikipedia_linkout}"
-puts "Datatype properties  : #{datatype_properties} (#{datatype_properties_sio_equivalent})"
-puts "Object properties    : #{object_properties} (#{object_properties_sio_equivalent})"
+puts "Classes                      : #{classes} (SIO equivalent: #{classes_sio_equivalent})"
+puts "  from GFF3                  : #{gff3_specification_linkout} (#{gff3_specification_linkout_sio})"
+puts "  from GTF                   : #{gtf_specification_linkout} (#{gtf_specification_linkout_sio})"
+puts "  from GVF                   : #{gvf_specification_linkout} (#{gvf_specification_linkout_sio})"
+puts "  from VCF                   : #{vcf_specification_linkout} (#{vcf_specification_linkout_sio})"
+puts "Class Metadata"
+puts "  Wikipedia references       : #{wikipedia_linkout}"
+puts "  Pairwise disjoint axioms   : #{pairwise_disjoint_classes}"
+puts "  Disjoint collection axioms : #{disjoint_class_collections}"
+puts "Datatype properties          : #{datatype_properties} (#{datatype_properties_sio_equivalent})"
+puts "Object properties            : #{object_properties} (#{object_properties_sio_equivalent})"
 
 puts ''
 
@@ -101,7 +113,10 @@ puts "<tr><td>&hellip;modeled from GFF3</td><td>#{gff3_specification_linkout}</t
 puts "<tr><td>&hellip;modeled from GTF</td><td>#{gtf_specification_linkout}</td><td>#{gtf_specification_linkout_sio}</td></tr>"
 puts "<tr><td>&hellip;modeled from GVF</td><td>#{gvf_specification_linkout}</td><td>#{gvf_specification_linkout_sio}</td></tr>"
 puts "<tr><td>&hellip;modeled from VCF</td><td>#{vcf_specification_linkout}</td><td>#{vcf_specification_linkout_sio}</td></tr>"
-puts "<tr><td>&hellip;with Wikipedia reference</td><td>#{wikipedia_linkout}</td><td></td></tr>"
+puts "<tr><td>Class Metadata</td><td></td><td></td></tr>"
+puts "<tr><td>&hellip;Wikipedia references</td><td>#{wikipedia_linkout}</td><td></td></tr>"
+puts "<tr><td>&hellip;pairwise disjoint axioms</td><td>#{pairwise_disjoint_classes}</td><td></td></tr>"
+puts "<tr><td>&hellip;disjoint collection axioms</td><td>#{disjoint_class_collections}</td><td></td></tr>"
 puts "<tr><td>Datatype properties</td><td>#{datatype_properties}</td><td>#{datatype_properties_sio_equivalent}</td></tr>"
 puts "<tr><td>Object properties</td><td>#{object_properties}</td><td>#{object_properties_sio_equivalent}</td></tr>"
 
