@@ -268,24 +268,33 @@
 # Genotype for the first individual.
 #
 # The genotype's phased variants are linked via "hasFirstPart" and
-# "hasLastPart" only. The object property "isBefore" could be used
-# to explicitly denote the ordering of the variants, but it would then
-# be necessary to create variant instances per-genotype, since the
-# ordering is not uniform across all genotypes.
+# "hasLastPart" here, which are descendants of "hasOrderedPart".
+# The object properties "isBefore"/"isAfter" connect the phased variants.
+#
+# Note: for an unphased genotype, it is sufficient to use "hasPart" only.
 :ExampleSet3Genotype1 a :Genotype ;
                       :hasParticipant :ExampleSet3SequencedIndividual1 ;
                       :hasQuality :Heterozygous ;
                       :hasAttribute :ExampleSet3Phase ;
-                      :hasFirstPart :ExampleSet3Variant1 ;
-                      :hasLastPart :ExampleSet3Variant2 .
+                      :hasFirstPart :ExampleSet3ReferenceA_AT ;
+                      :hasLastPart :ExampleSet3VariantT_AT .
+
+# Ordering of the variants permits the expresion of phased genotypes.
+# It is recommended to use "isBefore", but the use of "isAfter" is optional.
+:ExampleSet3ReferenceA_AT :isBefore :ExampleSet3VariantT_AT .
+:ExampleSet3VariantT_AT :isAfter :ExampleSet3ReferenceA_AT .
 
 # Genotype of the second individual.
 :ExampleSet3Genotype2 a :Genotype ;
                       :hasParticipant :ExampleSet3SequencedIndividual2 ;
                       :hasQuality :Homozygous ;
                       :hasAttribute :ExampleSet3Phase ;
-                      :hasFirstPart :ExampleSet3Variant2 ;
-                      :hasLastPart :ExampleSet3Variant2 .
+                      :hasFirstPart :ExampleSet3VariantT_TT ;
+                      :hasLastPart :ExampleSet3VariantT_TT .
+
+# As above: variant ordering to phase the genotype.
+:ExampleSet3VariantT_TT :isBefore :ExampleSet3VariantT_TT .
+:ExampleSet3VariantT_TT :isAfter :ExampleSet3VariantT_TT .
 
 # Having an instance to denote the presence of phase information
 # might appear redundant across data sets. On the other hand, it
@@ -299,9 +308,11 @@
 # would be indicated -- in a VCF file -- by a "0" in the GT field
 # (e.g., "0/1" to indicate a genotype whose first allele is on the
 # reference genome and the second allele is an alternative allele).
-:ExampleSet3Variant1 a :SequenceVariant ;
-                     :hasValue "A" .
+:ExampleSet3ReferenceA_AT a :ReferenceSequence ;
+                          :hasValue "A" .
 
-:ExampleSet3Variant2 a :SequenceVariant ;
-                     :hasValue "T" .
+:ExampleSet3VariantT_AT a :SequenceVariant ;
+                        :hasValue "T" .
 
+:ExampleSet3VariantT_TT a :SequenceVariant ;
+                        :hasValue "T" .
