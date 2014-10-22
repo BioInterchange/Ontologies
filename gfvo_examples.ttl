@@ -241,8 +241,8 @@
 #
 #    Encoding of a sequence variant. This is part of the GVF
 #    specification, denoting two variants for two separate
-#    sequenced individuals: &quot;Variant_seq=A,T;Genotype=0:1,1:1&quot;.
-#    (See &quot;Genotype&quot; in the GVF specification at
+#    sequenced individuals: "Variant_seq=A,T;Genotype=0:1,1:1".
+#    (See "Genotype" in the GVF specification at
 #     http://www.sequenceontology.org/resources/gvf.html)
 #
 #    The example also addresses sequence variant encoding in
@@ -279,7 +279,7 @@
                       :hasFirstPart :ExampleSet3ReferenceA_AT ;
                       :hasLastPart :ExampleSet3VariantT_AT .
 
-# Ordering of the variants permits the expresion of phased genotypes.
+# Ordering of the variants permits the expression of phased genotypes.
 # It is recommended to use "isBefore", but the use of "isAfter" is optional.
 :ExampleSet3ReferenceA_AT :isBefore :ExampleSet3VariantT_AT .
 :ExampleSet3VariantT_AT :isAfter :ExampleSet3ReferenceA_AT .
@@ -293,8 +293,8 @@
                       :hasLastPart :ExampleSet3VariantT_TT .
 
 # As above: variant ordering to phase the genotype.
-:ExampleSet3VariantT_TT :isBefore :ExampleSet3VariantT_TT .
-:ExampleSet3VariantT_TT :isAfter :ExampleSet3VariantT_TT .
+:ExampleSet3VariantT_TT :isBefore :ExampleSet3VariantT_TT ;
+                        :isAfter :ExampleSet3VariantT_TT .
 
 # Having an instance to denote the presence of phase information
 # might appear redundant across data sets. On the other hand, it
