@@ -25,6 +25,7 @@ wikipedia_linkout = 0
 
 pairwise_disjoint_classes = 0
 disjoint_class_collections = 0
+with_restrictions = 0
 
 within_definition = nil
 
@@ -36,6 +37,8 @@ STDIN.each { |line|
     pairwise_disjoint_classes += 1
   elsif line.include?('&owl;AllDisjointClasses') then
     disjoint_class_collections += 1
+  elsif line.include?('owl:withRestriction') then
+    with_restrictions += 1
   end
 
   if line.start_with?('<owl:Class rdf:about="http://www.biointerchange.org/gfvo#') then
@@ -103,6 +106,7 @@ puts "Class Metadata"
 puts "  Wikipedia references       : #{wikipedia_linkout}"
 puts "  Pairwise disjoint axioms   : #{pairwise_disjoint_classes}"
 puts "  Disjoint collection axioms : #{disjoint_class_collections}"
+puts "  Property restrictions      : #{with_restrictions}"
 puts "Datatype properties          : #{datatype_properties} (#{datatype_properties_sio_equivalent})"
 puts "Object properties            : #{object_properties} (#{object_properties_sio_equivalent})"
 
@@ -117,6 +121,7 @@ puts "<tr><td>Class Metadata</td><td></td><td></td></tr>"
 puts "<tr><td>&hellip;Wikipedia references</td><td>#{wikipedia_linkout}</td><td></td></tr>"
 puts "<tr><td>&hellip;pairwise disjoint axioms</td><td>#{pairwise_disjoint_classes}</td><td></td></tr>"
 puts "<tr><td>&hellip;disjoint collection axioms</td><td>#{disjoint_class_collections}</td><td></td></tr>"
+puts "<tr><td>&hellip;with property restrictions</td><td>#{with_restrictions}</td><td></td></tr>"
 puts "<tr><td>Datatype properties</td><td>#{datatype_properties}</td><td>#{datatype_properties_sio_equivalent}</td></tr>"
 puts "<tr><td>Object properties</td><td>#{object_properties}</td><td>#{object_properties_sio_equivalent}</td></tr>"
 

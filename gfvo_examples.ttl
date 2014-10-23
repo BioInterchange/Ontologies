@@ -62,10 +62,10 @@
                            faldo:end :ExampleSet1LandmarkEndPosition .
 
 :ExampleSet1LandmarkStartPosition a faldo:ExactPosition ;
-                                  faldo:position "1" .
+                                  faldo:position 1 .
 
 :ExampleSet1LandmarkEndPosition a faldo:ExactPosition ;
-                                faldo:position "1497228" .
+                                faldo:position 1497228 .
 
 # GFF3, GTF and GVF make use of named attributes. There are predefined (reserved)
 # names, but users can also freely contribute their own attributes. In this example,
@@ -95,10 +95,10 @@
 # The start coordinate of both features is the same in this example. So this
 # entity is used by both :ExampleSet1Feature1 and :ExampleSet1Feature2.
 :ExampleSet1FeatureStartPosition a faldo:ExactPosition ;
-                                 faldo:position "1000" .
+                                 faldo:position 1000 .
 
 :ExampleSet1Feature1EndPosition a faldo:ExactPosition ;
-                                faldo:position "9000" .
+                                faldo:position 9000 .
 
 :ExampleSet1Feature1Identifier a :Identifier ;
                                :hasValue "gene00001" .
@@ -125,7 +125,7 @@
                            faldo:end :ExampleSet1Feature2EndPosition .
 
 :ExampleSet1Feature2EndPosition a faldo:ExactPosition ;
-                                faldo:position "1012" .
+                                faldo:position 1012 .
 
 :ExampleSet1Feature2Identifier a :Identifier ;
                                :hasValue "tfbs00001" .
@@ -191,10 +191,10 @@
                             faldo:end :ExampleSet2AlignmentEndPosition .
 
 :ExampleSet2AlignmentStartPosition a faldo:ExactPosition ;
-                                   faldo:position "1" .
+                                   faldo:position 1 .
 
 :ExampleSet2AlignmentEndPosition a faldo:ExactPosition ;
-                                 faldo:position "21" .
+                                 faldo:position 21 .
 
 # Description of an actual alignment operation.
 :ExampleSet2AlignmentOperation1 rdf:type :Match ;
@@ -202,7 +202,7 @@
                                 :isBefore :ExampleSet2AlignmentOperation2 .
 
 :ExampleSet2AlignmentOperation1Span a :Span ;
-                                    :hasValue "8" .
+                                    :hasValue 8 .
 
 :ExampleSet2AlignmentOperation2 rdf:type :TargetSequenceGap ;
                                 :hasAttribute :ExampleSet2AlignmentOperation2Span ;
@@ -210,7 +210,7 @@
                                 :isBefore :ExampleSet2AlignmentOperation3 .
 
 :ExampleSet2AlignmentOperation2Span a :Span ;
-                                    :hasValue "3" .
+                                    :hasValue 3 .
 
 :ExampleSet2AlignmentOperation3 rdf:type :Match ;
                                 :hasAttribute :ExampleSet2AlignmentOperation3Span ;
@@ -218,7 +218,7 @@
                                 :isBefore :ExampleSet2AlignmentOperation4 .
 
 :ExampleSet2AlignmentOperation3Span a :Span ;
-                                    :hasValue "6" .
+                                    :hasValue 6 .
 
 :ExampleSet2AlignmentOperation4 rdf:type :ReferenceSequenceGap ;
                                 :hasAttribute :ExampleSet2AlignmentOperation4Span ;
@@ -226,33 +226,30 @@
                                 :isBefore :ExampleSet2AlignmentOperation5 .
 
 :ExampleSet2AlignmentOperation4Span a :Span ;
-                                    :hasValue "1" .
+                                    :hasValue 1 .
 
 :ExampleSet2AlignmentOperation5 rdf:type :Match ;
                                 :hasAttribute :ExampleSet2AlignmentOperation5Span ;
                                 :isAfter :ExampleSet2AlignmentOperation4 .
 
 :ExampleSet2AlignmentOperation5Span a :Span ;
-                                    :hasValue "6" .
+                                    :hasValue 6 .
 
 #################################################################
 #
 #    Example 3
 #
-#    Encoding of a sequence variant. This is part of the GVF
+#    Encoding of genotypes/sequence variants. This is part of the GVF
 #    specification, denoting two variants for two separate
 #    sequenced individuals: "Variant_seq=A,T;Genotype=0:1,1:1".
 #    (See "Genotype" in the GVF specification at
 #     http://www.sequenceontology.org/resources/gvf.html)
 #
-#    The example also addresses sequence variant encoding in
-#    VCF files.
-#
 #################################################################
 
 :ExampleSet3 a :Collection ;
              :hasMember :ExampleSet3Feature1 ;
-             rdfs:comment "Encoding of a sequence variant. This example is part of the GVF specification, denoting two variants for two separate sequenced individuals (http://www.sequenceontology.org/resources/gvf.html)."@en .
+             rdfs:comment "Encoding of genotypes/sequence variants. This example is part of the GVF specification, denoting two variants for two separate sequenced individuals (http://www.sequenceontology.org/resources/gvf.html)."@en .
 
 # The individuals that were sequenced are represented by named, but otherwise
 # unspecified, instances. This provides sufficient information to distinguish
@@ -316,3 +313,30 @@
 
 :ExampleSet3VariantT_TT a :SequenceVariant ;
                         :hasValue "T" .
+
+#################################################################
+#
+#    Example 4
+#
+#    Encoding of a Phred score. GVF leaves it open how the
+#    "score" (column 6) should be interpreted, but recommends
+#    the use of Phred scores. If a data provider knows that
+#    a Phred score was utilized, then this can be represented
+#    via GFVO.
+#    (See "Column Descriptions" in the GVF specification at
+#     http://www.sequenceontology.org/resources/gvf.html)
+#
+#################################################################
+
+:ExampleSet4 a :Collection ;
+             :hasMember :ExampleSet4Feature1 ;
+             rdfs:comment "Encoding of a Phred score. This example is motivated by the GVF specification, which encourages -- but does not enforce -- the use of Phred scores (http://www.sequenceontology.org/resources/gvf.html)."@en .
+
+# Interpreting "score" (column 6) of a GVF file as Phred score.
+:ExampleSet4Feature1 a :Feature ;
+                     :hasAttribute :ExampleSet4Feature1Score .
+
+# Use of "PhredScore" instead of "Score" to denote the specific
+# type of score being used.
+:ExampleSet4Feature1Score a :PhredScore ;
+                          :hasValue 38 .
