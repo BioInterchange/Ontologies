@@ -1,0 +1,15 @@
+@prefix : <http://www.biointerchange.org/gfvo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:ExampleSet4 a :Collection ;
+             :hasMember :ExampleSet4Feature1 .
+
+# Interpreting "score" (column 6) of a GVF file as Phred score.
+# Uses "PhredScore" instead of "Score" to denote the specific
+# type of score being used.
+:ExampleSet4Feature1 a :Feature ;
+                     :hasAttribute [
+                         a :PhredScore ;
+                         :hasValue 38 .
+                     ] .
+

@@ -1,0 +1,68 @@
+@prefix : <http://www.biointerchange.org/gfvo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix so: <http://purl.bioontology.org/ontology/SO/SO> .
+
+:ExampleSet1 a :File ;
+             :hasIdentifier [
+                 a :Version ;
+                 :hasValue "gff-version 3" ;
+             ] ;
+             :hasMember :ExampleSet1Feature1 ,
+                        :ExampleSet1Feature2 .
+
+# Feature 1: a gene
+:ExampleSet1Feature1 a :Feature ,
+                     so:0000704 ;
+                     :isLocatedOn :ExampleSet1Landmark ;
+                     :hasPart [
+                         a :Locus ;
+                         :hasAttribute [
+                             a faldo:Region ;
+                             faldo:begin [
+                                 a faldo:ExactPosition ;
+                                 faldo:position 1000 .
+                             ] ;
+                             faldo:end [
+                                 a faldo:ExactPosition ;
+                                 faldo:position 9000 .
+                             ] .
+                         ] .
+                     ] ;
+                     :hasIdentifier [
+                         a :Identifier ;
+                         :hasValue "gene00001" .
+                     ] ;
+                     :hasAttribute [
+                         a :Name ;
+                         :hasAttribute [
+                             a :Label ;
+                             :hasValue "Name" .
+                         ] ;
+                         :hasValue "EDEN" .
+                     ] .
+
+# Feature 2: a transcription factor binding site
+:ExampleSet1Feature2 a :Feature ,
+                     so:0000235 ;
+                     :isLocatedOn :ExampleSet1Landmark ;
+                     :hasPart [
+                         a :Locus ;
+                         :hasAttribute [
+                             a faldo:Region ;
+                             faldo:begin [
+                                 a faldo:ExactPosition ;
+                                 faldo:position 1000 .
+                             ] ;
+                             faldo:end [
+                                 a faldo:ExactPosition ;
+                                 faldo:position 1012 .
+                             ] .
+                         ] .
+                     ] ;
+                     :hasIdentifier [
+                         a :Identifier ;
+                         :hasValue "tfbs00001" .
+                     ] ;
+                     :hasSource :ExampleSet1Feature1 .
+

@@ -1,0 +1,62 @@
+@prefix : <http://www.biointerchange.org/gfvo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:ExampleSet3 a :Collection ;
+             :hasMember :ExampleSet3Feature1 .
+
+# The individuals that were sequenced are represented by named,
+# but otherwise unspecified, instances. This provides sufficient
+# information to distinguish between the individuals that were
+# sequenced.
+:ExampleSet3SequencedIndividual1 a :SequencedIndividual .
+:ExampleSet3SequencedIndividual2 a :SequencedIndividual .
+
+# Genomic feature that captures the two described genotypes.
+:ExampleSet3Feature1 a :Feature ;
+                     :hasAttribute :ExampleSet3Genotype1 ,
+                                   :ExampleSet3Genotype2 .
+
+# Genotype for the first individual.
+:ExampleSet3Genotype1 a :Genotype ;
+                      :hasParticipant :ExampleSet3SequencedIndividual1 ;
+                      :hasQuality :Heterozygous ;
+                      :hasAttribute [
+                          a :GameticPhase .
+                      ] ;
+                      :hasFirstPart :ExampleSet3ReferenceA_AT ;
+                      :hasLastPart :ExampleSet3VariantT_AT .
+
+# Ordering of the variants permits the expression of phased genotypes.
+# It is recommended to use "isBefore", but the use of "isAfter" is
+# optional.
+:ExampleSet3ReferenceA_AT :isBefore :ExampleSet3VariantT_AT .
+:ExampleSet3VariantT_AT :isAfter :ExampleSet3ReferenceA_AT .
+
+# Genotype of the second individual.
+:ExampleSet3Genotype2 a :Genotype ;
+                      :hasParticipant :ExampleSet3SequencedIndividual2 ;
+                      :hasQuality :Homozygous ;
+                      :hasAttribute [
+                          a :GameticPhase .
+                      ] ;
+                      :hasFirstPart :ExampleSet3VariantT_TT ;
+                      :hasLastPart :ExampleSet3VariantT_TT .
+
+# As above: variant ordering to phase the genotype.        
+:ExampleSet3VariantT_TT :isBefore :ExampleSet3VariantT_TT ;
+                        :isAfter :ExampleSet3VariantT_TT .
+
+# For VCF data, the type can also be "ReferenceSequence", which
+# denotes that the sequence is located on a reference genome. This
+# would be indicated -- in a VCF file -- by a "0" in the GT field
+# (e.g., "0/1" to indicate a genotype whose first allele is on the
+# reference genome and the second allele is an alternative allele).
+:ExampleSet3ReferenceA_AT a :ReferenceSequence ;
+                          :hasValue "A" .
+
+:ExampleSet3VariantT_AT a :SequenceVariant ;
+                        :hasValue "T" .
+
+:ExampleSet3VariantT_TT a :SequenceVariant ;
+                        :hasValue "T" .
+

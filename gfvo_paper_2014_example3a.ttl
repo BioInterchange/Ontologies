@@ -1,0 +1,24 @@
+@prefix : <http://www.biointerchange.org/gfvo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:ExampleSet3a a :Collection ;
+              :hasMember :ExampleSet3aFeature1 .
+
+:ExampleSet3aSequencedIndividual1 a :SequencedIndividual .
+
+# Genomic feature that captures an unphased genotype.
+:ExampleSet3aFeature1 a :Feature ;
+                      :hasAttribute :ExampleSet3aGenotype1 .
+
+:ExampleSet3aGenotype1 a :Genotype ;
+                       :hasParticipant :ExampleSet3aSequencedIndividual1 ;
+                       :hasQuality :Heterozygous ;
+                       :hasPart [
+                           a :ReferenceSequence ;
+                           :hasValue "A" .
+                       ] ;
+                       :hasPart [
+                           a :SequenceVariant ;
+                           :hasValue "T" .
+                       ] .
+
