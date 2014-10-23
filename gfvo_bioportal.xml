@@ -23,7 +23,7 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.47</owl:versionInfo>
+        <owl:versionInfo>0.9.48</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <rdfs:comment xml:lang="en">Best Practices
 
@@ -327,6 +327,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:DatatypeProperty>
     
@@ -429,6 +431,8 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
         <rdfs:comment xml:lang="en">Denotes an ancestral allele of a feature. May be used to denote the &apos;ancestral allele&apos; of VCF formatted files.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Ancestral_reconstruction</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#ArrayComparativeGenomicHybridization -->
@@ -520,6 +524,8 @@ The object property &quot;hasQuality&quot; (or subproperties thereof) should be 
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -536,6 +542,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#CodingFrameOffset -->
@@ -603,6 +611,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -712,6 +722,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -745,6 +757,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -757,6 +771,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -779,6 +795,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -819,6 +837,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Gametic_phase</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Genome -->
@@ -829,6 +849,8 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
         <rdfs:comment xml:lang="en">Representation of a genome. Genomic features that constitute the genome may be linked via one or more &quot;Collection&quot;, &quot;Catalog&quot;, &quot;Contig&quot;, &quot;Scaffold&quot; or &quot;File&quot; instances.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Genome</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#GenomeAnalysis -->
@@ -862,6 +884,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Genotype</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Genotyping -->
@@ -951,6 +975,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -980,6 +1006,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -992,6 +1020,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -1002,6 +1032,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quantity"/>
         <rdfs:comment xml:lang="en">Likelihood is the hypothetical probability of the occurrence of a certain event.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Locus -->
@@ -1014,6 +1046,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -1062,6 +1096,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#SequenceVariant"/>
         <rdfs:comment xml:lang="en">Insertion or deletion of a mobile element. The exact modification is determined by a type of the Variation Ontology.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Name -->
@@ -1073,6 +1109,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -1108,6 +1146,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:comment xml:lang="en">Number of reads supporting a particular feature or variant.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Object -->
@@ -1226,6 +1266,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:comment xml:lang="en">The Phred score can be used to assign quality scores to base calls of DNA sequences.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#PrenatalCell -->
@@ -1293,6 +1335,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:comment xml:lang="en">Denotes the reference sequence of a feature. The reference sequence is of importance when dealing with genomic variation data, which is expressed by the &quot;Variant&quot; class.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#ReferenceSequenceGap -->
@@ -1324,6 +1368,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Sample_(material)</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Scaffold -->
@@ -1363,6 +1409,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -1390,6 +1438,8 @@ Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -1444,6 +1494,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:comment xml:lang="en">Describing specific sequence alterations of a genomic feature. A variant is related to &quot;Reference&quot; class instances, which denote the sequence that serves as a basis for sequence alteration comparisons.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#SequencedIndividual -->
@@ -1483,6 +1535,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Somatic</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Span -->
@@ -1548,6 +1602,8 @@ In GFF3, a sequence alignment can be a nucleotide-to-nucleotide or protein-to-nu
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
