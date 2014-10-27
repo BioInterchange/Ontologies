@@ -4,7 +4,13 @@ def origin_tag(uri)
   return '<span style="margin-right: 4px;" class="badge alert-danger">GFF3</span>' if uri == 'http://sequenceontology.org/resources/gff3.html'
   return '<span style="margin-right: 4px;" class="badge alert-info">GTF</span>' if uri == 'http://www.ensembl.org/info/website/upload/gff.html'
   return '<span style="margin-right: 4px;" class="badge alert-success">GVF</span>' if uri == 'http://sequenceontology.org/resources/gvf.html'
-  return '<span style="margin-right: 4px;" class="badge alert-warning">VCF</span>' if uri == 'http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41'
+
+  # Only pick up on the latest VCF specification. For the others: ignore (since there will be already a badge).
+  return '<span style="margin-right: 4px;" class="badge alert-warning">VCF</span>' if uri == 'http://samtools.github.io/hts-specs/VCFv4.2.pdf'
+  return '' if uri == 'http://samtools.github.io/hts-specs/VCFv4.1.pdf'
+  return '' if uri == 'http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41'
+
+  # Everything else: just output the URI.
   return "<i>#{uri}</i>"
 end
 
