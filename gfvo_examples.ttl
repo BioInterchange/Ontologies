@@ -45,7 +45,7 @@
                         :ExampleSet1Feature2 ;
              rdfs:comment "A simple example of a hierarchical genomic feature dependency. This example is an excerpt of another example given in the GFF3 specification (http://sequenceontology.org/resources/gff3.html)."@en .
 
-# Features in this example are placed on a single langmark, which has
+# Features in this example are placed on a single landmark, which has
 # an identifier associated with it (it cannot be anonymous in GFF3, even
 # though GFVO permits landmarks without explicit identifier), and it
 # has a range of sequence positions it covers (expressed by a separate
