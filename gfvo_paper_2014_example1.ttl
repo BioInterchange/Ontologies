@@ -66,3 +66,25 @@
                      ] ;
                      :hasSource :ExampleSet1Feature1 .
 
+# Features in this example are placed on a single landmark, which has
+# an identifier associated with it (it cannot be anonymous in GFF3, even
+# though GFVO permits landmarks without explicit identifier), and it
+# has a range of sequence positions it covers (expressed by a separate
+# pragma statement in GFF3).
+:ExampleSet1Landmark a :Landmark ;
+                     :hasIdentifier [
+                         a :Identifier ;
+                         :hasValue "ctg123" .
+                     ] ;
+                     :hasAttribute [
+                         a faldo:Region ;
+                         faldo:begin [
+                             a faldo:ExactPosition ;
+                             faldo:position 1 .
+                         ] ;
+                         faldo:end [
+                             a faldo:ExactPosition ;
+                             faldo:position 1497228 .
+                         ] .
+                     ] .
+
