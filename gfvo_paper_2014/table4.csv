@@ -1,0 +1,103 @@
+GFVO Class,GFF3 Data Structure,GTF Data Structure,GVF Data Structure,VCF Data Structure
+Alias,“Alias” attribute,n/a,“Alias” attribute,n/a
+AlleleCount,n/a,n/a,n/a,“AC” additional information; “EC” additional information (requires link to alternate allele)
+AlleleFrequency,n/a,n/a,“Variant_freq” attribute,“AF” additional information
+AminoAcid,n/a,n/a,“Variant_aa” attribute; “Reference_aa” attribute; (see GFVO classes “Sequence Variant” and “Reference Sequence” for annotating the amino acid sequence),n/a
+AncestralSequence,n/a,n/a,n/a,“AA” additional information
+ArrayComparativeGenomicHybridization,n/a,n/a,“data-source” structured pragma,n/a
+Attribute,contents of the “attributes” column that are not mapped otherwise,“attribute” column,contents of the “attributes” column that are not mapped otherwise,contents of the “INFO” column that are not mapped otherwise
+AverageCoverage,n/a,n/a,“technology-platform-average-coverage” pragma,n/a
+Base Quality,n/a,n/a,n/a,“BQ” additional information
+BiologicalEntity,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+BiopolymerSequencing,n/a,n/a,see GFVO subclasses “DNASequencing” and “RNASequencing” for applications,n/a
+Breakpoint,n/a,n/a,“Breakpoint_detail” attribute and “Breakpoint_range” attribute (see also FALDO in Table 4),n/a
+Catalog,n/a,n/a,n/a,see GFVO subclass “Haplotype”
+Cell,n/a,n/a,see GFVO subclasses “GermlineCell” and “SomaticCell” and “PrenatalCell”,n/a
+ChemicalEntity,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+Chromosome,n/a,n/a,“sequencing-scope” pragma (for use with targeted sequencing),n/a
+CircularHelix,“Is_circular” attribute (see also GFVO class “WatsonCrickHelix”),n/a,“Is_circular” attribute (see also GFVO class “WatsonCrickHelix”),n/a
+CodingFrameOffset,“phase” column,“frame” column,n/a (“phase” column unused),n/a
+CodonSequence,n/a,n/a,“Variant_codon” attribute; “Reference_codon” attribute; (see GFVO classes “Sequence Variant” and “Reference Sequence” for annotating the codon sequence),n/a
+Collection,n/a,n/a,see subclasses “Contig” and “Catalog” and “Scaffold” for applications,see subclasses “Contig” and “Catalog” and “Scaffold” for applications
+Comment,comment lines (beginning with a single “#”; linkage via GFVO properties “isAfter”/“isBefore”),comment lines (beginning with a single “#”; linkage via GFVO properties “isAfter”/“isBefore”),“Comment” attribute; comment lines (beginning with a single “#”; linkage via GFVO properties “isAfter”/“isBefore”),n/a
+ConditionalGenotypeQuality,n/a,n/a,n/a,“GQ” additional information
+Contig,n/a,n/a,“sequencing-scope” pragma (for use with targeted sequencing),“contig” information field (see also GFVO class “Landmark”)
+Coverage,n/a,n/a,see GFVO class “AverageCoverage”,“DP” additional information
+DNAMicroarray,n/a,n/a,“data-source” structured pragma,n/a
+DNASequence,“FASTA” annotation,n/a,“sequencing-scope” pragma (for use with targeted sequencing),n/a
+DNASequencing,n/a,n/a,“data-source” structured pragma,n/a
+Exome,n/a,n/a,“sequencing-scope” pragma,n/a
+ExperimentalMethod,“source” column,“source” column,“source” column; “capture-method” pragma (for use with exome and targeted sequencing),“CHROM” column; “VALIDATED” additional information (GFVO class instance does not need to be further annotated)
+ExternalReference,“Dbxref” attribute; “genome-build” pragma,“source” column,“Dbxref” attribute; “genome-build” pragma; “source-method” structured pragma; “attribute-method” structured pragma; “phenotype-description” structured pragma (see also GFVO class “Phenotype”); “phased-genotypes” structured pragma,“assembly” information field (encouraged to include the linked FASTA file contents; compare to GVF FASTA annotations); “pedigreeDB” information field; “DB” additional information (link to dbSNP via GFVO property “hasEvidence”); “H2” additional information and “H3” additional information (link to HapMap via GFVO property “hasEvidence”); “1000G” additional information (link to 1000 Genomes via GFVO property “hasEvidence”)
+Feature,rows with 9-tab delimiters (see “Description of the Format”),every line (see “Fields”),rows with 9-tab delimiters (see “Column Descriptions”); “Variant_effect” attribute (see also GFVO’s “is_affected_by” property),data lines (see section 1.4 of the specification)
+Female,n/a,n/a,“sex” pragma,n/a
+File,n/a,n/a,“reference_fasta” pragma and “feature-gff3” pragma (it is encouraged to load and encode for the referenced file contents),n/a
+ForwardReferenceSequenceFrameshift,“Target” attribute,n/a,“Target” attribute; utilized by “sequence-alignment” pragma,utilized by “CIGAR” additional information
+FragmentReadPlatform,n/a,n/a,“technology-platform-read-type” pragma,n/a
+FunctionalSpecification,see GFVO subclass “Genotype” for applications,see GFVO subclass “Genotype” for applications,see GFVO subclass “Genotype” for applications,see GFVO subclass “Genotype” for applications
+GameticPhase,n/a,n/a,“Phase” attribute,“GT” additional information (see also GFVO class “Genotype”); “PS” additional information (see also GFVO class “Haplotype”)
+Genome,“genome-build” pragma,n/a,“genome-build” pragma; “sequencing-scope” pragma,“Genomes” key/value property in information field (“SAMPLE” information field); “PEDIGREE” information field (relationships via GFVO properties “isAfter”/“isBefore”; labels encoded via GFVO property “hasAttribute” and class “Label”)
+GenomeAnalysis,n/a,n/a,n/a,“FILTER” information field (applicable if GFVO classes “Genotyping” and “VariantCalling” are not applicable; see also GFVO property “isRefutedBy”)
+GenomicAscertainingMethod,n/a,n/a,parent class to classes used with the “data-source” structured pragma,n/a
+Genotype,n/a,n/a,“Genotype” attribute,“GT” additional information (see also GFVO class “GameticPhase”)
+Genotyping,n/a,n/a,n/a,“FILTER” information field (see also GFVO property “isRefutedBy”)
+GermlineCell,n/a,n/a,“genomic-source” pragma,n/a
+Haplotype,n/a,n/a,n/a,“HQ” additional information (see also GFVO class “PhredScore”)
+HelixStructure,see GFVO subclasses “CircularHelix” and “WatsonCrickHelix” for applications,n/a,see GFVO subclasses “CircularHelix” and “WatsonCrickHelix” for applications,n/a
+Hemizygous,n/a,n/a,“Zygosity” attribute,not explicitly specified; can be applied to genotypes (see GFVO class “Genotype”)
+Heritage,n/a,n/a,see GFVO subclasses “MaternalHeritage” and “PaternalHeritage”,see GFVO subclasses “MaternalHeritage” and “PaternalHeritage”
+Hermaphrodite,n/a,n/a,unspecified; potential future use with “sex” pragma,n/a
+Heterozygous,n/a,n/a,“Zygosity” attribute,not explicitly specified; can be applied to genotypes (see GFVO class “Genotype”)
+Homozygous,n/a,n/a,“Zygosity” attribute,not explicitly specified; can be applied to genotypes (see GFVO class “Genotype”)
+Identifier,“seqid” column; “ID” attribute,“seqname” column,“seqid” column; “ID” attribute; “individual-id” pragma; “technology-platform-machine-id” pragma,“CHROM” column; “ID” key/value property
+InformationContentEntity,n/a,n/a,n/a,“FORMAT” information field
+Label,n/a,n/a,n/a,“PEDIGREE” information field (see also GFVO class “Genome”)
+Landmark,“seqid” column; “sequence-region” pragma; “FASTA” annotation,“seqname” column; “DNA” “##”-line type and “RNA” “##”-line type and “Protein” “##”-line type,“seqid” column; “sequence-region” pragma; “FASTA” annotation,“CHROM” column; “contig” information field (see also GFVO class “Contig”)
+Likelihood,n/a,n/a,n/a,“GL” additional information; “GP” additional information (use with GFVO property “isSupportedBy” and GFVO class “ExperimentalMethod” or its descendants)
+LikelihoodOfHeterogeneousPloidy,n/a,n/a,n/a,“GLE” additional information
+Locus,“start” column; “end” column; “strand” column,“start” column; “end” column; “strand” column,“start” column; “end” column; “strand” column; “Start_range” attribute; “End_range” attribute,“POS” column
+Male,n/a,n/a,“sex” pragma,n/a
+MappingQuality,n/a,n/a,n/a,“MQ” information field
+Match,“Target” attribute,n/a,“Target” attribute; utilized by “sequence-alignment” pragma,utilized by “CIGAR” additional information
+MaterialEntity,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+MaternalHeritage,n/a,n/a,unspecified; potential use in phased genotypes,unspecified; potential use in phased genotypes
+Name,“genome-build” pragma,“feature” column,“genome-build” pragma; “population” pragma; “technology-platform-name” pragma,n/a
+Note,n/a,n/a,“sample-description” pragma; “Comment” key/value pairs in structured attributes,“Description” key/value property in information fields; “SB” information field (chosen due to ambiguous definition of strand bias)
+NumberOfReads,n/a,n/a,“Variant_reads” attribute,“MQ0” attribute (with GFVO property “hasQuality” and GFVO class “MappingQuality” instance with value 0)
+Object,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+PairedEndReadPlatform,n/a,n/a,“technology-platform-read-type” pragma,n/a
+PaternalHeritage,n/a,n/a,unspecified; potential use in phased genotypes,unspecified; potential use in phased genotypes
+PeptideSequence,“FASTA” annotation,n/a,“FASTA” annotation,n/a
+Phenotype,n/a,n/a,“phenotype-description” structured pragma (see also GFVO class “Phenotype”),n/a
+PhredScore,n/a,n/a,“score” column,“QUAL” column; “PL” additional information (linked to GFVO class “Genotype”); “HQ” additional information (see also GFVO class “Haplotype”); “PQ” additional information (see also GFVO “GameticPhase”)
+PrenatalCell,n/a,n/a,“genomic-source” pragma (deprecated class; meaning questioned in the specification),n/a
+Process,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+ProteinSequence,n/a,n/a,“sequencing-scope” pragma (for use with targeted sequencing),n/a
+Proteome,n/a,n/a,“sequencing-scope” pragma (anticipated future use),n/a
+Quality,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+Quantity,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+RNASequencing,n/a,n/a,“data-source” structured pragma,n/a
+ReferenceSequence,n/a,n/a,“Reference_seq” attribute; “Sequence_context” attribute (see also GFVO properties “isBefore”/“isAfter”),“REF” column
+ReferenceSequenceGap,“Target” attribute,n/a,“Target” attribute; utilized by “sequence-alignment” pragma,utilized by “CIGAR” additional information
+ReverseReferenceSequenceFrameshift,“Target” attribute,n/a,“Target” attribute; utilized by “sequence-alignment” pragma,utilized by “CIGAR” additional information
+Sample,n/a,n/a,“sample-description” pragma,“SAMPLE” information field
+SampleCount,n/a,n/a,n/a,“NS” additional information
+SampleMixture,n/a,n/a,n/a,“Mixture” key/value property in information fields (“SAMPLE” information field)
+Scaffold,n/a,n/a,“sequencing-scope” pragma (for use with targeted sequencing),n/a
+Score,“score” column,“score” column,“score” column; “score-method” structured pragma,uses subclasses of “Score” (see GFVO classes “Phred Score” and “Conditional Genotype Quality”)
+Sequence,see subclasses for applications,n/a,"“sequencing-scope” pragma (for use with targeted sequencing), see subclasses for further applications",n/a
+SequenceAlignment,“Target” attribute,n/a,“Target” attribute; “sequence-alignment” pragma,“CIGAR” additional information
+SequenceAlignmentOperation,see subclasses for applications,see subclasses for applications,see subclasses for applications,see subclasses for applications
+SequenceVariant,n/a,n/a,“Variant_seq” attribute,“ALT” column; “ALT” information field (with SO annotation)
+SequencedIndividual,n/a,n/a,“Individual” attribute; “multi-individual” pragma,not within specification; but could be applied by data providers (see GFVO class “Haplotype”)
+SequencingTechnologyPlatform,n/a,n/a,“technology-platform-class” pragma; composite for aggregating “technology-platform-name” pragma and “technology-platform-version” pragma and “technology-platform-machine-id” pragma and “technology-platform-read-length” pragma and “technology-platform-read-type” pragma and “technology-platform-read-pair-span” pragma and “technology-platform-average-coverage” pragma; “technology-platform” structured pragma,n/a
+Sex,n/a,n/a,“sex” pragma,n/a
+SomaticCell,n/a,n/a,“genomic-source” pragma,“SOMATIC” additional information (use with GFVO property “refersTo”)
+Span,for use with “SequenceAlignmentOperation”,n/a,for use with “SequenceAlignmentOperation”; “technology-platform-read-length” pragma and “technology-platform-read-pair-span” pragma,n/a
+TargetSequenceGap,“Target” attribute,n/a,“Target” attribute; utilized by “sequence-alignment” pragma,utilized by “CIGAR” additional information
+TotalNumberOfAlleles,n/a,n/a,n/a,“AN” additional information
+TotalNumberOfReads,n/a,n/a,“Total_reads” attribute,“DP” additional information
+VariantCalling,n/a,n/a,“variant-calling” pragma,“FILTER” information field (see also GFVO property “isRefutedBy”)
+Version,“gff-version” pragma,“gff-version” “##”-line type,“gvf-version” pragma; “file-version” pragma; “technology-platform-version” pragma,“fileformat” meta-information line
+WatsonCrickHelix,“Is_circular” attribute (see also GFVO class “CircularHelix”),n/a,“Is_circular” attribute (see also GFVO class “CircularHelix”),n/a
+Zygosity,n/a,n/a,see specific GFVO classes “Heterozygous” and “Homozygous” and “Hemizygous”,see specific GFVO classes “Heterozygous” and “Homozygous” and “Hemizygous”
