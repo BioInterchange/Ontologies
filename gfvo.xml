@@ -23,7 +23,7 @@
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>0.9.51</owl:versionInfo>
+        <owl:versionInfo>0.9.53</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <rdfs:comment xml:lang="en">Best Practices
 
@@ -325,7 +325,6 @@
         <rdfs:comment xml:lang="en">Denotes a temporarily constraint &quot;isPartOf&quot; relationship. The temporal restriction expresses that the relationship is not universally true.
 
 This property can be used to express &quot;Derives_from&quot; relations in GFF3.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gfvo#isPartOf"/>
     </owl:ObjectProperty>
     
@@ -381,8 +380,10 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Alias">
         <rdfs:label>Alias</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Name"/>
-        <rdfs:comment xml:lang="en">An alias is an alternative name for an entity. The use of an alias is mostly secondary, whereas instances of the &quot;Name&quot; class should be used to denote primary names.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Pseudonym</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">An alias is an alternative name for an entity. The use of an alias is mostly secondary, whereas instances of the &quot;Name&quot; class should be used to denote primary names.
+
+Encodes for the &quot;Alias&quot; attribute in GFF3 and GVF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
@@ -392,7 +393,9 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AlleleCount">
         <rdfs:label>Allele Count</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quantity"/>
-        <rdfs:comment xml:lang="en">Count of a specific allele in genotypes. Encodes for the &quot;AC&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Count of a specific allele in genotypes.
+
+Encodes for &quot;AC&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -442,7 +445,9 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Allele_frequency</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Proportion of a particular gene allele in a gene pool or genotype. Encodes for the &quot;AF&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Proportion of a particular gene allele in a gene pool or genotype.
+
+Encodes for &quot;AF&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -480,7 +485,9 @@ This property can be used to express &quot;Derives_from&quot; relations in GFF3.
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AncestralSequence">
         <rdfs:label>Ancestral Sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#ReferenceSequence"/>
-        <rdfs:comment xml:lang="en">Denotes an ancestral allele of a feature. May be used to denote the &quot;ancestral allele&quot; (&quot;AA&quot; additional information) of VCF formatted files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes an ancestral allele of a feature.
+
+May be used to denote the &quot;ancestral allele&quot; (&quot;AA&quot; additional information) of VCF formatted files.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Ancestral_reconstruction</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
@@ -514,7 +521,9 @@ The object property &quot;has quality&quot; (or subproperties thereof) should be
         <rdfs:label>Average Coverage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Coverage"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Shotgun_sequencing#Coverage</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Average coverage depth for a genomic locus (a region or single base pair), i.e. the average number of reads representing a given nucleotide in the reconstructed sequence. Captures the &quot;technology-platform&quot; structured pragma in GVF files (&quot;Average_coverage&quot; tag).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Average coverage depth for a genomic locus (a region or single base pair), i.e. the average number of reads representing a given nucleotide in the reconstructed sequence.
+
+Captures the &quot;technology-platform&quot; structured pragma in GVF files (&quot;Average_coverage&quot; tag).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -599,14 +608,10 @@ The class encodes for the &quot;Breakpoint_detail&quot; and &quot;Breakpoint_ran
         <rdfs:comment xml:lang="en">A chromosome can be used as an abstract representation of a (not necessarily named) chromosome to represent ploidy within a data set. The &quot;Chromosome&quot; instance is then used for for denoting the locus of phased genotypes.
 
 For placing genomic features (&quot;Feature&quot; class instances) on a chromosome, contig, scaffold, etc., please see the &quot;Landmark&quot; class. It is encouraged that Sequence Ontology terms are used to annotate a Landmark with a biological type (s.a. &quot;chromosome&quot;, &quot;contig&quot;, etc.).
-</rdfs:comment>
+
+Encodes for &quot;sequencing-scope&quot; pragma in GVF.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Chromosome</rdfs:seeAlso>
-        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
-        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#CircularHelix -->
@@ -646,8 +651,10 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Coding frame offset of a genomic feature that is a coding sequence or other genomic feature that contributes to transcription and translation. It is referred to as &quot;frame&quot; in GTF, but called &quot;phase&quot; in GFF3 and GVF. A feature&apos;s coding frame offset can be either 0, 1, or 2.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Reading_frame</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Coding frame offset of a genomic feature that is a coding sequence or other genomic feature that contributes to transcription and translation. A feature&apos;s coding frame offset can be either 0, 1, or 2.
+
+It is referred to as &quot;frame&quot; in GTF, but called &quot;phase&quot; in GFF3 and GVF. &quot;phase&quot; is defined in GVF, but unused.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
@@ -673,10 +680,10 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Codon</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A codon sequence is a nucleotide sequence underlying a potential amino acid sequence. Codon sequences are three bases of length or multiples thereof.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:comment xml:lang="en">A codon sequence is a nucleotide sequence underlying a potential amino acid sequence. Codon sequences are three bases of length or multiples thereof.
+
+Encodes for &quot;Variant_codon&quot; and &quot;Reference_codon&quot; attributes in GVF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Collection -->
@@ -723,8 +730,14 @@ Encodes for &quot;GQ&quot; additional information in VCF files.</rdfs:comment>
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Contig">
         <rdfs:label>Contig</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Collection"/>
-        <rdfs:comment xml:lang="en">A contig is a contiguous DNA sequence that has been assembled from shorter overlapping DNA segments. &quot;Contig&quot; is a specialization of a &quot;Collection&quot; and should be used to aggregate features, but not for indicating that a &quot;Landmark&quot; is representing a contig. It is encouraged that the latter is annotated by a term of the Sequence Ontology.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A contig is a contiguous DNA sequence that has been assembled from shorter overlapping DNA segments. &quot;Contig&quot; is a specialization of a &quot;Collection&quot; and should be used to aggregate features, but not for indicating that a &quot;Landmark&quot; is representing a contig. It is encouraged that the latter is annotated by a term of the Sequence Ontology.
+
+Encodes for &quot;sequencing-scope&quot; in GVF and the &quot;contig&quot; information field in VCF.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Contig</rdfs:seeAlso>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Coverage -->
@@ -777,7 +790,9 @@ Encodes for &quot;GQ&quot; additional information in VCF files.</rdfs:comment>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Number of nucleic acid sequence reads for a particular genomic locus (a region or single base pair). Accounts for the &quot;DP&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Number of nucleic acid sequence reads for a particular genomic locus (a region or single base pair).
+
+Accounts for &quot;DP&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -818,8 +833,10 @@ Used by the &quot;data-source&quot; structured pragma in GVF.</rdfs:comment>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.biointerchange.org/gfvo#PeptideSequence"/>
+        <rdfs:comment xml:lang="en">A DNA sequence is a sequence of nucleic acids.
+
+It can be used to describe &quot;FASTA&quot; annotations in both GFF3 and GVF files as well as short sequences in VCF files.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Dna_sequence</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A DNA sequence is a sequence of nucleic acids. It can be used to describe &quot;FASTA&quot; annotations in both GFF3 and GVF files as well as short sequences in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
@@ -876,7 +893,9 @@ Encodes for &quot;source&quot; column contents of GFF3, GTF, and GVF file format
         <owl:equivalentClass rdf:resource="&sio;SIO_001171"/>
         <rdfs:label>External Reference</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
-        <rdfs:comment xml:lang="en">A cross-reference to associate an entity to a representation in another database.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A cross-reference to associate an entity to a representation in another database.
+
+Encodes for the &quot;Dbxref&quot; attribute in GFF3 and GVF. Can be used to describe the contents of the &quot;source&quot; column in GTF files. Captures the &quot;genome-build&quot; pragma, &quot;source-method&quot;, &quot;attribute-method&quot;, &quot;phenotype-description&quot;, and &quot;phased-genotypes&quot; structured pragmas in GVF. Accounts for the &quot;assembly&quot; and &quot;pedigreeDB&quot; information fields, and &quot;DB&quot;, &quot;H2&quot;, &quot;H3&quot;, &quot;1000G&quot; additional information in VCF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
@@ -906,8 +925,10 @@ Encodes for &quot;source&quot; column contents of GFF3, GTF, and GVF file format
         <owl:equivalentClass rdf:resource="&sio;SIO_010052"/>
         <rdfs:label>Female</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Sex"/>
+        <rdfs:comment xml:lang="en">Denoting sex of a female individual, who is defined as an individual producing ova.
+
+This quality can be used to encode for the &quot;sex&quot; pragma in GVF files.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Female</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Denoting sex of a female individual, who is defined as an individual producing ova. This quality can be used to encode for the &quot;sex&quot; pragma in GVF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -959,7 +980,7 @@ Encodes for the &quot;technology-platform-read-type&quot; pragma in GVF.</rdfs:c
         <owl:equivalentClass rdf:resource="&sio;SIO_000315"/>
         <rdfs:label>Functional Specification</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
-        <rdfs:comment xml:lang="en">A functional specification of bioinformatics data, i.e. the specification of genomic material that potentially has biological function.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A functional specification of bioinformatics data, i.e. the specification of genomic material that potentially has biological function. This class should not be directly instantiated, but instead, its subclass &quot;Genotype&quot; should be used.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#GameticPhase -->
@@ -967,7 +988,9 @@ Encodes for the &quot;technology-platform-read-type&quot; pragma in GVF.</rdfs:c
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#GameticPhase">
         <rdfs:label>Gametic Phase</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quality"/>
-        <rdfs:comment xml:lang="en">Denotes the presence of information that required capturing the gametic phase. For diploid organisms, this quality indicates that information is available about which chromosome of a chromosome pair contributed data.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes the presence of information that required capturing the gametic phase. For diploid organisms, this quality indicates that information is available about which chromosome of a chromosome pair contributed data.
+
+&quot;Gametic Phase&quot; encodes for the &quot;Phase&quot; attribute in GVF. It encodes for &quot;GT&quot; and &quot;PS&quot; additional information in VCF.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Gametic_phase</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
@@ -1022,12 +1045,14 @@ Subclasses of the class can be used to encode for the &quot;data-source&quot; st
         <owl:equivalentClass rdf:resource="&sio;SIO_001079"/>
         <rdfs:label>Genotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#FunctionalSpecification"/>
+        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Genotype</rdfs:seeAlso>
         <rdfs:comment xml:lang="en">The genotype is the genetic information captured in a particular genome. It can also refer to one or more populations, if statistical distributions are provided that assign genetic codes to groups of individuals.
 
 A genotype is denoted by a string of slash-separated list of alleles (&quot;has value&quot; property). The length of the list is dependent on the ploidy of the studied species as well as sequencing technique used.
 
-Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot;G&quot;.</rdfs:comment>
-        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Genotype</rdfs:seeAlso>
+Example: &quot;A/G&quot; denotes a genotype with alleles &quot;A&quot; and &quot;G&quot;.
+
+Encodes for the &quot;Genotype&quot; attribute in GVF and &quot;GT&quot; additional information in VCF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1056,7 +1081,7 @@ Applicable to the &quot;FILTER&quot; information field in VCF.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Cell"/>
         <rdfs:comment xml:lang="en">The germline feature class captures information about genomic sequence features arising from germline cells.
 
-VCF files permit the explicit annotation with &quot;Somatic Cell&quot; via the &quot;SOMATIC&quot; additional information field. The absence of that field does not imply the presence of germine cell material though.</rdfs:comment>
+VCF files permit the explicit annotation with &quot;Somatic Cell&quot; via &quot;SOMATIC&quot; additional information. The absence of that field does not imply the presence of germine cell material though.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Germline</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
@@ -1066,10 +1091,12 @@ VCF files permit the explicit annotation with &quot;Somatic Cell&quot; via the &
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Haplotype">
         <rdfs:label>Haplotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Catalog"/>
-        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Haplotype</rdfs:seeAlso>
         <rdfs:comment xml:lang="en">A &quot;Haplotype&quot; is a collection of &quot;Genotype&quot; or &quot;Sequence Variant&quot; instances. It can imply that a set of genes is inherited as a group, or alternatively, that the set of genotypes or sequence variance has a biological function when acting together (e.g., there exists a disease association).
 
-Haplotype instances should only catalog a single type, i.e. either &quot;Genotype&quot; or &quot;Sequence Variant&quot; instances; they should not mix both types (see also &quot;Catalog&quot;).</rdfs:comment>
+Haplotype instances should only catalog a single type, i.e. either &quot;Genotype&quot; or &quot;Sequence Variant&quot; instances; they should not mix both types (see also &quot;Catalog&quot;).
+
+Encodes for &quot;HQ&quot; additional information in VCF.</rdfs:comment>
+        <rdfs:seeAlso>http://en.wikipedia.org/wiki/Haplotype</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1081,7 +1108,9 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <rdfs:label>Helix Structure</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quality"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/DNA_helix</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">&quot;Helix structure&quot; denotes the physical shape of biopolymers. The subclasses &quot;Circular Helix&quot; and &quot;Watson-Crick Helix&quot; can be used to for encoding the &quot;Is_circular&quot; attribute in GFF3 and GVF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">&quot;Helix Structure&quot; denotes the physical shape of biopolymers.
+
+The subclasses &quot;Circular Helix&quot; and &quot;Watson-Crick Helix&quot; can be used to for encoding the &quot;Is_circular&quot; attribute in GFF3 and GVF files.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Hemizygous -->
@@ -1090,7 +1119,9 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <rdfs:label>Hemizygous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Zygosity"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Zygosity#Hemizygous</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A sequence alteration with hemizygous alleles. This quality can be used to directly encode for the &quot;Zygosity&quot; attribute in GVF files and it indirectly describes genotypes in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A sequence alteration with hemizygous alleles.
+
+This quality can be used to directly encode for the &quot;Zygosity&quot; attribute in GVF files and it indirectly describes genotypes in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1119,7 +1150,9 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <rdfs:label>Heterozygous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Zygosity"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Zygosity#Heterozygous</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A sequence alteration with heterozygous alleles. This quality can be used to directly encode for the &quot;Zygosity&quot; attribute in GVF files and it indirectly describes genotypes in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A sequence alteration with heterozygous alleles.
+
+This quality can be used to directly encode for the &quot;Zygosity&quot; attribute in GVF files and it indirectly describes genotypes in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1129,7 +1162,9 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <rdfs:label>Homozygous</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Zygosity"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Zygosity#Homozygous</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A sequence alteration with homozygous alleles. This quality can be used to directly encode for the &quot;Zygosity&quot; attribute in GVF files and it indirectly describes genotypes in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A sequence alteration with homozygous alleles.
+
+This quality can be used to directly encode for the &quot;Zygosity&quot; attribute in GVF files and it indirectly describes genotypes in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1139,8 +1174,10 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <owl:equivalentClass rdf:resource="&sio;SIO_000115"/>
         <rdfs:label>Identifier</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Label"/>
+        <rdfs:comment xml:lang="en">An identifier labels an entity with preferably a single term that is interpreted as an accession. An accession labels entities that are part of a collection of similar type. More generic naming of entities can be achieved using the &quot;Label&quot; class.
+
+Encodes for the &quot;seqid&quot; column in GFF3 and GVF; encodes for the &quot;seqname&quot; column in GTF and &quot;CHROM&quot; column in VCF. Captures the &quot;ID&quot; attribute in GFF3 and GVF. Suitable for expression values of &quot;individual-id&quot; and &quot;technology-platform-machine-id&quot; pragmas in GVF. Encodes for the &quot;ID&quot; key/value property in VCF.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Identifier</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">An identifier labels an entity with preferably a single term that is interpreted as an accession. An accession labels entities that are part of a collection of similar type. More generic naming of entities can be achieved using the &quot;Label&quot; class.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
@@ -1164,13 +1201,12 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <owl:equivalentClass rdf:resource="&sio;SIO_000179"/>
         <rdfs:label>Label</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
-        <rdfs:comment xml:lang="en">A label is a term or short list of terms that describe an entity for the purpose of distinguishing it from entities of similar type. It should be considered to utilize the &quot;Identifier&quot; class, if labels of entities are sufficiently unique to actually identify them.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A label is a term or short list of terms that describe an entity for the purpose of distinguishing it from entities of similar type. It should be considered to utilize the &quot;Identifier&quot; class, if labels of entities are sufficiently unique to actually identify them.
+
+Encodes for the &quot;PEDIGREE&quot; information field in VCF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Landmark -->
@@ -1180,7 +1216,9 @@ Haplotype instances should only catalog a single type, i.e. either &quot;Genotyp
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
         <rdfs:comment xml:lang="en">A landmark establishes a coordinate system for features. Landmarks can be chromosomes, contigs, scaffolds or other constructs that can harbor &quot;Feature&quot; class instances. For expressing ploidy within a data set, please refer to the &quot;Chromosome&quot; class.
 
-To annotate a landmark with a biological type, it is encouraged to use terms of the Sequence Ontology, but not the classes &quot;Chromosome&quot;, &quot;Scaffold&quot; and &quot;Contig&quot;. The latter classes are used for describing ploidy within a dataset as well as offering means of data aggregation.</rdfs:comment>
+To annotate a landmark with a biological type, it is encouraged to use terms of the Sequence Ontology, but not the classes &quot;Chromosome&quot;, &quot;Scaffold&quot; and &quot;Contig&quot;. The latter classes are used for describing ploidy within a dataset as well as offering means of data aggregation.
+
+Encodes for the &quot;seqid&quot; column in GFF3 and GVF; encodes for the &quot;seqname&quot; column in GTF and &quot;CHROM&quot; column in VCF. Captures the &quot;sequence-region&quot; pragma in in GFF3 and GVF as well as their &quot;FASTA&quot; annotation. Encodes for &quot;DNA&quot;, &quot;RNA&quot; and &quot;Protein&quot; &quot;##&quot;-lines in GTF. Captures the &quot;contig&quot; information field in VCF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
@@ -1213,7 +1251,9 @@ To annotate a landmark with a biological type, it is encouraged to use terms of 
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A &quot;Likelihood&quot; is a probability of a certain even occurring. For use with &quot;GL&quot; and &quot;GP&quot; additional information fields in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A &quot;Likelihood&quot; is a probability of a certain even occurring.
+
+For use with &quot;GL&quot; and &quot;GP&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1224,7 +1264,9 @@ To annotate a landmark with a biological type, it is encouraged to use terms of 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#LikelihoodOfHeterogeneousPloidy">
         <rdfs:label>Likelihood of Heterogeneous Ploidy</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Likelihood"/>
-        <rdfs:comment xml:lang="en">&quot;Likelihood of Heterogeneous Ploidy&quot; expresses the likelihood of genotypes in absence of copy number data. Specifically designed to encode for values of the &quot;GLE&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">&quot;Likelihood of Heterogeneous Ploidy&quot; expresses the likelihood of genotypes in absence of copy number data.
+
+Specifically designed to encode for values of &quot;GLE&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1254,8 +1296,10 @@ The class encodes for the &quot;start&quot;, &quot;end&quot; and &quot;strand&qu
         <owl:equivalentClass rdf:resource="&sio;SIO_010048"/>
         <rdfs:label>Male</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Sex"/>
-        <rdfs:comment xml:lang="en">Denoting sex of a male individual, who is defined as an individual producing spermatozoa. This quality can be used to encode for the &quot;sex&quot; pragma in GVF files.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Male</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Denoting sex of a male individual, who is defined as an individual producing spermatozoa.
+
+This quality can be used to encode for the &quot;sex&quot; pragma in GVF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1304,8 +1348,10 @@ Encodes for the &quot;Target&quot; attribute in GFF3, encodes for &quot;Target&q
         <rdfs:label>Maternal Heritage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Heritage"/>
         <owl:disjointWith rdf:resource="http://www.biointerchange.org/gfvo#PaternalHeritage"/>
+        <rdfs:comment xml:lang="en">Maternal heritage is the passing of traits from a female to her ancestors.
+
+Currently ununsed but might be applicable to phased genotypes in GVF and VCF files; included for future use.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Maternal_effect</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Maternal heritage is the passing of traits from a female to her ancestors.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Name -->
@@ -1314,12 +1360,11 @@ Encodes for the &quot;Target&quot; attribute in GFF3, encodes for &quot;Target&q
         <owl:equivalentClass rdf:resource="&sio;SIO_000116"/>
         <rdfs:label>Name</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Label"/>
-        <rdfs:comment xml:lang="en">A name assigns an entity a non-formal term (or multiples thereof) that can provide information about the entities identity. Unlike an &quot;Identifier&quot;, a name should not be considered unique.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
-        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
+        <rdfs:comment xml:lang="en">A name assigns an entity a non-formal term (or multiples thereof) that can provide information about the entities identity. Unlike an &quot;Identifier&quot;, a name should not be considered unique.
+
+Encodes for the &quot;feature&quot; column in GTF. Captures the &quot;genome-build&quot; pragma in GFF3 and GVF. Captures the &quot;population&quot;, &quot;technology-platform-name&quot; pragmas in GVF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
         <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
@@ -1328,9 +1373,13 @@ Encodes for the &quot;Target&quot; attribute in GFF3, encodes for &quot;Target&q
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#Note">
         <owl:equivalentClass rdf:resource="&sio;SIO_000152"/>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#InformationContentEntity"/>
-        <rdfs:comment xml:lang="en">A note is a short textual description about an entity. It provides a formal or semi-formal description of an entity, as opposed to a &quot;Comment&quot;.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:comment xml:lang="en">A note is a short textual description about an entity. It provides a formal or semi-formal description of an entity, as opposed to a &quot;Comment&quot;.
+
+Encodes for the &quot;sample-description&quot; pragma and &quot;Comment&quot; key/value pairs in structured attributes in GVF. Captures &quot;Description&quot; key/value pairs in information fields and &quot;SB&quot; information field in VCF.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
+        <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#NumberOfReads -->
@@ -1353,7 +1402,9 @@ Encodes for the &quot;Target&quot; attribute in GFF3, encodes for &quot;Target&q
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Number of reads supporting a particular feature or variant. Can encode for the &quot;MQ0&quot; additional information field in VCF files, if additional annotations are provided to denote a mapping quality of zero for the given count. In GVF files, the class accounts for the &quot;Variant_reads&quot; attribute.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Number of reads supporting a particular feature or variant.
+
+Can encode for &quot;MQ0&quot; additional information in VCF files, if additional annotations are provided to denote a mapping quality of zero for the given count. In GVF files, the class accounts for the &quot;Variant_reads&quot; attribute.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1386,8 +1437,10 @@ Encodes for the &quot;technology-platform-read-type&quot; pragma in GVF.</rdfs:c
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#PaternalHeritage">
         <rdfs:label>Paternal Heritage</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Heritage"/>
-        <rdfs:comment xml:lang="en">Paternal heritage is the passing of traits from a male to his ancestors.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Maternal_effect#Paternal_effect_genes</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Paternal heritage is the passing of traits from a male to his ancestors.
+
+Currently ununsed but might be applicable to phased genotypes in GVF and VCF files; included for future use.</rdfs:comment>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#PeptideSequence -->
@@ -1410,11 +1463,12 @@ Encodes for the &quot;technology-platform-read-type&quot; pragma in GVF.</rdfs:c
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A peptide sequence is an ordered sequence of amino acid residues, but which may not necessarily be a protein sequence. For encoding sequences of proteins, the subclass &quot;Protein Sequence&quot; should be used.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A peptide sequence is an ordered sequence of amino acid residues, but which may not necessarily be a protein sequence. For encoding sequences of proteins, the subclass &quot;Protein Sequence&quot; should be used.
+
+Encodes for &quot;FASTA&quot; annotation in GFF3 and GVF.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Peptide_sequence</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Phenotype -->
@@ -1424,7 +1478,9 @@ Encodes for the &quot;technology-platform-read-type&quot; pragma in GVF.</rdfs:c
         <rdfs:label>Phenotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quality"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Phenotype</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A phenotype description represents additional information about a sequenced individual&apos;s phenotype. A sequenced individual is represented by instances of the &quot;Sequenced Individual&quot; class.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A phenotype description represents additional information about a sequenced individual&apos;s phenotype. A sequenced individual is represented by instances of the &quot;Sequenced Individual&quot; class.
+
+Encodes for the &quot;phenotype-description&quot; structured pragma in GVF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1486,10 +1542,10 @@ Since a process describes a large number of entities, its direct use is discoura
         <rdfs:label>Protein Sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#PeptideSequence"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Peptide_sequence</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A protein sequence is a peptide sequence which represents the primary structure of a protein.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gff3.html"/>
+        <rdfs:comment xml:lang="en">A protein sequence is a peptide sequence which represents the primary structure of a protein.
+
+Encodes for &quot;sequencing-scope&quot; pragma in GVF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
-        <rdfs:isDefinedBy rdf:resource="http://www.ensembl.org/info/website/upload/gff.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Proteome -->
@@ -1541,7 +1597,9 @@ Used by the &quot;data-source&quot; structured pragma in GVF.</rdfs:comment>
         <rdfs:label>Reference Sequence</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#DNASequence"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Reference_sequence</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Denotes the reference sequence of a feature. The reference sequence is of importance when dealing with genomic variation data, which is expressed by the &quot;Variant&quot; class.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Denotes the reference sequence of a feature. The reference sequence is of importance when dealing with genomic variation data, which is expressed by the &quot;Variant&quot; class.
+
+Encodes for the &quot;Reference_seq&quot; and &quot;Sequence_context&quot; attributes in GVF and the &quot;REF&quot; column in VCF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1599,7 +1657,9 @@ It can be applied to describe contents of the &quot;sample-description&quot; pra
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#SampleCount">
         <rdfs:label>Sample Count</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Quantity"/>
-        <rdfs:comment xml:lang="en">Number of samples in the dataset. Encodes for the &quot;NS&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Number of samples in the dataset.
+
+Encodes for &quot;NS&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1663,7 +1723,10 @@ Expresses the &quot;Mixture&quot; key/value pair in &quot;SAMPLE&quot; fields in
         <rdfs:label>Scaffold</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Collection"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Contig</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">A scaffold is the aggregation of multiple contigs to form a larger continuous sequencing region. &quot;Scaffold&quot; is a specialization of a &quot;Collection&quot; and should be used to aggregate features, but not for indicating that a &quot;Landmark&quot; is representing a scaffold. It is encouraged that the latter is annotated by a term of the Sequence Ontology.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A scaffold is the aggregation of multiple contigs to form a larger continuous sequencing region. &quot;Scaffold&quot; is a specialization of a &quot;Collection&quot; and should be used to aggregate features, but not for indicating that a &quot;Landmark&quot; is representing a scaffold. It is encouraged that the latter is annotated by a term of the Sequence Ontology.
+
+Encodes for &quot;sequencing-scope&quot; in GVF.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
     <!-- http://www.biointerchange.org/gfvo#Score -->
@@ -1787,7 +1850,9 @@ Its subclasses are used to encode for the &quot;Target&quot; attribute and &quot
         <rdfs:label>Sequence Variant</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#DNASequence"/>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Mutation</rdfs:seeAlso>
-        <rdfs:comment xml:lang="en">Describing specific sequence alterations of a genomic feature. A variant is related to &quot;Reference&quot; class instances, which denote the sequence that serves as a basis for sequence alteration comparisons.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describing specific sequence alterations of a genomic feature. A variant is related to &quot;Reference&quot; class instances, which denote the sequence that serves as a basis for sequence alteration comparisons.
+
+Encodes for the &quot;Variant_seq&quot; attribute in GVF. Captures the &quot;ALT&quot; column and &quot;ALT&quot; information field in VCF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1800,7 +1865,9 @@ Its subclasses are used to encode for the &quot;Target&quot; attribute and &quot
         <owl:equivalentClass rdf:resource="&sio;SIO_010000"/>
         <rdfs:label>Sequenced Individual</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#BiologicalEntity"/>
-        <rdfs:comment xml:lang="en">An abstract representation of a particular individual for representing aggregated sequencing information. &quot;Sequenced Individual&quot; can also be used to denote complex heritage relationships in genomic samples.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An abstract representation of a particular individual for representing aggregated sequencing information. &quot;Sequenced Individual&quot; can also be used to denote complex heritage relationships in genomic samples.
+
+Encodes for the &quot;individual&quot; attribute and &quot;multi-individual&quot; pragma in GVF.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
     </owl:Class>
     
@@ -1886,7 +1953,9 @@ Encodes for the &quot;Target&quot; attribute in GFF3, encodes for &quot;Target&q
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#TotalNumberOfAlleles">
         <rdfs:label>Total Number of Alleles</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#AlleleCount"/>
-        <rdfs:comment xml:lang="en">Total number of alleles in called genotypes. Encodes for the &quot;AN&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Total number of alleles in called genotypes.
+
+Encodes for &quot;AN&quot; additional information in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41"/>
@@ -1897,7 +1966,9 @@ Encodes for the &quot;Target&quot; attribute in GFF3, encodes for &quot;Target&q
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#TotalNumberOfReads">
         <rdfs:label>Total Number of Reads</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#NumberOfReads"/>
-        <rdfs:comment xml:lang="en">Total number of reads covering a feature or variant. Covers the &quot;Total_reads&quot; attribute in GVF files and the &quot;DP&quot; additional information field in VCF files.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Total number of reads covering a feature or variant.
+
+Covers the &quot;Total_reads&quot; attribute in GVF files and the &quot;DP&quot; additional information field in VCF files.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1925,7 +1996,9 @@ Applicable to the &quot;FILTER&quot; information field in VCF as well as the &qu
         <owl:equivalentClass rdf:resource="&sio;SIO_000653"/>
         <rdfs:label>Version</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#Identifier"/>
-        <rdfs:comment xml:lang="en">A &quot;Version&quot; names a release of a software, dataset, or other resource. Versions can follow the common &quot;major.minor.patch&quot; version format, but are not restricted in any way. The version can also incorporate the dataset name (e.g., &quot;HGNC19&quot;).</rdfs:comment>
+        <rdfs:comment xml:lang="en">A &quot;Version&quot; names a release of a software, dataset, or other resource. Versions can follow the common &quot;major.minor.patch&quot; version format, but are not restricted in any way. The version can also incorporate the dataset name (e.g., &quot;HGNC19&quot;).
+
+Encodes for the &quot;gff-version&quot; and &quot;gvf-version&quot; pragma statements in GFF3 and GVF, respectively. Encodes for the &quot;gff-version&quot; &quot;##&quot;-line type in GTF. Captures the &quot;fileformat&quot; meta-information line in VCF. Encodes for &quot;file-version&quot; and &quot;technology-platform-version&quot; pragmas in GVF.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Versioning</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
@@ -1968,18 +2041,14 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MaterialEntity"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Quantity"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Score"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SequenceAlignment"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#BaseQuality"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MappingQuality"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhredScore"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#AlleleCount"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#AlleleFrequency"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Coverage"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Likelihood"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#NumberOfReads"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SampleCount"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SampleMixture"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Span"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -1995,9 +2064,20 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genotype"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Haplotype"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2009,6 +2089,39 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#FunctionalSpecification"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Label"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Locus"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#BaseQuality"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MappingQuality"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhredScore"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MaterialEntity"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Quantity"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Score"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SequenceAlignment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Attribute"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Object"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Process"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2030,17 +2143,6 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genotype"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Haplotype"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Cell"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Exome"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
@@ -2050,38 +2152,9 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#AlleleCount"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#AlleleFrequency"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Coverage"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Likelihood"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#NumberOfReads"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SampleCount"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SampleMixture"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Span"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Attribute"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Object"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Process"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
