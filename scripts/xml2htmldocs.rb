@@ -55,11 +55,14 @@ terms[:named_individual] = {}
 current_term = {}
 collection = []
 
+multiline_comment = nil
 state = :idle
 
 STDIN.each { |line|
   line.chomp!
   line.strip!
+
+  line = "<rdfs:comment xml:lang=\"en\">#{line}" if multiline_comment
 
   if line.start_with?('<rdf:RDF xmlns="http://www.biointerchange.org/') then
     base = line.sub(/^[^"]+"/, '').sub(/".*$/, '')
@@ -104,7 +107,18 @@ STDIN.each { |line|
     terms[type][term][:label] = line.sub(/^[^>]+>/, '').sub(/<.*$/, '')
     next
   elsif line.start_with?('<rdfs:comment xml:lang="en">') then
-    terms[type][term][:comment] = line.sub(/^[^>]+>/, '').sub(/<[^<]+$/, '')
+    comment = line.sub(/^[^>]+>/, '').sub(/<[^<]+$/, '')
+    if multiline_comment and comment.length > 0 then
+      comment = "#{multiline_comment}<br>#{comment}"
+    elsif multiline_comment then
+      comment = multiline_comment
+    end
+    if line.end_with?('</rdfs:comment>') then
+      multiline_comment = nil
+    else
+      multiline_comment = comment
+    end
+    terms[type][term][:comment] = "<div style=\"margin-left: 50px;\">#{comment}</div>"
     next
   elsif line.start_with?('<rdfs:subClassOf rdf:resource="http://www.biointerchange.org/') then
     terms[type][term][:subclassof] = line.sub(/^[^#]+#/, '').sub(/"[^"]+$/, '')
