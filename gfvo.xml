@@ -6,6 +6,7 @@
     <!ENTITY vario "http://purl.obolibrary.org/obo/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY sio "http://semanticscience.org/resource/" >
+    <!ENTITY so "http://purl.obolibrary.org/obo/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY faldo "http://biohackathon.org/resource/faldo#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -17,13 +18,14 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vario="http://purl.obolibrary.org/obo/"
      xmlns:sio="http://semanticscience.org/resource/"
+     xmlns:so="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>1.0.0</owl:versionInfo>
+        <owl:versionInfo>1.0.1</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <rdfs:comment xml:lang="en">Best Practices
 
@@ -457,7 +459,8 @@ Encodes for &quot;AF&quot; additional information in VCF files.</rdfs:comment>
     <!-- http://www.biointerchange.org/gfvo#AminoAcid -->
 
     <owl:Class rdf:about="http://www.biointerchange.org/gfvo#AminoAcid">
-        <owl:equivalentClass rdf:resource="&sio;SIO_001224"/>
+        <owl:equivalentClass rdf:resource="&sio;SIO_010074"/>
+        <owl:equivalentClass rdf:resource="&so;SO_0001237"/>
         <rdfs:label>Amino Acid</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.biointerchange.org/gfvo#ChemicalEntity"/>
         <rdfs:subClassOf>
