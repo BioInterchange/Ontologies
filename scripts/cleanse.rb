@@ -86,7 +86,7 @@ STDIN.each { |line|
     end
   end
 
-  # If this is a propert with SIO mapping, then output the mapping here.
+  # If this is a property with SIO mapping, then output the mapping here.
   if line.match(/^\s*<owl:(Datatype|Object)Property rdf:about="http:\/\/www\.biointerchange\.org\//) then
     defined_property = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
     if sio_mapping.has_key?(defined_property) then
