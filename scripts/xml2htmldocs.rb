@@ -17,9 +17,16 @@ end
 def create_linkouts(type, links)
   if type == :class then
     return links.map { |link|
-      accession = link.sub(/^&sio;/, '')
-      "<a href=\"http://bioportal.bioontology.org/ontologies/SIO/?p=classes&conceptid=http%3A%2F%2Fsemanticscience.org%2Fresource%2F#{accession}\">#{accession}</a>"
-    }.join(',')
+      namespace = link.match(/&(\w+);/)[1]
+      accession = link.sub(/^&\w+;/, '')
+      if namespace == 'sio' then
+        "<a href=\"http://bioportal.bioontology.org/ontologies/SIO/?p=classes&conceptid=http%3A%2F%2Fsemanticscience.org%2Fresource%2F#{accession}\">#{accession}</a>"
+      elsif namespace == 'obo' then
+        "<a href=\"http://bioportal.bioontology.org/ontologies/SO/?p=classes&conceptid=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2F#{accession}\">#{accession}</a>"
+      else
+        throw "Woops. The namespace \"#{namespace}\" is not handled by \"create_linkouts\"."
+      end
+    }.join(',&nbsp;')
   end
   return links.join(',').gsub(/&sio;/, '')
 end
@@ -198,7 +205,11 @@ terms[:class].keys.sort.each { |term|
   puts "  <div><i>Label:</i> #{terms[:class][term][:label]}</div>"
   puts "  <div><i>Comment:</i> #{comment(terms[:class][term][:comment], terms)}</div>" if terms[:class][term][:comment]
   puts "  <div><i>Wikipedia reference:</i> <a href=\"#{terms[:class][term][:see_also]}\">#{terms[:class][term][:see_also]}</a></div>" if terms[:class][term][:see_also]
-  puts "  <div><i>Semanticscience Integrated Ontology class equivalence:</i> #{create_linkouts(:class, terms[:class][term][:equivalent_class])}</div>" unless terms[:class][term][:equivalent_class].empty?
+  unless terms[:class][term][:equivalent_class].empty? then
+    plural = ''
+    plural = 's' if terms[:class][term][:equivalent_class].length > 1
+    puts "  <div><i>External class equivalence#{plural}:</i> #{create_linkouts(:class, terms[:class][term][:equivalent_class])}</div>"
+  end
   puts "  <div>#{terms[:class][term][:defined_by].map { |uri| origin_tag(uri) }.sort.uniq.join('')}</div>" if terms[:class][term][:defined_by]
   puts "  </div>"
   puts '</p>'
