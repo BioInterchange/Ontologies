@@ -3,10 +3,9 @@
 <!DOCTYPE rdf:RDF [
     <!ENTITY dc "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY vario "http://purl.obolibrary.org/obo/" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY sio "http://semanticscience.org/resource/" >
-    <!ENTITY so "http://purl.obolibrary.org/obo/" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY faldo "http://biohackathon.org/resource/faldo#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -16,16 +15,15 @@
      xml:base="http://www.biointerchange.org/gfvo"
      xmlns:dc="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vario="http://purl.obolibrary.org/obo/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:sio="http://semanticscience.org/resource/"
-     xmlns:so="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
+        <owl:versionInfo>1.0.2</owl:versionInfo>
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
-        <owl:versionInfo>1.0.1</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <rdfs:comment xml:lang="en">Best Practices
 
@@ -600,10 +598,10 @@ Can be used to indicate a true &quot;Is_circular&quot; attribute in GFF3 and GVF
                         <owl:onDatatype rdf:resource="&xsd;integer"/>
                         <owl:withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:maxInclusive rdf:datatype="&xsd;integer">2</xsd:maxInclusive>
+                                <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
                             </rdf:Description>
                             <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="&xsd;integer">0</xsd:minInclusive>
+                                <xsd:maxInclusive rdf:datatype="&xsd;integer">2</xsd:maxInclusive>
                             </rdf:Description>
                         </owl:withRestrictions>
                     </rdfs:Datatype>
@@ -1442,7 +1440,9 @@ Encodes for the &quot;phenotype-description&quot; structured pragma in GVF.</rdf
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Phred_score</rdfs:seeAlso>
         <rdfs:comment xml:lang="en">The Phred score can be used to assign quality scores to base calls of DNA sequences.
 
-GVF supports the use of Phred scores in the &quot;score&quot; column, but this information needs to be obtained/given by the data provider. In VCF files, the &quot;QUAL&quot; column and &quot;PL&quot;, &quot;HQ&quot;, and &quot;PQ&quot; additional information carries Phred scores that can be encoded as &quot;Phred Score&quot;.</rdfs:comment>
+GVF supports the use of Phred scores in the &quot;score&quot; column, but this information needs to be obtained/given by the data provider. In VCF files, the &quot;QUAL&quot; column and &quot;PL&quot;, &quot;HQ&quot;, and &quot;PQ&quot; additional information carries Phred scores that can be encoded as &quot;Phred Score&quot;.
+
+GFVO&apos;s &quot;Score&quot; and &quot;Phred Score&quot; cannot be defined as equivalent to the Sequence Ontology terms &quot;score&quot; (SO:0001685) and &quot;quality_value&quot; (SO:0001686) due to differences in inheritance between the two ontology implementations. GFVO defines &quot;Phred Score&quot; as a subclass of &quot;Score&quot;, but the Sequence Ontology defines &quot;score&quot; as a sibling of &quot;quality_value&quot;.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://sequenceontology.org/resources/gvf.html"/>
@@ -1684,7 +1684,9 @@ Encodes for &quot;sequencing-scope&quot; in GVF.</rdfs:comment>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A measure that permits the ranking of entities.
 
-Directly encodes for the &quot;score&quot; column in GFF3, GTF and GVF files; if the actual scoring algorithm is known, then &quot;Phred Score&quot; might be used to encode for the values of the &quot;score&quot; column in GVF files. The class can encapsule information of the &quot;score-method&quot; pragma in GVF files. For VCF files, the subclasses &quot;Phred Score&quot; and &quot;Conditional Genotype Quality&quot; should be used.</rdfs:comment>
+Directly encodes for the &quot;score&quot; column in GFF3, GTF and GVF files; if the actual scoring algorithm is known, then &quot;Phred Score&quot; might be used to encode for the values of the &quot;score&quot; column in GVF files. The class can encapsule information of the &quot;score-method&quot; pragma in GVF files. For VCF files, the subclasses &quot;Phred Score&quot; and &quot;Conditional Genotype Quality&quot; should be used.
+
+GFVO&apos;s &quot;Score&quot; and &quot;Phred Score&quot; cannot be defined as equivalent to the Sequence Ontology terms &quot;score&quot; (SO:0001685) and &quot;quality_value&quot; (SO:0001686) due to differences in inheritance between the two ontology implementations. GFVO defines &quot;Phred Score&quot; as a subclass of &quot;Score&quot;, but the Sequence Ontology defines &quot;score&quot; as a sibling of &quot;quality_value&quot;.</rdfs:comment>
         <rdfs:seeAlso>http://en.wikipedia.org/wiki/Score_(statistics)</rdfs:seeAlso>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.1.pdf"/>
         <rdfs:isDefinedBy rdf:resource="http://samtools.github.io/hts-specs/VCFv4.2.pdf"/>
@@ -1969,44 +1971,6 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Collection"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ExternalReference"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#FunctionalSpecification"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Label"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Locus"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#BaseQuality"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MappingQuality"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhredScore"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genotype"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Haplotype"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ArrayComparativeGenomicHybridization"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#BiopolymerSequencing"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#DNAMicroarray"/>
@@ -2015,53 +1979,17 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Attribute"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Object"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Process"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Cell"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Exome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Proteome"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MaterialEntity"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Quantity"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Score"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SequenceAlignment"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Match"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequenceGap"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TargetSequenceGap"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hemizygous"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Heterozygous"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Homozygous"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#GermlineCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PrenatalCell"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SomaticCell"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
@@ -2080,9 +2008,83 @@ Can be used to indicate a false &quot;Is_circular&quot; attribute in GFF3 and GV
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Cell"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Exome"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
             <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Proteome"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Chromosome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Contig"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genotype"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Haplotype"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Scaffold"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MaterialEntity"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Quantity"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Score"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#SequenceAlignment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Exome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Genome"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Proteome"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ForwardReferenceSequenceFrameshift"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Match"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReferenceSequenceGap"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ReverseReferenceSequenceFrameshift"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#TargetSequenceGap"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#BaseQuality"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#MappingQuality"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#PhredScore"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Attribute"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Object"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Process"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Collection"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#ExternalReference"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Feature"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#FunctionalSpecification"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Label"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Locus"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Female"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Hermaphrodite"/>
+            <rdf:Description rdf:about="http://www.biointerchange.org/gfvo#Male"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
