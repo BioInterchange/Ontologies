@@ -21,6 +21,8 @@ classes_so_equivalent = 0
 datatype_properties_so_equivalent = 0
 object_properties_so_equivalent = 0
 
+joint_sio_so_classes = 0
+
 gff3_specification_linkout = 0
 gtf_specification_linkout = 0
 gvf_specification_linkout = 0
@@ -130,6 +132,8 @@ STDIN.each { |line|
 
   if within_definition and line.start_with?(within_definition) then
     within_definition = nil
+
+    joint_sio_so_classes += 1 if has_sio_equivalent and has_so_equivalent
   end
 }
 
@@ -146,6 +150,8 @@ puts "  Property restrictions      : #{with_restrictions}"
 puts "Datatype properties          : #{datatype_properties} (#{datatype_properties_sio_equivalent}; #{datatype_properties_so_equivalent})"
 puts "Object properties            : #{object_properties} (#{object_properties_sio_equivalent}; #{object_properties_so_equivalent})"
 
+puts ''
+puts "SIO/SO joint class equivalences: #{joint_sio_so_classes}"
 puts ''
 
 puts "<tr><td>Classes</td><td>#{classes}</td><td>#{classes_sio_equivalent}</td><td>#{classes_so_equivalent}</td></tr>"
