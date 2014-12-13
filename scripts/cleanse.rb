@@ -15,10 +15,10 @@ was_empty_line = false
 # supress output that stretches over multiple lines.
 skip_until_matching = nil
 
-# There will be SIO classes/properties in the file. Remember owl:equivalentClass 
-# and owl:equivalentProperty references to GFVO and get rid of the SIO definitions in here.
-read_sio_mapping = nil
-sio_mapping = {}
+# There will be SIO/SO classes/properties in the file. Remember owl:equivalentClass 
+# and owl:equivalentProperty references to GFVO and get rid of the SIO/SO definitions in here.
+read_ext_mapping = nil
+ext_mapping = {}
 
 STDIN.each { |line|
   line.chomp!
@@ -30,17 +30,23 @@ STDIN.each { |line|
     next
   end
 
-  # Find SIO class definitions, remember the equivalence in the next line and skip the rest.
-  if line.match(/^\s*<(owl:Class|rdf:Description) rdf:about="&sio;SIO_/) then
-    read_sio_mapping = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
+  # Find SIO/SO class definitions, remember the equivalence in the next line and skip the rest.
+  if line.match(/^\s*<(owl:Class|rdf:Description) rdf:about="&sio;SIO_/) or
+     line.match(/^\s*<(owl:Class|rdf:Description) rdf:about="&obo;SO_/) then
+    read_ext_mapping = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
     skip_until_matching = "#{line.sub(/\S.*$/, '')}</#{line.scan(/owl:Class|rdf:Description/)[0]}>"
     next
   end
 
-  # Read actual mapping to SIO (see previous if-then).
-  if read_sio_mapping then
-    sio_mapping[line.sub(/^[^"]*"/, '').sub(/".*$/, '')] = read_sio_mapping
-    read_sio_mapping = nil
+  # Read actual mapping to SIO/SO (see previous if-then).
+  if read_ext_mapping then
+    assigned_class = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
+    if ext_mapping.has_key?(assigned_class) then
+      ext_mapping[assigned_class] += [ read_ext_mapping ]
+    else
+      ext_mapping[assigned_class] = [ read_ext_mapping ]
+    end
+    read_ext_mapping = nil
     next
   end
 
@@ -78,19 +84,25 @@ STDIN.each { |line|
   # Consecutive empty lines are supressed, i.e. only single empty lines are permitted.
   next if line.strip.empty? and was_empty_line
 
-  # If this is a class with SIO mapping, then output the mapping here.
+  # If this is a class with SIO/SO mapping, then output the mapping here.
   if line.strip.start_with?('<owl:Class rdf:about="http://www.biointerchange.org/') then
     defined_class = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
-    if sio_mapping.has_key?(defined_class) then
-      line << "\n#{line.sub(/\S.*$/, '')}    <owl:equivalentClass rdf:resource=\"#{sio_mapping[defined_class]}\"/>"
+    if ext_mapping.has_key?(defined_class) then
+      indent = line.sub(/\S.*$/, '')
+      ext_mapping[defined_class].each { |resource|
+        line << "\n#{indent}    <owl:equivalentClass rdf:resource=\"#{resource}\"/>"
+      }
     end
   end
 
-  # If this is a property with SIO mapping, then output the mapping here.
+  # If this is a property with SIO/SO mapping, then output the mapping here.
   if line.match(/^\s*<owl:(Datatype|Object)Property rdf:about="http:\/\/www\.biointerchange\.org\//) then
     defined_property = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
-    if sio_mapping.has_key?(defined_property) then
-      line << "\n#{line.sub(/\S.*$/, '')}    <owl:equivalentProperty rdf:resource=\"#{sio_mapping[defined_property]}\"/>"
+    if ext_mapping.has_key?(defined_property) then
+      indent = line.sub(/\S.*$/, '')
+      ext_mapping[defined_property].each { |resource|
+        line << "\n#{indent}    <owl:equivalentProperty rdf:resource=\"#{resource}\"/>"
+      }
     end
   end
 
