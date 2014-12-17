@@ -1,0 +1,3 @@
+##gvf-version 1.07
+##phased-genotypes
+chr1	n/a	SO:0001059	1000	1000	.	+	.	ID=Example3;Reference_seq=A;Variant_seq=A,T;Genotype=0:1,1:1
