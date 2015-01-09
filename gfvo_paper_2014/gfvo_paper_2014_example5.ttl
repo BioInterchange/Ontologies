@@ -1,0 +1,545 @@
+@prefix : <http://www.biointerchange.org/gfvo#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix faldo: <http://biohackathon.org/resource/faldo#> .
+@prefix so: <http://purl.bioontology.org/ontology/SO/SO> .
+
+:ExampleSet5 a :File ;
+             :hasIdentifier
+               [
+                 a :Version ;
+                 :hasValue "fileformat 4.2" .
+               ] ;
+             :hasMember :ExampleSet5Feature1 ,
+                        :ExampleSet5Feature2 .
+
+#
+# INFO section.
+#
+# Note: "Number" and "Type" parameters are implicitly used in the
+#       conversion to RDF. For example, "Float" types are encoded
+#       as RDF floating point entities, whereas "Integer" types
+#       become RDF integer entities.
+#       "ID" assignments are encoded on a per-feature basis, which
+#       is in line with the representation chosen for GFF3/GTF/GVF
+#       file contents. The type of "ID" assignments is a GFVO Label,
+#       since the actual content type is not an identifier in the
+#       sense of GFVO/SIO.
+#
+
+:ExampleSet5Info1 a :Comment ;
+                  :hasValue "Number of Samples With Data" .
+
+:ExampleSet5Info2 a :Comment ;
+                  :hasValue "Total Depth" .
+
+:ExampleSet5Info3 a :Comment ;
+                  :hasValue "Allele Frequency" .
+
+:ExampleSet5Info4 a :Comment ;
+                  :hasValue "HapMap2 membership" .
+
+#
+# FILTER section.
+#
+# Note: Filters are GFVO processes, i.e. "Process" sub-class instances.
+#       As before, "ID" assignments are represented by GFVO "Label"
+#       instances.
+#
+
+:ExampleSet5Filter1 a :VariantCalling ;
+                    :hasAttribute
+                      [
+                        a :Label ;
+                        :hasValue "q10" .
+                      ] ,
+                      [
+                        a :Comment ;
+                        :hasValue "Quality below 10" .
+                      ] ,
+                      [
+                        a :Score ;
+                        xsd:restriction
+                          [
+                            xsd:maxExclusive 10 .
+                          ] .
+                      ] .
+
+:ExampleSet5Filter2 a :VariantCalling ;
+                    :hasAttribute
+                      [
+                        a :Label ;
+                        :hasValue "s50" .
+                      ] ,
+                      [
+                        a :Comment ;
+                        :hasValue "Less than 50% of samples have data" .
+                      ] .
+
+#
+# FORMAT section.
+#
+# Note: "Number" and "Type" parameters are implicitly used in the
+#       conversion to RDF. For example, "String" types are encoded
+#       as RDF string entities, whereas "Integer" types become
+#       RDF integer entities.
+#
+
+# The expression "less than 50%" cannot be expressed using XML Schema.
+# If a formal description is required, then it is suggested to use
+# an RDF representation of MathML for expressing "less than 50%".
+:ExampleSet5Format1 a :Comment ;
+                    :hasValue "Genotype" ;
+                    :hasAttribute
+                      [
+                        a :Identifier ;
+                        :hasValue "GT" .
+                      ] .
+
+:ExampleSet5Format2 a :Comment ;
+                    :hasValue "Genotype Quality" ;
+                    :hasAttribute
+                      [
+                        a :Label ;
+                        :hasValue "GQ" .
+                      ] .
+
+:ExampleSet5Format3 a :Comment ;
+                    :hasValue "Read Depth" ;
+                    :hasAttribute
+                      [
+                        a :Label ;
+                        :hasValue "DP" .
+                      ] .
+
+:ExampleSet5Format4 a :Comment ;
+                    :hasValue "Haplotype Quality" ;
+                    :hasAttribute
+                      [
+                        a :Label ;
+                        :hasValue "HQ" .
+                      ] .
+
+#
+# Sample labels.
+#
+# Sample labels are taken from columns 10 and above of the "#CHROM" line.
+#
+
+:ExampleSet5Sample1 a :BiologicalEntity ;
+                    :hasAttribute
+                      [
+                        a :Identifier ;
+                        :hasValue "NA00001" .
+                      ] .
+
+:ExampleSet5Sample2 a :BiologicalEntity ;
+                    :hasAttribute
+                      [
+                        a :Identifier ;
+                        :hasValue "NA00002" .
+                      ] .
+
+:ExampleSet5Sample3 a :BiologicalEntity ;
+                    :hasAttribute
+                      [
+                        a :Identifier ;
+                        :hasValue "NA00003" .
+                      ] .
+
+#
+# "contig" line; definition of a genomic landmark.
+#
+:ExampleSet5Contig20 a :Landmark ,
+                       so:0000340 ;
+                     :isPartOf
+                       [
+                         a :Genome ;
+                         :hasValue "B36" .
+                       ] ;
+                     :hasAttribute
+                       [
+                         a :Identifier ;
+                         :hasValue "20" .
+                       ] ,
+                       [
+                         a faldo:Region ;
+                         faldo:begin
+                           [
+                             a faldo:ExactPosition ;
+                             faldo:position 1 .
+                           ] ;
+                         faldo:end
+                           [
+                             a faldo:ExactPosition ;
+                             faldo:position 62435964 .
+                           ] .
+                       ] ,
+                       [
+                         a :InformationContentEntity ;
+                         :hasValue "f126cdf8a6e0c7f379d618ff66beb2da" ;
+                         :hasAttribute
+                           [
+                             a :Label ;
+                             :hasValue "md5" .
+                           ] .
+                       ] ,
+                       [
+                         a :Reference ;
+                         :hasValue "Homo sapiens" ;
+                         :refersTo <http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606> ;
+                         :hasAttribute
+                           [
+                             a :Label ;
+                             :hasValue "species" .
+                           ] .
+                       ] .
+
+#
+# Genomic feature descriptions.
+#
+
+:ExampleSet5Feature1 a :Feature ;
+                     :isLocatedOn :ExampleSet5Contig20 ;
+                     :hasPart
+                       [
+                         a :Locus ;
+                         :hasAttribute
+                           [
+                             a faldo:ExactPosition ;
+                             faldo:position 14370 .
+                           ] .
+                       ] ;
+                     :hasIdentifier
+                       [
+                         a :Identifier ;
+                         :hasValue "rs6054257" .
+                       ] ;
+                     :hasAttribute
+                       [
+                         a :ReferenceSequence ;
+                         :hasValue "G" .
+                       ] ,
+                       [
+                         a :SequenceVariant ;
+                         :hasValue "A" ;
+                         :hasAttribute
+                           [
+                             a :PhredScore ;
+                             :hasValue 29 .
+                           ] .
+                       ] ,
+                       [
+                         a :SampleCount ;
+                         :hasValue 3 ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "NS" .
+                           ] .
+                       ] ,
+                       [
+                         a :Coverage ;
+                         :hasValue 14 ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "DP" .
+                           ] .
+                       ] ,
+                       [
+                         a :AlleleFrequency ;
+                         :hasValue 0.5 ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "AF" .
+                           ] .
+                       ] ,
+                       [
+                         a :ExternalReference ;
+                         :refersTo <http://www.ncbi.nlm.nih.gov/SNP> ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "DB" .
+                           ] .
+                       ] ,
+                       [
+                         a :ExternalReference ;
+                         :refersTo <http://hapmap.ncbi.nlm.nih.gov> ;
+                         :hasAttribute :ExampleSet5Info4 .
+                       ] ;
+                     :hasEvidence
+                       [
+                         :hasSource :ExampleSet5Sample1 ;
+                         :hasAttribute
+                           [
+                             a :Genotype ;
+                             :hasQuality :Homozygous ,
+                                         :GameticPhase ;
+                             :hasAttribute
+                               [
+                                 a :ConditionalGenotypeQuality ;
+                                 :hasValue 48 .
+                               ] ,
+                               [
+                                 a :Coverage ;
+                                 :hasValue 1 .
+                               ] ,
+                               [
+                                 a :Haplotype ;
+                                 :hasFirstPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 51 .
+                                   ] ;
+                                 :hasLastPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 51 .
+                                   ] .
+                               ] ;
+                             :hasFirstPart
+                               [
+                                 a :ReferenceSequence ;
+                                 :hasValue "G" .
+                               ] ;
+                             :hasLastPart
+                               [
+                                 a :ReferenceSequence ;
+                                 :hasValue "G" .
+                               ] .
+                           ] ;
+                       ] ,
+                       [
+                         :hasSource :ExampleSet5Sample2 ;
+                         :hasAttribute
+                           [
+                             a :Genotype ;
+                             :hasQuality :Heterozygous ,
+                                         :GameticPhase ;
+                             :hasAttribute
+                               [
+                                 a :ConditionalGenotypeQuality ;
+                                 :hasValue 48 .
+                               ] ,
+                               [
+                                 a :Coverage ;
+                                 :hasValue 8 .
+                               ] ,
+                               [
+                                 a :Haplotype ;
+                                 :hasFirstPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 51 .
+                                   ] ;
+                                 :hasLastPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 51 .
+                                   ] .
+                               ] ;
+                             :hasFirstPart
+                               [
+                                 a :SequenceVariant ;
+                                 :hasValue "A" .
+                               ] ;
+                             :hasLastPart
+                               [
+                                 a :ReferenceSequence ;
+                                 :hasValue "G" .
+                               ] .
+                           ] ;
+                       ] ,
+                       [
+                         :hasSource :ExampleSet5Sample3 ;
+                         :hasAttribute
+                           [
+                             a :Genotype ;
+                             :hasQuality :Homozygous ;
+                             :hasAttribute
+                               [
+                                 a :ConditionalGenotypeQuality ;
+                                 :hasValue 43 .
+                               ] ,
+                               [
+                                 a :Coverage ;
+                                 :hasValue 5 .
+                               ] ;
+                             :hasPart
+                               [
+                                 a :SequenceVariant ;
+                                 :hasValue "A" .
+                               ] ,
+                               [
+                                 a :SequenceVariant ;
+                                 :hasValue "A" .
+                               ] .
+                           ] .
+                       ] .
+
+:ExampleSet5Feature2 a :Feature ;
+                     :isLocatedOn :ExampleSet5Contig20 ;
+                     :hasPart
+                       [
+                         a :Locus ;
+                         :hasAttribute
+                           [
+                             a faldo:ExactPosition ;
+                             faldo:position 17330 .
+                           ] .
+                       ] ;
+                     :isRefutedBy :ExampleSet5Filter1 ;
+                     :hasAttribute
+                       [
+                         a :ReferenceSequence ;
+                         :hasValue "T" .
+                       ] ,
+                       [
+                         a :SequenceVariant ;
+                         :hasValue "A" ;
+                         :hasAttribute
+                           [
+                             a :PhredScore ;
+                             :hasValue 3 .
+                           ] .
+                       ] ,
+                       [
+                         a :SampleCount ;
+                         :hasValue 3 ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "NS" .
+                           ] .
+                       ] ,
+                       [
+                         a :Coverage ;
+                         :hasValue 11 ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "DP" .
+                           ] .
+                       ] ,
+                       [
+                         a :AlleleFrequency ;
+                         :hasValue 0.017 ;
+                         :hasAttribute
+                           [
+                             a :Name ;
+                             :hasValue "AF" .
+                           ] .
+                       ] ;
+                     :hasEvidence
+                       [
+                         :hasSource :ExampleSet5Sample1 ;
+                         :hasAttribute
+                           [
+                             a :Genotype ;
+                             :hasQuality :Homozygous ,
+                                         :GameticPhase ;
+                             :hasAttribute
+                               [
+                                 a :ConditionalGenotypeQuality ;
+                                 :hasValue 49 .
+                               ] ,
+                               [
+                                 a :Coverage ;
+                                 :hasValue 3 .
+                               ] ,
+                               [
+                                 a :Haplotype ;
+                                 :hasFirstPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 58 .
+                                   ] ;
+                                 :hasLastPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 50 .
+                                   ] .
+                               ] ;
+                             :hasFirstPart
+                               [
+                                 a :ReferenceSequence ;
+                                 :hasValue "T" .
+                               ] ;
+                             :hasLastPart
+                               [
+                                 a :ReferenceSequence ;
+                                 :hasValue "T" .
+                               ] .
+                           ] .
+                       ] ,
+                       [
+                         :hasSource :ExampleSet5Sample2 ;
+                         :hasAttribute
+                           [
+                             a :Genotype ;
+                             :hasQuality :Heterozygous ,
+                                         :GameticPhase ;
+                             :hasAttribute
+                               [
+                                 a :ConditionalGenotypeQuality ;
+                                 :hasValue 3 .
+                               ] ,
+                               [
+                                 a :Coverage ;
+                                 :hasValue 5 .
+                               ] ,
+                               [
+                                 a :Haplotype ;
+                                 :hasFirstPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 65 .
+                                   ] ;
+                                 :hasLastPart
+                                   [
+                                     a :PhredScore ;
+                                     :hasValue 3 .
+                                   ] .
+                               ] ;
+                             :hasFirstPart
+                               [
+                                 a :SequenceVariant ;
+                                 :hasValue "T" .
+                               ] ;
+                             :hasLastPart
+                               [
+                                 a :ReferenceSequence ;
+                                 :hasValue "A" .
+                               ] .
+                           ] .
+                       ] ,
+                       [
+                         :hasSource :ExampleSet5Sample3 ;
+                         :hasAttribute
+                           [
+                             a :Genotype ;
+                             :hasQuality :Homozygous ;
+                             :hasAttribute
+                               [
+                                 a :ConditionalGenotypeQuality ;
+                                 :hasValue 41 .
+                               ] ,
+                               [
+                                 a :Coverage ;
+                                 :hasValue 3 .
+                               ] ;
+                             :hasPart
+                               [
+                                 a :SequenceVariant ;
+                                 :hasValue "T" .
+                               ] ;
+                             :hasPart
+                               [
+                                 a :SequenceVariant ;
+                                 :hasValue "T" .
+                               ] .
+                           ] .
+                       ] .
+

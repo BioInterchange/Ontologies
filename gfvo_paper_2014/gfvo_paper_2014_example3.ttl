@@ -19,10 +19,8 @@
 # Genotype for the first individual.
 :ExampleSet3Genotype1 a :Genotype ;
                       :hasParticipant :ExampleSet3SequencedIndividual1 ;
-                      :hasQuality :Heterozygous ;
-                      :hasAttribute [
-                          a :GameticPhase .
-                      ] ;
+                      :hasQuality :Heterozygous ,
+                                  :GameticPhase ;
                       :hasFirstPart :ExampleSet3ReferenceA_AT ;
                       :hasLastPart :ExampleSet3VariantT_AT .
 
@@ -36,9 +34,10 @@
 :ExampleSet3Genotype2 a :Genotype ;
                       :hasParticipant :ExampleSet3SequencedIndividual2 ;
                       :hasQuality :Homozygous ;
-                      :hasAttribute [
+                      :hasAttribute
+                        [
                           a :GameticPhase .
-                      ] ;
+                        ] ;
                       :hasFirstPart :ExampleSet3VariantT_TT ;
                       :hasLastPart :ExampleSet3VariantT_TT .
 

@@ -8,45 +8,52 @@
                         :ExampleSet2Feature2 .
 
 :ExampleSet2Landmark a :Landmark ;
-                     :hasIdentifier [
+                     :hasIdentifier
+                       [
                          a :Identifier ;
                          :hasValue "chr3" .
-                     ] .
+                       ] .
 
 # Reference sequence feature:
 :ExampleSet2Feature1 a :Feature ;
                      :isLocatedOn :ExampleSet2Landmark ;
-                     :hasIdentifier [
+                     :hasIdentifier
+                       [
                          a :Identifier ;
                          :hasValue "Match1" .
-                     ] .
+                       ] .
 
 # Target sequence feature:
 :ExampleSet2Feature2 a :Feature ,
                        so:0000343 ;
                      :isLocatedOn :ExampleSet2Landmark ;
-                     :hasIdentifier [
+                     :hasIdentifier
+                       [
                          a :Identifier ;
                          :hasValue "EST23" .
-                     ] .
+                       ] .
 
 # Description of the sequence alignment between :ExampleSet2Feature1
 # and :ExampleSet2Feature2 (features "Match1" and "EST23").
 :ExampleSet2SeqAlignment a :SequenceAlignment ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a :Locus ;
-                             :hasAttribute [
+                             :hasAttribute
+                               [
                                  a faldo:Region ;
-                                 faldo:begin [
+                                 faldo:begin
+                                   [
                                      a faldo:ExactPosition ;
                                      faldo:position 1 .
-                                 ] ;
-                                 faldo:end [
+                                   ] ;
+                                 faldo:end
+                                   [
                                      a faldo:ExactPosition ;
                                      faldo:position 21 .
-                                 ] .
-                             ] .
-                         ] ;
+                                   ] .
+                               ] .
+                           ] ;
                          :hasSource :ExampleSet2Feature1 ;
                          :hasInput :ExampleSet2Feature2 ;
                          :hasFirstPart :ExampleSet2AlignmentOp1 ;
@@ -58,40 +65,45 @@
 # Details about the alignment operations: their type and sequence spans
 
 :ExampleSet2AlignmentOp1 rdf:type :Match ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a :Span ;
                              :hasValue 8 .
-                         ] ;
+                           ] ;
                          :isBefore :ExampleSet2AlignmentOp2 .
 
 :ExampleSet2AlignmentOp2 rdf:type :TargetSequenceGap ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a :Span ;
                              :hasValue 3 .
-                         ] ;
+                           ] ;
                          :isAfter :ExampleSet2AlignmentOp1 ;
                          :isBefore :ExampleSet2AlignmentOp3 .
 
 :ExampleSet2AlignmentOp3 rdf:type :Match ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a :Span ;
                              :hasValue 6 .
-                         ] ;
+                           ] ;
                          :isAfter :ExampleSet2AlignmentOp2 ;
                          :isBefore :ExampleSet2AlignmentOp4 .
 
 :ExampleSet2AlignmentOp4 rdf:type :ReferenceSequenceGap ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a :Span ;
                                :hasValue 1 .
-                         ] ;
+                           ] ;
                          :isAfter :ExampleSet2AlignmentOp3 ;
                          :isBefore :ExampleSet2AlignmentOp5 .
 
 :ExampleSet2AlignmentOp5 rdf:type :Match ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a :Span ;
                              :hasValue 6 .
-                         ] ;
+                           ] ;
                          :isAfter :ExampleSet2AlignmentOp4 .
 

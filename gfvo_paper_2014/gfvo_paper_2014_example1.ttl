@@ -4,10 +4,11 @@
 @prefix so: <http://purl.bioontology.org/ontology/SO/SO> .
 
 :ExampleSet1 a :File ;
-             :hasIdentifier [
+             :hasIdentifier
+               [
                  a :Version ;
-                 :hasValue "gff-version 3" ;
-             ] ;
+                 :hasValue "gff-version 3" .
+               ] ;
              :hasMember :ExampleSet1Feature1 ,
                         :ExampleSet1Feature2 .
 
@@ -15,55 +16,67 @@
 :ExampleSet1Feature1 a :Feature ,
                      so:0000704 ;
                      :isLocatedOn :ExampleSet1Landmark ;
-                     :hasPart [
+                     :hasPart
+                       [
                          a :Locus ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a faldo:Region ;
-                             faldo:begin [
+                             faldo:begin
+                               [
                                  a faldo:ExactPosition ;
                                  faldo:position 1000 .
-                             ] ;
-                             faldo:end [
+                               ] ;
+                             faldo:end
+                               [
                                  a faldo:ExactPosition ;
                                  faldo:position 9000 .
-                             ] .
-                         ] .
-                     ] ;
-                     :hasIdentifier [
+                               ] .
+                           ] .
+                       ] ;
+                     :hasIdentifier
+                       [
                          a :Identifier ;
                          :hasValue "gene00001" .
-                     ] ;
-                     :hasAttribute [
+                       ] ;
+                     :hasAttribute
+                       [
                          a :Name ;
-                         :hasAttribute [
+                         :hasValue "EDEN" ;
+                         :hasAttribute
+                           [
                              a :Label ;
                              :hasValue "Name" .
-                         ] ;
-                         :hasValue "EDEN" .
-                     ] .
+                           ] .
+                       ] .
 
 # Feature 2: a transcription factor binding site
 :ExampleSet1Feature2 a :Feature ,
                      so:0000235 ;
                      :isLocatedOn :ExampleSet1Landmark ;
-                     :hasPart [
+                     :hasPart
+                       [
                          a :Locus ;
-                         :hasAttribute [
+                         :hasAttribute
+                           [
                              a faldo:Region ;
-                             faldo:begin [
+                             faldo:begin
+                               [
                                  a faldo:ExactPosition ;
                                  faldo:position 1000 .
-                             ] ;
-                             faldo:end [
+                               ] ;
+                             faldo:end
+                               [
                                  a faldo:ExactPosition ;
                                  faldo:position 1012 .
-                             ] .
-                         ] .
-                     ] ;
-                     :hasIdentifier [
+                               ] .
+                           ] .
+                       ] ;
+                     :hasIdentifier
+                       [
                          a :Identifier ;
                          :hasValue "tfbs00001" .
-                     ] ;
+                       ] ;
                      :hasSource :ExampleSet1Feature1 .
 
 # Features in this example are placed on a single landmark, which has
@@ -72,19 +85,23 @@
 # has a range of sequence positions it covers (expressed by a separate
 # pragma statement in GFF3).
 :ExampleSet1Landmark a :Landmark ;
-                     :hasIdentifier [
+                     :hasIdentifier
+                       [
                          a :Identifier ;
                          :hasValue "ctg123" .
-                     ] ;
-                     :hasAttribute [
+                       ] ;
+                     :hasAttribute
+                       [
                          a faldo:Region ;
-                         faldo:begin [
+                         faldo:begin
+                           [
                              a faldo:ExactPosition ;
                              faldo:position 1 .
-                         ] ;
-                         faldo:end [
+                           ] ;
+                         faldo:end
+                           [
                              a faldo:ExactPosition ;
                              faldo:position 1497228 .
-                         ] .
-                     ] .
+                           ] .
+                       ] .
 

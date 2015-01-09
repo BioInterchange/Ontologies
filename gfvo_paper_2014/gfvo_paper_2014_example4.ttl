@@ -8,8 +8,9 @@
 # Uses "PhredScore" instead of "Score" to denote the specific
 # type of score being used.
 :ExampleSet4Feature1 a :Feature ;
-                     :hasAttribute [
+                     :hasAttribute
+                       [
                          a :PhredScore ;
                          :hasValue 38 .
-                     ] .
+                       ] .
 

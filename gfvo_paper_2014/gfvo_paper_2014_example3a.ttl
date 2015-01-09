@@ -13,12 +13,13 @@
 :ExampleSet3aGenotype1 a :Genotype ;
                        :hasParticipant :ExampleSet3aSequencedIndividual1 ;
                        :hasQuality :Heterozygous ;
-                       :hasPart [
+                       :hasPart
+                         [
                            a :ReferenceSequence ;
                            :hasValue "A" .
-                       ] ;
-                       :hasPart [
+                         ] ,
+                         [
                            a :SequenceVariant ;
                            :hasValue "T" .
-                       ] .
+                         ] .
 
