@@ -1,5 +1,4 @@
 @prefix : <http://www.biointerchange.org/gfvo#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix faldo: <http://biohackathon.org/resource/faldo#> .
 @prefix so: <http://purl.bioontology.org/ontology/SO/SO> .
 
@@ -64,7 +63,7 @@
 
 # Details about the alignment operations: their type and sequence spans
 
-:ExampleSet2AlignmentOp1 rdf:type :Match ;
+:ExampleSet2AlignmentOp1 a :Match ;
                          :hasAttribute
                            [
                              a :Span ;
@@ -72,7 +71,7 @@
                            ] ;
                          :isBefore :ExampleSet2AlignmentOp2 .
 
-:ExampleSet2AlignmentOp2 rdf:type :TargetSequenceGap ;
+:ExampleSet2AlignmentOp2 a :TargetSequenceGap ;
                          :hasAttribute
                            [
                              a :Span ;
@@ -81,7 +80,7 @@
                          :isAfter :ExampleSet2AlignmentOp1 ;
                          :isBefore :ExampleSet2AlignmentOp3 .
 
-:ExampleSet2AlignmentOp3 rdf:type :Match ;
+:ExampleSet2AlignmentOp3 a :Match ;
                          :hasAttribute
                            [
                              a :Span ;
@@ -90,7 +89,7 @@
                          :isAfter :ExampleSet2AlignmentOp2 ;
                          :isBefore :ExampleSet2AlignmentOp4 .
 
-:ExampleSet2AlignmentOp4 rdf:type :ReferenceSequenceGap ;
+:ExampleSet2AlignmentOp4 a :ReferenceSequenceGap ;
                          :hasAttribute
                            [
                              a :Span ;
@@ -99,7 +98,7 @@
                          :isAfter :ExampleSet2AlignmentOp3 ;
                          :isBefore :ExampleSet2AlignmentOp5 .
 
-:ExampleSet2AlignmentOp5 rdf:type :Match ;
+:ExampleSet2AlignmentOp5 a :Match ;
                          :hasAttribute
                            [
                              a :Span ;

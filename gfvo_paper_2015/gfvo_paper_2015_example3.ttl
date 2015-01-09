@@ -1,5 +1,4 @@
 @prefix : <http://www.biointerchange.org/gfvo#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 :ExampleSet3 a :Collection ;
              :hasMember :ExampleSet3Feature1 .
