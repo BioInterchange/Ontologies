@@ -42,11 +42,11 @@ namespaces = { 'cls' => 'http://www.w3.org/2002/07/owl#', 'c' => 'http://www.w3.
 #
 # Note: requires a version of VariO with object properties removed, because VariO uses
 #       annotation properties for documentation and they are hard to filter on.
-faldo = count('gfvo_paper_2014/faldo.xml', '//cls:Class[@about]//c:comment', '//cls:Class[@about]', namespaces)
+faldo = count('gfvo_paper_2015/faldo.xml', '//cls:Class[@about]//c:comment', '//cls:Class[@about]', namespaces)
 gfvo = count('gfvo.xml', '//cls:Class[@about]//c:comment', '//cls:Class[@about]', namespaces)
-sio = count('gfvo_paper_2014/sio.xml', '//cls:Class[@about]//d:description', '//cls:Class[@about]', namespaces)
-so = count('gfvo_paper_2014/so-xp-simple.xml', '//cls:Class[@about]//c:comment', '//cls:Class[@about]', namespaces)
-vario = count('gfvo_paper_2014/vario-classes-only.xml', '//cls:Axiom//cls:annotatedTarget', '//cls:Class[@about]', namespaces)
+sio = count('gfvo_paper_2015/sio.xml', '//cls:Class[@about]//d:description', '//cls:Class[@about]', namespaces)
+so = count('gfvo_paper_2015/so-xp-simple.xml', '//cls:Class[@about]//c:comment', '//cls:Class[@about]', namespaces)
+vario = count('gfvo_paper_2015/vario-classes-only.xml', '//cls:Axiom//cls:annotatedTarget', '//cls:Class[@about]', namespaces)
 
 # Output:
 #  1. total number of words
