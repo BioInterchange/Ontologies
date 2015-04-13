@@ -6,7 +6,7 @@
              :hasIdentifier
                [
                  a :Version ;
-                 :hasValue "fileformat 4.2" .
+                 :hasValue "VCFv4.2" .
                ] ;
              :hasMember :ExampleSet5Feature1 ,
                         :ExampleSet5Feature2 .
