@@ -32,11 +32,8 @@
 # Genotype of the second individual.
 :ExampleSet3Genotype2 a :Genotype ;
                       :hasParticipant :ExampleSet3SequencedIndividual2 ;
-                      :hasQuality :Homozygous ;
-                      :hasAttribute
-                        [
-                          a :GameticPhase .
-                        ] ;
+                      :hasQuality :Homozygous ,
+                                  :GameticPhase ;
                       :hasFirstPart :ExampleSet3VariantT_TT ;
                       :hasLastPart :ExampleSet3VariantT_TT .
 
