@@ -22,7 +22,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
     <owl:Ontology rdf:about="http://www.biointerchange.org/gfvo#">
-        <owl:versionInfo>1.0.3</owl:versionInfo>
+        <owl:versionInfo>1.0.4</owl:versionInfo>
         <dc:rights>CC0 [https://creativecommons.org/publicdomain/zero/1.0/].</dc:rights>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <rdfs:comment xml:lang="en">Best Practices
@@ -33,7 +33,7 @@
 
 3.) Classes that are directly related to either GFF3, GTF, GVF or VCF specification have a link-out to the specification&apos;s document as provenance indicator (via rdfs:isDefinedBy).
 
-4.) Link-outs to Wikipedia are provided for classes whereever possible.
+4.) Link-outs to Wikipedia are provided for classes wherever possible.
 
 5.) Ontology terms are encoded in the URIs using camel case, i.e. letters following a white space in an ontology term are capitalized followed by the removal of the white space.
 </rdfs:comment>
