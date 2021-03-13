@@ -64,8 +64,8 @@ STDIN.each { |line|
 
   # If a comment or one-line definition do not refer to a BioInterchange URI,
   # then do not output them.
-  next if line.strip.match(/^<!-- http:.*-->$/) and not line.match(/http:\/\/www\.biointerchange\.org/)
-  next if line.strip.match(/^<owl:Class.*\/>/) and not line.match(/http:\/\/www\.biointerchange\.org/)
+  next if line.strip.match(/^<!-- http:.*-->$/) and not line.match(/https:\/\/github\.com\/BioInterchange/)
+  next if line.strip.match(/^<owl:Class.*\/>/) and not line.match(/https:\/\/github\.com\/BioInterchange/)
 
   # If there is a top-level definition about something non-BioInterchange,
   # then skip it. Top-level is identified by four leading spaces.
@@ -76,7 +76,7 @@ STDIN.each { |line|
 
   # If a multi-line individual is seen that falls outside the scope of BioInterchange
   # URIs, then supress its output until the matching closing XML-tag is found.
-  if line.strip.match(/^<owl:Thing.*[^\/]>/) and not line.match(/http:\/\/www\.biointerchange\.org/) then
+  if line.strip.match(/^<owl:Thing.*[^\/]>/) and not line.match(/https:\/\/github\.com\/BioInterchange/) then
     skip_until_matching = "#{line.sub(/\S.*$/, '')}</owl:Thing>"
     next
   end
@@ -85,7 +85,7 @@ STDIN.each { |line|
   next if line.strip.empty? and was_empty_line
 
   # If this is a class with SIO/SO mapping, then output the mapping here.
-  if line.strip.start_with?('<owl:Class rdf:about="http://www.biointerchange.org/') then
+  if line.strip.start_with?('<owl:Class rdf:about="https://github.com/BioInterchange') then
     defined_class = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
     if ext_mapping.has_key?(defined_class) then
       indent = line.sub(/\S.*$/, '')
@@ -96,7 +96,7 @@ STDIN.each { |line|
   end
 
   # If this is a property with SIO/SO mapping, then output the mapping here.
-  if line.match(/^\s*<owl:(Datatype|Object)Property rdf:about="http:\/\/www\.biointerchange\.org\//) then
+  if line.match(/^\s*<owl:(Datatype|Object)Property rdf:about="https:\/\/github\.com\/BioInterchange/) then
     defined_property = line.sub(/^[^"]*"/, '').sub(/".*$/, '')
     if ext_mapping.has_key?(defined_property) then
       indent = line.sub(/\S.*$/, '')

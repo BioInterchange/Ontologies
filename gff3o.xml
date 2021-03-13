@@ -12,8 +12,8 @@
     <!ENTITY sp "http://www.broad.mit.edu/annotation/genome/magnaporthe_grisea/GeneLocus.html?sp=" >
 ]>
 
-<rdf:RDF xmlns="http://www.biointerchange.org/gff3o#"
-     xml:base="http://www.biointerchange.org/gff3o"
+<rdf:RDF xmlns="https://github.com/BioInterchange/Ontologies/gff3o#"
+     xml:base="https://github.com/BioInterchange/Ontologies/gff3o"
      xmlns:dc="http://purl.org/dc/terms/"
      xmlns:ipid="http://supfam.cs.bris.ac.uk/SUPERFAMILY/cgi-bin/scop.cgi?ipid="
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -23,7 +23,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:faldo="http://biohackathon.org/resource/faldo#">
-    <owl:Ontology rdf:about="http://www.biointerchange.org/gff3o#">
+    <owl:Ontology rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#">
         <owl:versionInfo>1.0.12</owl:versionInfo>
         <dc:contributor xml:lang="en">Begum Durgahee</dc:contributor>
         <dc:rights>Creative Commons - By Attribution [http://creativecommons.org/licenses/by/3.0/].</dc:rights>
@@ -63,148 +63,148 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0004 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0004 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0004">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0004">
         <rdfs:label>seqid</rdfs:label>
         <rdfs:comment xml:lang="en">Establishes the landmark (e.g. a chromosome) on which a feature is located.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0051"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0010 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0010 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0010">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0010">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>strand</rdfs:label>
         <rdfs:comment xml:lang="en">Strand of the feature.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0012 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0012 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0012">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0012">
         <rdfs:label>attributes</rdfs:label>
         <rdfs:comment xml:lang="en">Tag name/value pair attributes of a feature that are not covered by object-/data-properties of the ontology. Tags that are represented as object-/data-properties are: ID, Name, Alias, Parent, Target, Gap, Derives_from, Dbxref, Ontology_term, Ontology_term, or Is_circular</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0003"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0003"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0014 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0014 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0014">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0014">
         <rdfs:label>parent</rdfs:label>
         <rdfs:comment xml:lang="en">Link out to the parent feature.</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0015 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0015 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0015">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0015">
         <rdfs:label>contains</rdfs:label>
         <rdfs:comment xml:lang="en">Relationship that describes which features belong to a feature set.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0001"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0025"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0025"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0021 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0021 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0021">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0021">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>region</rdfs:label>
         <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a feature&#39;s start, stop, strand properties.</rdfs:comment>
         <rdfs:range rdf:resource="&faldo;Region"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0023 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0023 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0023">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0023">
         <rdfs:label>species</rdfs:label>
         <rdfs:comment xml:lang="en">NCBI Taxonomy Ontology &quot;NCBITaxon_1&quot; (or sub-classes) instance that denotes the species for a feature set.</rdfs:comment>
         <rdfs:range rdf:resource="&ncbi;NCBITaxon_1"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0001"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0025"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0025"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0025 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0025 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0025">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0025">
         <rdfs:label>set_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0026 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0026">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026">
         <rdfs:label>feature_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0039 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0039 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0039">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0039">
         <rdfs:label>target</rdfs:label>
         <rdfs:comment xml:lang="en">Identifies the target that the features aligns to.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0044 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0044 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0044">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0044">
         <rdfs:label>target_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0045 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0045 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0045">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0045">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>strand</rdfs:label>
         <rdfs:comment xml:lang="en">Strand of a target -- if applicable.</rdfs:comment>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0044"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0044"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0047 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0047 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0047">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0047">
         <rdfs:label>derives_from</rdfs:label>
         <rdfs:comment xml:lang="en">Describes a temporal relationship between two features, where the object denotes the subjects origin.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:range rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0026"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:range rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0026"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0050 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0050 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0050">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0050">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <rdfs:label>region</rdfs:label>
         <rdfs:comment xml:lang="en">FALDO &quot;Region&quot; instance replacement for a target&#39;s start, stop, strand  properties.</rdfs:comment>
         <rdfs:range rdf:resource="&faldo;Region"/>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0044"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0044"/>
     </owl:ObjectProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0056 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0056 -->
 
-    <owl:ObjectProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0056">
+    <owl:ObjectProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0056">
         <rdfs:label>feature_ontology</rdfs:label>
         <rdfs:comment xml:lang="en">Explicit link-out to one or more ontologies that have been used for describing features. This is a meta comment about the URIs that link out to SO/SOFA or other ontologies.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0001"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0025"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0025"/>
         <rdfs:range rdf:resource="&owl;Thing"/>
     </owl:ObjectProperty>
     
@@ -216,13 +216,13 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0005 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0005 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0005">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0005">
         <rdfs:label>source</rdfs:label>
         <rdfs:comment xml:lang="en">A free text qualifier that describes the algorithm or operating procedure that generated this feature.  For example, the name of the software that generated this feature or a database name.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -235,13 +235,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0006 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0006 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0006">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0006">
         <rdfs:label>type</rdfs:label>
         <rdfs:comment xml:lang="en">Type of the feature, which is either an entry the &quot;lite&quot; version of the Sequence Ontology (SOFA) or a child entry of sequence_feature (SO:0000110) of the full Sequence Ontology (SO).</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;anyURI"/>
@@ -254,13 +254,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0007 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0007 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0007">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0007">
         <rdfs:label>start</rdfs:label>
         <rdfs:comment xml:lang="en">Start coordinate of the feature on the seqid landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -273,13 +273,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0008 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0008 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0008">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0008">
         <rdfs:label>end</rdfs:label>
         <rdfs:comment xml:lang="en">End coordinate of the feature on the seqid landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -292,23 +292,23 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0009 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0009 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0009">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0009">
         <rdfs:label>score</rdfs:label>
         <rdfs:comment xml:lang="en">Score of the feature. For example, an E-value for sequence similarity features or a P-value for ab initio gene prediction features.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range rdf:resource="&xsd;float"/>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0011 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0011 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0011">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0011">
         <rdfs:label>phase</rdfs:label>
         <rdfs:comment xml:lang="en">Phase for &quot;CDS&quot; features. It indicates where the feature begins with reference to the reading frame. For forward strand features, phase is counted from the start field, whilst for reverse strand features, phase is counted from the end field.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -324,13 +324,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0013 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0013 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0013">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0013">
         <rdfs:label>tag</rdfs:label>
         <rdfs:comment xml:lang="en">Tag name of a feature attribute.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0003"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0029"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0003"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0029"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -343,13 +343,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0022 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0022 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0022">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0022">
         <rdfs:label>version</rdfs:label>
         <rdfs:comment xml:lang="en">Version of the GFF3 specification that defines the feature set contents.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0001"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0027"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0027"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;float"/>
@@ -365,44 +365,44 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0024 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0024 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0024">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0024">
         <rdfs:label>build</rdfs:label>
         <rdfs:comment xml:lang="en">Name of a genome assembly build that denotes the provenance of features in a feature set. For example, &#39;NCBI 36&#39; or &#39;FlyBase r4.1&#39;.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0001"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0027"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0027"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0027 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0027 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0027">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0027">
         <rdfs:label>set_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Set class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0028 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0028">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028">
         <rdfs:label>feature_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Feature class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0029 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0029 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0029">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0029">
         <rdfs:label>attribute_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Attribute class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0034 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0034 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0034">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0034">
         <rdfs:label>dbxref</rdfs:label>
         <rdfs:comment xml:lang="en">A database cross-reference to associate a sequence alteration to its representation in another database.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;anyURI"/>
@@ -415,13 +415,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0035 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0035 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0035">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0035">
         <rdfs:label>ontology_term</rdfs:label>
         <rdfs:comment xml:lang="en">A cross-reference to an ontology term that is associated with a feature.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;anyURI"/>
@@ -434,13 +434,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0036 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0036 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0036">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0036">
         <rdfs:label>name</rdfs:label>
         <rdfs:comment xml:lang="en">Name of a feature, which can be used for display purposes. The name is not a unique property among features.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -453,13 +453,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0037 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0037 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0037">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0037">
         <rdfs:label xml:lang="en">alias</rdfs:label>
         <rdfs:comment xml:lang="en">An alternative name for a feature. This can be another descriptive name of a feature, such as a locus name or accession number.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -472,20 +472,20 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0040 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0040 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0040">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0040">
         <rdfs:label>target_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Target class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0041 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0041 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0041">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0041">
         <rdfs:label>target_id</rdfs:label>
         <rdfs:comment xml:lang="en">ID or accession of the target alignment.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0040"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0040"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -498,13 +498,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0042 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0042 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0042">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0042">
         <rdfs:label>start</rdfs:label>
         <rdfs:comment xml:lang="en">Start coordinate of the target.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0040"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0040"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -517,13 +517,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0043 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0043 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0043">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0043">
         <rdfs:label>end</rdfs:label>
         <rdfs:comment xml:lang="en">End coordinate of the target.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0038"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0040"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0040"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -536,13 +536,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0046 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0046 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0046">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0046">
         <rdfs:label>gap</rdfs:label>
         <rdfs:comment xml:lang="en">Gap describing the feature/target alignment if the sequences are not collinear. The formal description of this property has been lost due to a dead link in the GFF3 specification.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -555,40 +555,40 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0048 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0048 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0048">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0048">
         <rdfs:label>note</rdfs:label>
         <rdfs:comment xml:lang="en">A free text note.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0049 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0049 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0049">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0049">
         <rdfs:label>is_circular</rdfs:label>
         <rdfs:comment xml:lang="en">Describes whether a feature is circular or not.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0052 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0052 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0052">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0052">
         <rdfs:label>landmark_properties</rdfs:label>
         <rdfs:comment xml:lang="en">Properties that are directly associated with Landmark class instances.</rdfs:comment>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0053 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0053 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0053">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0053">
         <rdfs:label>id</rdfs:label>
         <rdfs:comment xml:lang="en">ID that uniquely establishes the Landmark&#39;s identity within a Set.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0051"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0052"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0052"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -601,13 +601,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0054 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0054 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0054">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0054">
         <rdfs:label>start</rdfs:label>
         <rdfs:comment xml:lang="en">Genomic start coordinate of the landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0051"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0052"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0052"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -620,13 +620,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0055 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0055 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0055">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0055">
         <rdfs:label>end</rdfs:label>
         <rdfs:comment xml:lang="en">Genomic end coordinate of the landmark.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0051"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0052"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0052"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;int"/>
@@ -639,13 +639,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0057 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0057 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0057">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0057">
         <rdfs:label>sequence</rdfs:label>
         <rdfs:comment xml:lang="en">Sequence associated with this feature, if it has been specified using a FASTA string.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0028"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0028"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -658,13 +658,13 @@
         </rdfs:range>
     </owl:DatatypeProperty>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0058 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0058 -->
 
-    <owl:DatatypeProperty rdf:about="http://www.biointerchange.org/gff3o#GFF3_0058">
+    <owl:DatatypeProperty rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0058">
         <rdfs:label>sequence</rdfs:label>
         <rdfs:comment xml:lang="en">Sequence associated with this feature, if it has been specified using a FASTA string.</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0051"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0052"/>
+        <rdfs:domain rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051"/>
+        <rdfs:subPropertyOf rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0052"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="&xsd;string"/>
@@ -685,104 +685,104 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0001 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001 -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0001">
+    <owl:Class rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001">
         <rdfs:label>Set</rdfs:label>
         <rdfs:comment xml:lang="en">Set of genomic sequence features, whose identifiers are unique within the set.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0002 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002 -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0002">
+    <owl:Class rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002">
         <rdfs:label>Feature</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0046"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0046"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0005"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0005"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0047"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0047"/>
+                <owl:onClass rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0011"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0011"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;int"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0010"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0010"/>
+                <owl:onClass rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0009"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0009"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0007"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0007"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;int"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0048"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0048"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0008"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0008"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;int"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0021"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0021"/>
                 <owl:onClass rdf:resource="&faldo;Region"/>
                 <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0037"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0037"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0014"/>
-                <owl:onClass rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0002"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0014"/>
+                <owl:onClass rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
                 <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0036"/>
+                <owl:onProperty rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0036"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="&xsd;string"/>
             </owl:Restriction>
@@ -790,40 +790,40 @@
         <rdfs:comment xml:lang="en">A genomic sequence feature.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0003 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0003 -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0003">
+    <owl:Class rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0003">
         <rdfs:label>Attribute</rdfs:label>
         <rdfs:comment xml:lang="en">Describes additional feature attributes besides ID, Name, Alias, Parent, Target, Gap, Derives_from, Dbxref, Ontology_term, Ontology_term, or Is_circular.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0016 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016 -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0016">
+    <owl:Class rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016">
         <rdfs:label>Strand</rdfs:label>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0020"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0017"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0018"/>
-                    <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0019"/>
+                    <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0020"/>
+                    <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0017"/>
+                    <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0018"/>
+                    <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0019"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:comment xml:lang="en">Class describing a genomic strand. Instances of the class (individuals) are used to denote forward-/reverse-strands, etc.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0038 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038 -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0038">
+    <owl:Class rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038">
         <rdfs:label>Target</rdfs:label>
         <rdfs:comment xml:lang="en">Indicates a feature&#39;s &quot;target&quot; of a nucleotide-to-nucleotide or protein-to-nucleotide alignment.</rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0051 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051 -->
 
-    <owl:Class rdf:about="http://www.biointerchange.org/gff3o#GFF3_0051">
+    <owl:Class rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051">
         <rdfs:label>Landmark</rdfs:label>
         <rdfs:comment xml:lang="en">A landmark that establishes the coordinate system for features.</rdfs:comment>
     </owl:Class>
@@ -836,34 +836,34 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0017 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0017 -->
 
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0017">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
+    <owl:NamedIndividual rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0017">
+        <rdf:type rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
         <rdfs:label>Positive</rdfs:label>
         <rdfs:comment xml:lang="en">Location on the positive (forward) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0018 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0018 -->
 
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0018">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
+    <owl:NamedIndividual rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0018">
+        <rdf:type rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
         <rdfs:label>Negative</rdfs:label>
         <rdfs:comment xml:lang="en">Location on the negative (reverse) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0019 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0019 -->
 
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0019">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
+    <owl:NamedIndividual rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0019">
+        <rdf:type rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
         <rdfs:label>UnknownStrand</rdfs:label>
         <rdfs:comment xml:lang="en">Strand was not determined, which leaves it open whether the location is on the positive (forward) or negative (reverse) strand.</rdfs:comment>
     </owl:NamedIndividual>
     
-    <!-- http://www.biointerchange.org/gff3o#GFF3_0020 -->
+    <!-- https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0020 -->
 
-    <owl:NamedIndividual rdf:about="http://www.biointerchange.org/gff3o#GFF3_0020">
-        <rdf:type rdf:resource="http://www.biointerchange.org/gff3o#GFF3_0016"/>
+    <owl:NamedIndividual rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0020">
+        <rdf:type rdf:resource="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
         <rdfs:label>NotStranded</rdfs:label>
         <rdfs:comment xml:lang="en">Strand is not applicable.</rdfs:comment>
     </owl:NamedIndividual>
@@ -879,21 +879,21 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0017"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0018"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0019"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0020"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0017"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0018"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0019"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0020"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0001"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0002"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0003"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0016"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0038"/>
-            <rdf:Description rdf:about="http://www.biointerchange.org/gff3o#GFF3_0051"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0001"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0002"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0003"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0016"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0038"/>
+            <rdf:Description rdf:about="https://github.com/BioInterchange/Ontologies/gff3o#GFF3_0051"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
